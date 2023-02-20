@@ -7,7 +7,7 @@
 git clone https://github.com/geloman-likes-rust/dotfiles ~/.dotfiles
 ```
 
-2. create symbolic links that points to all of your dotfiles from .dotfiles
+2. create symbolic links that points to all of my dotfiles inside .dotfiles
 ```
 ln -s ~/.dotfiles/* ./
 ```
