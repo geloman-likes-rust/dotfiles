@@ -93,6 +93,7 @@ fi
 #alias l='ls -CF'
 alias linux='cd'
 alias windows="cd /mnt/c/Users/user"
+alias unity="cd /mnt/c/Users/user/Documents/unity-projects"
 alias python='python3'
 alias vi='nvim'
 alias vim='nvim'
