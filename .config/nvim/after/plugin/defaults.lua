@@ -3,19 +3,23 @@ local term_opts = { silent = true }
 
 local keymap = vim.api.nvim_set_keymap
 
+-- tab space
 vim.o.tabstop = 2
 vim.o.softtabstop = 2
 vim.o.shiftwidth = 2
 vim.o.expandtab = true
 
+-- line number
 vim.wo.wrap = false
 vim.wo.number = true
 vim.wo.relativenumber = true
 
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
--- keymap("n", "<C-=>", ":resize +2<CR>", opts)
--- keymap("n", "<C-->", ":resize -2<CR>", opts)
--- keymap("n", "<leader>e", ":Lex 30<cr>", opts)
+-- window's width resize
+keymap("n", "=", "[[<cmd>vertical resize +5<cr>]]", opts)
+keymap("n", "-", "[[<cmd>vertical resize -5<cr>]]", opts)
+
+-- window's height resize
+keymap("n", "_", "[[<cmd>horizontal resize -3<cr>]]", opts)
+keymap("n", "+", "[[<cmd>horizontal resize +3<cr>]]", opts)
+
+
