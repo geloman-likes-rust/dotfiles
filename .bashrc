@@ -102,6 +102,8 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias github-token="gpg -d ~/.personal/access-token/token.txt.gpg"
+alias dev="cd ~/.development"
+alias learn="cd ~/.learning"
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
