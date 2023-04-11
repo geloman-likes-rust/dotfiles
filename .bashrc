@@ -102,6 +102,7 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias git-cache="git config --global credential.helper 'cache --timeout=28800'"
+alias minecraft="sudo java -jar ~/.mod-minecraft/TLauncher-2.879.jar"
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
