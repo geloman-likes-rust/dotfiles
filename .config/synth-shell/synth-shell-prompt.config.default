@@ -23,7 +23,7 @@
 ##
 ##==============================================================================
 
-format="USER PWD GIT"
+format="USER HOST PWD GIT PYENV TF KUBE"
 
 font_color_user="white"
 background_user="blue"
