@@ -91,19 +91,6 @@ fi
 #alias ll='ls -l'
 #alias la='ls -A'
 #alias l='ls -CF'
-alias ls='exa -l'
-alias vi='nvim'
-alias vim='nvim'
-alias dev="cd ~/.development"
-alias github-token="gpg -d ~/.personal/access-token/token.txt.gpg"
-alias python='python3'
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
-alias git-cache="git config --global credential.helper 'cache --timeout=28800'"
-alias minecraft="sudo java -jar ~/.mod-minecraft/TLauncher-2.879.jar"
-alias sessions="tmux list-sessions"
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -124,36 +111,15 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-export PATH=~/.local/bin:$PATH
 
 ##-----------------------------------------------------
-## synth-shell-greeter.sh
-if [ -f /home/geloman/.config/synth-shell/synth-shell-greeter.sh ] && [ -n "$( echo $- | grep i )" ]; then
-	source /home/geloman/.config/synth-shell/synth-shell-greeter.sh
-fi
+# export path .local/bin
+export PATH=$PATH:~/.local/bin
 
 ##-----------------------------------------------------
 ## synth-shell-prompt.sh
 if [ -f /home/geloman/.config/synth-shell/synth-shell-prompt.sh ] && [ -n "$( echo $- | grep i )" ]; then
 	source /home/geloman/.config/synth-shell/synth-shell-prompt.sh
-fi
-
-##-----------------------------------------------------
-## better-ls
-if [ -f /home/geloman/.config/synth-shell/better-ls.sh ] && [ -n "$( echo $- | grep i )" ]; then
-	source /home/geloman/.config/synth-shell/better-ls.sh
-fi
-
-##-----------------------------------------------------
-## alias
-if [ -f /home/geloman/.config/synth-shell/alias.sh ] && [ -n "$( echo $- | grep i )" ]; then
-	source /home/geloman/.config/synth-shell/alias.sh
-fi
-
-##-----------------------------------------------------
-## better-history
-if [ -f /home/geloman/.config/synth-shell/better-history.sh ] && [ -n "$( echo $- | grep i )" ]; then
-	source /home/geloman/.config/synth-shell/better-history.sh
 fi
 
 export NVM_DIR="$HOME/.nvm"
