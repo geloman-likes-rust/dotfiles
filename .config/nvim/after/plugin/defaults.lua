@@ -1,6 +1,5 @@
+-- local term_opts = { silent = true }
 local opts = { noremap = true, silent = true }
-local term_opts = { silent = true }
-
 local keymap = vim.api.nvim_set_keymap
 
 -- tab space
@@ -21,5 +20,3 @@ keymap("n", "-", "[[<cmd>vertical resize -5<cr>]]", opts)
 -- window's height resize
 keymap("n", "_", "[[<cmd>horizontal resize -3<cr>]]", opts)
 keymap("n", "+", "[[<cmd>horizontal resize +3<cr>]]", opts)
-
-
