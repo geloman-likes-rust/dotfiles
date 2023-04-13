@@ -114,7 +114,11 @@ fi
 
 ##-----------------------------------------------------
 # export path .local/bin
-export PATH=$PATH:~/.local/bin
+## export PATH=$PATH:~/.local/bin
+
+##-----------------------------------------------------
+# custom ls color for directory
+## export LS_COLORS=$LS_COLORS:di="01;36"
 
 ##-----------------------------------------------------
 ## synth-shell-prompt.sh
