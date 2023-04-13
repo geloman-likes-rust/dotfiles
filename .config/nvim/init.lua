@@ -117,16 +117,17 @@ require('lazy').setup({
     priority = 1000,
     config = function()
       require('onedark').setup {
-        style = 'cool',
+        style = 'deep',
         transparent = true,
         term_colors = true,
+        toggle_style_key = '<leader>t',
         code_style = {
-          comments = 'italic',
+          comments = 'italic,bold',
           keywords = 'none',
           functions = 'none',
           strings = 'none',
           variables = 'none'
-        }
+        },
       }
       vim.cmd.colorscheme 'onedark'
     end,
@@ -137,10 +138,12 @@ require('lazy').setup({
     -- See `:help lualine.txt`
     opts = {
       options = {
-        icons_enabled = false,
+        icons_enabled = true,
         theme = 'onedark',
-        component_separators = '|',
-        section_separators = '',
+        -- section_separators = { left = '', right = '' },
+        component_separators = { left = '', right = '' },
+        -- component_separators = { left = '', right = ''},
+        section_separators = { left = '', right = ''},
       },
     },
   },
@@ -151,7 +154,7 @@ require('lazy').setup({
     -- See `:help indent_blankline.txt`
     opts = {
       char = '┊',
-      show_trailing_blankline_indent = false,
+      show_trailing_blankline_indent = true,
     },
   },
 
