@@ -9,12 +9,7 @@ for dotfile in "${dotfiles[@]}"; do
   ln -s ~/".dotfiles/$dotfile" ~/"$dotfile"
 done
 
-configs=(
-  nvim
-  synth-shell
-  neofetch
-)
-
-for config in "${configs[@]}"; do
-  ln -s ~/".dotfiles/.config/$config" ~/".config/$config"
+for dir in ~/.dotfiles/.config/*; do
+  config="$(basename $dir)"
+  ln -s ~/".dotfiles/.config/${config}" ~/.config/"${config}"
 done
