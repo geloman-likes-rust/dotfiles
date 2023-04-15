@@ -1,3 +1,5 @@
+![screenshot](https://raw.githubusercontent.com/geloman-likes-rust/dotfiles/main/screenshot.png)
+
 # How to use this?
 
 ## QUICKSTART
