@@ -12,4 +12,4 @@ git clone https://github.com/geloman-likes-rust/dotfiles ~/.dotfiles
 ./.dotfiles/dotfiles-setup.sh
 ```
 
-3. close and reopen your terminal
+3. close and reopen your terminal to see the changes
