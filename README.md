@@ -9,7 +9,6 @@ git clone https://github.com/geloman-likes-rust/dotfiles ~/.dotfiles
 
 2. this will create symbolic links that points to all of my dotfiles inside .dotfiles
 ```
-chmod +x link-dotfiles.sh
 ./.dotfiles/link-dotfiles.sh
 ```
 
