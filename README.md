@@ -1,5 +1,3 @@
-![screenshot](https://raw.githubusercontent.com/geloman-likes-rust/dotfiles/main/screenshot.png)
-
 # How to use this?
 
 ## QUICKSTART
@@ -15,3 +13,5 @@ git clone https://github.com/geloman-likes-rust/dotfiles ~/.dotfiles
 ```
 
 3. close and reopen your terminal to see the changes
+
+![screenshot](https://raw.githubusercontent.com/geloman-likes-rust/dotfiles/main/screenshot.png)
