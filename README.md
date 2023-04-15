@@ -7,7 +7,7 @@
 git clone https://github.com/geloman-likes-rust/dotfiles ~/.dotfiles
 ```
 
-2. run dotfiles-setup.sh script to programmatically setup all of my configs
+2. run this script to programmatically setup all of my configs
 ```
 ./.dotfiles/dotfiles-setup.sh
 ```
