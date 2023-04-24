@@ -16,7 +16,7 @@ git clone https://github.com/geloman-likes-rust/dotfiles ~/.dotfiles
 
 
 ## SCREENSHOT
-![screenshot](https://raw.githubusercontent.com/geloman-likes-rust/dotfiles/main/screenshot.png)
+![screenshot](https://raw.githubusercontent.com/geloman-likes-rust/dotfiles/main/ss.png)
 
 ![debian](https://img.shields.io/badge/debian-D14D72?style=for-the-badge&logo=debian&logoColor=white)
 ![tmux](https://img.shields.io/badge/tmux-393646?style=for-the-badge&logo=tmux&logoColor=fff)
