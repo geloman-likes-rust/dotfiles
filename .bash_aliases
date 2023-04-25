@@ -9,8 +9,10 @@ alias tls="tmux ls"
 alias tks="tmux kill-server"
 
 # version control aliases
+alias glo="git log --oneline"
+alias gs="git status"
+alias gb="git branch"
 alias github-token="gpg -d ~/.personal/access-token/token.txt.gpg"
-alias git-cache="git config --global credential.helper 'cache --timeout=28800'"
 
 # additional aliases
 alias ls='exa -l'
