@@ -21,6 +21,7 @@ alias python='python3'
 alias mem="neofetch memory"
 alias cpu="neofetch cpu"
 alias disk="neofetch disk"
+alias uptime="neofetch uptime"
 alias minecraft="sudo java -jar ~/.mod-minecraft/TLauncher-2.879.jar"
 
 
