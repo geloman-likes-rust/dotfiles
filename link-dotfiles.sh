@@ -2,6 +2,7 @@
 
 dotfiles=(
   .bash_aliases
+  .bash_profile
   .tmux.conf
 )
 
