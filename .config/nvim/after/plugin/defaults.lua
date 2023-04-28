@@ -1,4 +1,3 @@
--- local term_opts = { silent = true }
 local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 
@@ -20,3 +19,9 @@ keymap("n", "-", "[[<cmd>vertical resize -5<cr>]]", opts)
 -- window's height resize
 keymap("n", "_", "[[<cmd>horizontal resize -3<cr>]]", opts)
 keymap("n", "+", "[[<cmd>horizontal resize +3<cr>]]", opts)
+
+-- toggle filetree
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
+
+-- format on save
+vim.api.nvim_command('autocmd BufWritePre * Format')
