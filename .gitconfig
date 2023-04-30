@@ -7,3 +7,7 @@
 	username = geloman-likes-rust
 [credential]
 	helper = cache --timeout=28800
+[core]
+	editor = vim
+[fetch]
+	prune = true
