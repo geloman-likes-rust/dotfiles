@@ -14,4 +14,5 @@ for dir in ~/.dotfiles/.config/*; do
   ln -s ~/".dotfiles/.config/${config}" ~/.config/"${config}"
 done
 
+rm -rdf $HOME/.gitconfig
 ln -s $HOME/.dotfiles/.gitconfig $HOME
