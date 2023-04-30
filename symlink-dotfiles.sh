@@ -13,3 +13,5 @@ for dir in ~/.dotfiles/.config/*; do
   config="$(basename $dir)"
   ln -s ~/".dotfiles/.config/${config}" ~/.config/"${config}"
 done
+
+ln -s $HOME/.dotfiles/.gitconfig $HOME
