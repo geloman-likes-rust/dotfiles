@@ -1,6 +1,8 @@
 [user]
 	name = geloman
 	email = geloman-likes-rust@users.noreply.github.com
+[init]
+	defaultBranch = main
 [url "https://geloman-likes-rust@github.com"]
 	username = geloman-likes-rust
 [credential]
