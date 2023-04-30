@@ -11,6 +11,12 @@ install_neovim() {
 	ln -s ~/.local/bin/nvim-linux64/bin/nvim ~/.local/bin
 }
 
+## NEOVIM STABLE - LATEST
+#---------------------------------------------------------------------
+install_tmux_tpm() {
+	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+}
+
 ## RUSTUP, CARGO, RUSTC
 #---------------------------------------------------------------------
 install_rust() {
@@ -25,5 +31,6 @@ install_nvm() {
 }
 
 install_neovim
+install_tmux_tpm
 install_rust
 install_nvm
