@@ -15,6 +15,9 @@ git clone https://github.com/geloman-likes-rust/dotfiles ~/.dotfiles
 ```
 
 3. close and reopen your terminal to see the changes
+```
+exit
+```
 
 
 ### SCREENSHOT
