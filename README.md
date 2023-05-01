@@ -1,6 +1,8 @@
-# How to use this?
+# my fresh start config/dotfiles
 
-## QUICKSTART
+## How to use this?
+
+### QUICKSTART
 
 1. clone this repo to your .dotfiles directory
 ```
@@ -15,7 +17,7 @@ git clone https://github.com/geloman-likes-rust/dotfiles ~/.dotfiles
 3. close and reopen your terminal to see the changes
 
 
-## SCREENSHOT
+### SCREENSHOT
 ![screenshot](https://raw.githubusercontent.com/geloman-likes-rust/dotfiles/main/screenshot.png)
 
 ![debian](https://img.shields.io/badge/debian-D14D72?style=for-the-badge&logo=debian&logoColor=white)
