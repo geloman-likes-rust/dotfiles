@@ -11,7 +11,7 @@ git clone https://github.com/geloman-likes-rust/dotfiles ~/.dotfiles
 
 2. run this script to programmatically setup all of my configs
 ```
-./.dotfiles/setup.sh
+bash ~/.dotfiles/setup.sh
 ```
 
 3. close and reopen your terminal to see the changes
