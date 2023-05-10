@@ -17,7 +17,7 @@ alias github-token="gpg -d ~/.personal/access-token/token.txt.gpg"
 # additional aliases
 alias ls='exa -l'
 alias vi='nvim'
-alias vim='nvim'
+## alias vim='nvim'
 alias dev="cd ~/.development"
 alias config="cd ~/.dotfiles/.config"
 alias python='python3'
@@ -32,7 +32,7 @@ alias fixpkgs='sudo dnf install @^rpmfusion-free-release-f$(rpm -E %fedora) -y &
 
 ## terminal appearance
 ## -----------------------------------------------------
-#   hex-color: #252630;
+#   hex-color: #2A2F38;
 #   font-family: hack-nerdfont;
 #   font-size: 18px;
 #   terminal-size: 80 24;
