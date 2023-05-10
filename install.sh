@@ -31,6 +31,17 @@ install_nvm() {
 	nvm install-latest-npm
 }
 
+## EXA LS
+#---------------------------------------------------------------------
+install_exa() {
+  cd ~/.config
+  mkdir exa && cd exa
+  curl -LO https://github.com/ogham/exa/releases/download/v0.10.1/exa-linux-x86_64-v0.10.1.zip
+  unzip exa-linux-x86_64-v0.10.1.zip
+  ln -s ~/.config/exa/bin/exa ~/.local/bin/
+}
+
+install_exa
 install_neovim
 install_tmux_tpm
 # install_rust
