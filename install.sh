@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-## NEOVIM STABLE - LATEST
+## NEOVIM LATEST VERSION - STABLE
 #---------------------------------------------------------------------
 install_neovim() {
 	curl -JLO https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz
