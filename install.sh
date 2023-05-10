@@ -34,11 +34,11 @@ install_nvm() {
 ## EXA LS
 #---------------------------------------------------------------------
 install_exa() {
-  cd ~/.config
-  mkdir exa && cd exa
+  cd ~/.local/bin
+  mkdir exa_ls && cd exa_ls
   curl -LO https://github.com/ogham/exa/releases/download/v0.10.1/exa-linux-x86_64-v0.10.1.zip
   unzip exa-linux-x86_64-v0.10.1.zip
-  ln -s ~/.config/exa/bin/exa ~/.local/bin/
+  ln -s ~/.local/bin/exa_ls/bin/exa ~/.local/bin/
 }
 
 install_exa
