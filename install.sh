@@ -4,10 +4,10 @@
 ## NEOVIM LATEST VERSION - STABLE
 #---------------------------------------------------------------------
 install_neovim() {
+	cd ~/.local/bin
 	curl -JLO https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz
 	tar xzvf nvim-linux64.tar.gz
 	rm -rdf nvim-linux64.tar.gz
-	mv nvim-linux64 ~/.local/bin/
 	ln -s ~/.local/bin/nvim-linux64/bin/nvim ~/.local/bin
 }
 
@@ -38,6 +38,7 @@ install_exa() {
   mkdir exa_ls && cd exa_ls
   curl -LO https://github.com/ogham/exa/releases/download/v0.10.1/exa-linux-x86_64-v0.10.1.zip
   unzip exa-linux-x86_64-v0.10.1.zip
+  rm -rdf exa-linux-x86_64-v0.10.1.zip
   ln -s ~/.local/bin/exa_ls/bin/exa ~/.local/bin/
 }
 
