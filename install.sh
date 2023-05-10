@@ -33,5 +33,5 @@ install_nvm() {
 
 install_neovim
 install_tmux_tpm
-install_rust
-install_nvm
+# install_rust
+# install_nvm
