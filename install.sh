@@ -34,6 +34,11 @@ install_neovim() {
 	ln -s ~/.local/bin/nvim-linux64/bin/nvim ~/.local/bin
 }
 
+install_clang() {
+	echo "Installing clang for nvim-treesitter"
+	conda install -y -c conda-forge clang
+}
+
 ## RUSTUP, CARGO, RUSTC
 #---------------------------------------------------------------------
 install_rust() {
@@ -65,6 +70,7 @@ install_exa() {
 install_tmux
 install_tmux_tpm
 install_neovim
+# install_clang
 install_exa
 # install_rust
 # install_nvm
