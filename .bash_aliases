@@ -15,7 +15,7 @@ alias gb="git branch"
 alias github-token="gpg -d ~/.personal/access-token/token.txt.gpg"
 
 # additional aliases
-alias ls='exa -l'
+alias ls='exa -lh'
 alias vi='nvim'
 alias vim='nvim'
 alias dev="cd ~/.development"
