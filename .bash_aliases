@@ -29,6 +29,7 @@ alias uptime="neofetch uptime"
 alias minecraft="sudo java -jar ~/.mod-minecraft/TLauncher-2.879.jar"
 alias next-app="npx create-next-app@latest ."
 alias fixpkgs='sudo dnf install @^rpmfusion-free-release-f$(rpm -E %fedora) -y && sudo dnf check && sudo dnf install -y && sudo dnf autoremove -y'
+alias sctl="systemctl"
 
 
 ## terminal appearance
