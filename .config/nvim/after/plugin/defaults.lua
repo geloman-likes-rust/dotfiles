@@ -24,7 +24,10 @@ keymap("n", "_", "[[<cmd>horizontal resize -3<cr>]]", opts)
 keymap("n", "+", "[[<cmd>horizontal resize +3<cr>]]", opts)
 
 -- toggle filetree
-vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+
+-- toggle trouble
+vim.keymap.set("n", "<leader>l", ":TroubleToggle<CR>", opts)
 
 -- format on save
 vim.api.nvim_command('autocmd BufWritePre * Format')
