@@ -35,7 +35,7 @@ alias sql-cli="mysql -u geloman"
 
 ## terminal appearance
 ## -----------------------------------------------------
-#   hex-color: #2A2F38;
+#   hex-color: #1E2127;
 #   font-family: hack-nerdfont;
 #   font-size: 18px;
 #   terminal-size: 80 24;
