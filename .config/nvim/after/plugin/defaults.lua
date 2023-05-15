@@ -29,5 +29,8 @@ vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 -- toggle trouble
 vim.keymap.set("n", "<leader>L", ":TroubleToggle<CR>", opts)
 
+-- git diffsplit
+vim.keymap.set("n", "<leader>D", ":Gvdiffsplit<CR>", opts)
+
 -- format on save
 vim.api.nvim_command('autocmd BufWritePre * Format')
