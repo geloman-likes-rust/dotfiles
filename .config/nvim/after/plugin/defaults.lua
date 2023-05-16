@@ -30,7 +30,11 @@ vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 vim.keymap.set("n", "<leader>L", ":TroubleToggle<CR>", opts)
 
 -- git diffsplit
-vim.keymap.set("n", "<leader>D", ":Gvdiffsplit<CR>", opts)
+vim.keymap.set("n", "<leader>gs", ":Gvdiffsplit<CR>", opts)
+
+-- switch to previous/next file
+vim.keymap.set("n", "<leader>n", ":bprevious<CR>", opts)
+vim.keymap.set("n", "<leader>N", ":bNext<CR>", opts)
 
 -- format on save
 vim.api.nvim_command('autocmd BufWritePre * Format')
