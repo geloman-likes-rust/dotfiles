@@ -8,7 +8,9 @@ bash ~/.dotfiles/symlink-dotfiles.sh
 
 echo -e "\n## opens fzf when ctrl+f key was press" >> $BASHRC
 echo "#-----------------------------------------------------" >> $BASHRC
-echo -e bind -x '"\C-f": "tmux new -s $(command ls -d * | fzf)"' >> $BASHRC 
+cat <<'EOF' >> ~/.bashrc
+bind -x '"\C-f": "tmux new -s $(command ls -d * | fzf)"'
+EOF
 
 echo -e '\n' >> $BASHRC
 echo "## synth-shell-prompt.sh" >> $BASHRC
