@@ -10,3 +10,5 @@ echo -e '\n' >> $BASHRC
 echo "## synth-shell-prompt.sh" >> $BASHRC
 echo "##-----------------------------------------------------" >> $BASHRC
 echo -e $SOURCE_SYNTHSHELL >> $BASHRC
+
+source ~/.bashrc
