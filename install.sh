@@ -23,6 +23,13 @@ install_tmux_tpm() {
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 }
 
+## FUZZY FINDER
+#---------------------------------------------------------------------
+install_fzf() {
+  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+  y | ~/.fzf/install
+}
+
 ## NEOVIM LATEST VERSION - STABLE
 #---------------------------------------------------------------------
 install_neovim() {
@@ -77,6 +84,7 @@ install_httpie() {
 
 install_tmux
 install_tmux_tpm
+install_fzf
 install_neovim
 install_exa
 install_httpie
