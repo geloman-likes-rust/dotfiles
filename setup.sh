@@ -12,3 +12,4 @@ echo "##-----------------------------------------------------" >> $BASHRC
 echo -e $SOURCE_SYNTHSHELL >> $BASHRC
 
 source ~/.bashrc
+source ~/.bash_aliases
