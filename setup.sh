@@ -6,6 +6,10 @@ SOURCE_SYNTHSHELL='if [ -f ~/.config/synth-shell/synth-shell-prompt.sh ] && [ -n
 bash ~/.dotfiles/install.sh
 bash ~/.dotfiles/symlink-dotfiles.sh
 
+echo -e "\n## opens fzf when ctrl+f key was press" >> ~/.bashrc
+echo "#-----------------------------------------------------" >> ~/.bashrc
+echo -e bind -x '"\C-f": "tmux new -s $(command ls -d * | fzf)"' >> ~/.bashrc
+
 echo -e '\n' >> $BASHRC
 echo "## synth-shell-prompt.sh" >> $BASHRC
 echo "##-----------------------------------------------------" >> $BASHRC
