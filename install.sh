@@ -67,10 +67,19 @@ install_exa() {
 	ln -s ~/.local/bin/exa_ls/bin/exa ~/.local/bin/
 }
 
+## HTTPIE
+#---------------------------------------------------------------------
+install_httpie() {
+  cd ~/.local/bin
+  curl -SLo http https://packages.httpie.io/binaries/linux/http-latest
+  chmod +x http
+}
+
 install_tmux
 install_tmux_tpm
 install_neovim
-# install_clang
 install_exa
+install_httpie
+# install_clang
 # install_rust
 # install_nvm
