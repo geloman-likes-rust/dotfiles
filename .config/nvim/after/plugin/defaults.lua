@@ -39,6 +39,7 @@ vim.keymap.set("n", "<leader>N", ":bNext<CR>", opts)
 -- move cursor to bottom/top and center the screen
 vim.keymap.set("n", "H", "Hzz")
 vim.keymap.set("n", "L", "Lzz")
+vim.keymap.set("n", "G", "Gzz")
 
 -- format on save
 vim.api.nvim_command('autocmd BufWritePre * Format')
