@@ -16,6 +16,7 @@ alias github-token="gpg -d ~/.personal/access-token/token.txt.gpg"
 
 # additional aliases
 alias ls='exa -lh'
+alias v='nvim'
 alias vi='nvim'
 alias vim='nvim'
 alias vii='nvim'
