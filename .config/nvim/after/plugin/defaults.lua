@@ -15,6 +15,9 @@ vim.wo.wrap = false
 vim.wo.number = true
 vim.wo.relativenumber = true
 
+-- set colorscheme
+vim.cmd.colorscheme 'onedark'
+
 -- window's width resize
 keymap("n", "=", "[[<cmd>vertical resize +5<cr>]]", opts)
 keymap("n", "-", "[[<cmd>vertical resize -5<cr>]]", opts)

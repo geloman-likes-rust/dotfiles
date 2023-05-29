@@ -14,6 +14,5 @@ return {
         variables = 'none'
       },
     }
-    vim.cmd.colorscheme 'onedark'
   end,
 }
