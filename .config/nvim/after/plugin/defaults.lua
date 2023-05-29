@@ -8,7 +8,35 @@ vim.o.shiftwidth = 2
 vim.o.expandtab = true
 vim.o.smartindent = true
 vim.o.autoindent = true
+
+-- disable highlight on search
+vim.o.hlsearch = false
+
+-- sync clipboard between os and neovim.
+vim.o.clipboard = 'unnamedplus'
+
+-- enable break indent
+vim.o.breakindent = true
+
+-- save undo history
+vim.o.undofile = true
+
+-- case insensitive searching UNLESS /C or capital in search
+vim.o.ignorecase = true
 vim.o.smartcase = true
+
+-- keep signcolumn on by default
+vim.wo.signcolumn = 'yes'
+
+-- decrease update time
+vim.o.updatetime = 250
+vim.o.timeout = true
+vim.o.timeoutlen = 300
+
+-- set completeopt to have a better completion experience
+vim.o.completeopt = 'menuone,noselect'
+
+vim.o.termguicolors = true
 
 -- line number
 vim.wo.wrap = false
