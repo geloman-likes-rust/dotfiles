@@ -5,7 +5,7 @@
 #---------------------------------------------------------------------
 install_tmux() {
 	echo "Installing miniconda......................................"
-	curl -SL https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -o ~/miniconda.sh
+	curl -sSL https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -o ~/miniconda.sh
 	chmod +x miniconda.sh
 	bash ~/miniconda.sh -b -p ~/.miniconda && echo "yes" | ~/.miniconda/bin/conda init
 	rm -rdf miniconda.sh
@@ -26,8 +26,9 @@ install_tmux_tpm() {
 ## FUZZY FINDER
 #---------------------------------------------------------------------
 install_fzf() {
-  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-  y | ~/.fzf/install
+	echo "Installing fzf......................................"
+	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+	y | ~/.fzf/install
 }
 
 ## NEOVIM LATEST VERSION - STABLE
@@ -35,7 +36,7 @@ install_fzf() {
 install_neovim() {
 	echo "Installing neovim......................................"
 	cd ~/.local/bin
-	curl -JLO https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz
+	curl -s -JLO https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz
 	tar xzvf nvim-linux64.tar.gz
 	rm -rdf nvim-linux64.tar.gz
 	ln -s ~/.local/bin/nvim-linux64/bin/nvim ~/.local/bin
@@ -68,7 +69,7 @@ install_exa() {
 	echo "Installing exa......................................"
 	cd ~/.local/bin
 	mkdir exa_ls && cd exa_ls
-	curl -LO https://github.com/ogham/exa/releases/download/v0.10.1/exa-linux-x86_64-v0.10.1.zip
+	curl -sLO https://github.com/ogham/exa/releases/download/v0.10.1/exa-linux-x86_64-v0.10.1.zip
 	unzip exa-linux-x86_64-v0.10.1.zip
 	rm -rdf exa-linux-x86_64-v0.10.1.zip
 	ln -s ~/.local/bin/exa_ls/bin/exa ~/.local/bin/
@@ -77,9 +78,10 @@ install_exa() {
 ## HTTPIE
 #---------------------------------------------------------------------
 install_httpie() {
-  cd ~/.local/bin
-  curl -SLo http https://packages.httpie.io/binaries/linux/http-latest
-  chmod +x http
+	echo "Installing httpie......................................"
+	cd ~/.local/bin
+	curl -sLo http https://packages.httpie.io/binaries/linux/http-latest
+	chmod +x http
 }
 
 install_tmux
