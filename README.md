@@ -20,9 +20,6 @@ exit
 ```
 
 
-### SCREENSHOT
-![screenshot](https://raw.githubusercontent.com/geloman-likes-rust/dotfiles/main/screenshot.png)
-
 ![debian](https://img.shields.io/badge/debian-D14D72?style=for-the-badge&logo=debian&logoColor=white)
 ![fedora](https://img.shields.io/badge/fedora-19376D?style=for-the-badge&logo=fedora&logoColor=fff)
 ![arch](https://img.shields.io/badge/arch-0B2447?style=for-the-badge&logo=archlinux&logoColor=19A7CE)
