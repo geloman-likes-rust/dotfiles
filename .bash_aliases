@@ -7,12 +7,17 @@ alias .....="cd ../../../.."
 # tmux aliases
 alias tls="tmux ls"
 alias tks="tmux kill-server"
+alias ta="tmux a"
+alias tns="tmux new -s"
+alias trn="tmux rename-session -t"
 
 # version control aliases
 alias glo="git log --oneline"
 alias gs="git status"
 alias gb="git branch"
 alias ga="git add"
+alias gcm="git commit -m"
+alias gp="git push"
 alias github-token="gpg -d ~/.personal/access-token/token.txt.gpg"
 
 # additional aliases
