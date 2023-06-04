@@ -3,10 +3,9 @@
 	email = geloman-likes-rust@users.noreply.github.com
 [init]
 	defaultBranch = main
-[url "https://geloman-likes-rust@github.com"]
-	username = geloman-likes-rust
 [credential]
-	helper = cache --timeout=28800
+	username = geloman-likes-rust
+	token = $GITHUB_TOKEN
 [core]
 	editor = vim
 [fetch]
