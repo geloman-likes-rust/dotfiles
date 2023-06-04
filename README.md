@@ -14,9 +14,9 @@ git clone https://github.com/geloman-likes-rust/dotfiles ~/.dotfiles
 bash ~/.dotfiles/setup.sh
 ```
 
-3. close and reopen your terminal to see the changes
+3. refresh shell session by running
 ```
-exit
+source ~/.bashrc
 ```
 
 
