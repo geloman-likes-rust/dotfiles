@@ -9,7 +9,7 @@
 git clone https://github.com/geloman-likes-rust/dotfiles ~/.dotfiles
 ```
 
-2. run this script to programmatically setup all of my configs (Note: this will perform some installation)
+2. run this script to programmatically setup all of my configs (Note: this will perform some [installation](install.sh))
 ```
 bash ~/.dotfiles/setup.sh
 ```
