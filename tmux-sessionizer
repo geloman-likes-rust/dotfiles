@@ -6,6 +6,7 @@ else
     selected=$(find ~/* -type d | fzf)
 fi
 
+# EXITS IF NO SELECTED
 if [[ -z $selected ]]; then
     exit 0
 fi
@@ -13,13 +14,22 @@ fi
 selected_name=$(basename "$selected" | tr . _)
 tmux_running=$(pgrep tmux)
 
+# CREATE NEW TMUX SESSION IF TMUX SERVER IS NOT RUNNING
 if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
     tmux new-session -s $selected_name -c $selected
     exit 0
 fi
 
+# CREATE NEW TMUX SESSION IF THE SELECTED BASENAME IS NOT A SESSION
 if ! tmux has-session -t=$selected_name 2> /dev/null; then
     tmux new-session -ds $selected_name -c $selected
 fi
 
-tmux attach-session -t $selected_name
+# ATTACH TO TMUX SESSION IF TMUX HAS A SESSION SIMILAR TO SELECTED BASENAME AND IF TMUX SESSION IS NOT RUNNING
+if tmux has-session -t $selected_name && [[ -z $TMUX ]]; then
+    tmux attach-session -t $selected_name
+else
+    # SWITCH TO SELECTED CLIENT IF TMUX SERVER IS RUNNING
+    tmux switch-client -t $selected_name
+fi
+
