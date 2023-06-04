@@ -3,6 +3,7 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
+    # FUZZY FIND DIRECTORIES
     selected=$(find ~/* -type d | fzf)
 fi
 
