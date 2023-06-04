@@ -14,7 +14,7 @@ git clone https://github.com/geloman-likes-rust/dotfiles ~/.dotfiles
 bash ~/.dotfiles/setup.sh
 ```
 
-3. refresh shell session by running
+3. refresh your shell session by running `source ~/.bashrc`
 ```
 source ~/.bashrc
 ```
