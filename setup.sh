@@ -6,10 +6,10 @@ SOURCE_SYNTHSHELL='if [ -f ~/.config/synth-shell/synth-shell-prompt.sh ] && [ -n
 bash ~/.dotfiles/install.sh
 bash ~/.dotfiles/symlink-dotfiles.sh
 
-echo -e "\n## opens fzf when ctrl+f key was press" >> $BASHRC
+echo -e "\n## opens fzf when ctrl+f key was press and creates a tmux session based on the selected basename" >> $BASHRC
 echo "#-----------------------------------------------------" >> $BASHRC
 cat <<'EOF' >> ~/.bashrc
-bind -x '"\C-f": "tmux new -s $(command ls -d * | fzf)"'
+bind -x '"\C-f": tmux-sessionizer'
 EOF
 
 echo -e '\n' >> $BASHRC
