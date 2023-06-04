@@ -18,7 +18,6 @@ alias gb="git branch"
 alias ga="git add"
 alias gcm="git commit -m"
 alias gp="git push"
-alias github-token="gpg -d ~/.personal/access-token/token.txt.gpg"
 
 # additional aliases
 alias size-of="du -sh"
