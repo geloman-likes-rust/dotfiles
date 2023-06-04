@@ -21,6 +21,8 @@ alias gp="git push"
 alias github-token="gpg -d ~/.personal/access-token/token.txt.gpg"
 
 # additional aliases
+alias size-of="du -sh"
+alias size-all="du -hc"
 alias ls='exa -lh'
 alias v='nvim'
 alias vi='nvim'
