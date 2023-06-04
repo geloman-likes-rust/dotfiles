@@ -26,7 +26,7 @@ if ! tmux has-session -t=$selected_name 2> /dev/null; then
     tmux new-session -ds $selected_name -c $selected
 fi
 
-# ATTACH TO TMUX SESSION IF TMUX HAS A SESSION SIMILAR TO SELECTED BASENAME AND IF HAS NO RUNNING TMUX SESSION
+# ATTACH TO TMUX SESSION IF TMUX HAS A SESSION SIMILAR TO SELECTED BASENAME AND IF HAS NO RUNNING TMUX SESSION (OR CURRENTLY DEATTACHED)
 if tmux has-session -t $selected_name && [[ -z $TMUX ]]; then
     tmux attach-session -t $selected_name
 else
