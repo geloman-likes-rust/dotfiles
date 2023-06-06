@@ -40,10 +40,13 @@ alias uptime="neofetch uptime"
 alias mysql-run="mysql -v --table"
 alias mysql-start="sudo systemctl start mysqld.service"
 alias mysql-stop="sudo systemctl stop mysqld.service"
+alias mysql-status="systemctl status mysqld.service"
 alias redis-start="sudo systemctl start redis.service"
 alias redis-stop="sudo systemctl stop redis.service"
+alias redis-status="systemctl status redis.service"
 alias mongo-start="sudo systemctl start mongod.service"
 alias mongo-stop="sudo systemctl stop mongod.service"
+alias mongo-status="systemctl status mongod.service"
 alias ndoe="node"
 
 
