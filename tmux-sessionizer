@@ -4,7 +4,7 @@ if [[ $# -eq 1 ]]; then
     selected=$1
 else
     # FUZZY FIND DIRECTORIES
-    selected=$(find ~/* -type d | fzf)
+    selected=$(find ~/* -type d | fzf --border=rounded --margin=5,10)
 fi
 
 # EXITS IF NO SELECTED
