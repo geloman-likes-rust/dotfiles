@@ -72,5 +72,10 @@ vim.keymap.set("n", "H", "Hzz")
 vim.keymap.set("n", "L", "Lzz")
 vim.keymap.set("n", "G", "Gzz")
 
+-- here because.. haha i don't know either LOL
+vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
+vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+
 -- format on save
 vim.api.nvim_command('autocmd BufWritePre * Format')
