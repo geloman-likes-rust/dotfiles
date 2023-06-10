@@ -5,7 +5,6 @@
 	defaultBranch = main
 [credential]
 	username = geloman-likes-rust
-	token = $GITHUB_TOKEN
 	helper = store
 [core]
 	editor = vim
