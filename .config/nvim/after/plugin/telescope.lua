@@ -1,4 +1,6 @@
 pcall(require('telescope').load_extension, 'fzf') -- Enable telescope fzf native, if installed
+local ignore_files = { "target", "node_modules", "wwwroot", "**/Debug", "**.cache", "**.png", "**.svg", "**.ico",
+  "**.gif", "**.jpg", "**/assets" }
 
 require('telescope').setup {
   defaults = {
@@ -12,7 +14,7 @@ require('telescope').setup {
       },
     },
     initial_mode = "normal",
-    file_ignore_patterns = { "node_modules" },
+    file_ignore_patterns = ignore_files,
   },
 }
 
