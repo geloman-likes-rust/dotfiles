@@ -8,6 +8,8 @@ vim.o.shiftwidth = 2
 vim.o.expandtab = true
 vim.o.smartindent = true
 vim.o.autoindent = true
+
+-- file explorer
 vim.g.netrw_banner = 0 -- disable explorer banner
 
 -- disable highlight on search
