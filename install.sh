@@ -88,6 +88,11 @@ install_fd() {
 	conda install -y -c conda-forge fd-find
 }
 
+install_ripgrep() {
+	echo "Installing ripgrep......................................"
+	conda install -y -c conda-forge ripgrep
+}
+
 install_tmux
 install_tmux_tpm
 install_fzf
@@ -95,6 +100,7 @@ install_neovim
 install_exa
 install_httpie
 install_fd
+install_ripgrep
 # install_clang
 # install_rust
 # install_nvm
