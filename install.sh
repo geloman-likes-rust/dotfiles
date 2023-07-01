@@ -85,6 +85,7 @@ install_httpie() {
 }
 
 install_fd() {
+	echo "Installing fd-find......................................"
 	conda install -y -c conda-forge fd-find
 }
 
