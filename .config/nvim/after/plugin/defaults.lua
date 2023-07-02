@@ -64,7 +64,7 @@ vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 vim.keymap.set("n", "<leader>L", ":TroubleToggle<CR>", opts)
 
 -- git diffsplit
-vim.keymap.set("n", "<leader>gs", ":Gvdiffsplit<CR>", opts)
+vim.keymap.set("n", "<leader>gds", ":Gvdiffsplit<CR>", opts)
 
 -- switch to previous/next file
 vim.keymap.set("n", "<leader>n", ":bprevious<CR>", opts)
