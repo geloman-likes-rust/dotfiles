@@ -11,6 +11,9 @@ require('telescope').setup {
         width = 0.50,
         preview_width = 0.05
       },
+    },
+    grep_string = {
+      word_match = "-w",
     }
   },
   defaults = {
@@ -30,6 +33,7 @@ require('telescope').setup {
   },
 }
 
+vim.keymap.set('n', '<leader>gs', require('telescope.builtin').grep_string, { desc = '[G]rep [S]tring' })
 vim.keymap.set('n', '<leader>sc', require('telescope.builtin').colorscheme, { desc = '[C]hange [C]olorscheme' })
 vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
 vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
