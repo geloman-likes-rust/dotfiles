@@ -1,0 +1,2 @@
+#!/bin/sh
+nitrogen --set-zoom-fill ~/Pictures/wallpaper/$(command ls ~/Pictures/wallpaper | shuf -n 1)
