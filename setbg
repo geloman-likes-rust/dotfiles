@@ -1,3 +1,3 @@
 #!/bin/sh
 
-nitrogen --set-zoom-fill ~/Pictures/wallpaper/$(command ls ~/Pictures/wallpaper | fzf)
+nitrogen --set-zoom-fill ~/Pictures/wallpaper/$(command ls ~/Pictures/wallpaper | fzf --border=rounded --margin=10,10)
