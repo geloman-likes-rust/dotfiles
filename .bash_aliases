@@ -51,10 +51,3 @@ alias ndoe="node"
 
 # personal aliases
 alias celluloid="flatpak run io.github.celluloid_player.Celluloid"
-
-
-## terminal appearance
-## -----------------------------------------------------
-#   background: #1a212e;
-#   font-family: hack-nerdfont;
-## -----------------------------------------------------
