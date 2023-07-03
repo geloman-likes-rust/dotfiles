@@ -49,6 +49,9 @@ alias mongo-stop="sudo systemctl stop mongod.service"
 alias mongo-status="systemctl status mongod.service"
 alias ndoe="node"
 
+# personal aliases
+alias celluloid="flatpak run io.github.celluloid_player.Celluloid"
+
 
 ## terminal appearance
 ## -----------------------------------------------------
