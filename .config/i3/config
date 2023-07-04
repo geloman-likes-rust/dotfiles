@@ -171,3 +171,5 @@ bindsym $mod+f fullscreen toggle
 
 # kill focused window
 bindsym $mod+q kill
+
+exec --no-startup-id compton
