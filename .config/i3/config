@@ -156,6 +156,10 @@ exec --no-startup-id compton
 exec --no-startup-id i3-msg 'workspace 1; exec kitty'
 exec --no-startup-id i3-msg 'workspace 2; exec google-chrome'
 
+# defaults
+default_border pixel 0
+default_floating_border pixel 0
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
