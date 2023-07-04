@@ -151,6 +151,11 @@ bar {
         }
 }
 
+# startup scripts
+exec --no-startup-id compton
+exec --no-startup-id i3-msg 'workspace 1; exec kitty'
+exec --no-startup-id i3-msg 'workspace 2; exec google-chrome'
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -171,5 +176,3 @@ bindsym $mod+f fullscreen toggle
 
 # kill focused window
 bindsym $mod+q kill
-
-exec --no-startup-id compton
