@@ -51,3 +51,4 @@ alias ndoe="node"
 
 # personal aliases
 alias celluloid="flatpak run io.github.celluloid_player.Celluloid"
+alias obs="flatpak run com.obsproject.Studio"
