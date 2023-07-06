@@ -3,7 +3,7 @@ return {
   config = function()
     require('onedark').setup {
       style = 'deep',
-      transparent = true,
+      transparent = false,
       term_colors = true,
       toggle_style_key = '<leader>t',
       code_style = {
