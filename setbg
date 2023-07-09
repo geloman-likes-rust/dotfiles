@@ -1,3 +1,4 @@
 #!/bin/sh
 
-xwallpaper --zoom ~/Pictures/wallpaper/$(command ls ~/Pictures/wallpaper | fzf --border=rounded --margin=10,10)
+selected=$(command ls ~/Pictures/wallpaper | fzf --border=rounded --margin=10,10)
+[[ -z $selected ]] || xwallpaper --zoom ~/Pictures/wallpaper/$selected
