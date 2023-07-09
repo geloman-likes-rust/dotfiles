@@ -4,6 +4,7 @@
 [ -f ~/.zshrc ] && echo -e export EDITOR="nvim" >> ~/.zshrc
 [ -f ~/.profile ] && echo -e ". \"\$HOME/.dotfiles/.default_background\"" >> ~/.profile
 
+if [ -f ~/.bashrc ]; then
 cat <<'EOF' >> ~/.bashrc
 
 ## synth-shell-prompt.sh
@@ -15,6 +16,7 @@ cat <<'EOF' >> ~/.bashrc
 bind -x '"\C-f": tmux-sessionizer'
 
 EOF
+fi
 
 ~/.dotfiles/install.sh
 ~/.dotfiles/symlink-dotfiles.sh
