@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 rm -rdf $HOME/.gitconfig
 ln -s $HOME/.dotfiles/.gitconfig $HOME

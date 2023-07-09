@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 
 ## TMUX (TERMINAL MULTIPLEXER)

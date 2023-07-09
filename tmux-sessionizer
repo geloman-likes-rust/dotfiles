@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 # FUZZY FIND DIRECTORIES
 [[ $# -eq 1 ]] && selected=$1 || selected=$(find ~/.development ~/.dotfiles ~/.config -type d | fzf --border=rounded --margin=5,10)
