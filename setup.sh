@@ -1,24 +1,22 @@
-#!/bin/bash
+#!/bin/sh
 
-BASHRC=$HOME/.bashrc
-SOURCE_SYNTHSHELL='if [ -f ~/.config/synth-shell/synth-shell-prompt.sh ] && [ -n "$( echo $- | grep i )" ]; then\n	source ~/.config/synth-shell/synth-shell-prompt.sh\nfi'
+[ -f ~/.bashrc ] && echo -e export EDITOR="nvim" >> ~/.bashrc
+[ -f ~/.zshrc ] && echo -e export EDITOR="nvim" >> ~/.zshrc
+[ -f ~/.profile ] && echo -e ". \"\$HOME/.dotfiles/.default_background\"" >> ~/.profile
+
+cat <<'EOF' >> ~/.bashrc
+
+## synth-shell-prompt.sh
+##-----------------------------------------------------
+[ -f ~/.config/synth-shell/synth-shell-prompt.sh ] && [ -n "$( echo $- | grep i )" ] && source ~/.config/synth-shell/synth-shell-prompt.sh
+
+## opens fzf when ctrl+f key was press and creates a tmux session based on the selected basename
+#-----------------------------------------------------
+bind -x '"\C-f": tmux-sessionizer'
+
+EOF
 
 ~/.dotfiles/install.sh
 ~/.dotfiles/symlink-dotfiles.sh
-
-cat <<'EOF' >> ~/.profile
-. "$HOME/.dotfiles/.default_background"
-EOF
-
-echo -e "\n## opens fzf when ctrl+f key was press and creates a tmux session based on the selected basename" >> $BASHRC
-echo "#-----------------------------------------------------" >> $BASHRC
-cat <<'EOF' >> ~/.bashrc
-bind -x '"\C-f": tmux-sessionizer'
-EOF
-
-echo -e '\n' >> $BASHRC
-echo "## synth-shell-prompt.sh" >> $BASHRC
-echo "##-----------------------------------------------------" >> $BASHRC
-echo -e $SOURCE_SYNTHSHELL >> $BASHRC
 
 source ~/.bashrc
