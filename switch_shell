@@ -1,5 +1,5 @@
 #!/bin/sh
-#
+
 switch_shell() {
   selected=$(cat /etc/shells | fzf --border=rounded --margin=10,30)
   chsh -s $selected
