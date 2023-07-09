@@ -109,6 +109,13 @@ install_delta() {
 	conda install -y -c conda-forge git-delta
 }
 
+## BAT - just like 'cat' but with syntax-highlighting
+#---------------------------------------------------------------------
+install_bat() {
+	echo "Installing bat......................................"
+	conda install -y -c conda-forge bat
+}
+
 install_miniconda
 install_tmux
 install_tmux_tpm
@@ -119,6 +126,7 @@ install_httpie
 install_fd
 install_ripgrep
 install_delta
+install_bat
 # install_clang
 # install_rust
 # install_nvm
