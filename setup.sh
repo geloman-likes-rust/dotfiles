@@ -1,5 +1,7 @@
 #!/bin/sh
 
+git clone https://github.com/geloman-likes-rust/desktop-wallpaper ~/Pictures/wallpaper
+
 [ -f ~/.bashrc ] && echo -e export EDITOR="nvim" >> ~/.bashrc
 [ -f ~/.zshrc ] && echo -e export EDITOR="nvim" >> ~/.zshrc
 [ -f ~/.profile ] && echo -e ". \"\$HOME/.dotfiles/.default_background\"" >> ~/.profile
