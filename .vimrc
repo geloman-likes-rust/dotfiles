@@ -5,263 +5,34 @@ set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
 set smarttab
-set autoindent
 set smartindent
-set autowrite
 set smartcase
 set hidden
 set noerrorbells
 set nowrap
 set incsearch
 set nohlsearch
+set noshowmode
+set encoding=UTF-8
+set nocompatible
+set termguicolors
 set timeout
 set timeoutlen=300
 set updatetime=250
-set history=200
-set noshowmode
-set path+=** " search down into subfolders
-set laststatus=2
-set termguicolors
-colorscheme slate
+set signcolumn=yes
 syntax on
+set noshowmode
 
-let g:enable_trasparent = 0
-let g:show_os_icon = 0
-
-" Set cursor shape
+" Set the cursor shape
 let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
-
-
-" My custom keymap
-nnoremap G Gzz
-nnoremap H Hzz
-nnoremap L Lzz
-nnoremap <leader>gd <C-]>
-nnoremap <leader>n :bnext<cr> 
-nnoremap <leader>s :!ctags -R .
-
-" toggle code snippet suggestion
-inoremap <C-G> <C-X><C-N>
-inoremap <tab> <C-N>
-inoremap <s-tab> <C-P>
-
-" toggle filetree
-nnoremap <silent> <leader>e <esc>:Lex 20<cr>
-
-" html template
-nnoremap <silent> <leader>! :-1read $HOME/.vim/snippets/skeleton.html<cr>9jf<
-
-" show currently opened buffers
-nnoremap <silent> <leader><space> :buffers<cr>
-
-" auto pair brackets && quotations
-inoremap <silent> { {}<esc>i
-inoremap <silent> [ []<esc>i
-inoremap <silent> ( ()<esc>i
-inoremap <silent> ` ``<esc>i
-inoremap <silent> ' ''<esc>i
-inoremap <silent> " ""<esc>i
-inoremap <silent> < <><esc>i
-
-" command! MakeTags !ctags -R .
 
 " Tweaks for file browsing
 let g:netrw_banner = 0 " disable explorer banner
 let g:netrw_altv = 1 " open in prior window
 let g:netrw_list_hide = netrw_gitignore#Hide() " hide all listed file in .gitignore
 let g:netrw_liststyle = 3 " explorer tree view
-
-
-" Set language specific indentation
-autocmd FileType javascript,javascriptreact,typescriptreact,typescript,html,css setlocal shiftwidth=2 softtabstop=2 tabstop=2
-
-
-" ---------------------------------------
-" --------- CUSTOM COLORSCHEME ----------
-" ---------------------------------------
-
-highlight netrwSymLink guifg=#c75ae8
-highlight netrwExe guifg=#8bcd5b
-highlight netrwPlain guifg=#93a4c3
-highlight netrwTreeBar guifg=#455574
-highlight netrwClassify guifg=#4fa6ed
-
-highlight vimEscape guifg=#dd9046
-highlight vimContinue guifg=#dd9046
-highlight vimFuncSID guifg=#dd9046
-highlight vimNotation guifg=#dd9046
-
-highlight CursorLineNR ctermfg=11 guifg=NONE guibg=#2a324a
-highlight CursorLine ctermfg=11 guifg=NONE guibg=#2a324a
-
-highlight Type guifg=#efbd5d
-highlight Comment guifg=#455574
-highlight StatusLine guibg=#a0a8b7 guifg=#1A212E
-highlight Question guifg=#cc9057
-highlight Directory guifg=#4fa6ed
-highlight IncSearch guibg=#d99a5e
-highlight MatchParen guibg=#2a324a guifg=NONE
-"highlight Pmenu guifg=#e55561
-highlight PmenuSel guifg=#e55561
-highlight WildMenu guibg=#e55561
-highlight ErrorMsg guifg=#f65866
-highlight String guifg=#8bcd5b
-highlight Constant guifg=#34bfd0
-highlight Character guifg=#dd9046
-highlight Number guifg=#dd9046
-highlight Boolean guifg=#dd9046
-highlight Float guifg=#dd9046
-highlight Function guifg=#c75ae8
-highlight Identifier guifg=#f65866
-highlight Conditional guifg=#c75ae8
-highlight Statement guifg=#c75ae8
-highlight Repeat guifg=#c75ae8
-highlight Label guifg=#c75ae8
-highlight Operator guifg=#c75ae8
-highlight Keyword guifg=#c75ae8
-highlight Exception guifg=#c75ae8
-highlight Include guifg=#c75ae8
-highlight Define guifg=#c75ae8
-highlight Macro guifg=#f65866
-highlight Special guifg=#2a324a
-highlight Tag guifg=#8bcd5b
-highlight SpecialChar guifg=#f65866
-highlight Delimiter guifg=#6c7d9c
-highlight Visual ctermbg=242 guibg=#2a324a guifg=NONE
-
-if g:enable_trasparent == 1
-    highlight Normal guifg=#93a4c3 ctermbg=NONE guibg=NONE
-    highlight VertSplit guifg=#2a324a guibg=NONE ctermbg=NONE
-    highlight EndOfBuffer guifg=#455574
-    highlight LineNr guifg=#93a4c3
-else
-    highlight Normal guibg=#1A212E guifg=#93a4c3
-    highlight VertSplit guifg=#2a324a guibg=#1A212E
-    highlight EndOfBuffer guifg=#1A212E
-    highlight LineNr guifg=#455574
-endif
-
-" -----------------------------------------------
-" ------- LANGUAGE SPECIFIC COLORSCHEME ---------
-" -----------------------------------------------
-" --------------- JS,TS,JSX,TSX -----------------
-autocmd FileType javascript,typescript,javascriptreact,typescriptreact 
-    \ highlight Normal guifg=#93a4c3 |
-    \ highlight Special guifg=#c75ae8 |
-    \ highlight Identifier guifg=#c75ae8 |
-    \ highlight htmlTag guifg=#c75ae8 |
-    \ highlight link htmlTagName htmlTag |
-    \ highlight JavaScriptBraces guifg=#6c7d9c |
-    \ highlight link javaScriptParens JavascriptBraces |
-    \ highlight javaScriptValue guifg=#4fa6ed |
-    \ highlight Structure guifg=#e55561 |
-    \ highlight Type guifg=#efbd5d |
-    \ highlight PreProc guifg=#e55561 |
-    \ highlight link typescriptBraces JavascriptBraces |
-    \ highlight link typescriptParens JavascriptParens |
-    \ highlight typescriptObjectColon guifg=#ffffff |
-    \ highlight typescriptArrowFunc guifg=#93a4c3 |
-    \ highlight typescriptClassName guifg=#efbd5d |
-    \ highlight typescriptIdentifierName guifg=#93a4c3 |
-    \ highlight typescriptVariableDeclaration guifg=#4fa6ed |
-    \ highlight tsxEqual guifg=#93a4c3 |
-    \ highlight tsxTagName guifg=#efbd5d |
-    \ highlight typescriptFuncName guifg=#4fa6ed |
-
-
-" -----------------------------------------------
-" ------- LANGUAGE SPECIFIC COLORSCHEME ---------
-" -----------------------------------------------
-" ------------------- HTML ----------------------
-highlight link htmlEndTag htmlTag
-highlight htmlH1 guifg=#93a4c3
-highlight htmlH2 guifg=#93a4c3
-highlight htmlH3 guifg=#93a4c3
-highlight htmlH4 guifg=#93a4c3
-highlight htmlH5 guifg=#93a4c3
-highlight htmlH6 guifg=#93a4c3
-highlight htmlArg guifg=#efbd5d
-highlight htmlTitle guifg=#93a4c3
-
-
-" -----------------------------------------------
-" ------- LANGUAGE SPECIFIC COLORSCHEME ---------
-" -----------------------------------------------
-" -------------------- CSS ----------------------
-highlight cssClassName guifg=#4fa6ed
-highlight cssClassNameDot guifg=#4fa6ed
-highlight cssIdentifier guifg=#4fa6ed
-highlight cssBraces guifg=#4fa6ed
-highlight cssProp guifg=#efbd5d
-
-
-" ----------- POPUP MENU COLORSCHEME ------------
-highlight Pmenu guifg=#4fa6ed guibg=#2a324a
-highlight PmenuSel guifg=#2a324a guibg=#4fa6ed
-highlight PmenuThumb guibg=#4fa6ed
-highlight PmenuSbar guibg=#1a324a
-
-
-fu! WhatMode()
-    if mode() == 'n'
-        highlight ModeMsg guibg=#6ECB63
-        return "NORMAL"
-
-    elseif mode() == 'i'
-        highlight ModeMsg guibg=#4fa6ed
-        return "INSERT"
-
-    elseif mode() == 'c'
-        highlight ModeMsg guibg=#efbd5d
-        return "COMMAND"
-
-    elseif mode() == 'R'
-        highlight ModeMsg guibg=#e55561
-        return "REPLACE"
-
-    elseif mode() == 'v'
-        highlight ModeMsg guibg=#bf68d9
-        return "VISUAL"
-
-    elseif mode() == 'V'
-        highlight ModeMsg guibg=#bf68d9
-        return "V-LINE"
-
-    else
-        highlight ModeMsg guibg=#bf68d9
-        return "V-BLOCK"
-    endif
-endf
-
-
-fu! WhatOS()
-  if has('win32') || has('win64')
-    if g:show_os_icon == 1
-        return ''
-    else
-        return 'windows'
-    endif
-
-  elseif has('unix') || has('linux')
-    if g:show_os_icon == 1
-        return ''
-    else
-        return 'unix'
-    endif
-
-  else
-    if g:show_os_icon == 1
-        return ''
-    else
-        return 'mac'
-    endif
-
-  endif
-
-endf
-
 
 " ----------------------------------------------
 " ----------- CUSTOM STATUS LINE ---------------
@@ -277,4 +48,200 @@ set statusline+=\ %{WhatOS()}
 set statusline+=\ \|\ %{&fileencoding}\ \|
 set statusline+=\ %Y
 set statusline+=\ %#LightGray#\ buf:%n
-set statusline+=\ %#ModeMsg#\ %l:%L\ 
+set statusline+=\ %#ModeMsg#\ %l:%L\
+
+" My custom keymaps
+nnoremap G Gzz
+nnoremap H Hzz
+nnoremap L Lzz
+
+" toggle filetree
+nnoremap <silent> <leader>e <esc>:Lex 20<cr>
+
+
+
+" Install vim-plug and all my plugins
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" VIM-PLUGINS
+call plug#begin('~/.vim/plugged')
+    " AUTOCOMPLETION
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+    " FUZZY FINDER
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
+
+    " VIM LANGUAGE PACK
+    Plug 'sheerun/vim-polyglot'
+
+    " GIT TOOL
+    Plug 'tpope/vim-fugitive'
+
+    " GIT SIGN
+    Plug 'airblade/vim-gitgutter'
+
+    " AUTO PAIRS & AUTO CLOSETAG
+    Plug 'jiangmiao/auto-pairs'
+    Plug 'alvan/vim-closetag'
+
+    " HIGHLIGHT MATCHTAGS
+    Plug 'leafOfTree/vim-matchtag'
+
+    " ADJUSTS 'SHIFTWIDTH' AND 'EXPANDTAB' AUTOMATICALLY
+    Plug 'tpope/vim-sleuth'
+
+    " PLUGIN FOR ICONS
+    Plug 'ryanoasis/vim-devicons'
+
+    " COLORSCHEMES
+    Plug 'joshdick/onedark.vim'
+
+    " FORMAT ON SAVE (PRETTIER)
+    Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
+
+    " COLORIZER
+    Plug 'lilydjwg/colorizer'
+
+call plug#end()
+
+
+
+" VIM ONEDARK CONFIG
+let g:onedark_termcolors=256
+let g:onedark_color_overrides = {
+  \ "red": { "gui": "#f65866", "cterm": "204", "cterm16": "1" },
+  \ "dark_red": { "gui": "#C70D3A", "cterm": "196", "cterm16": "9" },
+  \ "green": { "gui": "#8bcd5b", "cterm": "114", "cterm16": "2" },
+  \ "yellow": { "gui": "#efbd5d", "cterm": "180", "cterm16": "3" },
+  \ "dark_yellow": { "gui": "#FFC26F", "cterm": "173", "cterm16": "11" },
+  \ "blue": { "gui": "#41a7fc", "cterm": "39", "cterm16": "4" },
+  \ "purple": { "gui": "#c75ae8", "cterm": "170", "cterm16": "5" },
+  \ "cyan": { "gui": "#34bfd0", "cterm": "38", "cterm16": "6" },
+  \ "black": { "gui": "#0c0e15", "cterm": "235", "cterm16": "0" },
+  \ "foreground": { "gui": "#93a4c3", "cterm": "145", "cterm16": "NONE" },
+  \ "background": { "gui": "#1a212e", "cterm": "235", "cterm16": "NONE" },
+\}
+
+colorscheme onedark
+
+
+
+" VIM AIRLINE CONFIG
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+let g:airline_theme='onedark'
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ' :'
+let g:airline_symbols.maxlinenr = '☰ '
+let g:airline_symbols.dirty=''
+
+
+
+" VIM AUTO CLOSETAG CONFIG
+let g:closetag_filenames = '*.html,*.jsx,*.tsx'
+let g:closetag_filetypes = 'html,jsx,tsx'
+
+
+
+" VIM AUTOCOMPLETION CONFIG
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Goto code navigation
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gI <Plug>(coc-implementation)
+
+" Rename variable
+nmap <leader>rn <Plug>(coc-rename)
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call ShowDocumentation()<CR>
+
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
+
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" coc-lsp
+let g:coc_global_extensions = [
+    \'coc-css',
+    \'coc-emmet',
+    \'coc-html',
+    \'coc-json',
+    \'coc-tsserver',
+\]
+
+
+
+
+" VIM FUGITIVE CONFIG
+nnoremap <leader>gs :Gvdiffsplit<CR>
+
+
+
+" VIM FORMATTER CONFIG
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
+let g:prettier#exec_cmd_async = 1
+
+
+
+" VIM FUZZY FINDER CONFIG
+nnoremap <leader>sf :Files<CR>
+nnoremap <leader><space> :Buffers<CR>
+let g:fzf_layout = { 'window': { 'width': 0.7, 'height': 0.8 } }
+let g:fzf_preview_syntax_highlighting = 1
+let $FZF_DEFAULT_OPTS="--ansi --layout reverse --margin=1,4"
+let $FZF_DEFAULT_OPTS='
+  \ --color=fg:#a0a8b7,bg:#1a212e,hl:#af5fff
+  \ --color=fg+:#1a212e,bg+:#a0a8b7,hl+:#d7005f
+  \ --color=info:#afaf87,prompt:#4fa6ed,pointer:#d7005f
+  \ --color=spinner:#af5fff'
+
+
+
+" VIM MATCHTAGS CONFIG
+let g:vim_matchtag_enable_by_default = 1
+let g:vim_matchtag_highlight_cursor_on = 1
+let g:vim_matchtag_files = '*.html,*.ts,*.tsx,*.js,*.jsx,*.vue,*.svelte,*.jsp'
+
+
+
+" VIM ON TMUX COLOR CONFIG
+if (empty($TMUX))
+  if (has("nvim"))
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
+
+
+" Set language specific indentation
+autocmd FileType javascript,javascriptreact,typescriptreact,typescript,html,css setlocal shiftwidth=2 softtabstop=2 tabstop=2
