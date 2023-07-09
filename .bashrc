@@ -1,3 +1,4 @@
+set -o vi
 EDITOR="nvim"
 [ -f /etc/bashrc ] && . /etc/bashrc
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
