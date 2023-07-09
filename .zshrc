@@ -8,6 +8,7 @@ EDITOR="nvim"
 
 bindkey -s ^f "tmux-sessionizer\n"
 bindkey -s ^b "randbg\n"
+bindkey -s ^q "switch_shell\n"
 
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
 [ -f ~/.zsh_profile ] && . ~/.zsh_profile
