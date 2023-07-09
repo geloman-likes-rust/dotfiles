@@ -1,9 +1,8 @@
 #!/bin/sh
 
-
-## TMUX (TERMINAL MULTIPLEXER)
+## MINICONDA - need this for local installations
 #---------------------------------------------------------------------
-install_tmux() {
+install_miniconda() {
 	echo "Installing miniconda......................................"
 	curl -sSL https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -o ~/miniconda.sh
 	chmod +x miniconda.sh
@@ -11,6 +10,11 @@ install_tmux() {
 	rm -rdf miniconda.sh
 	echo export PATH="$HOME/.miniconda/bin:$PATH" >> ~/.bashrc
 	source ~/.bashrc
+}
+
+## TMUX (TERMINAL MULTIPLEXER)
+#---------------------------------------------------------------------
+install_tmux() {
 	echo "Installing tmux..........................................."
 	conda install -y -c conda-forge tmux
 	source ~/.bashrc
@@ -94,6 +98,7 @@ install_ripgrep() {
 	conda install -y -c conda-forge ripgrep
 }
 
+install_miniconda
 install_tmux
 install_tmux_tpm
 install_fzf
