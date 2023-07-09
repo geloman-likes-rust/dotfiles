@@ -6,6 +6,9 @@ source $ZSH/oh-my-zsh.sh
 set -o vi
 EDITOR="nvim"
 
+bindkey -s ^f "tmux-sessionizer\n"
+bindkey -s ^b "randbg\n"
+
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
 [ -f ~/.zsh_profile ] && . ~/.zsh_profile
 [ -d ~/.local/bin ] && PATH=$PATH:$HOME/.local/bin && export PATH
@@ -21,5 +24,6 @@ EDITOR="nvim"
 #-----------------------------------------------------
 [ -d ~/.miniconda/bin ] && PATH=$PATH:$HOME/.miniconda/bin && export PATH
 
-bindkey -s ^f "tmux-sessionizer\n"
-bindkey -s ^b "randbg\n"
+## source fzf
+#-----------------------------------------------------
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
