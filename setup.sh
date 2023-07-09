@@ -15,6 +15,9 @@ cat <<'EOF' >> ~/.bashrc
 #-----------------------------------------------------
 bind -x '"\C-f": tmux-sessionizer'
 
+## change background scripts
+bind -x '"\C-b": randbg'
+
 EOF
 fi
 
