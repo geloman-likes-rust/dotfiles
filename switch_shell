@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+switch_shell() {
+  selected=$(cat /etc/shells | fzf --border=rounded --margin=10,30)
+  chsh -s $selected
+}
+
+[ $HOSTNAME = "debian" ] && switch_shell
+[ $HOSTNAME = "ubuntu" ] && switch_shell
+[ $HOSTNAME = "fedora" ] && sudo lchsh $USER
