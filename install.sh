@@ -88,11 +88,15 @@ install_httpie() {
 	chmod +x http
 }
 
+## FD-FIND - need this for telescope live-grep & grep-string
+#---------------------------------------------------------------------
 install_fd() {
 	echo "Installing fd-find......................................"
 	conda install -y -c conda-forge fd-find
 }
 
+## RIPGREP - need this for telescope live-grep & grep-string
+#---------------------------------------------------------------------
 install_ripgrep() {
 	echo "Installing ripgrep......................................"
 	conda install -y -c conda-forge ripgrep
