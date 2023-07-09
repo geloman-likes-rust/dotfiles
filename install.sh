@@ -102,6 +102,13 @@ install_ripgrep() {
 	conda install -y -c conda-forge ripgrep
 }
 
+## GIT-DELTA - gitdiff syntax-highlighting
+#---------------------------------------------------------------------
+install_delta() {
+	echo "Installing git-delta......................................"
+	conda install -y -c conda-forge git-delta
+}
+
 install_miniconda
 install_tmux
 install_tmux_tpm
@@ -111,6 +118,7 @@ install_exa
 install_httpie
 install_fd
 install_ripgrep
+install_delta
 # install_clang
 # install_rust
 # install_nvm

@@ -1,12 +1,30 @@
 [user]
 	name = geloman
 	email = geloman-likes-rust@users.noreply.github.com
+
 [init]
 	defaultBranch = main
+
 [credential]
 	username = geloman-likes-rust
 	helper = store
+
 [core]
 	editor = vim
+	pager = delta
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	navigate = true
+	light = false
+
+[merge]
+	conflictstyle = diff3
+
+[diff]
+	colorMoved = default
+
 [fetch]
 	prune = true
