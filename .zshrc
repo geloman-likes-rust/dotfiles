@@ -20,3 +20,6 @@ EDITOR="nvim"
 ## source miniconda
 #-----------------------------------------------------
 [ -d ~/.miniconda/bin ] && PATH=$PATH:$HOME/.miniconda/bin && export PATH
+
+bindkey -s ^f "tmux-sessionizer\n"
+bindkey -s ^b "randbg\n"
