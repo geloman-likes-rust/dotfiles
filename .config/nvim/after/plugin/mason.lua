@@ -22,10 +22,6 @@ end
 
 -- Enable the following language servers
 local language_servers = {
-  -- rust_analyzer = {},
-  tsserver = {},
-  cssls = {},
-  tailwindcss = {},
   emmet_ls = {},
   html = {},
   lua_ls = {
