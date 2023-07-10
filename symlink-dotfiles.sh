@@ -13,5 +13,6 @@ ln -s $HOME/.dotfiles/fvi ~/.local/bin/
 
 for dir in ~/.dotfiles/.config/*; do
   config="$(basename $dir)"
+  [ -d ~/.config/$config ] && rm -rdf ~/.config/$config
   ln -s ~/".dotfiles/.config/${config}" ~/.config/"${config}"
 done
