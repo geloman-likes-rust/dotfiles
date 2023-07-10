@@ -1,9 +1,14 @@
 #!/bin/sh
 
 fuzzy_preview() {
-  fzf --preview "bat --color=always {}" \
+  fzf -e \
+    --preview "bat --color=always {}" \
     --preview-window right,70% \
-    --bind up:preview-page-up,down:preview-page-down
+    --bind up:preview-page-up,down:preview-page-down \
+    --header "Open File" \
+    --header-first \
+    --preview-label "File Preview" \
+    --padding 1
 }
 
 if [[ -d .git ]]; then
