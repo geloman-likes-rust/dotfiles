@@ -1,0 +1,3 @@
+#!/bin/sh
+selected=$(fzf --preview "bat --color=always {}" --preview-window right,70% --bind up:preview-page-up,down:preview-page-down)
+[[ -z $selected ]] && exit 0 || nvim $selected
