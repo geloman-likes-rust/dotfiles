@@ -18,6 +18,7 @@ alias gb="git branch"
 alias ga="git add"
 alias gcm="git commit -m"
 alias gp="git push"
+alias gdf="git diff"
 
 # additional aliases
 alias size-of="du -sh"
