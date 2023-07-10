@@ -9,6 +9,7 @@ ln -s $HOME/.dotfiles/tmux-sessionizer ~/.local/bin/
 ln -s $HOME/.dotfiles/setbg ~/.local/bin/
 ln -s $HOME/.dotfiles/randbg ~/.local/bin/
 ln -s $HOME/.dotfiles/switch_shell ~/.local/bin/
+ln -s $HOME/.dotfiles/fvi ~/.local/bin/
 
 for dir in ~/.dotfiles/.config/*; do
   config="$(basename $dir)"
