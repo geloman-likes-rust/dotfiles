@@ -1,0 +1,15 @@
+#!/bin/sh
+
+dirty_preview() {
+  fzf -e \
+    --preview "bat --color=always {}" \
+    --preview-window right,70% \
+    --bind up:preview-page-up,down:preview-page-down \
+    --header "Open File" \
+    --header-first \
+    --preview-label "File Preview" \
+    --padding 1
+}
+
+selected=$(git ls-files --others --exclude=standard | dirty_preview)
+[[ -z $selected ]] || nvim selected
