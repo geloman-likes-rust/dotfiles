@@ -9,6 +9,7 @@ unlink ~/.local/bin/setbg
 unlink ~/.local/bin/randbg
 unlink ~/.local/bin/switch_shell
 unlink ~/.local/bin/fvi
+unlink ~/.local/bin/gco
 
 for dir in ~/.dotfiles/.config/*; do
   config="$(basename $dir)"
