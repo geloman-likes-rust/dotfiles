@@ -2,7 +2,7 @@
 
 switch_shell() {
   selected=$(cat /etc/shells | fzf --border=rounded --margin=10,30)
-  chsh -s $selected
+  [[ -z $selected ]] && exit 0 || chsh -s $selected
 }
 
 [ $HOSTNAME = "debian" ] && switch_shell
