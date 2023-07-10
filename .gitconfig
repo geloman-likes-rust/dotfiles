@@ -19,6 +19,11 @@
 [delta]
 	navigate = true
 	light = false
+	line-numbers = true
+	line-numbers-minus-style = "#de5454" bold
+	line-numbers-plus-style = "#65db65" bold
+	minus-style = red bold "#ffeeee"
+	plus-style = green bold "#d6ffd6"
 
 [merge]
 	conflictstyle = diff3
