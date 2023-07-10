@@ -10,6 +10,8 @@ ln -s $HOME/.dotfiles/setbg ~/.local/bin/
 ln -s $HOME/.dotfiles/randbg ~/.local/bin/
 ln -s $HOME/.dotfiles/switch_shell ~/.local/bin/
 ln -s $HOME/.dotfiles/fvi ~/.local/bin/
+[ -f ~/.local/bin/slnk ] || ln -s $HOME/.dotfiles/symlink-dotfiles.sh ~/.local/bin/slnk
+[ -f ~/.local/bin/ulnk ] ||  ln -s $HOME/.dotfiles/unlink-dotfiles.sh ~/.local/bin/ulnk
 
 for dir in ~/.dotfiles/.config/*; do
   config="$(basename $dir)"
