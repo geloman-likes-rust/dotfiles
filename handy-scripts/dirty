@@ -12,4 +12,4 @@ dirty_preview() {
 }
 
 selected=$(git ls-files --others --exclude=standard | dirty_preview)
-[[ -z $selected ]] || nvim selected
+[[ -z $selected ]] || nvim $selected
