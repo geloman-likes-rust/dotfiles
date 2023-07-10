@@ -10,6 +10,7 @@ ln -s $HOME/.dotfiles/setbg ~/.local/bin/
 ln -s $HOME/.dotfiles/randbg ~/.local/bin/
 ln -s $HOME/.dotfiles/switch_shell ~/.local/bin/
 ln -s $HOME/.dotfiles/fvi ~/.local/bin/
+ln -s $HOME/.dotfiles/git-branch-previewer ~/.local/bin/gco
 [ -f ~/.local/bin/slnk ] || ln -s $HOME/.dotfiles/symlink-dotfiles.sh ~/.local/bin/slnk
 [ -f ~/.local/bin/ulnk ] ||  ln -s $HOME/.dotfiles/unlink-dotfiles.sh ~/.local/bin/ulnk
 
