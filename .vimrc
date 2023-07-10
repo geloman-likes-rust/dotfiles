@@ -130,22 +130,6 @@ colorscheme onedark
 
 
 
-" VIM AIRLINE CONFIG
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-
-let g:airline_theme='onedark'
-let g:airline_left_sep=''
-let g:airline_right_sep=''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ' :'
-let g:airline_symbols.maxlinenr = '☰ '
-let g:airline_symbols.dirty=''
-
-
-
 " VIM AUTO CLOSETAG CONFIG
 let g:closetag_filenames = '*.html,*.jsx,*.tsx'
 let g:closetag_filetypes = 'html,jsx,tsx'
