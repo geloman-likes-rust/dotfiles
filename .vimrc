@@ -75,9 +75,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
 
-    " VIM LANGUAGE PACK
-    Plug 'sheerun/vim-polyglot'
-
     " GIT TOOL
     Plug 'tpope/vim-fugitive'
 
@@ -93,9 +90,6 @@ call plug#begin('~/.vim/plugged')
 
     " ADJUSTS 'SHIFTWIDTH' AND 'EXPANDTAB' AUTOMATICALLY
     Plug 'tpope/vim-sleuth'
-
-    " PLUGIN FOR ICONS
-    Plug 'ryanoasis/vim-devicons'
 
     " COLORSCHEMES
     Plug 'joshdick/onedark.vim'
@@ -177,7 +171,6 @@ let g:coc_global_extensions = [
     \'coc-emmet',
     \'coc-html',
     \'coc-json',
-    \'coc-tsserver',
 \]
 
 
@@ -196,7 +189,7 @@ let g:prettier#exec_cmd_async = 1
 
 
 " VIM FUZZY FINDER CONFIG
-nnoremap <leader>sf :Files<CR>
+nnoremap <leader>ff :Files<CR>
 nnoremap <leader><space> :Buffers<CR>
 let g:fzf_layout = { 'window': { 'width': 0.7, 'height': 0.8 } }
 let g:fzf_preview_syntax_highlighting = 1
