@@ -1,0 +1,15 @@
+#!/bin/sh
+
+branch_preview() {
+  fzf --header "Checkout Branch" \
+  --header-first \
+  --preview "git diff --color=always {1} | delta" \
+  --preview-label "Branch Preview" \
+  --preview-window right,80% \
+  --padding 1
+}
+
+if [[ -d .git ]]; then
+  selected=$(git branch --sort=committerdate | branch_preview)
+  [[ -z $selected ]] && exit 0 || git checkout $selected
+fi
