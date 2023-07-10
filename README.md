@@ -1,5 +1,3 @@
-# my fresh start config/dotfiles
-
 ## How to use this?
 
 ### QUICKSTART
