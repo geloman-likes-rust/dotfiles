@@ -20,8 +20,8 @@
 	navigate = true
 	light = false
 	line-numbers = true
-	line-numbers-minus-style = "#de5454" bold
-	line-numbers-plus-style = "#65db65" bold
+	line-numbers-minus-style = "#FC2947" bold
+	line-numbers-plus-style = "#03C988" bold
 	minus-style = red bold "#ffeeee"
 	plus-style = green bold "#d6ffd6"
 
