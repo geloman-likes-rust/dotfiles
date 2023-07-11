@@ -17,6 +17,10 @@ git clone https://github.com/geloman-likes-rust/dotfiles ~/.dotfiles
 source ~/.bashrc
 ```
 
+### UNINSTALL
+```
+~/.dotfiles/uninstall.sh
+```
 
 ![debian](https://img.shields.io/badge/debian-D14D72?style=for-the-badge&logo=debian&logoColor=white)
 ![fedora](https://img.shields.io/badge/fedora-19376D?style=for-the-badge&logo=fedora&logoColor=fff)
