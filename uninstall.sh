@@ -3,6 +3,8 @@
 [ -f ~/.local/bin/ulnk ] && ulnk
 [ -f ~/.local/bin/ulnk ] && unlink ~/.local/bin/ulnk
 [ -f ~/.local/bin/slnk ] && unlink ~/.local/bin/slnk
+[ -f ~/.local/bin/nvim ] && unlink ~/.local/bin/nvim
+[ -d ~/.local/bin/nvim-linux64 ] && rm -rdf ~/.local/bin/nvim-linux64
 [ -d ~/.local/share/nvim ] && rm -rdf ~/.local/share/nvim
 [ -d ~/.fzf ] && rm -rdf ~/.fzf
 [ -d ~/.tmux ] && rm -rdf ~/.tmux
