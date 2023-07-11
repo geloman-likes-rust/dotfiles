@@ -7,7 +7,9 @@ Run this to autoinstall and setup everything effortlessly.
 curl -LO https://raw.githubusercontent.com/geloman-likes-rust/dotfiles/main/quickstart | sh
 ```
 
-### UNINSTALL
+### UNINSTALLATION
+
+This will uninstall (everything)[dotfiles/uninstall.sh]
 ```
 ~/.dotfiles/uninstall.sh
 ```
