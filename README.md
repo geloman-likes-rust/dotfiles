@@ -2,19 +2,9 @@
 
 ### QUICKSTART
 
-1. clone this repo to your .dotfiles directory
+By running this to autoinstall and setup everything effortlessly.
 ```
-git clone https://github.com/geloman-likes-rust/dotfiles ~/.dotfiles
-```
-
-2. run this script to programmatically setup all of my configs (Note: this will perform some [installation](install.sh))
-```
-~/.dotfiles/setup.sh
-```
-
-3. refresh your shell session by running `source ~/.bashrc`
-```
-source ~/.bashrc
+curl -LO https://raw.githubusercontent.com/geloman-likes-rust/dotfiles/main/quickstart | sh
 ```
 
 ### UNINSTALL
