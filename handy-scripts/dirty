@@ -12,4 +12,4 @@ dirty_preview() {
 }
 
 dirty_files=$(git ls-files $(git rev-parse --show-toplevel) -m --exclude-standard --others)
-[[ -z $dirty_files ]] && exit 0 || selected=$(echo $dirty_files | tr ' ' '\n' | dirty_preview); [[ -z $selected ]] || nvim $selected
+[[ -z $dirty_files ]] && echo "not dirty, working tree clean" && exit 0 || selected=$(echo $dirty_files | tr ' ' '\n' | dirty_preview); [[ -z $selected ]] || nvim $selected
