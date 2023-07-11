@@ -9,7 +9,7 @@ curl -LO https://raw.githubusercontent.com/geloman-likes-rust/dotfiles/main/quic
 
 ### UNINSTALLATION
 
-This will uninstall (everything)[dotfiles/uninstall.sh]
+This will uninstall [everything](dotfiles/uninstall.sh)
 ```
 ~/.dotfiles/uninstall.sh
 ```
