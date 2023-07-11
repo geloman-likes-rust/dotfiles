@@ -11,3 +11,4 @@
 [ -d ~/.rustup ] && rm -rdf ~/.rustup
 [ -d ~/.miniconda ] && rm -rdf ~/.miniconda
 [ -d ~/.conda ] && rm -rdf ~/.conda
+[ -d ~/.dotfiles ] && rm -rdf ~/.dotfiles
