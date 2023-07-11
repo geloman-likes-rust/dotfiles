@@ -2,7 +2,7 @@
 
 ### QUICKSTART
 
-By running this to autoinstall and setup everything effortlessly.
+Run this to autoinstall and setup everything effortlessly.
 ```
 curl -LO https://raw.githubusercontent.com/geloman-likes-rust/dotfiles/main/quickstart | sh
 ```
