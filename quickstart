@@ -1,0 +1,6 @@
+#!/bin/sh
+
+[ -d ~/.dotfiles ] && echo "'$HOME/.dotfiles' already exists" && exit 0
+git clone https://github.com/geloman-likes-rust/dotfiles ~/.dotfiles
+~/.dotfiles/setup.sh
+source ~/.bashrc
