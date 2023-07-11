@@ -28,3 +28,7 @@ bindkey -s ^q "switch_shell\n"
 ## source fzf
 #-----------------------------------------------------
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+## source cargo 
+#-----------------------------------------------------
+[ -d ~/.cargo ] && PATH=$PATH:$HOME/.cargo/bin && export PATH
