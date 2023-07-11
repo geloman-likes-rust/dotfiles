@@ -11,5 +11,5 @@ dirty_preview() {
     --padding 1
 }
 
-selected=$(git ls-files -m --exclude-standard --others | dirty_preview)
-[[ -z $selected ]] || nvim $selected
+dirty_files=$(git ls-files $(git rev-parse --show-toplevel) -m --exclude-standard --others)
+[[ -z $dirty_files ]] && exit 0 || selected=$(echo $dirty_files | tr ' ' '\n' | dirty_preview); [[ -z $selected ]] || nvim $selected
