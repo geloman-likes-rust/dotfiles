@@ -19,6 +19,7 @@ alias ga="git add"
 alias gcm="git commit -m"
 alias gp="git push"
 alias gdf="git diff"
+alias gco="git-branch-previewer"
 
 # additional aliases
 alias size-of="du -sh"
