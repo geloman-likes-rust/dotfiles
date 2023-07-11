@@ -1,5 +1,5 @@
 #!/bin/sh
 
 languages=(python lua bash c cpp rust golang typescript javascript c_sharp php)
-selected=`echo ${languages[@]} | tr ' ' '\n' | sort -r | fzf --margin 25%,35% --border=sharp`
+selected=`echo ${languages[@]} | tr ' ' '\n' | sort -r | fzf --margin 25%,35% --border=sharp --header "search language"`
 [[ -z $selected ]] && exit 0 || read -p "$selected search: " query_string && query=`echo $query_string | tr ' ' '+'` && curl cht.sh/$selected/$query
