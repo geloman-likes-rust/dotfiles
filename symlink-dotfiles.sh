@@ -5,6 +5,7 @@ ln -s $HOME/.dotfiles/.gitconfig $HOME
 ln -s $HOME/.dotfiles/.bash_aliases $HOME
 ln -s $HOME/.dotfiles/.tmux.conf $HOME
 ln -s $HOME/.dotfiles/.vimrc $HOME
+[ -d ~/.local/bin ] || mkdir ~/.local && mkdir ~/.local/bin
 ln -s $HOME/.dotfiles/handy-scripts/tmux-sessionizer ~/.local/bin/
 ln -s $HOME/.dotfiles/handy-scripts/setbg ~/.local/bin/
 ln -s $HOME/.dotfiles/handy-scripts/randbg ~/.local/bin/
