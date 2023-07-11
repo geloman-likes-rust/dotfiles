@@ -6,7 +6,7 @@ ln -s $HOME/.dotfiles/.bash_aliases $HOME
 ln -s $HOME/.dotfiles/.tmux.conf $HOME
 ln -s $HOME/.dotfiles/.vimrc $HOME
 
-[ -d ~/.local/bin ] || mkdir ~/.local && mkdir ~/.local/bin
+[ -d ~/.local ] || mkdir ~/.local && [ -d ~/.local/bin ] || mkdir ~/.local/bin
 for x in ~/.dotfiles/handy-scripts/*; do
   ln -s $x ~/.local/bin/
 done
@@ -16,7 +16,7 @@ done
 
 [ -d ~/.config ] || mkdir ~/.config
 for dir in ~/.dotfiles/.config/*; do
-  config="$(basename $dir)"
+  config=$(basename $dir)
   [ -d ~/.config/$config ] && rm -rdf ~/.config/$config
-  ln -s ~/".dotfiles/.config/${config}" ~/.config/"${config}"
+  ln -s ~/.dotfiles/.config/$config ~/.config/$config
 done
