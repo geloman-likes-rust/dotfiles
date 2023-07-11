@@ -29,3 +29,7 @@ bind -x '"\C-b": randbg'
 ## source fzf 
 #-----------------------------------------------------
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+## source cargo 
+#-----------------------------------------------------
+[ -d ~/.cargo ] && PATH=$PATH:$HOME/.cargo/bin && export PATH
