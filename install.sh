@@ -130,12 +130,12 @@ install_bat() {
 	conda install -y -c conda-forge bat
 }
 
-install_miniconda &
-install_tmux_tpm &
-install_fzf &
-install_neovim &
-install_exa &
+install_tmux_tpm
+install_fzf
+install_neovim
+install_exa
 install_httpie
+install_miniconda
 install_tmux
 install_fd
 install_ripgrep
