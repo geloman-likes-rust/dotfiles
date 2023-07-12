@@ -1,4 +1,4 @@
 #!/bin/sh
 
-selected=$(command ls ~/Pictures/wallpaper | fzf --border=rounded --margin=10,10)
-[[ -z $selected ]] || xwallpaper --zoom ~/Pictures/wallpaper/$selected
+selected=$(command ls ~/.personal/wallpaper | fzf --border=rounded --margin=10,10)
+[[ -z $selected ]] || xwallpaper --zoom ~/.personal/wallpaper/$selected
