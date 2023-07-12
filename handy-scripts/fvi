@@ -12,7 +12,7 @@ fuzzy_preview() {
 }
 
 if [[ -d .git ]]; then
-  selected=$(git ls-files $(git rev-parse --show-toplevel) --exclude-standard --others | fuzzy_preview)
+  selected=$(git ls-files $(git rev-parse --show-toplevel) | fuzzy_preview)
   [[ -z $selected ]] && exit 0 || nvim $selected
 else
   selected=$(find . -not -type d | fuzzy_preview)
