@@ -11,10 +11,5 @@ fuzzy_preview() {
     --padding 1
 }
 
-if [[ -d .git ]]; then
-  selected=$(git ls-files $(git rev-parse --show-toplevel) | fuzzy_preview)
-  [[ -z $selected ]] && exit 0 || nvim $selected
-else
-  selected=$(find . -not -type d | fuzzy_preview)
-  [[ -z $selected ]] && exit 0 || nvim $selected
-fi
+selected=$(rg --files --sort-files --hidden --glob="!.git" | fuzzy_preview)
+[[ -z $selected ]] && exit 0 || nvim $selected
