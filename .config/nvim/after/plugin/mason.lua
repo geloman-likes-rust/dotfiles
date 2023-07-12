@@ -22,8 +22,6 @@ end
 
 -- Enable the following language servers
 local language_servers = {
-  emmet_ls = {},
-  html = {},
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
