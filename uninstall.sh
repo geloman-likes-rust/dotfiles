@@ -7,6 +7,8 @@
 [ -d ~/.neovim ] && rm -rdf ~/.neovim
 [ -d ~/.local/share/nvim ] && rm -rdf ~/.local/share/nvim
 [ -d ~/.fzf ] && rm -rdf ~/.fzf
+[ -f ~/.fzf.bash ] && rm -rdf ~/.fzf.bash
+[ -f ~/.fzf.zsh ] && rm -rdf ~/.fzf.zsh
 [ -d ~/.tmux ] && rm -rdf ~/.tmux
 [ -d ~/.vim ] && rm -rdf ~/.vim
 [ -d ~/.nvm ] && rm -rdf ~/.nvm
