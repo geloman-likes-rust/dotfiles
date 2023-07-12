@@ -141,5 +141,5 @@ install_httpie
 install_tmux_tpm
 install_neovim
 # install_clang
-# install_rust
+install_rust
 # install_nvm
