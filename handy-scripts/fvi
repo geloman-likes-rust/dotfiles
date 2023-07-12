@@ -11,5 +11,5 @@ fuzzy_preview() {
     --padding 1
 }
 
-selected=$(rg --files --sort-files --hidden --glob="!.git" | fuzzy_preview)
+selected=$(rg --files --sort-files --hidden --glob="!{**.git/*,**/node_modules/*,.cache,**.jpg,**.png,**.mp3,**.mp4,**.rpm}" | fuzzy_preview)
 [[ -z $selected ]] && exit 0 || nvim $selected
