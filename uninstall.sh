@@ -4,6 +4,8 @@
 [ -f ~/.local/bin/ulnk ] && unlink ~/.local/bin/ulnk
 [ -f ~/.local/bin/slnk ] && unlink ~/.local/bin/slnk
 [ -f ~/.local/bin/nvim ] && unlink ~/.local/bin/nvim
+[ -d ~/.exa ] && unlink ~/.local/bin/exa && rm -rdf ~/.exa
+[ -d ~/.httpie ] && unlink ~/.local/bin/http && rm -rdf ~/.httpie
 [ -d ~/.neovim ] && rm -rdf ~/.neovim
 [ -d ~/.local/share/nvim ] && rm -rdf ~/.local/share/nvim
 [ -d ~/.fzf ] && rm -rdf ~/.fzf
