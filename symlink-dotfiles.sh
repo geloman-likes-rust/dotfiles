@@ -4,7 +4,7 @@ rm -rdf $HOME/.gitconfig
 ln -s $HOME/.dotfiles/.gitconfig $HOME
 ln -s $HOME/.dotfiles/.bash_aliases $HOME
 ln -s $HOME/.dotfiles/.tmux.conf $HOME
-ln -s $HOME/.dotfiles/.vimrc $HOME
+[ -f ~/.vimrc ] || ln -s $HOME/.dotfiles/.vimrc $HOME
 
 [ -d ~/.local ] || mkdir ~/.local && [ -d ~/.local/bin ] || mkdir ~/.local/bin
 for x in ~/.dotfiles/handy-scripts/*; do
