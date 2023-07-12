@@ -15,7 +15,7 @@ install_miniconda() {
 ## TMUX (TERMINAL MULTIPLEXER)
 #---------------------------------------------------------------------
 install_tmux() {
-	[ -d ~/.miniconda ] && return
+	[ -f ~/.miniconda/bin/tmux ] && return
 	echo "Installing tmux..........................................."
 	conda install -y -c conda-forge tmux
 	source ~/.bashrc
@@ -100,7 +100,7 @@ install_httpie() {
 ## FD-FIND - need this for telescope live-grep & grep-string
 #---------------------------------------------------------------------
 install_fd() {
-	[ -d ~/.miniconda ] && return
+	[ -f ~/.miniconda/bin/fd ] && return
 	echo "Installing fd-find......................................"
 	conda install -y -c conda-forge fd-find
 }
@@ -108,7 +108,7 @@ install_fd() {
 ## RIPGREP - need this for telescope live-grep & grep-string
 #---------------------------------------------------------------------
 install_ripgrep() {
-	[ -d ~/.miniconda ] && return
+	[ -f ~/.miniconda/bin/rg ] && return
 	echo "Installing ripgrep......................................"
 	conda install -y -c conda-forge ripgrep
 }
@@ -116,7 +116,7 @@ install_ripgrep() {
 ## GIT-DELTA - gitdiff syntax-highlighting
 #---------------------------------------------------------------------
 install_delta() {
-	[ -d ~/.miniconda ] && return
+	[ -f ~/.miniconda/bin/delta ] && return
 	echo "Installing git-delta......................................"
 	conda install -y -c conda-forge git-delta
 }
@@ -124,7 +124,7 @@ install_delta() {
 ## BAT - just like 'cat' but with syntax-highlighting
 #---------------------------------------------------------------------
 install_bat() {
-	[ -d ~/.miniconda ] && return
+	[ -f ~/.miniconda/bin/bat ] && return
 	echo "Installing bat......................................"
 	conda install -y -c conda-forge bat
 }
