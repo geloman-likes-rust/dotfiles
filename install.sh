@@ -80,12 +80,12 @@ install_nvm() {
 install_exa() {
 	[ -f ~/.local/bin/exa ] && return
 	echo "Installing exa......................................"
-	cd ~/.local/bin
-	mkdir exa_ls && cd exa_ls
+	[ -d ~/.exa ] && mkdir ~/.exa
+	cd ~/.exa
 	curl -sLO https://github.com/ogham/exa/releases/download/v0.10.1/exa-linux-x86_64-v0.10.1.zip
 	unzip exa-linux-x86_64-v0.10.1.zip
 	rm -rdf exa-linux-x86_64-v0.10.1.zip
-	ln -s ~/.local/bin/exa_ls/bin/exa ~/.local/bin/
+	ln -s ~/.exa/bin/exa ~/.local/bin/
 }
 
 ## HTTPIE
@@ -93,9 +93,8 @@ install_exa() {
 install_httpie() {
 	[ -f ~/.local/bin/http ] && return
 	echo "Installing httpie......................................"
-	cd ~/.local/bin
-	curl -sLo http https://packages.httpie.io/binaries/linux/http-latest
-	chmod +x http
+	curl -sLo ~/.httpie/http https://packages.httpie.io/binaries/linux/http-latest
+	chmod +x ~/.httpie/http && ln -s ~/.httpie/http ~/.local/bin/
 }
 
 ## FD-FIND - need this for telescope live-grep & grep-string
@@ -130,17 +129,17 @@ install_bat() {
 	conda install -y -c conda-forge bat
 }
 
-install_tmux_tpm &
-install_fzf &
-install_neovim &
-install_exa &
-install_httpie &
 install_miniconda
 install_tmux
 install_fd
 install_ripgrep
 install_delta
 install_bat
+install_fzf
+install_exa
+install_httpie
+install_tmux_tpm
+install_neovim
 # install_clang
 # install_rust
 # install_nvm
