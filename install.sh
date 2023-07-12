@@ -6,9 +6,9 @@ install_miniconda() {
 	[ -d ~/.miniconda ] && return
 	echo "Installing miniconda......................................"
 	curl -sSL https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -o ~/miniconda.sh
-	chmod +x miniconda.sh
+	chmod +x ~/miniconda.sh
 	~/miniconda.sh -b -p ~/.miniconda && echo "yes" | ~/.miniconda/bin/conda init
-	rm -rdf miniconda.sh
+	rm -rdf ~/miniconda.sh
 	source ~/.bashrc
 }
 
@@ -130,11 +130,11 @@ install_bat() {
 	conda install -y -c conda-forge bat
 }
 
-install_tmux_tpm
-install_fzf
-install_neovim
-install_exa
-install_httpie
+install_tmux_tpm &
+install_fzf &
+install_neovim &
+install_exa &
+install_httpie &
 install_miniconda
 install_tmux
 install_fd
