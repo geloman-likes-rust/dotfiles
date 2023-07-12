@@ -2,7 +2,7 @@
 
 dirty_preview() {
   fzf -e \
-    --preview "bat --color=always {}" \
+    --preview "git diff --color=always {1} | delta" \
     --preview-window right,70% \
     --bind up:preview-page-up,down:preview-page-down \
     --header "Open File" \
