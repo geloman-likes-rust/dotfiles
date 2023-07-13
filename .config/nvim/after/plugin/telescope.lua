@@ -25,9 +25,6 @@ require('telescope').setup {
 
     find_files = {
       hidden = true,
-      layout_config = {
-
-      }
     },
 
     git_status = {
