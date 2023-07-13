@@ -1,6 +1,6 @@
 #!/bin/sh
 
-fuzzy_preview() {
+fzf_file() {
   fzf -e \
     --preview "bat --color=always {}" \
     --preview-window right,70% \
@@ -11,7 +11,32 @@ fuzzy_preview() {
     --padding 1
 }
 
-selected=$(rg --files --sort-files --hidden --glob="!{**.git/*,**/node_modules/*,.cache,**.jpg,**.png,**.mp3,**.mp4,**.rpm}" | fuzzy_preview)
-[[ -z $selected ]] && exit 0
-response=$(echo NO YES | tr ' ' '\n' | fzf --header="Remove $selected?" --border=sharp --margin=15%)
-[[ "$response" = "YES" ]] && rm -rdf $selected
+fzf_directory() {
+  fzf -e \
+    --header "Remove Directory" \
+    --header-first \
+    --border=sharp
+}
+
+remove_file() {
+  local selected=$(rg --files --sort-files --hidden --glob="!{**.git/*,**/node_modules/*,.cache,**.jpg,**.png,**.mp3,**.mp4,**.rpm}" | fzf_file)
+  [[ -z $selected ]] && exit 0
+  response=$(echo NO YES | tr ' ' '\n' | fzf --header="Remove $selected?" --border=sharp --margin=15%)
+  [[ "$response" = "YES" ]] && rm -rdf $selected
+}
+
+remove_directory() {
+  local selected=$(fd --hidden --type d | fzf_directory)
+  [[ -z $selected ]] && exit 0
+  response=$(echo NO YES | tr ' ' '\n' | fzf --header="Remove $selected?" --border=sharp --margin=15%)
+  [[ "$response" = "YES" ]] && rm -rdf $selected
+}
+
+remove_what() {
+  local selected=$(echo "directory file" | tr ' ' '\n' | fzf --header-first --header "Remove what?" --border=sharp --margin=30%,30%)
+  [[ -z $selected ]] && exit 0
+  [[ "$selected" = "file" ]] && remove_file
+  [[ "$selected" = "directory" ]] && remove_directory
+}
+
+remove_what
