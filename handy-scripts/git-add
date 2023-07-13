@@ -1,6 +1,11 @@
 #!/bin/sh
 
-dirty_preview() {
+
+[[ -z $1 ]] || git add $1
+[[ -z $1 ]] || exit 0
+
+
+file_preview() {
   fzf -e \
     --preview "bat --color=always {}" \
     --preview-window right,70% \
@@ -11,12 +16,41 @@ dirty_preview() {
     --padding 1
 }
 
-if [[ -z $1 ]]; then
-  dirty_files=$(git ls-files $(git rev-parse --show-toplevel) -m --exclude-standard --others)
-  [[ -z $dirty_files ]] && echo "working tree clean, nothing to stage" && exit 0
-  selected=$(echo $dirty_files | tr ' ' '\n' | dirty_preview)
-  [[ -z $selected ]] || git add $selected
-else
-  git add $1
-fi
+dirty_preview() {
+  fzf -e \
+    --preview "git diff --color=always {1} | delta" \
+    --preview-window right,70% \
+    --bind up:preview-page-up,down:preview-page-down \
+    --header "Stage File" \
+    --header-first \
+    --preview-label "File Preview" \
+    --padding 1
+}
 
+git_stage_untracked() {
+  local untracked_files=$(git ls-files $(git rev-parse --show-toplevel) --exclude-standard --others)
+  [[ -z $untracked_files ]] && echo "working tree clean, nothing to stage" && exit 0
+  local selected=$(echo $untracked_files | tr ' ' '\n' | file_preview)
+  [[ -z $selected ]] || git add $selected
+}
+
+git_stage_modified() {
+  local dirty_files=$(git ls-files $(git rev-parse --show-toplevel) -m)
+  [[ -z $dirty_files ]] && echo "working tree clean, nothing to stage" && exit 0
+  local selected=$(echo $dirty_files | tr ' ' '\n' | dirty_preview)
+  [[ -z $selected ]] || git add $selected
+}
+
+git_stage_what() {
+  local selected=$(echo "modified untracked" | tr ' ' '\n' | fzf --header-first --header "git --stage what?" --border=sharp --margin=30%,30%)
+  [[ -z $selected ]] && exit 0
+  echo $selected
+}
+
+git_stage() {
+  local selected=$(git_stage_what)
+  [[ "$selected" = "modified" ]] && git_stage_modified
+  [[ "$selected" = "untracked" ]] && git_stage_untracked
+}
+
+git_stage
