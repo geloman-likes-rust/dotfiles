@@ -1,1 +1,0 @@
-return { "jlcrochet/vim-razor" }
