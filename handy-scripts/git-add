@@ -5,11 +5,18 @@ dirty_preview() {
     --preview "bat --color=always {}" \
     --preview-window right,70% \
     --bind up:preview-page-up,down:preview-page-down \
-    --header "Open File" \
+    --header "Stage File" \
     --header-first \
     --preview-label "File Preview" \
     --padding 1
 }
 
-dirty_files=$(git ls-files $(git rev-parse --show-toplevel) -m --exclude-standard --others)
-[[ -z $dirty_files ]] && echo "not dirty, working tree clean" && exit 0 || selected=$(echo $dirty_files | tr ' ' '\n' | dirty_preview); [[ -z $selected ]] || git add $selected
+if [[ -z $1 ]]; then
+  dirty_files=$(git ls-files $(git rev-parse --show-toplevel) -m --exclude-standard --others)
+  [[ -z $dirty_files ]] && echo "working tree clean, nothing to stage" && exit 0
+  selected=$(echo $dirty_files | tr ' ' '\n' | dirty_preview)
+  [[ -z $selected ]] || git add $selected
+else
+  git add $1
+fi
+
