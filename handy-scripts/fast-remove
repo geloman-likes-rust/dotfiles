@@ -12,4 +12,6 @@ fuzzy_preview() {
 }
 
 selected=$(rg --files --sort-files --hidden --glob="!{**.git/*,**/node_modules/*,.cache,**.jpg,**.png,**.mp3,**.mp4,**.rpm}" | fuzzy_preview)
-[[ -z $selected ]] && exit 0 || rm -rdf $selected
+[[ -z $selected ]] && exit 0
+response=$(echo NO YES | tr ' ' '\n' | fzf --header="Remove $selected?" --border=sharp --margin=15%)
+[[ "$response" = "YES" ]] && rm -rdf $selected
