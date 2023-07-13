@@ -57,15 +57,8 @@ keymap("n", "-", "[[<cmd>vertical resize -5<cr>]]", opts)
 keymap("n", "_", "[[<cmd>horizontal resize -3<cr>]]", opts)
 keymap("n", "+", "[[<cmd>horizontal resize +3<cr>]]", opts)
 
--- toggle filetree
-vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
-
 -- git diffsplit
 vim.keymap.set("n", "<leader>gds", ":Gvdiffsplit<CR>", opts)
-
--- switch to previous/next file
-vim.keymap.set("n", "<leader>n", ":bprevious<CR>", opts)
-vim.keymap.set("n", "<leader>N", ":bNext<CR>", opts)
 
 -- move cursor to bottom/top and center the screen
 vim.keymap.set("n", "H", "Hzz")
