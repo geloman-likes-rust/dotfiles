@@ -60,9 +60,6 @@ keymap("n", "+", "[[<cmd>horizontal resize +3<cr>]]", opts)
 -- toggle filetree
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
--- toggle trouble
-vim.keymap.set("n", "<leader>L", ":TroubleToggle<CR>", opts)
-
 -- git diffsplit
 vim.keymap.set("n", "<leader>gds", ":Gvdiffsplit<CR>", opts)
 
