@@ -11,6 +11,9 @@ alias ta="tmux a"
 alias tns="tmux new -s"
 alias trn="tmux rename-session -t"
 
+# fast remove alias
+alias frm="fast-remove"
+
 # version control aliases
 alias glo="git log --oneline"
 alias gs="git status"
