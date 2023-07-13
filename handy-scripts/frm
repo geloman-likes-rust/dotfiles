@@ -1,0 +1,15 @@
+#!/bin/sh
+
+fuzzy_preview() {
+  fzf -e \
+    --preview "bat --color=always {}" \
+    --preview-window right,70% \
+    --bind up:preview-page-up,down:preview-page-down \
+    --header "Open File" \
+    --header-first \
+    --preview-label "File Preview" \
+    --padding 1
+}
+
+selected=$(rg --files --sort-files --hidden --glob="!{**.git/*,**/node_modules/*,.cache,**.jpg,**.png,**.mp3,**.mp4,**.rpm}" | fuzzy_preview)
+[[ -z $selected ]] && exit 0 || rm -rdf $selected
