@@ -2,4 +2,4 @@
 
 ignore_files="{.git,.rustup,.neovim,.miniconda,.oh-my-zsh,.nuget,go,.npm,node_modules,.cache,.var}"
 selected=$(fd --hidden --type d --exclude $ignore_files | fzf --border=sharp --header-first --header "Change Directory")
-[[ -z $selected ]] && echo $PWD || echo $selected
+[[ -z $selected ]] || echo $selected
