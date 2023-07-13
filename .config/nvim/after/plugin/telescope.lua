@@ -14,30 +14,41 @@ require('telescope').setup {
         preview_width = 0.05
       },
     },
+
     grep_string = {
       word_match = "-w",
     },
+
     live_grep = {},
+
     help_tags = {},
+
     find_files = {
       hidden = true,
       layout_config = {
 
       }
     },
+
+    git_status = {
+      initial_mode = "normal",
+    },
   },
+
   defaults = {
     layout_config = {
       height = 0.95,
       width = 0.95,
       preview_width = 0.55
     },
+
     mappings = {
       i = {
         ['<C-u>'] = false,
         ['<C-d>'] = false,
       },
     },
+
     file_ignore_patterns = ignore_files,
   },
 }
