@@ -4,7 +4,7 @@ EDITOR="nvim"
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
 [ -d ~/.local/bin ] && PATH=$PATH:$HOME/.local/bin && export PATH
 
-## opens fzf when ctrl+f key was press and creates a tmux session based on the selected basename
+## bind tmux-sessionizer -> ctrl+x
 #-----------------------------------------------------
 bind -x '"\C-x": tmux-sessionizer'
 
