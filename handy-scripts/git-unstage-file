@@ -8,12 +8,11 @@ fuzzy_preview() {
     --margin 15%,15%
 }
 
-if [[ -z $1 ]]; then
-  staged_files=$(git diff --name-only --cached)
-  [[ -z $staged_files ]] && echo "No staged files, nothing to unstage" && exit 0
-  workspace=$(git rev-parse --show-toplevel)
-  selected=$(echo $staged_files | tr ' ' '\n' | fuzzy_preview)
-  [[ -z $selected ]] || git restore --stage $workspace/$selected
-else
-  [[ -z $1 ]] || git restore --stage $1; exit 0
-fi
+[[ -z $1 ]] || git restore --stage $1
+[[ -z $1 ]] || exit 0
+
+staged_files=$(git diff --name-only --cached)
+[[ -z $staged_files ]] && echo "No staged files, nothing to unstage" && exit 0
+workspace=$(git rev-parse --show-toplevel)
+selected=$(echo $staged_files | tr ' ' '\n' | fuzzy_preview)
+[[ -z $selected ]] || git restore --stage $workspace/$selected
