@@ -3,16 +3,24 @@
 [[ -z $1 ]] || git checkout $1
 [[ -z $1 ]] || exit 0
 
-branch_preview() {
-  fzf --header "Checkout Branch" \
-  --header-first \
-  --preview "git diff --color=always {1} | delta" \
-  --preview-label "Branch Preview" \
-  --preview-window right,80% \
-  --padding 1
+checkout_branch() {
+  local selected=$(git branch 2> /dev/null |fzf --border=rounded --header-first --header "Checkout Branch" --margin=25%)
+  [[ -z $selected ]] && exit 0
+  git checkout $selected 2> /dev/null
 }
 
-if [[ -d .git ]]; then
-  selected=$(git branch --sort=committerdate | branch_preview)
-  [[ -z $selected ]] && exit 0 || git checkout $selected 2> /dev/null
-fi
+checkout_commit() {
+  local selected=$(git log --oneline 2> /dev/null | fzf --border=sharp --header-first --header "Checkout Commit" --margin=5%)
+  [[ -z $selected ]] && exit 0
+  commit_id=$(echo $selected | awk '{print $1}')
+  git checkout $commit_id 2> /dev/null
+}
+
+checkout_what() {
+  local selected=$(echo "branch commit" | tr ' ' '\n' | fzf --border=rounded --header-first --header "Checkout What?" --margin=25%)
+  [[ -z $selected ]] && exit 0
+  [[ "$selected" = "branch" ]] && checkout_branch
+  [[ "$selected" = "commit" ]] && checkout_commit
+}
+
+checkout_what
