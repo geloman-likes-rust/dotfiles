@@ -16,7 +16,7 @@ alias frm="fast-remove"
 
 # version control aliases
 alias glo="git log --oneline"
-alias gs="git status"
+alias gs="git-status"
 alias gb="git branch"
 alias ga="git-add"
 alias gu="git-unstage-file"
