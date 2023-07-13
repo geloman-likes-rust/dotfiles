@@ -2,15 +2,8 @@
 
 [[ -d ~/.dotfiles && -d ~/.development && -d ~/.personal ]] || exit 0
 
-ripgrep() {
-  rg ~/.dotfiles ~/.development ~/.personal \
-  --files --sort-files --hidden \
-    --glob="!{**/.git,**/target,**/node_modules,**/obj}" \
-    --null 2> /dev/null | xargs -0 dirname | sort -u
-}
-
 # FUZZY FIND DIRECTORIES
-[[ $# -eq 1 ]] && selected=$1 || selected=$(ripgrep | fzf --border=rounded --margin=5,10)
+[[ $# -eq 1 ]] && selected=$1 || selected=$(find ~/.dotfiles ~/.development ~/.personal -type d | fzf --border=sharp --margin=1 --header-first --header "Create tmux session")
 
 # EXITS IF NO SELECTED
 [[ -z $selected ]] && exit 0
