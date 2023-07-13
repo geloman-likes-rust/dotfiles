@@ -1,11 +1,13 @@
 pcall(require('telescope').load_extension, 'fzf') -- Enable telescope fzf native, if installed
-local ignore_files = { "target", "node_modules", "wwwroot/lib", "**/Debug", "**.cache", "**/assets", "**.png", "**.svg",
+local ignore_files = { ".git", "target", "node_modules", "wwwroot/lib", "**/Debug", "**.cache", "**/assets", "**.png",
+  "**.svg",
   "**.favicon.*", "**.gif", "**.jpg", "**.jpeg", "**.mp4", "**.mp3", "**.pdf", "go", "**.zip", "**.tar.gz", "**/tags",
   "**.ttf" }
 
 require('telescope').setup {
   pickers = {
     colorscheme = {
+      initial_mode = "normal",
       enable_preview = true,
       layout_config = {
         width = 0.50,
@@ -15,9 +17,14 @@ require('telescope').setup {
     grep_string = {
       word_match = "-w",
     },
-    live_grep = {
-      initial_mode = "insert",
-    }
+    live_grep = {},
+    help_tags = {},
+    find_files = {
+      hidden = true,
+      layout_config = {
+
+      }
+    },
   },
   defaults = {
     layout_config = {
@@ -31,11 +38,11 @@ require('telescope').setup {
         ['<C-d>'] = false,
       },
     },
-    initial_mode = "normal",
     file_ignore_patterns = ignore_files,
   },
 }
 
+vim.keymap.set('n', '<leader>gs', require('telescope.builtin').git_status, { desc = '[G]it [S]tatus' })
 vim.keymap.set('n', '<leader>cc', require('telescope.builtin').colorscheme, { desc = '[C]hange [C]olorscheme' })
 vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
 vim.keymap.set('n', '<leader>hh', require('telescope.builtin').help_tags, { desc = 'Search [H][H]elp' })
