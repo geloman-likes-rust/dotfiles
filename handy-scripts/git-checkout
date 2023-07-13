@@ -14,5 +14,5 @@ branch_preview() {
 
 if [[ -d .git ]]; then
   selected=$(git branch --sort=committerdate | branch_preview)
-  [[ -z $selected ]] && exit 0 || git checkout $selected
+  [[ -z $selected ]] && exit 0 || git checkout $selected 2> /dev/null
 fi
