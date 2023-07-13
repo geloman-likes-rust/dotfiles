@@ -16,6 +16,7 @@ alias glo="git log --oneline"
 alias gs="git status"
 alias gb="git branch"
 alias ga="git add"
+alias gu="git restore --stage"
 alias gcm="git commit -m"
 alias gp="git push"
 alias gdf="git diff"
@@ -24,7 +25,7 @@ alias gco="git-branch-previewer"
 # additional aliases
 alias size-of="du -sh"
 alias size-all="du -hc"
-alias ls='exa -l'
+alias ls='exa --no-user --no-time --no-filesize -l'
 alias v='nvim'
 alias vi='nvim'
 alias vii='nvim'
