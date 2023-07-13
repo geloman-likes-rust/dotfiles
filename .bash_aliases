@@ -23,7 +23,7 @@ alias gu="git-unstage-file"
 alias gcm="git commit -m"
 alias gp="git push"
 alias gdf="git diff"
-alias gco="git-branch-previewer"
+alias gco="git-checkout"
 
 # additional aliases
 alias size-of="du -sh"
