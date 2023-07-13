@@ -6,11 +6,15 @@ EDITOR="nvim"
 
 ## opens fzf when ctrl+f key was press and creates a tmux session based on the selected basename
 #-----------------------------------------------------
-bind -x '"\C-f": tmux-sessionizer'
+bind -x '"\C-x": tmux-sessionizer'
 
 ## change background scripts
 #-----------------------------------------------------
 bind -x '"\C-b": randbg'
+
+## fast-cd keybinding
+#-----------------------------------------------------
+bind '"\C-f": "cd $(fast-cd)\nclear\n"'
 
 ## synth-shell-prompt.sh
 ##-----------------------------------------------------
