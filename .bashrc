@@ -14,7 +14,7 @@ bind -x '"\C-b": randbg'
 
 ## fast-cd keybinding
 #-----------------------------------------------------
-bind '"\C-f": "cd $(fast-cd)\nclear\n"'
+bind '"\C-f": "cd $(fast-cd) && clear\n"'
 
 ## synth-shell-prompt.sh
 ##-----------------------------------------------------
