@@ -15,7 +15,7 @@ file_preview() {
     --preview "bat --color=always {}" \
     --preview-window right,70% \
     --bind up:preview-page-up,down:preview-page-down \
-    --header "$(printf "${GREEN}Stage File")" \
+    --header "$(printf "${GREEN}Stage ${CYAN}Untracked File")" \
     --header-first \
     --preview-label "File Preview" \
     --padding 1
@@ -26,7 +26,7 @@ dirty_preview() {
     --preview "git diff --color=always {1} | delta" \
     --preview-window right,70% \
     --bind up:preview-page-up,down:preview-page-down \
-    --header "$(printf "${GREEN}Stage File")" \
+    --header "$(printf "${GREEN}Stage ${RED}Dirty File")" \
     --header-first \
     --preview-label "File Preview" \
     --padding 1
