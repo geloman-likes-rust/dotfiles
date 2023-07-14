@@ -10,14 +10,14 @@ checkout_branch() {
 }
 
 checkout_commit() {
-  local selected=$(git log --oneline 2> /dev/null | fzf --border=sharp --header-first --header "Checkout Commit" --margin=5%)
+  local selected=$(git log --oneline --color=always 2> /dev/null | fzf --ansi --border=sharp --header-first --header "Checkout Commit" --margin=5%)
   [[ -z $selected ]] && exit 0
   commit_id=$(echo $selected | awk '{print $1}')
   git checkout $commit_id 2> /dev/null
 }
 
 checkout_what() {
-  local selected=$(echo "branch commit" | tr ' ' '\n' | fzf --border=rounded --header-first --header "Checkout What?" --margin=25%)
+  local selected=$(echo "branch commit" | tr ' ' '\n' | fzf --ansi --border=rounded --header-first --header "Checkout What?" --margin=25%)
   [[ -z $selected ]] && exit 0
   [[ "$selected" = "branch" ]] && checkout_branch
   [[ "$selected" = "commit" ]] && checkout_commit
