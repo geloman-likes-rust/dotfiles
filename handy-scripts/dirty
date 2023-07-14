@@ -8,6 +8,7 @@ dirty_preview() {
     --header "Open File" \
     --header-first \
     --preview-label " File Preview " \
+    --border-label " Dirty Files " \
     --padding 1
 }
 
