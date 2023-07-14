@@ -3,9 +3,10 @@
 ORANGE='\033[0;33m'
 fuzzy_preview() {
   fzf -e \
-    --header "$(printf "${ORANGE}Unstage File")" \
+    --header "$(printf "${ORANGE}Select File")" \
     --header-first \
-    --border=sharp \
+    --border=rounded \
+    --border-label " Unstage File " \
     --margin 15%,15%
 }
 
