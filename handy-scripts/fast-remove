@@ -8,13 +8,15 @@ fzf_file() {
     --header "Remove File" \
     --header-first \
     --preview-label " File Preview " \
-    --padding 1
+    --border-label " Remove File " \
+    --border=sharp
 }
 
 fzf_directory() {
   fzf -e \
     --header "Remove Directory" \
     --header-first \
+    --border-label " Remove Directory " \
     --border=sharp
 }
 
@@ -33,7 +35,7 @@ remove_directory() {
 }
 
 remove_what() {
-  local selected=$(echo "directory file" | tr ' ' '\n' | fzf --header-first --border-label " Remove what? " --header "Remove what?" --border=sharp --margin=30%,30%)
+  local selected=$(echo "directory file" | tr ' ' '\n' | fzf --header-first --border-label " Remove what? " --header "Remove what?" --border=rounded --margin=30%,30%)
   [[ -z $selected ]] && exit 0
   [[ "$selected" = "file" ]] && remove_file
   [[ "$selected" = "directory" ]] && remove_directory
