@@ -18,7 +18,7 @@ file_preview() {
     --bind up:preview-page-up,down:preview-page-down \
     --header "$(printf "${GREEN}Stage ${CYAN}Untracked File")" \
     --header-first \
-    --preview-label "File Preview" \
+    --preview-label " File Preview " \
     --padding 1
 }
 
