@@ -1,41 +1,48 @@
 #!/bin/sh
 
+
+CYAN='\033[0;36m'
+NC='\033[0m'
+ORANGE='\033[0;33m'
+RED='\033[0;91m'
+
+
 fzf_file() {
   fzf -e \
     --preview "bat --color=always {}" \
     --preview-window right,70% \
     --bind up:preview-page-up,down:preview-page-down \
-    --header "Remove File" \
+    --header "$(printf " ${ORANGE}Remove File ")" \
     --header-first \
     --preview-label " File Preview " \
-    --border-label " Remove File " \
+    --border-label "$(printf " ${ORANGE}Remove File ")" \
     --border=sharp
 }
 
 fzf_directory() {
   fzf -e \
-    --header "Remove Directory" \
+    --header "$(printf " ${CYAN}Remove Directory ")" \
     --header-first \
-    --border-label " Remove Directory " \
+    --border-label "$(printf " ${CYAN}Remove Directory ")" \
     --border=sharp
 }
 
 remove_file() {
   local selected=$(rg --files --sort-files --hidden --glob="!{**.git/*,**/node_modules/*,.cache,**.jpg,**.png,**.mp3,**.mp4,**.rpm}" | fzf_file)
   [[ -z $selected ]] && exit 0
-  response=$(echo NO YES | tr ' ' '\n' | fzf --border-label=" Do u really want to remove this file? " --header="Remove $selected?" --border=rounded --margin=15%)
-  [[ "$response" = "YES" ]] && rm -rdf $selected
+  response=$(printf "NO ${RED}YES" | tr ' ' '\n' | fzf --border-label "$(printf "${ORANGE} Do u really want to remove this file? ")" --header="$(printf "Remove ${ORANGE}${selected}${NC}")" --border=rounded --margin=15%)
+  [[ "$response" = "YES" ]] && rm -rdf $selected && printf "\n${RED} Removed ${ORANGE}file:\n\n\t${NC}filename: ${ORANGE}${selected}${NC}\n\n"
 }
 
 remove_directory() {
   local selected=$(fd --hidden --type d | fzf_directory)
   [[ -z $selected ]] && exit 0
-  response=$(echo NO YES | tr ' ' '\n' | fzf --border-label=" Do u really want to remove this Directory? " --header="Remove $selected?" --border=rounded --margin=15%)
-  [[ "$response" = "YES" ]] && rm -rdf $selected
+  response=$(printf "NO ${RED}YES" | tr ' ' '\n' | fzf --border-label "$(printf "${CYAN} Do u really want to remove this Directory? ")" --header="$(printf "Remove ${CYAN}${selected}${NC}")" --border=rounded --margin=15%)
+  [[ "$response" = "YES" ]] && rm -rdf $selected && printf "\n${RED} Removed ${CYAN}Directory:\n\n\t${NC}dirname: ${CYAN}${selected}${NC}\n\n"
 }
 
 remove_what() {
-  local selected=$(echo "directory file" | tr ' ' '\n' | fzf --header-first --border-label " Remove what? " --header "Remove what?" --border=rounded --margin=30%,30%)
+  local selected=$(printf "${CYAN}directory ${ORANGE}file" | tr ' ' '\n' | fzf --header-first --border-label " Remove what? " --header "Remove what?" --border=rounded --margin=30%,30%)
   [[ -z $selected ]] && exit 0
   [[ "$selected" = "file" ]] && remove_file
   [[ "$selected" = "directory" ]] && remove_directory
