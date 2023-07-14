@@ -5,7 +5,8 @@ fuzzy_preview() {
     --preview "bat --color=always {}" \
     --preview-window right,70% \
     --bind up:preview-page-up,down:preview-page-down \
-    --header "Open File" \
+    --header "Select File" \
+    --border-label " Open File " \
     --header-first \
     --preview-label " File Preview " \
     --padding 1
