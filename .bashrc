@@ -4,7 +4,7 @@ EDITOR="nvim"
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
 [ -d ~/.local/bin ] && PATH=$PATH:$HOME/.local/bin && export PATH
 
-## bind tmux-sessionizer -> ctrl+x
+## opens fzf when ctrl+f key was press and creates a tmux session based on the selected basename
 #-----------------------------------------------------
 bind -x '"\C-x": tmux-sessionizer'
 
@@ -30,10 +30,20 @@ bind '"\C-f": "selected=$(fast-cd); [[ -z $selected ]] || cd $selected; clear\n"
 #-----------------------------------------------------
 [ -d ~/.miniconda/bin ] && PATH=$PATH:$HOME/.miniconda/bin && export PATH
 
-## source fzf 
-#-----------------------------------------------------
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-## source cargo 
+RED=#f65866
+YELLOW=#FF8400
+PINK=#FF52A2
+PURPLE=#DAB8F3
+BG=#2a324a
+FG=#93a4c3
+MINT=#00FFAB
+WHITE=#EDEDED
+
+## source fzf
+#-----------------------------------------------------
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash && export FZF_DEFAULT_OPTS="--ansi --color=bg+:$BG,fg+:$FG,gutter:-1,border:$PURPLE,hl:$MINT,hl+:$PINK,query:$PINK,pointer:$PINK,label:$WHITE,info:$MINT,spinner:$PURPLE --border=rounded"
+
+## source cargo
 #-----------------------------------------------------
 [ -d ~/.cargo ] && PATH=$PATH:$HOME/.cargo/bin && export PATH
