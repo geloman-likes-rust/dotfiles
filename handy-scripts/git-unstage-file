@@ -1,8 +1,9 @@
 #!/bin/sh
 
+ORANGE='\033[0;33m'
 fuzzy_preview() {
   fzf -e \
-    --header "Unstage File" \
+    --header "$(printf "${ORANGE}Unstage File")" \
     --header-first \
     --border=sharp \
     --margin 15%,15%
