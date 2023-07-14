@@ -5,19 +5,20 @@
 [[ -z $1 ]] || git add $1
 [[ -z $1 ]] || exit 0
 
-NC='\033[0m'
-RED='\033[0;91m'
-GREEN='\033[0;92m'
-ORANGE='\033[0;33m'
 CYAN='\033[0;36m'
+GREEN='\033[0;92m'
+NC='\033[0m'
+ORANGE='\033[0;33m'
+RED='\033[0;91m'
 
 file_preview() {
   fzf -e \
     --preview "bat --color=always {}" \
     --preview-window right,70% \
     --bind up:preview-page-up,down:preview-page-down \
-    --header "$(printf "${GREEN}Stage ${CYAN}Untracked File")" \
     --header-first \
+    --header "Select File" \
+    --border-label " Stage Untracked File " \
     --preview-label " File Preview " \
     --padding 1
 }
@@ -27,8 +28,9 @@ dirty_preview() {
     --preview "git diff --color=always {1} | delta" \
     --preview-window right,70% \
     --bind up:preview-page-up,down:preview-page-down \
-    --header "$(printf "${GREEN}Stage ${RED}Dirty File")" \
+    --header "Select File" \
     --header-first \
+    --border-label " Stage Dirty File " \
     --preview-label " File Preview " \
     --padding 1
 }
@@ -48,7 +50,7 @@ git_stage_modified() {
 }
 
 git_stage_what() {
-  local selected=$(printf "${RED}modified ${CYAN}untracked" | tr ' ' '\n' | fzf --ansi --header-first --header "$(printf "${ORANGE}git ${GREEN}--stage ${NC}what?")" --margin=30%,30%)
+  local selected=$(printf "${RED}modified ${CYAN}untracked" | tr ' ' '\n' | fzf --ansi --header-first --header "$(printf "git ${GREEN}add ${NC}what?")" --margin=30%,30% --border-label " Stage File ")
   [[ -z $selected ]] && exit 0
   echo $selected
 }
