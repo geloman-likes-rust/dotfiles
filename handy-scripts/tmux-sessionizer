@@ -3,7 +3,7 @@
 [[ -d ~/.dotfiles && -d ~/.development && -d ~/.personal ]] || exit 0
 
 # FUZZY FIND DIRECTORIES
-[[ $# -eq 1 ]] && selected=$1 || selected=$(find ~/.dotfiles ~/.development ~/.personal -type d | fzf --border=sharp --margin=1 --header-first --header "Create tmux session")
+[[ $# -eq 1 ]] && selected=$1 || selected=$(find ~/.dotfiles ~/.development ~/.personal -type d | fzf --border-label " tmux-sessionizer " --border=rounded --margin=1 --header-first --header "Create tmux session")
 
 # EXITS IF NO SELECTED
 [[ -z $selected ]] && exit 0
