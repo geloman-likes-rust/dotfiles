@@ -48,7 +48,7 @@ git_stage_modified() {
 }
 
 git_stage_what() {
-  local selected=$(printf "${RED}modified ${CYAN}untracked" | tr ' ' '\n' | fzf --ansi --header-first --header "$(printf "${ORANGE}git ${GREEN}--stage ${NC}what?")" --border=sharp --margin=30%,30%)
+  local selected=$(printf "${RED}modified ${CYAN}untracked" | tr ' ' '\n' | fzf --ansi --header-first --header "$(printf "${ORANGE}git ${GREEN}--stage ${NC}what?")" --margin=30%,30%)
   [[ -z $selected ]] && exit 0
   echo $selected
 }
