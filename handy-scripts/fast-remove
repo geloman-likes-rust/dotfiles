@@ -23,14 +23,14 @@ fzf_directory() {
 remove_file() {
   local selected=$(rg --files --sort-files --hidden --glob="!{**.git/*,**/node_modules/*,.cache,**.jpg,**.png,**.mp3,**.mp4,**.rpm}" | fzf_file)
   [[ -z $selected ]] && exit 0
-  response=$(echo NO YES | tr ' ' '\n' | fzf --border-label=" Do u really want to remove this file? " --header="Remove $selected?" --border=sharp --margin=15%)
+  response=$(echo NO YES | tr ' ' '\n' | fzf --border-label=" Do u really want to remove this file? " --header="Remove $selected?" --border=rounded --margin=15%)
   [[ "$response" = "YES" ]] && rm -rdf $selected
 }
 
 remove_directory() {
   local selected=$(fd --hidden --type d | fzf_directory)
   [[ -z $selected ]] && exit 0
-  response=$(echo NO YES | tr ' ' '\n' | fzf --header="Remove $selected?" --border=sharp --margin=15%)
+  response=$(echo NO YES | tr ' ' '\n' | fzf --border-label=" Do u really want to remove this Directory? " --header="Remove $selected?" --border=rounded --margin=15%)
   [[ "$response" = "YES" ]] && rm -rdf $selected
 }
 
