@@ -1,7 +1,8 @@
 #!/bin/sh
 
 
-[[ -z $(git status -s) ]] && exit 0
+[[ -z $(git status -s 2> /dev/null) ]] && exit 0
+[[ -z $(git ls-files -m --exclude-standard --other) ]] && echo "working tree clean, nothing to stage" && exit 0
 [[ -z $1 ]] || git add $1
 [[ -z $1 ]] || exit 0
 
@@ -17,9 +18,9 @@ file_preview() {
     --preview-window right,70% \
     --bind up:preview-page-up,down:preview-page-down \
     --header-first \
-    --header "Select File" \
-    --border-label " Stage Untracked File " \
-    --preview-label " File Preview " \
+    --header "$(printf "${ORANGE}Select File")" \
+    --border-label "$(printf " Stage ${CYAN}Untracked ${NC}File ")" \
+    --preview-label "$(printf " ${ORANGE}File Preview ")" \
     --padding 1
 }
 
@@ -28,29 +29,29 @@ dirty_preview() {
     --preview "git diff --color=always {1} | delta" \
     --preview-window right,70% \
     --bind up:preview-page-up,down:preview-page-down \
-    --header "Select File" \
+    --header "$(printf ${ORANGE}"Select File")" \
     --header-first \
-    --border-label " Stage Dirty File " \
-    --preview-label " File Preview " \
+    --border-label "$(printf " Stage ${RED}Modified ${NC}File ")" \
+    --preview-label "$(printf " ${ORANGE}File Preview ")" \
     --padding 1
 }
 
 git_stage_untracked() {
   local untracked_files=$(git ls-files $(git rev-parse --show-toplevel 2> /dev/null) --exclude-standard --others 2> /dev/null)
-  [[ -z $untracked_files ]] && echo "working tree clean, nothing to stage" && exit 0
-  local selected=$(echo $untracked_files | tr ' ' '\n' | file_preview)
+  [[ -z $untracked_files ]] && echo "no untracked files, nothing to stage" && exit 0
+  local selected=$(echo $untracked_files | tr ' ' '\n' | xargs -I {} printf "${CYAN}{}\n" | file_preview)
   [[ -z $selected ]] || git add $selected
 }
 
 git_stage_modified() {
   local dirty_files=$(git ls-files $(git rev-parse --show-toplevel 2> /dev/null) -m 2> /dev/null)
-  [[ -z $dirty_files ]] && echo "working tree clean, nothing to stage" && exit 0
-  local selected=$(echo $dirty_files | tr ' ' '\n' | dirty_preview)
+  [[ -z $dirty_files ]] && echo "no modified files, nothing to stage" && exit 0
+  local selected=$(echo $dirty_files | tr ' ' '\n' | xargs -I {} printf "${RED}{}\n" | dirty_preview)
   [[ -z $selected ]] || git add $selected
 }
 
 git_stage_what() {
-  local selected=$(printf "${RED}modified ${CYAN}untracked" | tr ' ' '\n' | fzf --ansi --header-first --header "$(printf "git ${GREEN}add ${NC}what?")" --margin=30%,30% --border-label " Stage File ")
+  local selected=$(printf "${RED}modified ${CYAN}untracked" | tr ' ' '\n' | fzf --ansi --header-first --header "$(printf "git ${GREEN}add ${ORANGE}what?")" --margin=30%,30% --border-label "$(printf " ${ORANGE}Stage File ")")
   [[ -z $selected ]] && exit 0
   echo $selected
 }
