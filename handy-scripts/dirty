@@ -1,16 +1,23 @@
 #!/bin/sh
 
+ORANGE='\033[0;33m'
+RED='\033[0;91m'
+PURPLE='\e[0;35m'
+CYAN='\033[0;36m'
+
 dirty_preview() {
   fzf -e \
-    --preview "git diff --color=always {1} | delta" \
+    --preview "bat --style=changes,header,grid --theme=1337 --color=always {}" \
     --preview-window right,70% \
     --bind up:preview-page-up,down:preview-page-down \
-    --header "Open File" \
+    --header "$(printf " ${ORANGE}Open File ")" \
     --header-first \
-    --preview-label " File Preview " \
-    --border-label " Dirty Files " \
+    --preview-label "$(printf " ${ORANGE}File Preview ")" \
+    --border-label "$(printf " ${PURPLE}Dirty Files ")" \
     --padding 1
 }
 
-dirty_files=$(git ls-files $(git rev-parse --show-toplevel 2> /dev/null) -m --exclude-standard --others 2> /dev/null)
-[[ -z $dirty_files ]] && echo "not dirty, working tree clean" && exit 0 || selected=$(echo $dirty_files | tr ' ' '\n' | dirty_preview); [[ -z $selected ]] || nvim $selected
+dirty_files=$(git ls-files $(git rev-parse --show-toplevel 2> /dev/null) -m 2> /dev/null | xargs -I {} printf "${RED}{}\n")
+untracked_files=$(git ls-files $(git rev-parse --show-toplevel 2> /dev/null) --exclude-standard --others 2> /dev/null | xargs -I {} printf "${CYAN}{}\n")
+# printf $untracked_files
+[[ -z $dirty_files ]] && echo "not dirty, working tree clean" && exit 0 || selected=$(echo $dirty_files $untracked_files | tr ' ' '\n' | dirty_preview); [[ -z $selected ]] || nvim $selected
