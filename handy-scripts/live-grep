@@ -22,6 +22,4 @@ selected=$(rg --line-number --only-matching --hidden --glob="!.git" $1 | fuzzy_p
 filename_and_linenumber=$(echo "${selected%:*}")
 filename=$(echo "${filename_and_linenumber%:*}")
 linenumber=$(echo "${filename_and_linenumber#*:}")
-echo $linenumber
-echo $filename
 nvim +$linenumber $filename -c 'normal zt'
