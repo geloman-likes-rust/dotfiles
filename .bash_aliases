@@ -17,6 +17,9 @@ alias frm="fast-remove"
 # live-grep
 alias lg="live-grep"
 
+# dirty
+alias drt="dirty"
+
 # version control aliases
 alias glo="git log --oneline"
 alias gs="git-status"
