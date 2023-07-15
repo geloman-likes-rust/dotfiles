@@ -9,17 +9,17 @@ fuzzy_preview() {
     --preview "bat --theme=1337 --color=always --highlight-line {2} {1}" \
     --preview-window right,70% \
     --bind up:preview-page-up,down:preview-page-down \
-    --header "$(printf "${CYAN}live-grep")" \
-    --border-label "$(printf " ${CYAN}Results ")" \
+    --header "$(printf "${ORANGE}Open File")" \
+    --border-label "$(printf " ${CYAN}live-grep ")" \
     --header-first \
     --preview-label "$(printf " ${CYAN}Grep Preview ")" \
     --preview-window '~3,+{2}+3/2'
 }
 
 [[ -z $1 ]] && exit 0
-selected=$(grep -r -n $1 | fuzzy_preview)
+selected=$(grep -o -r -n $1 | fuzzy_preview)
 [[ -z $selected ]] && exit 0
-filename_and_linenumber=$(echo $selected | awk -F: '{print $1":"$2}')
+filename_and_linenumber=$(echo "${selected%:*}")
 filename=$(echo "${filename_and_linenumber%:*}")
 linenumber=$(echo "${filename_and_linenumber#*:}")
-nvim +$linenumber $filename
+nvim +$linenumber $filename -c 'normal zt'
