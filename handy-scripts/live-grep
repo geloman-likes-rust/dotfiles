@@ -17,9 +17,10 @@ fuzzy_preview() {
 }
 
 [[ -z $1 ]] && exit 0
-selected=$(grep -o -r -n --exclude-dir=".git" $1 | fuzzy_preview)
+selected=$(rg --line-number --only-matching --hidden $1 | fuzzy_preview)
 [[ -z $selected ]] && exit 0
-filename_and_linenumber=$(echo "${selected%:*}")
-filename=$(echo "${filename_and_linenumber%:*}")
-linenumber=$(echo "${filename_and_linenumber#*:}")
+filename=$(echo "${selected%:*}")
+linenumber=$(echo "${selected#*:}")
+echo $linenumber
+echo $filename
 nvim +$linenumber $filename -c 'normal zt'
