@@ -15,7 +15,7 @@ install_miniconda() {
 ## TMUX (TERMINAL MULTIPLEXER)
 #---------------------------------------------------------------------
 install_tmux() {
-	[ -f ~/.miniconda/bin/tmux ] && return
+	[[ -z $(which tmux 2> /dev/null) ]] || return
 	echo "Installing tmux..........................................."
 	conda install -y -c conda-forge tmux
 	source ~/.bashrc
@@ -32,7 +32,7 @@ install_tmux_tpm() {
 ## FUZZY FINDER
 #---------------------------------------------------------------------
 install_fzf() {
-	[ -d ~/.fzf ] && return
+	[[ -z $(which fzf 2> /dev/null) ]] || return
 	echo "Installing fzf......................................"
 	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 	y | ~/.fzf/install
@@ -41,9 +41,8 @@ install_fzf() {
 ## NEOVIM LATEST VERSION - STABLE
 #---------------------------------------------------------------------
 install_neovim() {
-	[ -f ~/.local/bin/nvim ] && return
+	[[ -z $(which nvim 2> /dev/null) ]] || return
 	echo "Installing neovim......................................"
-	[ -d ~/.neovim ] || mkdir ~/.neovim
 	cd ~/.neovim
 	curl -s -JLO https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz
 	tar xzvf nvim-linux64.tar.gz
@@ -52,7 +51,7 @@ install_neovim() {
 }
 
 install_clang() {
-	[ -d ~/.miniconda ] && return
+	[[ -z $(which gcc 2> /dev/null) ]] || return
 	echo "Installing clang for nvim-treesitter"
 	conda install -y -c conda-forge clang
 }
@@ -78,7 +77,7 @@ install_nvm() {
 ## EXA LS
 #---------------------------------------------------------------------
 install_exa() {
-	[ -f ~/.local/bin/exa ] && return
+	[[ -z $(which exa 2> /dev/null) ]] || return
 	echo "Installing exa......................................"
 	[ -d ~/.exa ] && mkdir ~/.exa
 	cd ~/.exa
@@ -91,7 +90,7 @@ install_exa() {
 ## HTTPIE
 #---------------------------------------------------------------------
 install_httpie() {
-	[ -f ~/.local/bin/http ] && return
+	[[ -z $(which http 2> /dev/null) ]] || return
 	echo "Installing httpie......................................"
 	curl -sLo ~/.httpie/http https://packages.httpie.io/binaries/linux/http-latest
 	chmod +x ~/.httpie/http && ln -s ~/.httpie/http ~/.local/bin/
@@ -100,7 +99,7 @@ install_httpie() {
 ## FD-FIND - need this for telescope live-grep & grep-string
 #---------------------------------------------------------------------
 install_fd() {
-	[ -f ~/.miniconda/bin/fd ] && return
+	[[ -z $(which fd 2> /dev/null) ]] || return
 	echo "Installing fd-find......................................"
 	conda install -y -c conda-forge fd-find
 }
@@ -108,7 +107,7 @@ install_fd() {
 ## RIPGREP - need this for telescope live-grep & grep-string
 #---------------------------------------------------------------------
 install_ripgrep() {
-	[ -f ~/.miniconda/bin/rg ] && return
+	[[ -z $(which rg 2> /dev/null) ]] || return
 	echo "Installing ripgrep......................................"
 	conda install -y -c conda-forge ripgrep
 }
@@ -116,7 +115,7 @@ install_ripgrep() {
 ## GIT-DELTA - gitdiff syntax-highlighting
 #---------------------------------------------------------------------
 install_delta() {
-	[ -f ~/.miniconda/bin/delta ] && return
+	[[ -z $(which delta 2> /dev/null) ]] || return
 	echo "Installing git-delta......................................"
 	conda install -y -c conda-forge git-delta
 }
@@ -124,6 +123,7 @@ install_delta() {
 ## BAT - just like 'cat' but with syntax-highlighting
 #---------------------------------------------------------------------
 install_bat() {
+	[[ -z $(which bat 2> /dev/null) ]] || return
 	[ -f ~/.miniconda/bin/bat ] && return
 	echo "Installing bat......................................"
 	conda install -y -c conda-forge bat
@@ -140,6 +140,6 @@ install_exa
 install_httpie
 install_tmux_tpm
 install_neovim
-# install_clang
+install_clang
 install_rust
 # install_nvm
