@@ -1,5 +1,6 @@
 #!/bin/sh
 
+CYAN='\033[0;36m'
 ignore_files="{.git,.rustup,.neovim,.miniconda,.oh-my-zsh,.nuget,go,.npm,node_modules,.cache,.var}"
-selected=$(fd --hidden --type d --exclude $ignore_files | fzf --border=sharp --header-first --border-label=" Change Directory " --header "Select Directory")
+selected=$(fd --hidden --type d --exclude $ignore_files | fzf --border=sharp --header-first --border-label="$(printf " ${CYAN}Change Directory ")" --header "Select Directory")
 [[ -z $selected ]] || echo $selected
