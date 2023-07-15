@@ -19,8 +19,9 @@ fuzzy_preview() {
 [[ -z $1 ]] && exit 0
 selected=$(rg --line-number --only-matching --hidden $1 | fuzzy_preview)
 [[ -z $selected ]] && exit 0
-filename=$(echo "${selected%:*}")
-linenumber=$(echo "${selected#*:}")
+filename_and_linenumber=$(echo "${selected%:*}")
+filename=$(echo "${filename_and_linenumber%:*}")
+linenumber=$(echo "${filename_and_linenumber#*:}")
 echo $linenumber
 echo $filename
 nvim +$linenumber $filename -c 'normal zt'
