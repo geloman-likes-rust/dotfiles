@@ -24,6 +24,8 @@
 	line-numbers-plus-style = "#03C988" bold
 	minus-style = red bold "#ffeeee"
 	plus-style = green bold "#d6ffd6"
+	line-numbers-zero-style = "#F4F2DE"
+	syntax-theme = 1337
 
 [merge]
 	conflictstyle = diff3
