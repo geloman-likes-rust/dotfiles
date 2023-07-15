@@ -19,5 +19,4 @@ dirty_preview() {
 
 dirty_files=$(git ls-files $(git rev-parse --show-toplevel 2> /dev/null) -m 2> /dev/null | xargs -I {} printf "${RED}{}\n")
 untracked_files=$(git ls-files $(git rev-parse --show-toplevel 2> /dev/null) --exclude-standard --others 2> /dev/null | xargs -I {} printf "${CYAN}{}\n")
-# printf $untracked_files
-[[ -z $dirty_files ]] && echo "not dirty, working tree clean" && exit 0 || selected=$(echo $dirty_files $untracked_files | tr ' ' '\n' | dirty_preview); [[ -z $selected ]] || nvim $selected
+[[ -z $dirty_files && -z $untracked_files ]] && echo "not dirty, working tree clean" && exit 0 || selected=$(echo $dirty_files $untracked_files | tr ' ' '\n' | dirty_preview); [[ -z $selected ]] || nvim $selected
