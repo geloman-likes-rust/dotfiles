@@ -22,4 +22,4 @@ selected=$(grep -r -n $1 | fuzzy_preview)
 filename_and_linenumber=$(echo "${selected%:*}")
 filename=$(echo "${filename_and_linenumber%:*}")
 linenumber=$(echo "${filename_and_linenumber#*:}")
-nvim "+$linenumber|norm V" $filename
+nvim +$linenumber $filename
