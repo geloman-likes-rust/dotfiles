@@ -42,7 +42,7 @@ WHITE=#EDEDED
 
 ## source fzf
 #-----------------------------------------------------
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash && export FZF_DEFAULT_OPTS="--no-mouse --ansi --color=bg+:$BG,fg+:$FG,gutter:-1,border:$PURPLE,hl:$MINT,hl+:$PINK,query:$PINK,pointer:$PINK,label:$WHITE,info:$MINT,spinner:$PURPLE,header:$PURPLE --border=rounded"
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash && export FZF_DEFAULT_OPTS="--ansi --color=bg+:$BG,fg+:$FG,gutter:-1,border:$PURPLE,hl:$MINT,hl+:$PINK,query:$PINK,pointer:$PINK,label:$WHITE,info:$MINT,spinner:$PURPLE,header:$PURPLE --border=rounded"
 
 ## source cargo
 #-----------------------------------------------------
