@@ -5,6 +5,8 @@ CYAN='\033[0;36m'
 NC='\033[0m'
 ORANGE='\033[0;33m'
 RED='\033[0;91m'
+GREEN='\033[1;32m'
+WHITE='\033[1;37m'
 
 
 fzf_file() {
@@ -30,7 +32,7 @@ fzf_directory() {
 remove_file() {
   local selected=$(rg --files --sort-files --hidden --glob="!{**.git/*,**/node_modules/*,.cache,**.jpg,**.png,**.mp3,**.mp4,**.rpm}" | fzf_file)
   [[ -z $selected ]] && exit 0
-  response=$(printf "NO ${RED}YES" | tr ' ' '\n' | fzf --border-label "$(printf "${ORANGE} Do u really want to remove this file? ")" --header="$(printf "Remove ${ORANGE}${selected}${NC}")" --border=rounded --margin=15%)
+  response=$(printf "${GREEN}NO ${RED}YES" | tr ' ' '\n' | fzf --border-label "$(printf "${ORANGE} Do u really want to remove this file? ")" --header="$(printf "${WHITE}Remove ${ORANGE}${selected}${NC}")" --border=rounded --margin=15%)
   [[ "$response" = "YES" ]] && rm -rdf $selected && printf "\n${RED} Removed ${ORANGE}file:\n\n\t${NC}filename: ${ORANGE}${selected}${NC}\n\n"
 }
 
