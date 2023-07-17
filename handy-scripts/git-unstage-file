@@ -1,12 +1,14 @@
 #!/bin/sh
 
-ORANGE='\033[0;33m'
+CYAN='\033[0;36m'
+GREEN='\033[1;32m'
+RED='\033[0;91m'
 fuzzy_preview() {
   fzf -e \
-    --header "$(printf "${ORANGE}Select File")" \
+    --header "$(printf "${CYAN}Select File")" \
     --header-first \
     --border=rounded \
-    --border-label " Unstage File " \
+    --border-label "$(printf " ${RED}Unstage File ")" \
     --margin 15%,15%
 }
 
@@ -16,5 +18,5 @@ fuzzy_preview() {
 staged_files=$(git diff --name-only --cached)
 [[ -z $staged_files ]] && echo "No staged files, nothing to unstage" && exit 0
 workspace=$(git rev-parse --show-toplevel)
-selected=$(echo $staged_files | tr ' ' '\n' | fuzzy_preview)
+selected=$(printf "${GREEN}${staged_files}" | tr ' ' '\n' | fuzzy_preview)
 [[ -z $selected ]] || git restore --stage $workspace/$selected
