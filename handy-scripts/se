@@ -1,5 +1,6 @@
 #!/bin/sh
 
+CYAN='\033[0;36m'
 languages=(python lua bash c cpp rust golang typescript javascript c_sharp php)
-selected=`echo ${languages[@]} | tr ' ' '\n' | sort -r | fzf --margin 25%,35% --border=sharp --header "search language"`
+selected=`echo ${languages[@]} | tr ' ' '\n' | sort -r | fzf --margin 25%,35% --border=rounded --border-label "$(printf " ${CYAN}search language ")" --header-first --header "select language"`
 [[ -z $selected ]] && exit 0 || read -p "$selected search: " query_string && query=`echo $query_string | tr ' ' '+'` && curl cht.sh/$selected/$query
