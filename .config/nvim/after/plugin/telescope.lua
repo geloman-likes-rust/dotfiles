@@ -23,6 +23,10 @@ require('telescope').setup {
 
     help_tags = {},
 
+    buffers = {
+      initial_mode = "normal",
+    },
+
     find_files = {
       hidden = true,
     },
@@ -41,9 +45,13 @@ require('telescope').setup {
 
     mappings = {
       i = {
-        ['<C-u>'] = false,
-        ['<C-d>'] = false,
+        ['<C-k>'] = require("telescope.actions").move_selection_previous,
+        ['<C-j>'] = require("telescope.actions").move_selection_next,
       },
+      n = {
+        ['<C-k>'] = require("telescope.actions").move_selection_previous,
+        ['<C-j>'] = require("telescope.actions").move_selection_next,
+      }
     },
 
     file_ignore_patterns = ignore_files,
@@ -52,7 +60,7 @@ require('telescope').setup {
 
 vim.keymap.set('n', '<leader>gs', require('telescope.builtin').git_status, { desc = '[G]it [S]tatus' })
 vim.keymap.set('n', '<leader>cc', require('telescope.builtin').colorscheme, { desc = '[C]hange [C]olorscheme' })
-vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
+vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, { desc = '[F]ind [F]iles' })
 vim.keymap.set('n', '<leader>hh', require('telescope.builtin').help_tags, { desc = 'Search [H][H]elp' })
 vim.keymap.set('n', '<leader>fw', require('telescope.builtin').grep_string, { desc = '[F]ind [W]ord under cursor' })
 vim.keymap.set('n', '<leader>lg', require('telescope.builtin').live_grep, { desc = '[L]ive [G]rep' })
