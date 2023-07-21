@@ -25,6 +25,11 @@ require('telescope').setup {
 
     buffers = {
       initial_mode = "normal",
+      mappings = {
+        n = {
+          ['dd'] = require("telescope.actions").delete_buffer,
+        }
+      }
     },
 
     find_files = {
