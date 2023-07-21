@@ -43,11 +43,11 @@ install_fzf() {
 install_neovim() {
 	[[ -z $(which nvim 2> /dev/null) ]] || return
 	echo "Installing neovim......................................"
-	cd ~/.neovim
-	curl -s -JLO https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz
+	cd $HOME && curl -s -JLO https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz
 	tar xzvf nvim-linux64.tar.gz
 	rm -rdf nvim-linux64.tar.gz
-	ln -s ~/.neovim/nvim-linux64/bin/nvim ~/.local/bin/
+	mv $HOME/nvim-linux64 $HOME/.neovim
+	ln -s $HOME/.neovim/bin/nvim $HOME/.local/bin/
 }
 
 install_clang() {
