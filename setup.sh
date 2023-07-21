@@ -2,8 +2,7 @@
 
 [ -d ~/.personal/wallpaper ] || git clone https://github.com/geloman-likes-rust/desktop-wallpaper ~/.personal/wallpaper
 
-[ -d ~/.local ] || mkdir ~/.local
-[ -d ~/.local/bin ] || mkdir ~/.local/bin
+[ -d ~/.local/bin ] || mkdir ~/.local && mkdir ~/.local/bin
 [ -d ~/.config ] || mkdir ~/.config
 
 [ -f ~/.bashrc ] || cat ~/.dotfiles/.bashrc > ~/.bashrc
