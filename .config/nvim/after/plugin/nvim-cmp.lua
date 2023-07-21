@@ -59,6 +59,13 @@ cmp.setup {
 
   },
 
+  window = {
+    completion = cmp.config.window.bordered({
+      winhighlight = "Normal:VisualNC,FloatBorder:VisualNC,CursorLine:PmenuSel"
+    }),
+    documentation = cmp.config.window.bordered(),
+  },
+
   sources = {
     { name = 'nvim_lsp', max_item_count = 5 },
     { name = 'luasnip',  max_item_count = 5 },
