@@ -4,7 +4,7 @@ EDITOR="nvim"
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
 [ -d ~/.local/bin ] && PATH=$PATH:$HOME/.local/bin && export PATH
 
-## opens fzf when ctrl+f key was press and creates a tmux session based on the selected basename
+## bind (ctrl-x) --> tmux-sessionizer
 #-----------------------------------------------------
 bind -x '"\C-x": tmux-sessionizer'
 
@@ -12,7 +12,7 @@ bind -x '"\C-x": tmux-sessionizer'
 #-----------------------------------------------------
 bind -x '"\C-b": randbg'
 
-## fast-cd keybinding
+## bind (ctrl-f) --> fast-cd
 #-----------------------------------------------------
 bind '"\C-f": "selected=$(fast-cd); [[ -z $selected ]] || cd $selected; clear\n"'
 
