@@ -79,8 +79,7 @@ install_nvm() {
 install_exa() {
 	[[ -z $(which exa 2> /dev/null) ]] || return
 	echo "Installing exa......................................"
-	[ -d ~/.exa ] && mkdir ~/.exa
-	cd ~/.exa
+	[ -d ~/.exa ] || mkdir ~/.exa && cd ~/.exa
 	curl -sLO https://github.com/ogham/exa/releases/download/v0.10.1/exa-linux-x86_64-v0.10.1.zip
 	unzip exa-linux-x86_64-v0.10.1.zip
 	rm -rdf exa-linux-x86_64-v0.10.1.zip
@@ -124,7 +123,6 @@ install_delta() {
 #---------------------------------------------------------------------
 install_bat() {
 	[[ -z $(which bat 2> /dev/null) ]] || return
-	[ -f ~/.miniconda/bin/bat ] && return
 	echo "Installing bat......................................"
 	conda install -y -c conda-forge bat
 }
@@ -141,5 +139,5 @@ install_httpie
 install_tmux_tpm
 install_neovim
 install_clang
-# install_rust
+install_rust
 # install_nvm
