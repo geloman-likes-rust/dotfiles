@@ -70,6 +70,7 @@ install_nvm() {
 	[ -d ~/.nvm ] && return
 	echo "Installing node-version-manager......................................"
 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | sh
+	source ~/.bashrc
 	nvm install --lts
 	nvm install-latest-npm
 }
@@ -140,4 +141,4 @@ install_tmux_tpm
 install_neovim
 install_clang
 install_rust
-# install_nvm
+install_nvm
