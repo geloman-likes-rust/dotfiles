@@ -1,5 +1,7 @@
 #!/bin/sh
 
+[ -z $(git rev-parse --show-toplevel 2> /dev/null) ] && exit 0
+
 ORANGE='\033[0;33m'
 RED='\033[0;91m'
 PURPLE='\e[0;35m'
