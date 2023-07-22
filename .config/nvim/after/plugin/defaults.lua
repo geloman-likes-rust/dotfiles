@@ -1,6 +1,13 @@
 local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 
+-- Default DiagnosticSign
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl })
+end
+
 -- tab space
 vim.o.tabstop = 2
 vim.o.softtabstop = 2
