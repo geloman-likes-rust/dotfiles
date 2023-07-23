@@ -60,6 +60,8 @@ require('telescope').setup {
     },
 
     file_ignore_patterns = ignore_files,
+    selection_caret = " ",
+    prompt_prefix = "   ",
   },
 }
 
