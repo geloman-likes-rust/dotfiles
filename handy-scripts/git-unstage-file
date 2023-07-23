@@ -11,7 +11,9 @@ fuzzy_preview() {
     --header-first \
     --border=rounded \
     --border-label "$(printf " ${RED}Unstage File ")" \
-    --margin 15%,15%
+    --margin 15%,15% \
+    --pointer "" \
+    --prompt "  "
 }
 
 [[ -z $1 ]] || git restore --stage $1

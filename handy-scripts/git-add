@@ -21,7 +21,9 @@ file_preview() {
     --header "$(printf "${ORANGE}Select File")" \
     --border-label "$(printf " Stage ${CYAN}Untracked ${NC}File ")" \
     --preview-label "$(printf " ${ORANGE}File Preview ")" \
-    --padding 1
+    --padding 1 \
+    --pointer "" \
+    --prompt "  "
 }
 
 dirty_preview() {
@@ -33,7 +35,9 @@ dirty_preview() {
     --header-first \
     --border-label "$(printf " Stage ${RED}Modified ${NC}File ")" \
     --preview-label "$(printf " ${ORANGE}File Preview ")" \
-    --padding 1
+    --padding 1 \
+    --pointer "" \
+    --prompt "  "
 }
 
 git_stage_untracked() {
@@ -51,7 +55,7 @@ git_stage_modified() {
 }
 
 git_stage_what() {
-  local selected=$(printf "${RED}modified ${CYAN}untracked" | tr ' ' '\n' | fzf --ansi --header-first --header "$(printf "git ${GREEN}add ${ORANGE}what?")" --margin=30%,30% --border-label "$(printf " ${ORANGE}Stage File ")")
+  local selected=$(printf "${RED}modified ${CYAN}untracked" | tr ' ' '\n' | fzf --ansi --header-first --header "$(printf "git ${GREEN}add ${ORANGE}what?")" --margin=30%,30% --border-label "$(printf " ${ORANGE}Stage File ")" --pointer "" --prompt "  ")
   [[ -z $selected ]] && exit 0
   echo $selected
 }

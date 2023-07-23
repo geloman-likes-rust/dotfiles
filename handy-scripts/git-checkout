@@ -13,22 +13,22 @@ WHITE='\033[1;37m'
 [[ -z $1 ]] || exit 0
 
 checkout_branch() {
-  local selected=$(git branch 2> /dev/null |fzf --border=rounded --border-label "$(printf " ${CYAN}Checkout Branch ")" --header-first --header "$(printf " ${PURPLE}Checkout Branch ")" --margin=25%)
+  local selected=$(git branch 2> /dev/null |fzf --border=rounded --border-label "$(printf " ${CYAN}Checkout Branch ")" --header-first --header "$(printf " ${PURPLE}Checkout Branch ")" --margin=25% --pointer "" --prompt "  ")
   [[ -z $selected ]] && exit 0
   git checkout $selected 2> /dev/null
 }
 
 checkout_commit() {
-  local selected=$(git log --oneline --color=always 2> /dev/null | fzf --ansi --border=rounded --border-label "$(printf " ${ORANGE}Commit Logs ")" --header-first --header "$(printf " ${RED}Checkout Commit ")" --margin=5%)
+  local selected=$(git log --oneline --color=always 2> /dev/null | fzf --ansi --border=rounded --border-label "$(printf " ${ORANGE}Commit Logs ")" --header-first --header "$(printf " ${RED}Checkout Commit ")" --margin=5% --pointer "" --prompt "  ")
   [[ -z $selected ]] && exit 0
   commit_id=$(echo $selected | awk '{print $1}')
-  response=$(printf "${RED}NO ${GREEN}YES" | tr ' ' '\n' | fzf --header-first --header "$(printf " ${PURPLE}git ${GREEN}checkout ${ORANGE}${commit_id}")" --border=rounded --border-label "$(printf " ${WHITE}checkout ${ORANGE}${commit_id} ")" --margin=25%)
+  response=$(printf "${RED}NO ${GREEN}YES" | tr ' ' '\n' | fzf --header-first --header "$(printf " ${PURPLE}git ${GREEN}checkout ${ORANGE}${commit_id}")" --border=rounded --border-label "$(printf " ${WHITE}checkout ${ORANGE}${commit_id} ")" --margin=25% --pointer "" --prompt "  ")
   [[ "$response" = "YES" ]] || exit 0
   git checkout $commit_id 2> /dev/null
 }
 
 checkout_what() {
-  local selected=$(printf "${PURPLE}branch ${RED}commit" | tr ' ' '\n' | fzf --ansi --border=rounded --border-label "$(printf " ${CYAN}Checkout What? ")" --header-first --header "$(printf " ${GREEN}Checkout What? ")" --margin=25%)
+  local selected=$(printf "${PURPLE}branch ${RED}commit" | tr ' ' '\n' | fzf --ansi --border=rounded --border-label "$(printf " ${CYAN}Checkout What? ")" --header-first --header "$(printf " ${GREEN}Checkout What? ")" --margin=25% --pointer "" --prompt "  ")
   [[ -z $selected ]] && exit 0
   [[ "$selected" = "branch" ]] && checkout_branch
   [[ "$selected" = "commit" ]] && checkout_commit

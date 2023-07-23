@@ -16,7 +16,9 @@ dirty_preview() {
     --header-first \
     --preview-label "$(printf " ${ORANGE}File Preview ")" \
     --border-label "$(printf " ${PURPLE}Dirty Files ")" \
-    --padding 1
+    --padding 1 \
+    --prompt " " \
+    --pointer ""
 }
 
 dirty_files=$(git ls-files $(git rev-parse --show-toplevel 2> /dev/null) -m 2> /dev/null | xargs -I {} printf "${RED}{}\n")

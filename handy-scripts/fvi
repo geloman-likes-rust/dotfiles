@@ -11,7 +11,9 @@ fuzzy_preview() {
     --border-label "$(printf " ${ORANGE}Open File ")" \
     --header-first \
     --preview-label "$(printf " ${ORANGE}File Preview ")" \
-    --padding 1
+    --padding 1 \
+    --prompt " " \
+    --pointer ""
 }
 
 selected=$(rg --files --sort-files --hidden --glob="!{**.git/*,**/node_modules/*,.cache,**.jpg,**.png,**.mp3,**.mp4,**.rpm}" | fuzzy_preview)

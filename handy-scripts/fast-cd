@@ -1,6 +1,6 @@
 #!/bin/sh
 
 CYAN='\033[0;36m'
-ignore_files="{.git,.rustup,.neovim,.miniconda,.oh-my-zsh,.nuget,go,.npm,node_modules,.cache,.var}"
-selected=$(fd --hidden --type d --exclude $ignore_files | fzf --border=rounded --header-first --border-label="$(printf " ${CYAN}Change Directory ")" --header "Select Directory")
+ignore_files="{.git,.rustup,.neovim,.miniconda,.oh-my-zsh,.nuget,go,.npm,node_modules,.cache,.var,.nvm,.tmux,.fzf,.exa}"
+selected=$(fd --hidden --type d --exclude $ignore_files | fzf --border=rounded --header-first --border-label="$(printf " ${CYAN}Change Directory ")" --header "Select Directory" --pointer "" --prompt "  ")
 [[ -z $selected ]] || echo $selected
