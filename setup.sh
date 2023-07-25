@@ -5,8 +5,8 @@
 [ -d ~/.local ] || mkdir ~/.local && [ -d ~/.local/bin ] || mkdir ~/.local/bin
 [ -d ~/.config ] || mkdir ~/.config
 
-[ -f ~/.bashrc ] || cat ~/.dotfiles/.bashrc > ~/.bashrc
-[ -f ~/.zshrc ] || cat ~/.dotfiles/.zshrc > ~/.zshrc
+cat ~/.dotfiles/.bashrc > ~/.bashrc
+cat ~/.dotfiles/.zshrc > ~/.zshrc
 
 [ -f ~/.profile ] && echo -e ". \"\$HOME/.dotfiles/.default_background\"" >> ~/.profile
 
