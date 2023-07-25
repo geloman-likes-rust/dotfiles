@@ -16,10 +16,6 @@ bind -x '"\C-b": randbg'
 #-----------------------------------------------------
 bind '"\C-f": "selected=$(fast-cd); [[ -z $selected ]] || cd $selected; clear\n"'
 
-## synth-shell-prompt.sh
-##-----------------------------------------------------
-[ -f ~/.config/synth-shell/synth-shell-prompt.sh ] && [ -n "$( echo $- | grep i )" ] && source ~/.config/synth-shell/synth-shell-prompt.sh
-
 ## source nvm
 #-----------------------------------------------------
 [ -d $HOME/.nvm ] && export NVM_DIR="$HOME/.nvm"
