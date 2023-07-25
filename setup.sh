@@ -12,5 +12,3 @@ cat ~/.dotfiles/.zshrc > ~/.zshrc
 
 ~/.dotfiles/install.sh
 [ -f ~/.local/bin/slnk ] || ~/.dotfiles/symlink-dotfiles.sh
-
-source ~/.bashrc
