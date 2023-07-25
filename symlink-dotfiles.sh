@@ -1,6 +1,7 @@
 #!/bin/sh
 
 [ -f $HOME/.gitconfig ] && rm -rdf $HOME/.gitconfig
+ln -s $HOME/.dotfiles/.prompt $HOME
 ln -s $HOME/.dotfiles/.gitconfig $HOME
 ln -s $HOME/.dotfiles/.bash_aliases $HOME
 ln -s $HOME/.dotfiles/.tmux.conf $HOME

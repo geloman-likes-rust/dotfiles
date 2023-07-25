@@ -2,6 +2,7 @@ set -o vi
 EDITOR="nvim"
 [ -f /etc/bashrc ] && . /etc/bashrc
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
+[ -f ~/.prompt ] && . ~/.prompt
 [ -d ~/.local/bin ] && PATH=$PATH:$HOME/.local/bin && export PATH
 
 ## bind (ctrl-x) --> tmux-sessionizer
