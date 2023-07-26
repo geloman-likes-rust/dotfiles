@@ -6,11 +6,10 @@ source $ZSH/oh-my-zsh.sh
 set -o vi
 EDITOR="nvim"
 
-bindkey -s ^f "tmux-sessionizer\n"
-bindkey -s ^b "randbg\n"
-bindkey -s ^q "switch_shell\n"
+bindkey -s ^f "tmux-sessionizer\nclear\n"
+bindkey -s ^b "randbg\nclear\n"
 
-[ -f ~/.bash_aliases ] && . ~/.bash_aliases
+[ -f ~/.aliasrc ] && . ~/.aliasrc
 [ -f ~/.zsh_profile ] && . ~/.zsh_profile
 [ -d ~/.local/bin ] && PATH=$PATH:$HOME/.local/bin && export PATH
 
