@@ -128,6 +128,12 @@ install_bat() {
 	conda install -y -c conda-forge bat
 }
 
+## oh-my-zsh - need this for zsh pretty prompt
+install_ohmyzsh() {
+	[[ -d ~/.oh-my-zsh ]] && return
+	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+}
+
 install_miniconda
 install_tmux
 install_fd
