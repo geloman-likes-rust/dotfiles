@@ -1,9 +1,10 @@
 #!/bin/sh
 
 unlink ~/.gitconfig
-unlink ~/.bash_aliases
+unlink ~/.aliasrc
 unlink ~/.tmux.conf
 unlink ~/.vimrc
+unlink ~/.bash_prompt
 
 for script in ~/.dotfiles/handy-scripts/*; do
   file=$(basename $script)
