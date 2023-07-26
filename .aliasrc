@@ -1,69 +1,71 @@
 # navigation aliases
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
+alias \
+  ..="cd .." \
+  ...="cd ../.." \
+  ....="cd ../../.." \
+  .....="cd ../../../.." \
 
 # tmux aliases
-alias tls="tmux ls"
-alias tks="tmux kill-server"
-alias ta="tmux a"
-alias tns="tmux new -s"
-alias trn="tmux rename-session -t"
+alias \
+  tls="tmux ls" \
+  tks="tmux kill-server" \
+  ta="tmux a" \
+  tns="tmux new -s" \
+  trn="tmux rename-session -t" \
 
-# fast remove alias
-alias frm="fast-remove"
-
-# live-grep
-alias lg="live-grep"
-
-# dirty
-alias drt="dirty"
+# handy scripts
+alias \
+  frm="fast-remove" \
+  lg="live-grep" \
+  drt="dirty" \
+  gs="git-status" \
+  ga="git-add" \
+  gu="git-unstage-file" \
+  gco="git-checkout" \
 
 # version control aliases
-alias glo="git log --oneline"
-alias gs="git-status"
-alias gb="git branch"
-alias ga="git-add"
-alias gu="git-unstage-file"
-alias gcm="git commit -m"
-alias gp="git push"
-alias gdf="git diff"
-alias gco="git-checkout"
+alias \
+  glo="git log --oneline" \
+  gb="git branch" \
+  gcm="git commit -m" \
+  gp="git push" \
+  gdf="git diff" \
 
 # additional aliases
-alias size-of="du -sh"
-alias size-all="du -hc"
-alias ls='exa --no-user --no-time --no-filesize -l'
-alias v='nvim'
-alias vi='nvim'
-alias vii='nvim'
-alias iv='nvim'
-alias ivi='nvim'
-alias ivii='nvim'
-alias dev="cd ~/.development"
-alias dotfiles="cd ~/.dotfiles"
-alias config="cd ~/.dotfiles/.config"
-alias python='python3'
-alias mem="neofetch memory"
-alias cpu="neofetch cpu"
-alias disk="neofetch disk"
-alias uptime="neofetch uptime"
-alias mysql-run="mysql -v --table"
-alias mysql-start="sudo systemctl start mysqld.service"
-alias mysql-stop="sudo systemctl stop mysqld.service"
-alias mysql-status="systemctl status mysqld.service"
-alias redis-start="sudo systemctl start redis.service"
-alias redis-stop="sudo systemctl stop redis.service"
-alias redis-status="systemctl status redis.service"
-alias mongo-start="sudo systemctl start mongod.service"
-alias mongo-stop="sudo systemctl stop mongod.service"
-alias mongo-status="systemctl status mongod.service"
-alias ndoe="node"
+alias \
+  size-of="du -sh" \
+  size-all="du -hc" \
+  ls='exa --no-user --no-time --no-filesize -l' \
+  v='nvim' \
+  vi='nvim' \
+  vii='nvim' \
+  iv='nvim' \
+  ivi='nvim' \
+  ivii='nvim' \
+  dev="cd ~/.development" \
+  dotfiles="cd ~/.dotfiles" \
+  config="cd ~/.dotfiles/.config" \
+  python='python3' \
+  mem="neofetch memory" \
+  cpu="neofetch cpu" \
+  disk="neofetch disk" \
+  uptime="neofetch uptime" \
+  mysql-run="mysql -v --table" \
+  mysql-start="sudo systemctl start mysqld.service" \
+  mysql-stop="sudo systemctl stop mysqld.service" \
+  mysql-status="systemctl status mysqld.service" \
+  redis-start="sudo systemctl start redis.service" \
+  redis-stop="sudo systemctl stop redis.service" \
+  redis-status="systemctl status redis.service" \
+  mongo-start="sudo systemctl start mongod.service" \
+  mongo-stop="sudo systemctl stop mongod.service" \
+  mongo-status="systemctl status mongod.service" \
+  ndoe="node" \
 
 # personal aliases
-alias celluloid="flatpak run io.github.celluloid_player.Celluloid"
-alias obs="flatpak run com.obsproject.Studio"
-alias suspend="systemctl suspend"
-alias restart="systemctl reboot"
-alias sb="setbg"
+alias \
+  celluloid="flatpak run io.github.celluloid_player.Celluloid" \
+  obs="flatpak run com.obsproject.Studio" \
+  suspend="systemctl suspend" \
+  restart="systemctl reboot" \
+  sb="setbg" \
