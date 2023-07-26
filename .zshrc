@@ -8,7 +8,6 @@ EDITOR="nvim"
 bindkey -v
 export KEYTIMEOUT=1
 
-# bind '"\C-f": "selected=$(fast-cd); [[ -z $selected ]] || cd $selected; clear\n"'
 function fast_cd() {
     selected=$(fast-cd); [[ -z $selected ]] || cd $selected
 }
