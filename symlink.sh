@@ -2,6 +2,7 @@
 
 [ -f $HOME/.gitconfig ] && rm -rdf $HOME/.gitconfig
 ln -s $HOME/.dotfiles/.bash_prompt $HOME
+ln -s $HOME/.dotfiles/.zsh_prompt $HOME
 ln -s $HOME/.dotfiles/.gitconfig $HOME
 ln -s $HOME/.dotfiles/.aliasrc $HOME
 ln -s $HOME/.dotfiles/.tmux.conf $HOME
