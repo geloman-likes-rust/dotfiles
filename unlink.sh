@@ -5,6 +5,7 @@ unlink ~/.aliasrc
 unlink ~/.tmux.conf
 unlink ~/.vimrc
 unlink ~/.bash_prompt
+unlink ~/.zsh_prompt
 
 for script in ~/.dotfiles/handy-scripts/*; do
   file=$(basename $script)
