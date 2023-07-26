@@ -5,17 +5,24 @@ EDITOR="nvim"
 [ -f ~/.bash_prompt ] && . ~/.bash_prompt
 [ -d ~/.local/bin ] && PATH=$PATH:$HOME/.local/bin && export PATH
 
-## bind (ctrl-x) --> tmux-sessionizer
+## bind (ctrl-p) --> tmux-sessionizer
 #-----------------------------------------------------
-bind -x '"\C-x": tmux-sessionizer'
+bind -x '"\C-p": tmux-sessionizer'
 
-## change background scripts
+## bind (ctrl-b) --> randbg
 #-----------------------------------------------------
 bind -x '"\C-b": randbg'
 
-## bind (ctrl-f) --> fast-cd
+## bind (ctrl-f) --> randbg
 #-----------------------------------------------------
-bind '"\C-f": "selected=$(fast-cd); [[ -z $selected ]] || cd $selected; clear\n"'
+bind -x '"\C-f": fvi'
+
+## bind (ctrl-o) --> fast-cd
+#-----------------------------------------------------
+fast_cd() {
+  selected=$(fast-cd); [[ -z $selected ]] || cd $selected
+}
+bind '"\C-o": "fast_cd; clear\n"'
 
 ## source nvm
 #-----------------------------------------------------
