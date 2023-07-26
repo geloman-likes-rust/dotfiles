@@ -1,7 +1,8 @@
 return {
   "rebelot/kanagawa.nvim",
+  priority = 1000,
   config = function()
-    require("kanagawa").setup { transparent = true,
+    require("kanagawa").setup { transparent = false,
       commentStyle = { italic = true, bold = true },
       colors = {
         theme = {
