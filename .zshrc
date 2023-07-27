@@ -13,10 +13,10 @@ function fast_cd() {
 }
 
 # handy-scripts
-bindkey -s ^o "fast_cd\nclear\n"
-bindkey -s ^f "fvi\nclear\n"
-bindkey -s ^b "randbg\nclear\n"
-bindkey -s ^p "tmux-sessionizer\nclear\n"
+bindkey -s ^o "fast_cd; clear\n"
+bindkey -s ^f "fvi; clear\n"
+bindkey -s ^b "randbg; clear\n"
+bindkey -s ^p "tmux-sessionizer; clear\n"
 
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
