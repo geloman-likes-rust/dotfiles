@@ -63,7 +63,7 @@ require('telescope').setup {
     },
 
     file_ignore_patterns = ignore_files,
-    selection_caret = " ",
+    selection_caret = "  ",
     prompt_prefix = "   ",
   },
 }
@@ -77,3 +77,6 @@ vim.keymap.set('n', '<leader>lg', require('telescope.builtin').live_grep, { desc
 vim.keymap.set('n', '<leader>wd', require('telescope.builtin').diagnostics, { desc = '[W]orkspace [D]iagnostics' })
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
 vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
+
+vim.cmd("highlight! TelescopeSelectionCaret guifg=#FF52A2")
+vim.cmd("highlight! TelescopePromptNormal guifg=#dd9046")
