@@ -24,13 +24,13 @@ fast_cd() {
 }
 bind '"\C-o": "fast_cd; clear\n"'
 
-## source nvm
+## add nvm to PATH
 #-----------------------------------------------------
 [ -d $HOME/.nvm ] && export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-## source miniconda
+## add miniconda to PATH
 #-----------------------------------------------------
 [ -d ~/.miniconda/bin ] && PATH=$PATH:$HOME/.miniconda/bin && export PATH
 
@@ -48,6 +48,6 @@ WHITE=#EDEDED
 #-----------------------------------------------------
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash && export FZF_DEFAULT_OPTS="--ansi --color=bg+:$BG,fg+:$FG,gutter:-1,border:$PURPLE,hl:$MINT,hl+:$PINK,query:$PINK,pointer:$PINK,label:$WHITE,info:$MINT,spinner:$PURPLE,header:$PURPLE --border=rounded"
 
-## source cargo
+## add cargo to PATH
 #-----------------------------------------------------
 [ -d ~/.cargo ] && PATH=$PATH:$HOME/.cargo/bin && export PATH
