@@ -9,7 +9,7 @@ for type, icon in pairs(signs) do
 end
 
 -- disable showmode because i have lualine
-vim.opt.showmode = false
+vim.o.showmode = false
 
 -- tab space
 vim.o.tabstop = 2
