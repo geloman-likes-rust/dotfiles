@@ -78,6 +78,9 @@ require('lazy').setup({
         virt_text_pos = 'eol', -- 'eol' | 'overlay' | 'right_align'
         delay = 100,
       },
+      preview_config = {
+        border = "rounded"
+      },
       on_attach = function(bufnr)
         vim.keymap.set('n', '<leader>N', require('gitsigns').prev_hunk,
           { buffer = bufnr, desc = '[N] go to previous hunk' })
