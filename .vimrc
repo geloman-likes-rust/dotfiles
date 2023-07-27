@@ -26,7 +26,7 @@ colorscheme slate
 syntax on
 
 let g:enable_trasparent = 0
-let g:show_os_icon = 0
+let g:show_os_icon = 1
 
 " Set cursor shape
 let &t_SI = "\<Esc>[6 q"
@@ -206,7 +206,7 @@ highlight PmenuSbar guibg=#1a324a
 
 fu! WhatMode()
     if mode() == 'n'
-        highlight ModeMsg guibg=#6ECB63
+        highlight ModeMsg guibg=#8bcd5b
         return "NORMAL"
 
     elseif mode() == 'i'
@@ -271,10 +271,10 @@ highlight LightGray guibg=#a0a8b7 guifg=#1A212E
 
 set statusline=
 set statusline+=\%#ModeMsg#\ %{WhatMode()}
-set statusline+=\ %#Dark#\ %F
+set statusline+=\ %#Dark#\ %f
 set statusline+=\%=
 set statusline+=\ %{WhatOS()}
-set statusline+=\ \|\ %{&fileencoding}\ \|
+set statusline+=\ \│\ %{&fileencoding}\ \│
 set statusline+=\ %Y
 set statusline+=\ %#LightGray#\ buf:%n
 set statusline+=\ %#ModeMsg#\ %l:%L\ 
