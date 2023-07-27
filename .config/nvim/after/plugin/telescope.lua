@@ -8,10 +8,9 @@ require('telescope').setup {
   pickers = {
     colorscheme = {
       initial_mode = "normal",
-      enable_preview = true,
       layout_config = {
-        width = 0.50,
-        preview_width = 0.05
+        width = 0.40,
+        height = 0.60,
       },
     },
 
@@ -22,6 +21,10 @@ require('telescope').setup {
     live_grep = {},
 
     help_tags = {},
+
+    diagnostics = {
+      initial_mode = "normal",
+    },
 
     buffers = {
       initial_mode = "normal",
