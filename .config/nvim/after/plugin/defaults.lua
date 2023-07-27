@@ -8,6 +8,9 @@ for type, icon in pairs(signs) do
   vim.fn.sign_define(hl, { text = icon, texthl = hl })
 end
 
+-- disable showmode because i have lualine
+vim.opt.showmode = false
+
 -- tab space
 vim.o.tabstop = 2
 vim.o.softtabstop = 2
