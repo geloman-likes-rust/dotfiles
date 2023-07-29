@@ -69,7 +69,7 @@ keymap("n", "<leader>gc", ":Git commit<cr>", { noremap = true, silent = true, de
 keymap("n", "<leader>G", ":vertical Git<cr>", { noremap = true, silent = true, desc = "[G]it fugitive" })
 keymap("n", "<leader>gds", ":Gvdiffsplit<cr>", { noremap = true, silent = true, desc = "[G]it [D]iff [S]plit" })
 
-keymap("n", "<leader>e", ":Lex 25<cr>", { noremap = true, silent = true, desc = "toggle Lex" })
+keymap("n", "<leader>e", ":Lex 25<cr>", { noremap = true, silent = true, desc = "toggle Lex 25" })
 
 -- close current buffer
 keymap("n", "q", "<C-w>q")
