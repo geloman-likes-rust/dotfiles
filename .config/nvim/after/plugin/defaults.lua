@@ -21,8 +21,8 @@ vim.o.autoindent = true
 -- file explorer
 vim.g.netrw_banner = 0 -- disable explorer banner
 
--- disable highlight on search
--- vim.o.hlsearch = false
+-- enable highlight on search
+vim.o.hlsearch = true
 
 -- sync clipboard between os and neovim.
 vim.o.clipboard = 'unnamedplus'
