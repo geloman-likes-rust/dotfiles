@@ -91,6 +91,11 @@ keymap("n", "<C-n>", ":bNext<cr>", { silent = true })
 keymap("n", "<left>", ":bprevious<cr>", { silent = true })
 keymap("n", "<right>", ":bNext<cr>", { silent = true })
 
+-- switch tabs
+keymap("n", "<S-tab>", ":tabprevious<cr>", { silent = true })
+keymap("n", "<tab>", ":tabNext<cr>", { silent = true })
+keymap("n", "<C-q>", ":tabclose<cr>", { silent = true })
+
 -- here because.. haha i don't know either LOL
 keymap({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
