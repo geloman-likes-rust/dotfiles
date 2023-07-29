@@ -17,8 +17,8 @@ before using all of my handy scripts, u must have all of these tools installed o
 
     - Default keymaps:
         - **`<cr>`**:    opens the selected file.
-        - **`<c-k>`**:   move the selection to the previous entry.
-        - **`<c-j>`**:   move the selection to the next entry.
+        - **`<c-k>`**:   move the selection cursor upward.
+        - **`<c-j>`**:   move the selection cursor downward.
 
  [**`dirty`**](handy-scripts/dirty) - show all modified/untracked files in your project directory and open the selected file in vim.
 
