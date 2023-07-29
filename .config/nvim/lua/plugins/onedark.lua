@@ -6,7 +6,6 @@ return {
       style = 'deep',
       transparent = true,
       term_colors = true,
-      toggle_style_key = '<leader>t',
       code_style = {
         comments = 'italic,bold',
         keywords = 'none',
