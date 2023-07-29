@@ -66,7 +66,7 @@ keymap("n", "+", "horizontal resize +3<cr>", { noremap = true, silent = true, de
 
 keymap("n", "<leader>q", ":set hlsearch!<cr>", { noremap = true, silent = true, desc = "toggle highlight search" })
 keymap("n", "<leader>gc", ":Git commit<cr>", { noremap = true, silent = true, desc = "[G]it [C]ommit" })
-keymap("n", "<leader>gp", ":Git push<cr>", { noremap = true, silent = true, desc = "[G]it [P]ush" })
+keymap("n", "<leader>gp", ":Git push<cr>", { noremap = true, desc = "[G]it [P]ush" })
 keymap("n", "<leader>G", ":vertical Git<cr>", { noremap = true, silent = true, desc = "[G]it fugitive" })
 keymap("n", "<leader>gds", ":Gvdiffsplit<cr>", { noremap = true, silent = true, desc = "[G]it [D]iff [S]plit" })
 
