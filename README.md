@@ -14,7 +14,7 @@ This will uninstall [everything](uninstall.sh)
 ~/.dotfiles/uninstall.sh
 ```
 
-[**`handy-scripts`**](./handy-scripts-userguide.md) user-friendly guide.
+[**`handy-scripts`**](handy-scripts__userguide.md) user-friendly guide.
 
 ![debian](https://img.shields.io/badge/debian-D14D72?style=for-the-badge&logo=debian&logoColor=white)
 ![fedora](https://img.shields.io/badge/fedora-19376D?style=for-the-badge&logo=fedora&logoColor=fff)
