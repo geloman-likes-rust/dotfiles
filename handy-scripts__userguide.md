@@ -44,20 +44,20 @@ before using all of my handy scripts, u must have all of these tools installed o
         - **`<c-j>`** :  move the selection cursor downward.
 
     - add this on your `.bashrc` if your default shell is bash:
-    ```sh
-    fast_cd() {
-      selected=$(fast-cd); [[ -z $selected ]] || cd $selected
-    }
-    bind '"\C-o": "fast_cd; clear\n"'
-    ```
+        ```sh
+        fast_cd() {
+          selected=$(fast-cd); [[ -z $selected ]] || cd $selected
+        }
+        bind '"\C-o": "fast_cd; clear\n"'
+        ```
 
     - add this on your `.zshrc` if your default shell is zsh:
-    ```sh
-    function fast_cd() {
-        selected=$(fast-cd); [[ -z $selected ]] || cd $selected
-    }
-    bindkey -s ^o "fast_cd; clear\n"
-    ```
+        ```sh
+        function fast_cd() {
+            selected=$(fast-cd); [[ -z $selected ]] || cd $selected
+        }
+        bindkey -s ^o "fast_cd; clear\n"
+        ```
 
 - [**`git-status`**](handy-scripts/git-status) - syntax highlighted and shorter git status.
 
