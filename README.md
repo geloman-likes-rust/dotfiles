@@ -25,9 +25,9 @@ This will uninstall [everything](uninstall.sh)
 
 ## `handy-scripts` user-friendly guide
 
-### some prerequisite tools:
+before using all of these handy scripts, u must have all of these tools installed on your machine:
 
-before using all of these scripts, u must have all of these tools installed on your machine:
+### some prerequisite tools:
 
 - [**`nvim`**](https://github.com/neovim/neovim) - neovim
 - [**`rg`**](https://github.com/BurntSushi/ripgrep) - ripgrep
