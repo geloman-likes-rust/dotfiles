@@ -57,7 +57,7 @@ before using all of these handy scripts, u must have all of these tools installe
         - **`<c-k>`**: move the selection cursor upward.
         - **`<c-j>`**: move the selection cursor downward.
 
-    - add this on your .bashrc if your default shell is bash:
+    - add this on your `.bashrc` if your default shell is bash:
     ```sh
     fast_cd() {
       selected=$(fast-cd); [[ -z $selected ]] || cd $selected
@@ -65,7 +65,7 @@ before using all of these handy scripts, u must have all of these tools installe
     bind '"\C-o": "fast_cd; clear\n"'
     ```
 
-    - add this on your .zshrc if your default shell is zsh:
+    - add this on your `.zshrc` if your default shell is zsh:
     ```sh
     function fast_cd() {
         selected=$(fast-cd); [[ -z $selected ]] || cd $selected
