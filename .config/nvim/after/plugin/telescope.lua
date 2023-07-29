@@ -16,6 +16,7 @@ require('telescope').setup {
 
     grep_string = {
       word_match = "-w",
+      initial_mode = "normal",
     },
 
     live_grep = {},
