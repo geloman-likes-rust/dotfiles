@@ -11,7 +11,7 @@ before using all of my handy scripts, u must have all of these tools installed o
 - [**`bat`**](https://github.com/sharkdp/bat) - clone of cat but with syntax highlighting
 - [**`delta`**](https://github.com/dandavison/delta) - git-delta
 
-### handy-scripts:
+### handy-scripts user guide:
 
 - **`fvi`** - find files recursively and opens it in neovim.
 
