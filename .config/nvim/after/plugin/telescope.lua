@@ -19,9 +19,9 @@ require('telescope').setup {
       initial_mode = "normal",
     },
 
-    live_grep = {},
-
-    help_tags = {},
+    oldfiles = {
+      initial_mode = "normal",
+    },
 
     diagnostics = {
       initial_mode = "normal",
