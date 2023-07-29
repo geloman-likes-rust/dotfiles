@@ -1,5 +1,7 @@
-local opts = { noremap = true, silent = true }
-local keymap = vim.api.nvim_set_keymap
+local function keymap(mode, lhs, rhs, opts)
+  opts = opts or {}
+  vim.keymap.set(mode, lhs, rhs, opts)
+end
 
 -- Default DiagnosticSign
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
