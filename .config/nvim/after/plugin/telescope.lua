@@ -75,6 +75,8 @@ require('telescope').setup {
 }
 
 vim.keymap.set('n', '<leader>gs', require('telescope.builtin').git_status, { desc = '[G]it [S]tatus' })
+vim.keymap.set('n', '<leader>hp', require('telescope.builtin').highlights, { desc = '[H]ighlight [P]review' })
+vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = '[G]it [F]iles' })
 vim.keymap.set('n', '<leader>cc', require('telescope.builtin').colorscheme, { desc = '[C]hange [C]olorscheme' })
 vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, { desc = '[F]ind [F]iles' })
 vim.keymap.set('n', '<leader>hh', require('telescope.builtin').help_tags, { desc = 'Search [H][H]elp' })
