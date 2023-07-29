@@ -75,6 +75,9 @@ keymap("n", "<leader>e", ":Lex 25<cr>", { noremap = true, silent = true, desc = 
 -- close current buffer
 keymap("n", "q", "<C-w>q")
 
+-- toggle cursorline
+keymap("n", "<cr>", ":set cursorline!<cr>", { noremap = true, silent = true })
+
 -- move cursor to bottom/top and center the screen
 keymap("n", "H", "Hzz")
 keymap("n", "L", "Lzz")
