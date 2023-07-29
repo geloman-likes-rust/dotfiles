@@ -8,9 +8,6 @@ for type, icon in pairs(signs) do
   vim.fn.sign_define(hl, { text = icon, texthl = hl })
 end
 
--- disable showmode because i have lualine
-vim.o.showmode = false
-
 -- tab space
 vim.o.tabstop = 2
 vim.o.softtabstop = 2
@@ -23,7 +20,7 @@ vim.o.autoindent = true
 vim.g.netrw_banner = 0 -- disable explorer banner
 
 -- disable highlight on search
-vim.o.hlsearch = false
+-- vim.o.hlsearch = false
 
 -- sync clipboard between os and neovim.
 vim.o.clipboard = 'unnamedplus'
@@ -62,6 +59,9 @@ vim.cmd.colorscheme 'onedark'
 -- window's width resize
 keymap("n", "=", "[[<cmd>vertical resize +5<cr>]]", opts)
 keymap("n", "-", "[[<cmd>vertical resize -5<cr>]]", opts)
+
+-- toggle highlight search
+keymap("n", "q", "[[<cmd>set hlsearch!<cr>]]", opts)
 
 -- window's height resize
 keymap("n", "_", "[[<cmd>horizontal resize -3<cr>]]", opts)
