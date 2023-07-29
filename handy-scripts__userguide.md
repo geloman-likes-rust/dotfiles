@@ -59,7 +59,7 @@ before using all of my handy scripts, u must have all of these tools installed o
     bindkey -s ^o "fast_cd; clear\n"
     ```
 
-- [**`git-status`**](handy-scripts/git-status) - docs coming soon
+- [**`git-status`**](handy-scripts/git-status) - `syntax highlighted` and `shorter` git status.
 
 - [**`git-add`**](handy-scripts/git-add) - docs coming soon
 
@@ -69,9 +69,9 @@ before using all of my handy scripts, u must have all of these tools installed o
 
 - [**`live-grep`**](handy-scripts/live-grep) - docs coming soon
 
-- [**`randbg`**](handy-scripts/randbg) - docs coming soon
+- [**`randbg`**](handy-scripts/randbg) - `randomly change` current wallpaper background.
 
-- [**`setbg`**](handy-scripts/setbg) - docs coming soon
+- [**`setbg`**](handy-scripts/setbg) - set wallpaper background.
 
 - [**`se`**](handy-scripts/se) - docs coming soon
 
