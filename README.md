@@ -23,40 +23,41 @@ This will uninstall [everything](uninstall.sh)
 ![neovim](https://img.shields.io/badge/neovim-62CDFF?style=for-the-badge&logo=neovim&logoColor=2B7A0B)
 
 
-# `handy-scripts` user-friendly guide
+## `handy-scripts` user-friendly guide
 
-some prerequisite tools:
+### some prerequisite tools:
 
 before using all of these scripts, u must have all of these tools installed on your machine:
-    [**`nvim`**](https://github.com/neovim/neovim) - neovim
-    [**`rg`**](https://github.com/BurntSushi/ripgrep) - ripgrep
-    [**`fd`**](https://github.com/sharkdp/fd) - fd-find
-    [**`fzf`**](https://github.com/junegunn/fzf) - fuzzy finder
-    [**`bat`**](https://github.com/sharkdp/bat) - clone of cat but with syntax highlighting
-    [**`delta`**](https://github.com/dandavison/delta) - git-delta
+
+    - [**`nvim`**](https://github.com/neovim/neovim) - neovim
+    - [**`rg`**](https://github.com/BurntSushi/ripgrep) - ripgrep
+    - [**`fd`**](https://github.com/sharkdp/fd) - fd-find
+    - [**`fzf`**](https://github.com/junegunn/fzf) - fuzzy finder
+    - [**`bat`**](https://github.com/sharkdp/bat) - clone of cat but with syntax highlighting
+    - [**`delta`**](https://github.com/dandavison/delta) - git-delta
 
 - `fvi` - find files recursively and opens it in neovim.
 
-    Default keymaps:
+    - Default keymaps:
         - <cr>: opens the selected file
         - <c-k>: move the selection to the previous entry
         - <c-j>: move the selection to the next entry
 
 - `fast-remove` - fast remove any file or directory.
 
-    Default keymaps:
+    - Default keymaps:
         - <c-k>: move the selection cursor upward.
         - <c-j>: move the selection cursor downward.
 
 - `fast-cd` - fast change directory.
 
-    Default keymaps:
+    - Default keymaps:
         - <c-k>: move the selection cursor upward.
         - <c-j>: move the selection cursor downward.
 
 - `dirty` - show all modified/untracked files in your project and open the selected file in vim.
 
-    Default keymaps:
+    - Default keymaps:
         - <cr>: opens the selected file
         - <c-k>: move the selection cursor upward.
         - <c-j>: move the selection cursor downward.
