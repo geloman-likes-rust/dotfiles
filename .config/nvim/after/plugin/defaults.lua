@@ -83,6 +83,10 @@ keymap("n", "H", "Hzz")
 keymap("n", "L", "Lzz")
 keymap("n", "G", "Gzz")
 
+-- switch buffers
+keymap("n", "<left>", ":bprevious<cr>", { silent = true })
+keymap("n", "<right>", ":bNext<cr>", { silent = true })
+
 -- here because.. haha i don't know either LOL
 keymap({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
