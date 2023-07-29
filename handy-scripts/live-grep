@@ -25,4 +25,4 @@ file_name=$(echo $selected | awk -F: '{print $1}')
 line_number=$(echo $selected | awk -F: '{print $2}')
 column_number=$(echo $selected | awk -F: '{print $3}')
 search_string=$(echo $selected | awk -F: '{print $4}')
-nvim +$line_number -c "normal zt${column_number}|" "+match Search /\%.c${search_string}/" $file_name
+nvim +$line_number -c "normal zt${column_number}|" "+match Search /\%.l${search_string}/" $file_name
