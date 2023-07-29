@@ -40,9 +40,16 @@ before using all of these handy scripts, u must have all of these tools installe
 - **`fvi`** - find files recursively and opens it in neovim.
 
     - Default keymaps:
-        - **`<cr>`**: opens the selected file
-        - **`<c-k>`**: move the selection to the previous entry
-        - **`<c-j>`**: move the selection to the next entry
+        - **`<cr>`**: opens the selected file.
+        - **`<c-k>`**: move the selection to the previous entry.
+        - **`<c-j>`**: move the selection to the next entry.
+
+- **`dirty`** - show all modified/untracked files in your project and open the selected file in vim.
+
+    - Default keymaps:
+        - **`<cr>`**: opens the selected file.
+        - **`<c-k>`**: move the selection cursor upward.
+        - **`<c-j>`**: move the selection cursor downward.
 
 - **`fast-remove`** - fast remove any file or directory.
 
@@ -53,7 +60,7 @@ before using all of these handy scripts, u must have all of these tools installe
 - **`fast-cd`** - fast change directory when u press **`ctrl+o`**.
 
     - Default keymaps:
-        - **`<cr>`**: cd to selected directory
+        - **`<cr>`**: cd to selected directory.
         - **`<c-k>`**: move the selection cursor upward.
         - **`<c-j>`**: move the selection cursor downward.
 
@@ -73,9 +80,22 @@ before using all of these handy scripts, u must have all of these tools installe
     bindkey -s ^o "fast_cd; clear\n"
     ```
 
-- **`dirty`** - show all modified/untracked files in your project and open the selected file in vim.
+- **`git-status`** - docs coming soon
 
-    - Default keymaps:
-        - **`<cr>`**: opens the selected file
-        - **`<c-k>`**: move the selection cursor upward.
-        - **`<c-j>`**: move the selection cursor downward.
+- **`git-add`** - docs coming soon
+
+- **`git-unstage-file`** - docs coming soon
+
+- **`git-checkout`** - docs coming soon
+
+- **`live-grep`** - docs coming soon
+
+- **`randbg`** - docs coming soon
+
+- **`setbg`** - docs coming soon
+
+- **`se`** - docs coming soon
+
+- **`switch_shell`** - docs coming soon
+
+- **`tmux-sessionizer`** - docs coming soon
