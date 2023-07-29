@@ -51,11 +51,28 @@ before using all of these handy scripts, u must have all of these tools installe
         - **`c-k>`**: move the selection cursor upward.
         - **`c-j>`**: move the selection cursor downward.
 
-- **`fast-cd`** - fast change directory.
+- **`fast-cd`** - fast change directory when u press **`ctrl+o`**.
 
     - Default keymaps:
+        - **`<cr>`**: cd to selected directory
         - **`<c-k>`**: move the selection cursor upward.
         - **`<c-j>`**: move the selection cursor downward.
+
+add this on your .bashrc if your default shell is bash:
+```sh
+fast_cd() {
+  selected=$(fast-cd); [[ -z $selected ]] || cd $selected
+}
+bind '"\C-o": "fast_cd; clear\n"'
+```
+
+add this on your .zshrc if your default shell is zsh:
+```sh
+function fast_cd() {
+    selected=$(fast-cd); [[ -z $selected ]] || cd $selected
+}
+bindkey -s ^o "fast_cd; clear\n"
+```
 
 - **`dirty`** - show all modified/untracked files in your project and open the selected file in vim.
 
