@@ -43,6 +43,11 @@ require('telescope').setup {
     git_status = {
       initial_mode = "normal",
     },
+
+    git_files = {
+      show_untracked = true
+    },
+
   },
 
   defaults = {
