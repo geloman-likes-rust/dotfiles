@@ -36,6 +36,8 @@ before using all of these scripts, u must have all of these tools installed on y
 - [**`bat`**](https://github.com/sharkdp/bat) - clone of cat but with syntax highlighting
 - [**`delta`**](https://github.com/dandavison/delta) - git-delta
 
+### handy-scripts:
+
 - `fvi` - find files recursively and opens it in neovim.
 
     - Default keymaps:
