@@ -22,7 +22,6 @@ This will uninstall [everything](uninstall.sh)
 ![bash](https://img.shields.io/badge/bash-1B2430?style=for-the-badge&logo=gnu-bash&logoColor=fff)
 ![neovim](https://img.shields.io/badge/neovim-62CDFF?style=for-the-badge&logo=neovim&logoColor=2B7A0B)
 
-
 ## `handy-scripts` user-friendly guide
 
 before using all of these handy scripts, u must have all of these tools installed on your machine:
@@ -58,21 +57,21 @@ before using all of these handy scripts, u must have all of these tools installe
         - **`<c-k>`**: move the selection cursor upward.
         - **`<c-j>`**: move the selection cursor downward.
 
-add this on your .bashrc if your default shell is bash:
-```sh
-fast_cd() {
-  selected=$(fast-cd); [[ -z $selected ]] || cd $selected
-}
-bind '"\C-o": "fast_cd; clear\n"'
-```
+    - add this on your .bashrc if your default shell is bash:
+    ```sh
+    fast_cd() {
+      selected=$(fast-cd); [[ -z $selected ]] || cd $selected
+    }
+    bind '"\C-o": "fast_cd; clear\n"'
+    ```
 
-add this on your .zshrc if your default shell is zsh:
-```sh
-function fast_cd() {
-    selected=$(fast-cd); [[ -z $selected ]] || cd $selected
-}
-bindkey -s ^o "fast_cd; clear\n"
-```
+    - add this on your .zshrc if your default shell is zsh:
+    ```sh
+    function fast_cd() {
+        selected=$(fast-cd); [[ -z $selected ]] || cd $selected
+    }
+    bindkey -s ^o "fast_cd; clear\n"
+    ```
 
 - **`dirty`** - show all modified/untracked files in your project and open the selected file in vim.
 
