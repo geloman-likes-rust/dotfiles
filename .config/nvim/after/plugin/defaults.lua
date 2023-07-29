@@ -66,6 +66,7 @@ keymap("n", "+", "horizontal resize +3<cr>", { noremap = true, silent = true, de
 
 keymap("n", "<leader>q", ":set hlsearch!<cr>", { noremap = true, silent = true, desc = "toggle highlight search" })
 keymap("n", "<leader>gc", ":Git commit<cr>", { noremap = true, silent = true, desc = "[G]it [C]ommit" })
+keymap("n", "<leader>G", ":Git<cr>", { noremap = true, silent = true, desc = "[G]it fugitive" })
 keymap("n", "<leader>gds", ":Gvdiffsplit<cr>", { noremap = true, silent = true, desc = "[G]it [D]iff [S]plit" })
 
 -- move cursor to bottom/top and center the screen
