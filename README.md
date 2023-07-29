@@ -38,28 +38,28 @@ before using all of these scripts, u must have all of these tools installed on y
 
 ### handy-scripts:
 
-- `fvi` - find files recursively and opens it in neovim.
+- **`fvi`** - find files recursively and opens it in neovim.
 
     - Default keymaps:
-        <cr>: opens the selected file
-        <c-k>: move the selection to the previous entry
-        <c-j>: move the selection to the next entry
+        **`<cr>`**: opens the selected file
+        **`<c-k>`**: move the selection to the previous entry
+        **`<c-j>`**: move the selection to the next entry
 
-- `fast-remove` - fast remove any file or directory.
-
-    - Default keymaps:
-        <c-k>: move the selection cursor upward.
-        <c-j>: move the selection cursor downward.
-
-- `fast-cd` - fast change directory.
+- **`fast-remove`** - fast remove any file or directory.
 
     - Default keymaps:
-        <c-k>: move the selection cursor upward.
-        <c-j>: move the selection cursor downward.
+        **`c-k>`**: move the selection cursor upward.
+        **`c-j>`**: move the selection cursor downward.
 
-- `dirty` - show all modified/untracked files in your project and open the selected file in vim.
+- **`fast-cd`** - fast change directory.
 
     - Default keymaps:
-        <cr>: opens the selected file
-        <c-k>: move the selection cursor upward.
-        <c-j>: move the selection cursor downward.
+        **`<c-k>`**: move the selection cursor upward.
+        **`<c-j>`**: move the selection cursor downward.
+
+- **`dirty`** - show all modified/untracked files in your project and open the selected file in vim.
+
+    - Default keymaps:
+        **`<cr>`**: opens the selected file
+        **`<c-k>`**: move the selection cursor upward.
+        **`<c-j>`**: move the selection cursor downward.
