@@ -57,28 +57,25 @@ vim.wo.relativenumber = true
 vim.cmd.colorscheme 'onedark'
 
 -- window's width resize
-keymap("n", "=", "[[<cmd>vertical resize +5<cr>]]", opts)
-keymap("n", "-", "[[<cmd>vertical resize -5<cr>]]", opts)
-
--- toggle highlight search
-keymap("n", "q", "[[<cmd>set hlsearch!<cr>]]", opts)
+keymap("n", "=", ":vertical resize +5<cr>", { noremap = true, silent = true, desc = "[=] (+) vertical resize" })
+keymap("n", "-", ":vertical resize -5<cr>", { noremap = true, silent = true, desc = "[-] (-) vertical resize" })
 
 -- window's height resize
-keymap("n", "_", "[[<cmd>horizontal resize -3<cr>]]", opts)
-keymap("n", "+", "[[<cmd>horizontal resize +3<cr>]]", opts)
-
--- git diffsplit
-vim.keymap.set("n", "<leader>gds", ":Gvdiffsplit<CR>", opts)
+keymap("n", "_", "horizontal resize -3<cr>", { noremap = true, silent = true, desc = "[_] (-) horizontal resize" })
+keymap("n", "+", "horizontal resize +3<cr>", { noremap = true, silent = true, desc = "[+] (+) horizontal resize" })
+keymap("n", "<leader>q", ":set hlsearch!<cr>", { noremap = true, silent = true, desc = "toggle highlight search" })
+keymap("n", "<leader>gc", ":Git commit<cr>", { noremap = true, silent = true, desc = "[G]it [C]ommit" })
+keymap("n", "<leader>gds", ":Gvdiffsplit<cr>", { noremap = true, silent = true, desc = "[G]it [D]iff [S]plit" })
 
 -- move cursor to bottom/top and center the screen
-vim.keymap.set("n", "H", "Hzz")
-vim.keymap.set("n", "L", "Lzz")
-vim.keymap.set("n", "G", "Gzz")
+keymap("n", "H", "Hzz")
+keymap("n", "L", "Lzz")
+keymap("n", "G", "Gzz")
 
 -- here because.. haha i don't know either LOL
-vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
-vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+keymap({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
+keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+keymap('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- format on save
 vim.api.nvim_command('autocmd BufWritePre * Format')
