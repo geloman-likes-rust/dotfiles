@@ -2,7 +2,7 @@
 
 
 [ -z "$(git rev-parse --show-toplevel 2> /dev/null)" ] && exit 0
-[ -z "$(git ls-files -m --exclude-standard --other)" ] && echo "working tree clean, nothing to stage" && exit 0
+[ -z "$(git ls-files "$(git rev-parse --show-toplevel)" -m --exclude-standard --other)" ] && echo "working tree clean, nothing to stage" && exit 0
 [ -z "$1" ] || git add "$1"
 [ -z "$1" ] || exit 0
 
