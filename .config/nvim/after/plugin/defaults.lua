@@ -65,7 +65,7 @@ keymap("n", "_", "horizontal resize -3<cr>", { noremap = true, silent = true, de
 keymap("n", "+", "horizontal resize +3<cr>", { noremap = true, silent = true, desc = "[+] (+) horizontal resize" })
 
 -- toggle highlight search
-keymap("n", "<leader>hs", ":set hlsearch!<cr>", { noremap = true, silent = true, desc = "toggle [H]ighlight [S]earch" })
+keymap("n", "<leader>hl", ":set hlsearch!<cr>", { noremap = true, silent = true, desc = "toggle [H]ighlight [S]earch" })
 
 -- toggle Lexplore
 keymap("n", "<leader>e", ":Lex 25<cr>", { noremap = true, silent = true, desc = "toggle Lex 25" })
