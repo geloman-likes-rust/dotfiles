@@ -1,10 +1,9 @@
 #!/bin/sh
 
-[ -z $(git rev-parse --show-toplevel 2> /dev/null) ] && exit 0
+[ -z "$(git rev-parse --show-toplevel 2> /dev/null)" ] && exit 0
 
 ORANGE='\033[0;33m'
 RED='\033[0;91m'
-PURPLE='\e[0;35m'
 CYAN='\033[0;36m'
 
 dirty_preview() {
@@ -15,12 +14,12 @@ dirty_preview() {
     --header "$(printf " ${ORANGE}Open File ")" \
     --header-first \
     --preview-label "$(printf " ${ORANGE}File Preview ")" \
-    --border-label "$(printf " ${PURPLE}Dirty Files ")" \
+    --border-label "$(printf "${RED} Dirty Files ")" \
     --padding 1 \
     --prompt " " \
     --pointer ""
 }
 
-dirty_files=$(git ls-files $(git rev-parse --show-toplevel 2> /dev/null) -m 2> /dev/null | xargs -I {} printf "${RED}{}\n")
-untracked_files=$(git ls-files $(git rev-parse --show-toplevel 2> /dev/null) --exclude-standard --others 2> /dev/null | xargs -I {} printf "${CYAN}{}\n")
-[[ -z $dirty_files && -z $untracked_files ]] && echo "no dirty files, working tree clean" && exit 0 || selected=$(echo $dirty_files $untracked_files | tr ' ' '\n' | dirty_preview); [[ -z $selected ]] || nvim $selected
+dirty_files=$(git ls-files "$(git rev-parse --show-toplevel 2> /dev/null)" -m 2> /dev/null | xargs -I {} printf "${RED}{}\n")
+untracked_files=$(git ls-files "$(git rev-parse --show-toplevel 2> /dev/null)" --exclude-standard --others 2> /dev/null | xargs -I {} printf "${CYAN}{}\n")
+[ -z "$dirty_files" ] && [ -z "$untracked_files" ] && echo "no dirty files, working tree clean" || selected=$(echo "$dirty_files" "$untracked_files" | tr ' ' '\n' | dirty_preview); [ -z "$selected" ] || nvim "$selected"
