@@ -13,7 +13,6 @@ set hidden
 set noerrorbells
 set nowrap
 set incsearch
-set nohlsearch
 set timeout
 set timeoutlen=300
 set updatetime=250
