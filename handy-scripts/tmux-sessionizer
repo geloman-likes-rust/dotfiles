@@ -1,22 +1,21 @@
 #!/usr/bin/env sh
 
 CYAN='\033[0;36m'
-[[ -d ~/.dotfiles && -d ~/.development && -d ~/.personal ]] || exit 0
+[ -d ~/.dotfiles ] && [ -d ~/.development ] && [ -d ~/.personal ] || exit 0
 
-# FUZZY FIND DIRECTORIES
-[[ $# -eq 1 ]] && selected=$1 || selected=$(find ~/.dotfiles ~/.development ~/.personal -type d | fzf --no-mouse --border-label "$(printf " ${CYAN}tmux-sessionizer ")" --border=rounded --margin=1 --header-first --header "Create tmux session" --prompt "  " --pointer "")
+[ $# -eq 1 ] && selected=$1 || selected=$(find ~/.dotfiles ~/.development ~/.personal -type d | fzf --no-mouse --border-label "$(printf " ${CYAN}tmux-sessionizer ")" --border=rounded --margin=1 --header-first --header "Create tmux session" --prompt "  " --pointer "")
 
-# EXITS IF NO SELECTED
-[[ -z $selected ]] && exit 0
+[ -z "$selected" ] && exit 0
 
 selected_name=$(basename "$selected" | tr . _)
 tmux_running=$(pgrep tmux)
 
-# CREATE NEW TMUX SESSION IF TMUX SERVER IS NOT RUNNING
-[[ -z $TMUX ]] && [[ -z $tmux_running ]] && tmux new-session -s $selected_name -c $selected && exit 0
+[ -z "$TMUX" ] && [ -z "$tmux_running" ] && tmux new-session -s "$selected_name" -c "$selected" && exit 0
 
-# CREATE NEW TMUX SESSION IF THE SELECTED BASENAME IS NOT A SESSION
-! tmux has-session -t=$selected_name 2> /dev/null && tmux new-session -ds $selected_name -c $selected
+! tmux has-session -t="$selected_name" 2> /dev/null && tmux new-session -ds "$selected_name" -c "$selected"
 
-# ATTACH TO TMUX SESSION IF TMUX HAS A SESSION SIMILAR TO SELECTED BASENAME AND IF HAS NO RUNNING TMUX SESSION (OR CURRENTLY DEATTACHED)
-tmux has-session -t $selected_name && [[ -z $TMUX ]] && tmux attach-session -t $selected_name || tmux switch-client -t $selected_name 
+tmux has-session -t "$selected_name"
+
+[ -z "$TMUX" ] || tmux switch-client -t "$selected_name"
+
+tmux attach-session -t "$selected_name"
