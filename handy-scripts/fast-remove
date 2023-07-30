@@ -34,24 +34,24 @@ fzf_directory() {
 }
 
 remove_file() {
-  local selected=$(rg --files --sort-files --hidden --glob="!{**.git/*,**/node_modules/*,.cache,**.jpg,**.png,**.mp3,**.mp4,**.rpm}" | fzf_file)
-  [[ -z $selected ]] && exit 0
+  selected="$(rg --files --sort-files --hidden --glob="!{**.git/*,**/node_modules/*,.cache,**.jpg,**.png,**.mp3,**.mp4,**.rpm}" | fzf_file)"
+  [ -z $selected ] && exit 0
   response=$(printf "${GREEN}NO ${RED}YES" | tr ' ' '\n' | fzf --border-label "$(printf "${ORANGE} Do u really want to remove this file? ")" --header="$(printf "${WHITE}Remove ${ORANGE}${selected}${NC}")" --border=rounded --margin=15% --pointer "" --prompt "  ")
-  [[ "$response" = "YES" ]] && rm -rdf $selected && printf "\n${RED} Removed ${ORANGE}file:\n\n\t${NC}filename: ${ORANGE}${selected}${NC}\n\n"
+  [ "$response" = "YES" ] && rm -rdf $selected && printf "\n${RED} Removed ${ORANGE}file:\n\n\t${NC}filename: ${ORANGE}${selected}${NC}\n\n"
 }
 
 remove_directory() {
-  local selected=$(fd --hidden --type d | fzf_directory)
-  [[ -z $selected ]] && exit 0
+  selected=$(fd --hidden --type d | fzf_directory)
+  [ -z "$selected" ] && exit 0
   response=$(printf "NO ${RED}YES" | tr ' ' '\n' | fzf --border-label "$(printf "${CYAN} Do u really want to remove this Directory? ")" --header="$(printf "Remove ${CYAN}${selected}${NC}")" --border=rounded --margin=15% --pointer "" --prompt "  ")
-  [[ "$response" = "YES" ]] && rm -rdf $selected && printf "\n${RED} Removed ${CYAN}Directory:\n\n\t${NC}dirname: ${CYAN}${selected}${NC}\n\n"
+  [ "$response" = "YES" ] && rm -rdf "$selected" && printf "\n${RED} Removed ${CYAN}Directory:\n\n\t${NC}dirname: ${CYAN}${selected}${NC}\n\n"
 }
 
 remove_what() {
-  local selected=$(printf "${CYAN}directory ${ORANGE}file" | tr ' ' '\n' | fzf --header-first --border-label " Remove what? " --header "Remove what?" --border=rounded --margin=30%,30% --pointer "" --prompt "  ")
-  [[ -z $selected ]] && exit 0
-  [[ "$selected" = "file" ]] && remove_file
-  [[ "$selected" = "directory" ]] && remove_directory
+  selected=$(printf "${CYAN}directory ${ORANGE}file" | tr ' ' '\n' | fzf --header-first --border-label " Remove what? " --header "Remove what?" --border=rounded --margin=30%,30% --pointer "" --prompt "  ")
+  [ -z "$selected" ] && exit 0
+  [ "$selected" = "file" ] && remove_file
+  [ "$selected" = "directory" ] && remove_directory
 }
 
 remove_what
