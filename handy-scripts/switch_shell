@@ -2,9 +2,9 @@
 
 switch_shell() {
   selected=$(cat /etc/shells | fzf --border=rounded --margin=10,30)
-  [[ -z $selected ]] && exit 0 || chsh -s $selected
+  [ -z "$selected" ] || chsh -s "$selected"
 }
 
 [ $HOSTNAME = "debian" ] && switch_shell
 [ $HOSTNAME = "ubuntu" ] && switch_shell
-[ $HOSTNAME = "fedora" ] && sudo lchsh $USER
+[ $HOSTNAME = "fedora" ] && sudo lchsh "$USER"
