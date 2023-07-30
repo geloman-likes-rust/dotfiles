@@ -1,6 +1,5 @@
 -- custom keymaps
-vim.keymap.set('n', '<leader>N', require('gitsigns').prev_hunk,
-  { buffer = bufnr, desc = '[N] go to previous hunk' })
+vim.keymap.set('n', '<leader>N', require('gitsigns').prev_hunk, { desc = '[N] go to previous hunk' })
 vim.keymap.set('n', '<leader>n', require('gitsigns').next_hunk, { desc = '[n] go to next hunk' })
 vim.keymap.set('n', '<leader>ph', require('gitsigns').preview_hunk, { desc = '[p]review [h]unk' })
 vim.keymap.set('n', 'ga', require('gitsigns').stage_hunk, { desc = '[G]it [A]dd Hunk' })
