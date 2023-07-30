@@ -93,7 +93,8 @@ highlight vimFuncSID guifg=#dd9046
 highlight vimNotation guifg=#dd9046
 
 highlight CursorLineNR ctermfg=11 guifg=NONE guibg=#2a324a
-highlight CursorLine ctermfg=11 guifg=NONE guibg=#2a324a
+highlight CursorLine gui=reverse guifg=NONE guibg=NONE
+highlight Cursor gui=reverse guifg=NONE guibg=NONE
 
 highlight Type guifg=#efbd5d
 highlight Comment guifg=#455574
