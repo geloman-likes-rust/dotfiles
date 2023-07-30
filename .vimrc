@@ -38,7 +38,7 @@ nnoremap G Gzz
 nnoremap H Hzz
 nnoremap L Lzz
 nnoremap <leader>gd <C-]>
-nnoremap <leader>n :bnext<cr> 
+nnoremap <silent> <c-n> :bnext<cr>
 nnoremap <leader>s :!ctags -R .
 
 " toggle highlight search
