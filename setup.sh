@@ -8,7 +8,7 @@
 cat ~/.dotfiles/.bashrc > ~/.bashrc
 cat ~/.dotfiles/.zshrc > ~/.zshrc
 
-[ -f ~/.profile ] && echo -e ". \"\$HOME/.dotfiles/.default_background\"" >> ~/.profile
+[ -f ~/.profile ] && echo ". \"\$HOME/.dotfiles/.default_background\"" >> ~/.profile
 
 ~/.dotfiles/install.sh
 [ -f ~/.local/bin/slnk ] || ~/.dotfiles/symlink.sh
