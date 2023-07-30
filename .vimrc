@@ -41,6 +41,9 @@ nnoremap <leader>gd <C-]>
 nnoremap <leader>n :bnext<cr> 
 nnoremap <leader>s :!ctags -R .
 
+" toggle highlight search
+nnoremap <silent> <leader>hl :set hlsearch!<cr>
+
 " toggle code snippet suggestion
 inoremap <C-G> <C-X><C-N>
 inoremap <tab> <C-N>
