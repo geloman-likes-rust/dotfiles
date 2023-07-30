@@ -1,8 +1,8 @@
 set -o vi
-EDITOR="nvim"
+export EDITOR="nvim"
 [ -f /etc/bashrc ] && . /etc/bashrc
-[ -f ~/.aliasrc ] && . ~/.aliasrc
-[ -f ~/.bash_prompt ] && . ~/.bash_prompt
+[ -f ~/.aliasrc ] && . "$HOME"/.aliasrc
+[ -f ~/.bash_prompt ] && . "$HOME"/.bash_prompt
 [ -d ~/.local/bin ] && PATH=$PATH:$HOME/.local/bin && export PATH
 
 ## bind (ctrl-p) --> tmux-sessionizer
@@ -20,13 +20,13 @@ bind -x '"\C-f": fvi'
 ## bind (ctrl-o) --> fast-cd
 #-----------------------------------------------------
 fast_cd() {
-  selected=$(fast-cd); [[ -z $selected ]] || cd $selected
+  selected=$(fast-cd); [[ -z $selected ]] || cd "$selected"
 }
 bind '"\C-o": "fast_cd; clear\n"'
 
 ## add nvm to PATH
 #-----------------------------------------------------
-[ -d $HOME/.nvm ] && export NVM_DIR="$HOME/.nvm"
+[ -d "$HOME"/.nvm ] && export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
@@ -36,7 +36,6 @@ bind '"\C-o": "fast_cd; clear\n"'
 
 
 RED=#f65866
-YELLOW=#FF8400
 PINK=#FF52A2
 PURPLE=#DAB8F3
 BG=#2a324a
