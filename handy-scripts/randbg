@@ -1,2 +1,2 @@
 #!/bin/sh
-xwallpaper --zoom ~/.personal/wallpaper/$(command ls ~/.personal/wallpaper | shuf -n 1)
+xwallpaper --zoom ~/.personal/wallpaper/"$(command ls ~/.personal/wallpaper | shuf -n 1)"
