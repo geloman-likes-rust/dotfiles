@@ -22,5 +22,5 @@ done
 for dir in ~/.dotfiles/.config/*; do
   config=$(basename "$dir")
   [ -d ~/.config/"$config" ] && rm -rdf ~/.config/"$config"
-  ln -s ~/.dotfiles/.config/"$config" ~/.config/"$config"
+  ln -sf ~/.dotfiles/.config/"$config" ~/.config/"$config"
 done
