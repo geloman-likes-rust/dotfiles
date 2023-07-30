@@ -21,7 +21,7 @@ before using all of my handy scripts, u must have all of these tools installed o
         - **`<c-j>`** : move the selection cursor downward.
 
 
-- [**`dirty`**](handy-scripts/dirty) - show all modified/untracked files in your project directory and open the selected file in vim.
+- [**`dirty`**](handy-scripts/dirty) - show all modified/untracked files in your project directory and open the selected file in neovim.
 
     - Default keymaps:
         - **`<cr>`** : opens the selected file.
