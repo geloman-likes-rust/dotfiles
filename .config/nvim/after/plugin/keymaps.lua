@@ -39,7 +39,7 @@ keymap("n", "<S-tab>", ":tabprevious<cr>", { silent = true })
 keymap("n", "<tab>", ":tabNext<cr>", { silent = true })
 keymap("n", "<C-q>", ":tabclose<cr>", { silent = true })
 
--- here because.. haha i don't know either LOL
+-- here because.. i don't know either LOL
 keymap({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 keymap('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
