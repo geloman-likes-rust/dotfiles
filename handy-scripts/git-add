@@ -1,10 +1,10 @@
 #!/bin/sh
 
 
-[[ -z $(git rev-parse --show-toplevel 2> /dev/null) ]] && exit 0
-[[ -z $(git ls-files -m --exclude-standard --other) ]] && echo "working tree clean, nothing to stage" && exit 0
-[[ -z $1 ]] || git add $1
-[[ -z $1 ]] || exit 0
+[ -z "$(git rev-parse --show-toplevel 2> /dev/null)" ] && exit 0
+[ -z "$(git ls-files -m --exclude-standard --other)" ] && echo "working tree clean, nothing to stage" && exit 0
+[ -z "$1" ] || git add "$1"
+[ -z "$1" ] || exit 0
 
 CYAN='\033[0;36m'
 GREEN='\033[0;92m'
@@ -41,29 +41,29 @@ dirty_preview() {
 }
 
 git_stage_untracked() {
-  local untracked_files=$(git ls-files $(git rev-parse --show-toplevel 2> /dev/null) --exclude-standard --others 2> /dev/null)
-  [[ -z $untracked_files ]] && echo "no untracked files, nothing to stage" && exit 0
-  local selected=$(echo $untracked_files | tr ' ' '\n' | xargs -I {} printf "${CYAN}{}\n" | file_preview)
-  [[ -z $selected ]] || git add $selected
+  local untracked_files="$(git ls-files "$(git rev-parse --show-toplevel 2> /dev/null)" --exclude-standard --others 2> /dev/null)"
+  [ -z "$untracked_files" ] && echo "no untracked files, nothing to stage" && exit 0
+  local selected="$(echo "$untracked_files" | tr ' ' '\n' | xargs -I {} printf "${CYAN}{}\n" | file_preview)"
+  [ -z "$selected" ] || git add "$selected"
 }
 
 git_stage_modified() {
-  local dirty_files=$(git ls-files $(git rev-parse --show-toplevel 2> /dev/null) -m 2> /dev/null)
-  [[ -z $dirty_files ]] && echo "no modified files, nothing to stage" && exit 0
-  local selected=$(echo $dirty_files | tr ' ' '\n' | xargs -I {} printf "${RED}{}\n" | dirty_preview)
-  [[ -z $selected ]] || git add $selected
+  local dirty_files="$(git ls-files "$(git rev-parse --show-toplevel 2> /dev/null)" -m 2> /dev/null)"
+  [ -z "$dirty_files" ] && echo "no modified files, nothing to stage" && exit 0
+  local selected="$(echo "$dirty_files" | tr ' ' '\n' | xargs -I {} printf "${RED}{}\n" | dirty_preview)"
+  [ -z "$selected" ] || git add "$selected"
 }
 
 git_stage_what() {
-  local selected=$(printf "${RED}modified ${CYAN}untracked" | tr ' ' '\n' | fzf --ansi --header-first --header "$(printf "git ${GREEN}add ${ORANGE}what?")" --margin=30%,30% --border-label "$(printf " ${ORANGE}Stage File ")" --pointer "" --prompt "  ")
-  [[ -z $selected ]] && exit 0
-  echo $selected
+  local selected="$(printf "${RED}modified ${CYAN}untracked" | tr ' ' '\n' | fzf --ansi --header-first --header "$(printf "git ${GREEN}add ${ORANGE}what?")" --margin=30%,30% --border-label "$(printf " ${ORANGE}Stage File ")" --pointer "" --prompt "  ")"
+  [ -z "$selected" ] && exit 0
+  echo "$selected"
 }
 
 git_stage() {
   local selected=$(git_stage_what)
-  [[ "$selected" = "modified" ]] && git_stage_modified
-  [[ "$selected" = "untracked" ]] && git_stage_untracked
+  [ "$selected" = "modified" ] && git_stage_modified
+  [ "$selected" = "untracked" ] && git_stage_untracked
 }
 
 git_stage
