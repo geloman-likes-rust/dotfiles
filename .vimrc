@@ -101,7 +101,9 @@ highlight Comment guifg=#455574
 highlight StatusLine guibg=#a0a8b7 guifg=#1A212E
 highlight Question guifg=#cc9057
 highlight Directory guifg=#4fa6ed
-highlight IncSearch guibg=#d99a5e
+highlight IncSearch guifg=#d6ffd6 guibg=#03c988
+highlight Search guibg=#d6ffd6
+highlight CurSearch guifg=#d6ffd6 guibg=#03c988
 highlight MatchParen guibg=#2a324a guifg=NONE
 "highlight Pmenu guifg=#e55561
 highlight PmenuSel guifg=#e55561
