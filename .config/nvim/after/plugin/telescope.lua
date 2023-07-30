@@ -46,20 +46,30 @@ require('telescope').setup {
     git_files = {
       show_untracked = true
     },
+  },
 
-    default = {
-      file_ignore_patterns = ignore_files,
-      mappings = {
-        i = {
-          ['<C-k>'] = require("telescope.actions").move_selection_previous,
-          ['<C-j>'] = require("telescope.actions").move_selection_next,
-        },
-        n = {
-          ['<C-k>'] = require("telescope.actions").move_selection_previous,
-          ['<C-j>'] = require("telescope.actions").move_selection_next,
-        }
+  defaults = {
+    file_ignore_patterns = ignore_files,
+
+    mappings = {
+      i = {
+        ['<C-k>'] = require("telescope.actions").move_selection_previous,
+        ['<C-j>'] = require("telescope.actions").move_selection_next,
       },
+      n = {
+        ['<C-k>'] = require("telescope.actions").move_selection_previous,
+        ['<C-j>'] = require("telescope.actions").move_selection_next,
+      }
     },
+
+    layout_config = {
+      height = 0.95,
+      width = 0.95,
+      preview_width = 0.55
+    },
+
+    selection_caret = "  ",
+    prompt_prefix = "   ",
   },
 }
 
