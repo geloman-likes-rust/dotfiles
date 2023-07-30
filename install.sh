@@ -9,7 +9,8 @@ install_miniconda() {
 	chmod +x ~/miniconda.sh
 	~/miniconda.sh -b -p ~/.miniconda && echo "yes" | ~/.miniconda/bin/conda init
 	rm -rdf ~/miniconda.sh
-	. "$HOME"/.bashrc
+	[ "$SHELL" = "bash" ] && . "$HOME"/.bashrc
+	[ "$SHELL" = "zsh" ] && . "$HOME"/.zshrc
 }
 
 ## TMUX (TERMINAL MULTIPLEXER)
@@ -18,7 +19,8 @@ install_tmux() {
 	[ -z "$(which tmux 2> /dev/null)" ] || return
 	echo "Installing tmux..........................................."
 	conda install -y -c conda-forge tmux
-	. "$HOME"/.bashrc
+	[ "$SHELL" = "bash" ] && . "$HOME"/.bashrc
+	[ "$SHELL" = "zsh" ] && . "$HOME"/.zshrc
 }
 
 ## TMUX PLUGIN MANAGER
@@ -70,7 +72,8 @@ install_nvm() {
 	[ -d ~/.nvm ] && return
 	echo "Installing node-version-manager......................................"
 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | sh
-	. "$HOME"/.bashrc
+	[ "$SHELL" = "bash" ] && . "$HOME"/.bashrc
+	[ "$SHELL" = "zsh" ] && . "$HOME"/.zshrc
 	nvm install --lts
 	nvm install-latest-npm
 }
