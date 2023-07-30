@@ -41,6 +41,22 @@ nnoremap <leader>gd <C-]>
 nnoremap <silent> <c-n> :bnext<cr>
 nnoremap <leader>s :!ctags -R .
 
+" switch tabs
+nnoremap <silent> <S-tab> :tabprevious<cr>
+nnoremap <silent> <tab> :tabNext<cr>
+
+" keymap for tabnew
+nnoremap <leader>ff :tabnew<space>
+
+" keymap for help
+nnoremap <leader>hh :help<space>
+
+" close current buffer
+nnoremap <silent> q <C-w>q
+
+" close current tab
+nnoremap <silent> <C-q> :tabclose<cr>
+
 " toggle highlight search
 nnoremap <silent> <leader>hl :set hlsearch!<cr>
 
@@ -85,13 +101,12 @@ autocmd FileType javascript,javascriptreact,typescriptreact,typescript,html,css 
 " --------- CUSTOM COLORSCHEME ----------
 " ---------------------------------------
 
-" DiffAdd        xxx term=bold ctermfg=231 ctermbg=65 guifg=#ffffff guibg=#5f875f                                                          
-" DiffChange     xxx term=bold ctermfg=231 ctermbg=67 guifg=#ffffff guibg=#5f87af                                                          
-" DiffDelete     xxx term=bold ctermfg=231 ctermbg=133 guifg=#ffffff guibg=#af5faf     
+highlight DiffAdd guifg=#03C988 guibg=#d6ffd6
+highlight DiffDelete guifg=#FC2947 guibg=#ffeeee
 
-" highlight DiffAdd guifg=#03C988 guibg=#d6ffd6
-" highlight DiffChange
-" highlight DiffDelete guifg=#FC2947 guibg=#ffeeee
+highlight TabLine guifg=#93a4c3 guibg=#21283b  
+highlight TabLineSel cterm=bold guifg=#1a212e guibg=#93a4c3
+highlight TabLineFill cterm=reverse guifg=#455574 guibg=#21283b
 
 highlight netrwSymLink guifg=#c75ae8
 highlight netrwExe guifg=#8bcd5b
