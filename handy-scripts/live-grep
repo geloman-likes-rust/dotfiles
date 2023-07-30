@@ -1,6 +1,5 @@
 #!/bin/sh
 
-RED='\033[0;91m'
 ORANGE='\033[0;33m'
 CYAN='\033[0;36m'
 fuzzy_preview() {
@@ -18,11 +17,11 @@ fuzzy_preview() {
     --pointer ""
 }
 
-[[ -z $1 ]] && exit 0
+[ -z "$1" ] && exit 0
 selected=$(rg --line-number --color=always --column --only-matching --hidden --colors "line:fg:green" --colors "column:fg:yellow" --colors "path:fg:blue" --colors "match:fg:white" --glob="!.git" $1 | fuzzy_preview)
-[[ -z $selected ]] && exit 0
-file_name=$(echo $selected | awk -F: '{print $1}')
-line_number=$(echo $selected | awk -F: '{print $2}')
-column_number=$(echo $selected | awk -F: '{print $3}')
-search_string=$(echo $selected | awk -F: '{print $4}')
-nvim +$line_number -c "normal zt${column_number}|" "+match Search /\%.l${search_string}/" $file_name
+[ -z "$selected" ] && exit 0
+file_name=$(echo "$selected" | awk -F: '{print $1}')
+line_number=$(echo "$selected" | awk -F: '{print $2}')
+column_number=$(echo "$selected" | awk -F: '{print $3}')
+search_string=$(echo "$selected" | awk -F: '{print $4}')
+nvim +"$line_number" -c "normal zt${column_number}|" "+match Search /\%.l${search_string}/" "$file_name"
