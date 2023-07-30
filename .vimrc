@@ -44,10 +44,13 @@ nnoremap <leader>s :!ctags -R .
 " toggle highlight search
 nnoremap <silent> <leader>hl :set hlsearch!<cr>
 
+" toggle cursorline
+nnoremap <silent> <cr> :set cursorline!<cr>
+
 " toggle code snippet suggestion
-inoremap <C-G> <C-X><C-N>
-inoremap <tab> <C-N>
-inoremap <s-tab> <C-P>
+" inoremap <cr> <C-X><C-N>
+inoremap <C-K> <C-P>
+inoremap <C-J> <C-N>
 
 " toggle filetree
 nnoremap <silent> <leader>e <esc>:Lex 25<cr>
@@ -59,21 +62,19 @@ nnoremap <silent> <leader>! :-1read $HOME/.vim/snippets/skeleton.html<cr>9jf<
 nnoremap <silent> <leader><space> :buffers<cr>
 
 " auto pair brackets && quotations
-inoremap <silent> { {}<esc>i
-inoremap <silent> [ []<esc>i
-inoremap <silent> ( ()<esc>i
-inoremap <silent> ` ``<esc>i
-inoremap <silent> ' ''<esc>i
-inoremap <silent> " ""<esc>i
-inoremap <silent> < <><esc>i
-
-" command! MakeTags !ctags -R .
+" inoremap <silent> { {}<esc>i
+" inoremap <silent> [ []<esc>i
+" inoremap <silent> ( ()<esc>i
+" inoremap <silent> ` ``<esc>i
+" inoremap <silent> ' ''<esc>i
+" inoremap <silent> " ""<esc>i
+" inoremap <silent> < <><esc>i
 
 " Tweaks for file browsing
 let g:netrw_banner = 0 " disable explorer banner
 let g:netrw_altv = 1 " open in prior window
 let g:netrw_list_hide = netrw_gitignore#Hide() " hide all listed file in .gitignore
-let g:netrw_liststyle = 3 " explorer tree view
+" let g:netrw_liststyle = 3 " explorer tree view
 
 
 " Set language specific indentation
@@ -83,6 +84,14 @@ autocmd FileType javascript,javascriptreact,typescriptreact,typescript,html,css 
 " ---------------------------------------
 " --------- CUSTOM COLORSCHEME ----------
 " ---------------------------------------
+
+" DiffAdd        xxx term=bold ctermfg=231 ctermbg=65 guifg=#ffffff guibg=#5f875f                                                          
+" DiffChange     xxx term=bold ctermfg=231 ctermbg=67 guifg=#ffffff guibg=#5f87af                                                          
+" DiffDelete     xxx term=bold ctermfg=231 ctermbg=133 guifg=#ffffff guibg=#af5faf     
+
+" highlight DiffAdd guifg=#03C988 guibg=#d6ffd6
+" highlight DiffChange
+" highlight DiffDelete guifg=#FC2947 guibg=#ffeeee
 
 highlight netrwSymLink guifg=#c75ae8
 highlight netrwExe guifg=#8bcd5b
@@ -95,10 +104,9 @@ highlight vimContinue guifg=#dd9046
 highlight vimFuncSID guifg=#dd9046
 highlight vimNotation guifg=#dd9046
 
-highlight CursorLineNR ctermfg=11 guifg=NONE guibg=#2a324a
-highlight CursorLine gui=reverse guifg=NONE guibg=NONE
+highlight CursorLineNR ctermfg=11 guifg=NONE guibg=#21283b
+highlight CursorLine gui=reverse guifg=NONE guibg=#21283b
 highlight Cursor gui=reverse guifg=NONE guibg=NONE
-
 highlight Type guifg=#efbd5d
 highlight Comment guifg=#455574
 highlight StatusLine guibg=#a0a8b7 guifg=#1A212E
@@ -152,7 +160,7 @@ endif
 " ------- LANGUAGE SPECIFIC COLORSCHEME ---------
 " -----------------------------------------------
 " --------------- JS,TS,JSX,TSX -----------------
-autocmd FileType javascript,typescript,javascriptreact,typescriptreact 
+autocmd FileType javascript,typescript,javascriptreact,typescriptreact
     \ highlight Normal guifg=#93a4c3 |
     \ highlight Special guifg=#c75ae8 |
     \ highlight Identifier guifg=#c75ae8 |
