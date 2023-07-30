@@ -48,7 +48,7 @@ inoremap <tab> <C-N>
 inoremap <s-tab> <C-P>
 
 " toggle filetree
-nnoremap <silent> <leader>e <esc>:Lex 20<cr>
+nnoremap <silent> <leader>e <esc>:Lex 25<cr>
 
 " html template
 nnoremap <silent> <leader>! :-1read $HOME/.vim/snippets/skeleton.html<cr>9jf<
