@@ -52,8 +52,11 @@ install_neovim() {
 	ln -s "$HOME"/.neovim/bin/nvim "$HOME"/.local/bin/
 }
 
+## CLANG - nvim-treesitter need this for syntax highlighting
+#---------------------------------------------------------------------
 install_clang() {
 	[ -z "$(which gcc 2> /dev/null)" ] || return
+	[ -z "$(which cc 2> /dev/null)" ] || return
 	echo "Installing clang for nvim-treesitter"
 	conda install -y -c conda-forge clang
 }
