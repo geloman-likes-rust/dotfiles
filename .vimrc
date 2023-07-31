@@ -3,12 +3,14 @@ set number
 set relativenumber
 set tabstop=4 softtabstop=4
 set shiftwidth=4
-set expandtab
-set smarttab
+" set expandtab
+" set smarttab
 set autoindent
 set smartindent
 set autowrite
 set smartcase
+set scrolloff=10
+" set sidescrolloff=20
 set hidden
 set noerrorbells
 set nowrap
@@ -24,7 +26,7 @@ set termguicolors
 syntax on
 
 let g:enable_trasparent = 0
-let g:show_os_icon = 1
+let g:show_os_icon = 0
 
 " Set cursor shape
 let &t_SI = "\<Esc>[6 q"
@@ -75,15 +77,6 @@ nnoremap <silent> <leader>! :-1read $HOME/.vim/snippets/skeleton.html<cr>9jf<
 
 " show currently opened buffers
 nnoremap <silent> <leader><space> :buffers<cr>
-
-" auto pair brackets && quotations
-" inoremap <silent> { {}<esc>i
-" inoremap <silent> [ []<esc>i
-" inoremap <silent> ( ()<esc>i
-" inoremap <silent> ` ``<esc>i
-" inoremap <silent> ' ''<esc>i
-" inoremap <silent> " ""<esc>i
-" inoremap <silent> < <><esc>i
 
 " Tweaks for file browsing
 let g:netrw_banner = 0 " disable explorer banner
@@ -303,7 +296,6 @@ set statusline+=\%#ModeMsg#\ %{WhatMode()}
 set statusline+=\ %#Dark#\ %t
 set statusline+=\%=
 set statusline+=\ %{WhatOS()}
-set statusline+=\ \│\ %{&fileencoding}\ \│
-set statusline+=\ %Y
-set statusline+=\ %#LightGray#\ buf:%n
-set statusline+=\ %#ModeMsg#\ %l:%L\ 
+set statusline+=\ \│\ %{&filetype}\ 
+set statusline+=\ %#LightGray#\ %P
+set statusline+=\ %#ModeMsg#\ %l:%c\ 
