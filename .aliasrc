@@ -37,6 +37,7 @@ alias \
   size-of="du -sh" \
   size-all="du -hc" \
   ls='exa --no-user --no-time --no-filesize -l' \
+  lsn='command ls --color=always' \
   v='nvim' \
   vi='nvim' \
   vii='nvim' \

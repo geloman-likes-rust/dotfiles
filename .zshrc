@@ -1,4 +1,4 @@
-EDITOR="nvim"
+export EDITOR="nvim"
 
 [ -f ~/.zsh_prompt ] && . ~/.zsh_prompt
 [ -f ~/.aliasrc ] && . ~/.aliasrc
