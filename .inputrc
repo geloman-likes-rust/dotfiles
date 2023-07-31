@@ -1,4 +1,13 @@
+set editing-mode vi
 set show-mode-in-prompt on
 set keyseq-timeout 0
 set vi-ins-mode-string \e[5 q
 set vi-cmd-mode-string \e[1 q
+
+$if mode=vi
+  set keymap vi-command
+  Control-l: clear-screen
+
+  set keymap vi-insert
+  Control-l: clear-screen
+$endif
