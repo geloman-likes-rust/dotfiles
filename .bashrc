@@ -1,4 +1,3 @@
-set -o vi
 export EDITOR="nvim"
 [ -f /etc/bashrc ] && . /etc/bashrc
 [ -f ~/.aliasrc ] && . "$HOME"/.aliasrc
