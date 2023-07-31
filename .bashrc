@@ -20,12 +20,6 @@ WHITE=#EDEDED
 [ -d ~/.cargo ] && PATH=$PATH:$HOME/.cargo/bin
 [ -d ~/.miniconda/bin ] && PATH=$PATH:$HOME/.miniconda/bin
 
-# ALL ENVIRONMENT VARIABLE GOES HERE
-export PATH
-export EDITOR="nvim"
-[ -d "$HOME"/.nvm ] && export NVM_DIR="$HOME/.nvm"
-[ -f ~/.fzf.bash ] && export FZF_DEFAULT_OPTS="--ansi --color=bg+:$BG,fg+:$FG,gutter:-1,border:$PURPLE,hl:$MINT,hl+:$PINK,query:$PINK,pointer:$PINK,label:$WHITE,info:$MINT,spinner:$PURPLE,header:$PURPLE --border=rounded"
-
 # CUSTOM FUNCTIONS
 fast_cd() {
   selected=$(fast-cd); [ -z "$selected" ] || cd "$selected" || return
@@ -36,3 +30,10 @@ bind -x '"\C-p": tmux-sessionizer'
 bind -x '"\C-b": randbg'
 bind -x '"\C-f": fvi'
 bind '"\C-o": "fast_cd; clear\n"'
+
+# ALL ENVIRONMENT VARIABLE GOES HERE
+export PATH
+export EDITOR="nvim"
+[ -d "$HOME"/.nvm ] && export NVM_DIR="$HOME/.nvm"
+[ -f ~/.fzf.bash ] && export FZF_DEFAULT_OPTS="--ansi --color=bg+:$BG,fg+:$FG,gutter:-1,border:$PURPLE,hl:$MINT,hl+:$PINK,query:$PINK,pointer:$PINK,label:$WHITE,info:$MINT,spinner:$PURPLE,header:$PURPLE --border=rounded"
+
