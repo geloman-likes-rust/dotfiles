@@ -15,9 +15,6 @@
 [ -d ~/.config/i3 ] && mv -f ~/.config/i3 ~/.config/i3.bak
 [ -d ~/.config/nvim ] && mv -f ~/.config/nvim ~/.config/nvim.bak
 [ -d ~/.config/kitty ] && mv -f ~/.config/kitty ~/.config/kitty.bak
-#
-# cat ~/.dotfiles/.zshrc > ~/.zshrc
-# cat ~/.dotfiles/.bashrc > ~/.bashrc
 
 [ -f ~/.profile ] && echo ". \"\$HOME/.dotfiles/.default_background\"" >> ~/.profile
 
