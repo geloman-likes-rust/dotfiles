@@ -28,7 +28,6 @@
 [ -L ~/.config/nvim ] || ln -s ~/.dotfiles/.config/nvim ~/.config/nvim
 
 # KITTY CONFIGS
-[ -d ~/.config/kitty ] && mv ~/.config/kitty ~/.config/kitty.bak
 [ -L ~/.config/kitty ] || ln -s ~/.dotfiles/.config/kitty ~/.config/kitty
 
 # SHORTHAND FOR SYMLINK AND UNLINK
