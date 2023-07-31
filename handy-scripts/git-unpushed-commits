@@ -1,0 +1,3 @@
+#!/bin/sh
+
+git log --oneline origin/"$(git branch --show-current 2> /dev/null)"..HEAD 2> /dev/null
