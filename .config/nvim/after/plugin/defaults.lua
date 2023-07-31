@@ -1,3 +1,6 @@
+-- no showmode
+vim.o.showmode = false
+
 -- tab space
 vim.o.tabstop = 2
 vim.o.softtabstop = 2
