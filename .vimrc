@@ -21,10 +21,9 @@ set noshowmode
 set path+=** " search down into subfolders
 set laststatus=2
 set termguicolors
-colorscheme slate
 syntax on
 
-let g:enable_trasparent = 1
+let g:enable_trasparent = 0
 let g:show_os_icon = 1
 
 " Set cursor shape
@@ -158,6 +157,7 @@ highlight Tag guifg=#8bcd5b
 highlight SpecialChar guifg=#f65866
 highlight Delimiter guifg=#6c7d9c
 highlight Visual ctermbg=242 guibg=#2a324a guifg=NONE
+highlight PreProc guifg=#f65866
 
 if g:enable_trasparent == 1
     highlight Normal guifg=#93a4c3 ctermbg=NONE guibg=NONE
@@ -186,7 +186,6 @@ autocmd FileType javascript,typescript,javascriptreact,typescriptreact
     \ highlight javaScriptValue guifg=#4fa6ed |
     \ highlight Structure guifg=#e55561 |
     \ highlight Type guifg=#efbd5d |
-    \ highlight PreProc guifg=#e55561 |
     \ highlight link typescriptBraces JavascriptBraces |
     \ highlight link typescriptParens JavascriptParens |
     \ highlight typescriptObjectColon guifg=#ffffff |
@@ -230,6 +229,8 @@ highlight Pmenu guifg=#4fa6ed guibg=#2a324a
 highlight PmenuSel guifg=#2a324a guibg=#4fa6ed
 highlight PmenuThumb guibg=#4fa6ed
 highlight PmenuSbar guibg=#1a324a
+
+highlight ModeMsg guifg=#2a324a
 
 
 fu! WhatMode()
@@ -299,7 +300,7 @@ highlight LightGray guibg=#a0a8b7 guifg=#1A212E
 
 set statusline=
 set statusline+=\%#ModeMsg#\ %{WhatMode()}
-set statusline+=\ %#Dark#\ %f
+set statusline+=\ %#Dark#\ %t
 set statusline+=\%=
 set statusline+=\ %{WhatOS()}
 set statusline+=\ \│\ %{&fileencoding}\ \│
