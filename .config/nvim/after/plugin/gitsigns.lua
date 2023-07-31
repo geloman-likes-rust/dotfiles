@@ -5,6 +5,7 @@ vim.keymap.set('n', '<leader>ph', require('gitsigns').preview_hunk, { desc = '[p
 vim.keymap.set('n', 'ga', require('gitsigns').stage_hunk, { desc = '[G]it [A]dd Hunk' })
 vim.keymap.set('n', '<leader>ga', require('gitsigns').stage_buffer, { desc = '[G]it [A]dd All Hunks' })
 vim.keymap.set('n', '<leader>gu', require('gitsigns').undo_stage_hunk, { desc = '[G]it [U]nstage Last Staged' })
+vim.keymap.set('n', '<leader>gr', require('gitsigns').reset_buffer, { desc = '[G]it [R]eset Buffer' })
 vim.keymap.set('n', '<leader>lb', require('gitsigns').toggle_current_line_blame, { desc = '[L]ine [B]lame toggle' })
 
 -- custom highlights
