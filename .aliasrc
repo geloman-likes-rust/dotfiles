@@ -22,6 +22,7 @@ alias \
   ga="git-add" \
   gu="git-unstage-file" \
   gco="git-checkout" \
+  guc="git-unpushed-commits" \
 
 # version control aliases
 alias \
