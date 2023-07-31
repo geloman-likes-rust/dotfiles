@@ -7,7 +7,7 @@ vim.o.smartindent = true
 vim.o.autoindent = true
 
 -- set scrolloff
-vim.o.scrolloff = 8
+vim.o.scrolloff = 10
 vim.o.sidescrolloff = 20
 
 -- file explorer
