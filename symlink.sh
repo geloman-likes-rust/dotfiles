@@ -1,22 +1,35 @@
 #!/bin/sh
 
-[ -f "$HOME"/.gitconfig ] && rm -rdf "$HOME"/.gitconfig
-ln -sf "$HOME"/.dotfiles/.bash_prompt "$HOME"
+# ZSH CONFIGS
+ln -sf ~/.dotfiles/.zshrc "$HOME"
 ln -sf "$HOME"/.dotfiles/.zsh_prompt "$HOME"
-ln -sf "$HOME"/.dotfiles/.gitconfig "$HOME"
+
+# BASH CONFIGS
+ln -sf ~/.dotfiles/.bashrc "$HOME"
+ln -sf ~/.dotfiles/.inputrc "$HOME"
+ln -sf "$HOME"/.dotfiles/.bash_prompt "$HOME"
+
+# ALIASES
 ln -sf "$HOME"/.dotfiles/.aliasrc "$HOME"
+
+# GIT CONFIGS
+ln -sf "$HOME"/.dotfiles/.gitconfig "$HOME"
+
+# TMUX CONFIGS
 ln -sf "$HOME"/.dotfiles/.tmux.conf "$HOME"
-[ -f ~/.vimrc ] || ln -sf "$HOME"/.dotfiles/.vimrc "$HOME"
 
-[ -d ~/.local ] || mkdir ~/.local
-[ -d ~/.local/bin ] || mkdir ~/.local/bin
+# VIM CONFIGS
+ln -sf "$HOME"/.dotfiles/.vimrc "$HOME"
 
-[ -f ~/.local/bin/slnk ] || ln -sf "$HOME"/.dotfiles/symlink.sh ~/.local/bin/slnk
-[ -f ~/.local/bin/ulnk ] ||  ln -sf "$HOME"/.dotfiles/unlink.sh ~/.local/bin/ulnk
+# I3 CONFIGS
+ln -sf ~/.dotfiles/.config/i3 ~/.config/i3
 
-[ -d ~/.config ] || mkdir ~/.config
-for dir in ~/.dotfiles/.config/*; do
-  config=$(basename "$dir")
-  [ -d ~/.config/"$config" ] && rm -rdf ~/.config/"$config"
-  ln -sf ~/.dotfiles/.config/"$config" ~/.config/"$config"
-done
+# NVIM CONFIGS
+ln -sf ~/.dotfiles/.config/nvim ~/.config/nvim
+
+# KITTY CONFIGS
+ln -sf ~/.dotfiles/.config/kitty ~/.config/kitty
+
+# SHORTHAND FOR SYMLINK AND UNLINK
+[ -f ~/.local/bin/slnk ] || ln -sf ~/.dotfiles/symlink.sh ~/.local/bin/slnk
+[ -f ~/.local/bin/ulnk ] ||  ln -sf ~/.dotfiles/unlink.sh ~/.local/bin/ulnk
