@@ -36,7 +36,6 @@ BG=#2a324a
 FG=#93a4c3
 MINT=#00FFAB
 WHITE=#EDEDED
-
 export PATH
 export EDITOR="nvim"
 [ -d "$HOME"/.nvm ] && export NVM_DIR="$HOME/.nvm"
