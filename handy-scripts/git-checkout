@@ -13,7 +13,7 @@ WHITE='\033[1;37m'
 checkout_branch() {
   selected=$(git branch 2> /dev/null |fzf --border=rounded --border-label "$(printf " ${CYAN}Checkout Branch ")" --header-first --header "$(printf " ${RED}Checkout Branch ")" --margin=25% --pointer "" --prompt "  ")
   [ -z "$selected" ] && exit 0
-  git checkout "$selected" 2> /dev/null
+  git checkout $selected 2> /dev/null
 }
 
 checkout_commit() {
