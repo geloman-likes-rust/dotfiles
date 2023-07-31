@@ -24,7 +24,7 @@ set termguicolors
 colorscheme slate
 syntax on
 
-let g:enable_trasparent = 0
+let g:enable_trasparent = 1
 let g:show_os_icon = 1
 
 " Set cursor shape
