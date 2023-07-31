@@ -1,34 +1,34 @@
 #!/bin/sh
 
 # UNLINK VIMRC
-unlink ~/.vimrc
+[ -L ~/.vimrc ] && unlink ~/.vimrc
 
 # UNLINK GIT CONFIGS
-unlink ~/.gitconfig
+[ -L ~/.gitconfig ] && unlink ~/.gitconfig
 
 # UNLINK ALIASES
-unlink ~/.aliasrc
+[ -L ~/.aliasrc ] && unlink ~/.aliasrc
 
 # UNLINK TMUX CONFIGS
-unlink ~/.tmux.conf
+[ -L ~/.tmux.conf ] && unlink ~/.tmux.conf
 
 # UNLINK ZSH CONFIGS
-unlink ~/.zshrc
-unlink ~/.zsh_prompt
+[ -L ~/.zshrc ] && unlink ~/.zshrc
+[ -L ~/.zsh_prompt ] && unlink ~/.zsh_prompt
 
 # UNLINK BASH CONFIGS
-unlink ~/.bashrc
-unlink ~/.inputrc
-unlink ~/.bash_prompt
+[ -L ~/.bashrc ] && unlink ~/.bashrc
+[ -L ~/.inputrc ] && unlink ~/.inputrc
+[ -L ~/.bash_prompt ] && unlink ~/.bash_prompt
 
 # UNLINK I3 CONFIGS
-unlink ~/.config/i3
+[ -L ~/.config/i3 ] && unlink ~/.config/i3
 
 # UNLINK NVIM CONFIGS
-unlink ~/.config/nvim
+[ -L ~/.config/nvim ] && unlink ~/.config/nvim
 
 # UNLINK KITTY CONFIGS
-unlink ~/.config/kitty
+[ -L ~/.config/kitty ] && unlink ~/.config/kitty
 
 # GETTING BACK TO NORMAL
 [ -f ~/.vimrc.bak ] && mv -f ~/.vimrc.bak ~/.vimrc
