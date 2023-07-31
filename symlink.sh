@@ -11,10 +11,6 @@ ln -s "$HOME"/.dotfiles/.tmux.conf "$HOME"
 [ -d ~/.local ] || mkdir ~/.local
 [ -d ~/.local/bin ] || mkdir ~/.local/bin
 
-for x in ~/.dotfiles/handy-scripts/*; do
-  ln -s "$x" ~/.local/bin/
-done
-
 [ -f ~/.local/bin/slnk ] || ln -s "$HOME"/.dotfiles/symlink.sh ~/.local/bin/slnk
 [ -f ~/.local/bin/ulnk ] ||  ln -s "$HOME"/.dotfiles/unlink.sh ~/.local/bin/ulnk
 
