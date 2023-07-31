@@ -9,8 +9,6 @@ install_miniconda() {
 	chmod +x ~/miniconda.sh
 	~/miniconda.sh -b -p ~/.miniconda && echo "yes" | ~/.miniconda/bin/conda init
 	rm -rdf ~/miniconda.sh
-	[ "$0" = "bash" ] && . "$HOME"/.bashrc
-	[ "$0" = "zsh" ] && . "$HOME"/.zshrc
 }
 
 ## TMUX (TERMINAL MULTIPLEXER)
@@ -19,7 +17,7 @@ install_tmux() {
 	[ -f ~/.miniconda/bin/tmux ] && return
 	[ -z "$(which tmux 2> /dev/null)" ] || return
 	echo "Installing tmux..........................................."
-	conda install -y -c conda-forge tmux 2> /dev/null
+	~/.miniconda/bin/conda install -y -c conda-forge tmux 2> /dev/null
 }
 
 ## TMUX PLUGIN MANAGER
@@ -59,7 +57,7 @@ install_clang() {
 	[ -z "$(which gcc 2> /dev/null)" ] || return
 	[ -z "$(which cc 2> /dev/null)" ] || return
 	echo "Installing clang for nvim-treesitter"
-	conda install -y -c conda-forge clang
+	~/.miniconda/bin/conda install -y -c conda-forge clang
 }
 
 ## RUSTUP, CARGO, RUSTC
@@ -101,7 +99,7 @@ install_httpie() {
 	[ -d ~/.httpie ] && return
 	[ -z "$(which http 2> /dev/null)" ] || return
 	echo "Installing httpie......................................"
-	curl -sLo ~/.httpie/http https://packages.httpie.io/binaries/linux/http-latest
+	curl --create-dirs -Lo ~/.httpie/http https://packages.httpie.io/binaries/linux/http-latest
 	chmod +x ~/.httpie/http && ln -sf ~/.httpie/http ~/.local/bin/
 }
 
@@ -111,7 +109,7 @@ install_fd() {
 	[ -f ~/.miniconda/bin/fd ] && return
 	[ -z "$(which fd 2> /dev/null)" ] || return
 	echo "Installing fd-find......................................"
-	conda install -y -c conda-forge fd-find
+	~/.miniconda/bin/conda install -y -c conda-forge fd-find
 }
 
 ## RIPGREP - need this for telescope live-grep & grep-string
@@ -120,7 +118,7 @@ install_ripgrep() {
 	[ -f ~/.miniconda/bin/rg ] && return
 	[ -z "$(which rg 2> /dev/null)" ] || return
 	echo "Installing ripgrep......................................"
-	conda install -y -c conda-forge ripgrep
+	~/.miniconda/bin/conda install -y -c conda-forge ripgrep
 }
 
 ## GIT-DELTA - gitdiff syntax-highlighting
@@ -129,7 +127,7 @@ install_delta() {
 	[ -f ~/.miniconda/bin/delta ] && return
 	[ -z "$(which delta 2> /dev/null)" ] || return
 	echo "Installing git-delta......................................"
-	conda install -y -c conda-forge git-delta
+	~/.miniconda/bin/conda install -y -c conda-forge git-delta
 }
 
 ## BAT - just like 'cat' but with syntax-highlighting
@@ -138,7 +136,7 @@ install_bat() {
 	[ -f ~/.miniconda/bin/bat ] && return
 	[ -z "$(which bat 2> /dev/null)" ] || return
 	echo "Installing bat......................................"
-	conda install -y -c conda-forge bat
+	~/.miniconda/bin/conda install -y -c conda-forge bat
 }
 
 ## oh-my-zsh - need this for zsh pretty prompt
