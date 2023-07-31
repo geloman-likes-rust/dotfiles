@@ -20,7 +20,7 @@ bind -x '"\C-f": fvi'
 ## bind (ctrl-o) --> fast-cd
 #-----------------------------------------------------
 fast_cd() {
-  selected=$(fast-cd); [[ -z $selected ]] || cd "$selected"
+  selected=$(fast-cd); [ -z "$selected" ] || cd "$selected" || return
 }
 bind '"\C-o": "fast_cd; clear\n"'
 
