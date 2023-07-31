@@ -6,6 +6,7 @@
 [ -d ~/.local/bin ] || mkdir ~/.local/bin
 [ -d ~/.config ] || mkdir ~/.config
 
+cat ~/.dotfiles/.inputrc > ~/.inputrc
 cat ~/.dotfiles/.bashrc > ~/.bashrc
 cat ~/.dotfiles/.zshrc > ~/.zshrc
 
