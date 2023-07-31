@@ -1,6 +1,4 @@
 export EDITOR="nvim"
-autoload -U colors && colors
-PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 [ -f ~/.zsh_prompt ] && . ~/.zsh_prompt
 [ -f ~/.aliasrc ] && . ~/.aliasrc
 [ -d ~/.local/bin ] && PATH=$PATH:$HOME/.local/bin && export PATH
