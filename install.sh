@@ -154,4 +154,4 @@ install_neovim
 install_clang
 install_rust
 install_nvm
-install_ohmyzsh
+# install_ohmyzsh
