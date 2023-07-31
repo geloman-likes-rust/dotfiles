@@ -49,7 +49,7 @@ install_neovim() {
 	tar xzvf nvim-linux64.tar.gz
 	rm -rdf nvim-linux64.tar.gz
 	mv "$HOME"/nvim-linux64 "$HOME"/.neovim
-	ln -s "$HOME"/.neovim/bin/nvim "$HOME"/.local/bin/
+	ln -sf "$HOME"/.neovim/bin/nvim "$HOME"/.local/bin/
 }
 
 ## CLANG - nvim-treesitter need this for syntax highlighting
@@ -90,7 +90,7 @@ install_exa() {
 	curl -sLO https://github.com/ogham/exa/releases/download/v0.10.1/exa-linux-x86_64-v0.10.1.zip
 	unzip exa-linux-x86_64-v0.10.1.zip
 	rm -rdf exa-linux-x86_64-v0.10.1.zip
-	ln -s ~/.exa/bin/exa ~/.local/bin/
+	ln -sf ~/.exa/bin/exa ~/.local/bin/
 }
 
 ## HTTPIE
@@ -99,7 +99,7 @@ install_httpie() {
 	[ -z "$(which http 2> /dev/null)" ] || return
 	echo "Installing httpie......................................"
 	curl -sLo ~/.httpie/http https://packages.httpie.io/binaries/linux/http-latest
-	chmod +x ~/.httpie/http && ln -s ~/.httpie/http ~/.local/bin/
+	chmod +x ~/.httpie/http && ln -sf ~/.httpie/http ~/.local/bin/
 }
 
 ## FD-FIND - need this for telescope live-grep & grep-string
