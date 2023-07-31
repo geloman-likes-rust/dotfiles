@@ -74,8 +74,7 @@ install_nvm() {
 	[ -d ~/.nvm ] && return
 	echo "Installing node-version-manager......................................"
 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | sh
-	[ "$0" = "bash" ] && . "$HOME"/.bashrc
-	[ "$0" = "zsh" ] && . "$HOME"/.zshrc
+	[ -s "$HOME/.nvim/nvm.sh" ] && \. "$HOME/.nvm/nvm.sh"  # This loads nvm
 	nvm install --lts
 	nvm install-latest-npm
 }
