@@ -96,7 +96,6 @@ keymap('n', '<leader>wd', builtin.diagnostics, { desc = '[W]orkspace [D]iagnosti
 keymap('n', '<leader>?', builtin.oldfiles, { desc = '[?] Find recently opened files' })
 keymap('n', '<leader><space>', builtin.buffers, { desc = '[ ] Find existing buffers' })
 keymap('n', '<leader>j', builtin.current_buffer_fuzzy_find, { desc = '[J] current buffer fuzzy find' })
--- vim.keymap.set('n', '<leader>j', builtin.current_buffer_fuzzy_find, { desc = '[J] current buffer fuzzy find' })
 
 -- custom highlights
 vim.cmd("highlight! TelescopeSelectionCaret guifg=#FF52A2")
