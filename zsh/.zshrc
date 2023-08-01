@@ -2,7 +2,7 @@ export EDITOR="nvim"
 [ -f ~/.zsh_prompt ] && . ~/.zsh_prompt
 [ -f ~/.aliasrc ] && . ~/.aliasrc
 [ -d ~/.local/bin ] && PATH=$PATH:$HOME/.local/bin && export PATH
-[ -d ~/.dotfiles/handy-scripts ] && PATH=$PATH:$HOME/.dotfiles/handy-scripts
+[ -d ~/.dotfiles/handy-scripts/bin ] && PATH=$PATH:$HOME/.dotfiles/handy-scripts/bin
 
 # vi mode
 bindkey -v
