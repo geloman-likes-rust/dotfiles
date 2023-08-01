@@ -36,15 +36,15 @@ fzf_directory() {
 remove_file() {
   selected="$(rg --files --sort-files --hidden --glob="!{**.git/*,**/node_modules/*,.cache,**.jpg,**.png,**.mp3,**.mp4,**.rpm}" | fzf_file)"
   [ -z $selected ] && exit 0
-  response=$(printf "${GREEN}NO ${RED}YES" | tr ' ' '\n' | fzf --border-label "$(printf "${ORANGE} Do u really want to remove this file? ")" --header="$(printf "${WHITE}Remove ${ORANGE}${selected}${NC}")" --border=rounded --margin=15% --pointer "" --prompt "  ")
-  [ "$response" = "YES" ] && rm -rdf $selected && printf "\n${RED} Removed ${ORANGE}file:\n\n\t${NC}filename: ${ORANGE}${selected}${NC}\n\n"
+  response=$(printf "${GREEN}NO ${RED}YES" | tr ' ' '\n' | fzf --border-label "$(printf "${ORANGE} Do u really want to remove this file? ")" --header="$(printf "${WHITE}Remove ${ORANGE}%s${NC}" "$selected")" --border=rounded --margin=15% --pointer "" --prompt "  ")
+  [ "$response" = "YES" ] && rm -rdf "$selected" && printf "\n${RED} Removed ${ORANGE}file:\n\n\t${NC}filename: ${ORANGE}%s${NC}\n\n" "$selected"
 }
 
 remove_directory() {
   selected=$(fd --hidden --type d | fzf_directory)
   [ -z "$selected" ] && exit 0
-  response=$(printf "NO ${RED}YES" | tr ' ' '\n' | fzf --border-label "$(printf "${CYAN} Do u really want to remove this Directory? ")" --header="$(printf "Remove ${CYAN}${selected}${NC}")" --border=rounded --margin=15% --pointer "" --prompt "  ")
-  [ "$response" = "YES" ] && rm -rdf "$selected" && printf "\n${RED} Removed ${CYAN}Directory:\n\n\t${NC}dirname: ${CYAN}${selected}${NC}\n\n"
+  response=$(printf "NO ${RED}YES" | tr ' ' '\n' | fzf --border-label "$(printf "${CYAN} Do u really want to remove this Directory? ")" --header="$(printf "Remove ${CYAN}%s${NC}" "$selected")" --border=rounded --margin=15% --pointer "" --prompt "  ")
+  [ "$response" = "YES" ] && rm -rdf "$selected" && printf "\n${RED} Removed ${CYAN}Directory:\n\n\t${NC}dirname: ${CYAN}%s${NC}\n\n" "$selected"
 }
 
 remove_what() {
