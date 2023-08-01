@@ -21,6 +21,7 @@ alias \
   gs="git-status" \
   ga="git-add" \
   gu="git-unstage-file" \
+  gr="git-restore" \
   gco="git-checkout" \
   guc="git-unpushed-commits" \
 
