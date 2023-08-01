@@ -12,7 +12,7 @@ WHITE='\033[1;37m'
 fzf_file() {
   fzf -e \
     --preview "bat --theme=1337 --color=always {}" \
-    --preview-window right,70% \
+    --preview-window right,60% \
     --bind up:preview-page-up,down:preview-page-down \
     --header "$(printf " ${ORANGE}Remove File ")" \
     --header-first \
