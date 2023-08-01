@@ -6,7 +6,7 @@ fuzzy_preview() {
   fzf -e \
     --delimiter : \
     --preview "bat --theme=1337 --color=always --highlight-line {2} {1}" \
-    --preview-window right,70% \
+    --preview-window right,60% \
     --bind up:preview-page-up,down:preview-page-down \
     --header "$(printf "${ORANGE}Open File")" \
     --border-label "$(printf " ${CYAN}live-grep ")" \
