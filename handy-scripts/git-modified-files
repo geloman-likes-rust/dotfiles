@@ -22,4 +22,4 @@ dirty_preview() {
 
 workspace=$(git rev-parse --show-toplevel 2> /dev/null)
 dirty_files=$(git diff --name-only --diff-filter=M "$workspace" 2> /dev/null | xargs -I {} printf "${RED}${workspace}/{}\n")
-[ -z "$dirty_files" ] && echo "no dirty files, working tree clean" || selected=$(echo "$dirty_files" | tr ' ' '\n' | dirty_preview); [ -z "$selected" ] || nvim "$selected"
+[ -z "$dirty_files" ] || selected=$(echo "$dirty_files" | tr ' ' '\n' | dirty_preview); [ -z "$selected" ] || nvim "$selected"
