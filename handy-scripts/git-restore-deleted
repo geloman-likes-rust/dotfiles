@@ -6,10 +6,10 @@ WHITE='\033[1;37m'
 
 dirty_preview() {
   fzf -e \
-    --header "$(printf " ${CYAN}Restore ${RED}Deleted ${WHITE}File") " \
+    --header "$(printf " ${CYAN}Git Restore ") " \
     --header-first \
     --border=rounded \
-    --border-label "$(printf " ${CYAN}Git Restore ")" \
+    --border-label "$(printf " ${CYAN}Restore ${RED}Deleted ${WHITE}File ")" \
     --margin 15%,15% \
     --prompt " " \
     --pointer ""
