@@ -14,6 +14,12 @@ local actions = require('telescope.actions')
 require('telescope').setup {
   pickers = {
 
+    planets = {
+      show_pluto = true,
+      show_moon = true,
+      initial_mode = "normal",
+    },
+
     colorscheme = {
       initial_mode = "normal",
       layout_config = {
@@ -96,6 +102,7 @@ keymap('n', '<leader>wd', builtin.diagnostics, { desc = '[W]orkspace [D]iagnosti
 keymap('n', '<leader>?', builtin.oldfiles, { desc = '[?] Find recently opened files' })
 keymap('n', '<leader><space>', builtin.buffers, { desc = '[ ] Find existing buffers' })
 keymap('n', '<leader>j', builtin.current_buffer_fuzzy_find, { desc = '[J] current buffer fuzzy find' })
+keymap('n', '<leader>ps', builtin.planets, { desc = 'Love and Peace' })
 
 -- custom highlights
 vim.cmd("highlight! TelescopeSelectionCaret guifg=#FF52A2")
