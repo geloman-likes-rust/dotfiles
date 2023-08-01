@@ -25,6 +25,7 @@ alias \
   gco="git-checkout" \
   guc="git-unpushed-commits" \
   guf="git-untracked-files" \
+  gmf="git-modified-files" \
 
 # version control aliases
 alias \
