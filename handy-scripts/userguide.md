@@ -1,6 +1,6 @@
 ## [`handy-scripts`](bin) user-friendly guide
 
-before using all of my handy scripts, u must have all of these tools installed on your machine:
+before using all of my handy scripts, u must have all these tools installed on your machine:
 
 ### some prerequisite tools:
 
