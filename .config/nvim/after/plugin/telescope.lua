@@ -90,9 +90,7 @@ require('telescope').setup {
 }
 
 -- custom keymaps
-keymap('n', '<leader>gs', builtin.git_status, { desc = '[G]it [S]tatus' })
 keymap('n', '<leader>hp', builtin.highlights, { desc = '[H]ighlight [P]review' })
-keymap('n', '<leader>gf', builtin.git_files, { desc = '[G]it [F]iles' })
 keymap('n', '<leader>cc', builtin.colorscheme, { desc = '[C]hange [C]olorscheme' })
 keymap('n', '<leader>ff', builtin.find_files, { desc = '[F]ind [F]iles' })
 keymap('n', '<leader>hh', builtin.help_tags, { desc = 'Search [H][H]elp' })
@@ -104,6 +102,11 @@ keymap('n', '<leader><space>', builtin.buffers, { desc = '[ ] Find existing buff
 keymap('n', '<leader>j', builtin.current_buffer_fuzzy_find, { desc = '[J] current buffer fuzzy find' })
 keymap('n', '<leader>ps', builtin.planets, { desc = 'Love and Peace' })
 
--- custom highlights
+keymap('n', '<leader>gs', builtin.git_status, { desc = '[G]it [S]tatus' })
+keymap('n', '<leader>gf', builtin.git_files, { desc = '[G]it [F]iles' })
+keymap('n', '<leader>gb', builtin.git_branches, { desc = '[G]it [B]ranches' })
+keymap('n', '<leader>gts', builtin.git_stash, { desc = 'Git Stash' })
+keymap('n', '<leader>gtb', builtin.git_bcommits, { desc = 'Git Current Buffer Commits' })
+
 vim.cmd("highlight! TelescopeSelectionCaret guifg=#FF52A2")
 vim.cmd("highlight! TelescopePromptNormal guifg=#dd9046")
