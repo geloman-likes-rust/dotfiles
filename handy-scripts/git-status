@@ -5,16 +5,20 @@ GREEN='\033[1;32m'
 CYAN='\033[0;36m'
 NC='\033[0m'
 
-[ -z "$(git rev-parse --show-toplevel 2> /dev/null)" ] && exit 0
+workspace=$(git rev-parse --show-toplevel 2> /dev/null)
+
+[ -z "$workspace" ] && exit 0
 [ "$1" = "-l" ] && git status --long && exit 0
 [ -z "$(git status -s)" ] && git status && exit 0
 
 staged_files=$(git diff --name-only --cached)
-untracked_files=$(git ls-files "$(git rev-parse --show-toplevel)" --exclude-standard --others)
-dirty_files=$(git ls-files "$(git rev-parse --show-toplevel)" -m)
+untracked_files=$(git ls-files "$workspace" --exclude-standard --others --full-name)
+dirty_files=$(git diff --name-only --diff-filter=M 2> /dev/null)
+deleted_files=$(git diff --name-only --diff-filter=D 2> /dev/null)
 
 printf "\n"
 echo "$staged_files" | tr ' ' '\n'| xargs -I {} printf "${GREEN} S  {}\n"
 echo "$untracked_files" | tr ' ' '\n'| xargs -I {} printf "${CYAN} U  {}\n"
 echo "$dirty_files" | tr ' ' '\n'| xargs -I {} printf "${RED} M  {}\n${NC}"
+echo "$deleted_files" | tr ' ' '\n'| xargs -I {} printf "${RED} D  {}\n${NC}"
 printf "${NC}\n"
