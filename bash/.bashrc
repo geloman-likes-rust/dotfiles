@@ -11,7 +11,7 @@
 # ADD THESE TO PATH
 # -----------------------------------
 [ -d ~/.local/bin ] && PATH=$PATH:$HOME/.local/bin
-[ -d ~/.dotfiles/handy-scripts ] && PATH=$PATH:~/.dotfiles/handy-scripts
+[ -d ~/.dotfiles/handy-scripts/bin ] && PATH=$PATH:~/.dotfiles/handy-scripts/bin
 [ -d ~/.cargo ] && PATH=$PATH:$HOME/.cargo/bin
 [ -d ~/.miniconda/bin ] && PATH=$PATH:$HOME/.miniconda/bin
 
