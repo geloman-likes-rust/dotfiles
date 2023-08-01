@@ -1,0 +1,28 @@
+#!/bin/sh
+
+workspace=$(git rev-parse --show-toplevel 2> /dev/null)
+[ -z "$workspace" ] && exit 0
+
+ORANGE='\033[0;33m'
+RED='\033[0;91m'
+WHITE='\033[1;37m'
+CYAN='\033[0;36m'
+
+dirty_preview() {
+  fzf -e \
+    --preview "git diff --color=always {1} | delta" \
+    --preview-window right,60% \
+    --bind up:preview-page-up,down:preview-page-down \
+    --header "$(printf " ${CYAN}Git Restore ") " \
+    --header-first \
+    --preview-label "$(printf " ${ORANGE}File Preview ")" \
+    --border-label "$(printf " ${CYAN}Restore ${RED}Modified ${WHITE}Files ")" \
+    --padding 1 \
+    --prompt " " \
+    --pointer ""
+}
+
+dirty_files=$(git diff --name-only --diff-filter=M "$workspace" 2> /dev/null | xargs -I {} printf "${RED}${workspace}/{}\n")
+[ -z "$dirty_files" ] && exit 0
+selected=$(echo "$dirty_files" | tr ' ' '\n' | dirty_preview)
+[ -n "$selected" ] && git restore "$selected"
