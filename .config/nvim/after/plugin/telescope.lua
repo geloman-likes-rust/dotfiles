@@ -3,6 +3,11 @@ local ignore_files = { ".git", "target", "node_modules", "wwwroot/lib", "**/Debu
   "**.svg", "**.favicon.*", "**.gif", "**.jpg", "**.jpeg", "**.mp4", "**.mp3", "**.pdf", "go", "**.zip", "**.tar.gz",
   "**/tags", "**.ttf" }
 
+local keymap = function(mode, lhs, rhs, opts)
+  opts = opts or {}
+  vim.keymap.set(mode, lhs, rhs, opts)
+end
+
 local builtin = require('telescope.builtin')
 local actions = require('telescope.actions')
 
@@ -79,18 +84,19 @@ require('telescope').setup {
 }
 
 -- custom keymaps
-vim.keymap.set('n', '<leader>gs', builtin.git_status, { desc = '[G]it [S]tatus' })
-vim.keymap.set('n', '<leader>hp', builtin.highlights, { desc = '[H]ighlight [P]review' })
-vim.keymap.set('n', '<leader>gf', builtin.git_files, { desc = '[G]it [F]iles' })
-vim.keymap.set('n', '<leader>cc', builtin.colorscheme, { desc = '[C]hange [C]olorscheme' })
-vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = '[F]ind [F]iles' })
-vim.keymap.set('n', '<leader>hh', builtin.help_tags, { desc = 'Search [H][H]elp' })
-vim.keymap.set('n', '<leader>fw', builtin.grep_string, { desc = '[F]ind [W]ord under cursor' })
-vim.keymap.set('n', '<leader>lg', builtin.live_grep, { desc = '[L]ive [G]rep' })
-vim.keymap.set('n', '<leader>wd', builtin.diagnostics, { desc = '[W]orkspace [D]iagnostics' })
-vim.keymap.set('n', '<leader>?', builtin.oldfiles, { desc = '[?] Find recently opened files' })
-vim.keymap.set('n', '<leader><space>', builtin.buffers, { desc = '[ ] Find existing buffers' })
-vim.keymap.set('n', '<leader>j', builtin.current_buffer_fuzzy_find, { desc = '[J] current buffer fuzzy find' })
+keymap('n', '<leader>gs', builtin.git_status, { desc = '[G]it [S]tatus' })
+keymap('n', '<leader>hp', builtin.highlights, { desc = '[H]ighlight [P]review' })
+keymap('n', '<leader>gf', builtin.git_files, { desc = '[G]it [F]iles' })
+keymap('n', '<leader>cc', builtin.colorscheme, { desc = '[C]hange [C]olorscheme' })
+keymap('n', '<leader>ff', builtin.find_files, { desc = '[F]ind [F]iles' })
+keymap('n', '<leader>hh', builtin.help_tags, { desc = 'Search [H][H]elp' })
+keymap('n', '<leader>fw', builtin.grep_string, { desc = '[F]ind [W]ord under cursor' })
+keymap('n', '<leader>lg', builtin.live_grep, { desc = '[L]ive [G]rep' })
+keymap('n', '<leader>wd', builtin.diagnostics, { desc = '[W]orkspace [D]iagnostics' })
+keymap('n', '<leader>?', builtin.oldfiles, { desc = '[?] Find recently opened files' })
+keymap('n', '<leader><space>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+keymap('n', '<leader>j', builtin.current_buffer_fuzzy_find, { desc = '[J] current buffer fuzzy find' })
+-- vim.keymap.set('n', '<leader>j', builtin.current_buffer_fuzzy_find, { desc = '[J] current buffer fuzzy find' })
 
 -- custom highlights
 vim.cmd("highlight! TelescopeSelectionCaret guifg=#FF52A2")
