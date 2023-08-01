@@ -24,6 +24,7 @@ alias \
   gr="git-restore" \
   gco="git-checkout" \
   guc="git-unpushed-commits" \
+  guf="git-untracked-files" \
 
 # version control aliases
 alias \
