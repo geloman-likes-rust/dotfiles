@@ -15,6 +15,7 @@ alias \
 
 # handy scripts
 alias \
+  ew="edit-tmux-workspace" \
   frm="fast-remove" \
   lg="live-grep" \
   drt="dirty" \
