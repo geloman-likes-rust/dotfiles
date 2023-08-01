@@ -1,0 +1,3 @@
+#!/bin/sh
+
+nvim  +5 -c 'normal 11|vi"' ~/.dotfiles/handy-scripts/tmux-sessionizer
