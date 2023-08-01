@@ -2,20 +2,16 @@
 
 [ -z "$(git rev-parse --show-toplevel 2> /dev/null)" ] && exit 0
 
-ORANGE='\033[0;33m'
 RED='\033[0;91m'
 CYAN='\033[0;36m'
 
 dirty_preview() {
   fzf -e \
-    --preview "git diff --color=always {1} | delta" \
-    --preview-window right,70% \
-    --bind up:preview-page-up,down:preview-page-down \
-    --header "$(printf " ${CYAN}Restore File ")" \
+    --header "$(printf " ${CYAN}Restore File") " \
     --header-first \
-    --preview-label "$(printf " ${ORANGE}File Preview ")" \
-    --border-label "$(printf "${CYAN} Git Restore ")" \
-    --padding 1 \
+    --border=rounded \
+    --border-label "$(printf " ${CYAN}Git Restore ")" \
+    --margin 15%,15% \
     --prompt " " \
     --pointer ""
 }
