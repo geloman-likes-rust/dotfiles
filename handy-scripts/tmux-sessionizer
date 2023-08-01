@@ -1,9 +1,11 @@
 #!/usr/bin/env sh
 
 CYAN='\033[0;36m'
-[ -d ~/.dotfiles ] && [ -d ~/.development ] && [ -d ~/.personal ] || exit 0
 
-[ $# -eq 1 ] && selected=$1 || selected=$(find ~/.dotfiles ~/.development ~/.personal -type d | fzf --no-mouse --border-label "$(printf " ${CYAN}tmux-sessionizer ")" --border=rounded --margin=1 --header-first --header "Create tmux session" --prompt "  " --pointer "")
+workspace="$HOME/.dotfiles $HOME/.development $HOME/.personal"
+
+[ $# -eq 1 ] && selected=$1
+selected=$(find $workspace -type d | fzf --no-mouse --border-label "$(printf " ${CYAN}tmux-sessionizer ")" --border=rounded --margin=1 --header-first --header "Create tmux session" --prompt "  " --pointer "")
 
 [ -z "$selected" ] && exit 0
 
