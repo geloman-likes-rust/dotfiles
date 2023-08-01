@@ -26,6 +26,8 @@ alias \
   guc="git-unpushed-commits" \
   guf="git-untracked-files" \
   gmf="git-modified-files" \
+  grd="git-restore-deleted" \
+  grm="git-restore-modified" \
 
 # version control aliases
 alias \
