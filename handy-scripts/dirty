@@ -1,6 +1,7 @@
 #!/bin/sh
 
-[ -z "$(git rev-parse --show-toplevel 2> /dev/null)" ] && exit 0
+workspace="$(git rev-parse --show-toplevel 2> /dev/null)"
+[ -z "$workspace" ] && exit 0
 
 ORANGE='\033[0;33m'
 RED='\033[0;91m'
@@ -20,7 +21,15 @@ dirty_preview() {
     --pointer ""
 }
 
-workspace="$(git rev-parse --show-toplevel 2> /dev/null)"
 dirty_files=$(git diff --name-only --diff-filter=M "$workspace" 2> /dev/null | xargs -I {} printf "${RED}${workspace}/{}\n")
+
 untracked_files=$(git ls-files "$workspace" --full-name --exclude-standard --others 2> /dev/null | xargs -I {} printf "${CYAN}${workspace}/{}\n")
-[ -z "$dirty_files" ] && [ -z "$untracked_files" ] && echo "no dirty files, working tree clean" || selected=$(echo "$dirty_files" "$untracked_files" | tr ' ' '\n' | dirty_preview); [ -z "$selected" ] || nvim "$selected"
+
+[  -z "$dirty_files" ] && [ -z "$untracked_files" ] && echo "no dirty files, working tree clean" && exit 0
+
+[ -z "$dirty_files" ] && selected=$(echo "$untracked_files" | tr ' ' '\n' | dirty_preview)
+[ -z "$untracked_files" ] && selected=$(echo "$dirty_files" | tr ' ' '\n' | dirty_preview)
+
+[ -n "$dirty_files" ] && [ -n "$untracked_files" ] && selected=$(echo "$dirty_files" "$untracked_files" | tr ' ' '\n' | dirty_preview)
+
+[ -z "$selected" ] || nvim "$selected"
