@@ -5,7 +5,7 @@ ORANGE='\033[0;33m'
 fuzzy_preview() {
   fzf -e \
     --preview "bat --theme=1337 --color=always {}" \
-    --preview-window right,70% \
+    --preview-window right,60% \
     --bind up:preview-page-up,down:preview-page-down \
     --header "$(printf "${ORANGE}Select File")" \
     --border-label "$(printf " ${ORANGE}Open File ")" \

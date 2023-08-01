@@ -8,7 +8,7 @@ CYAN='\033[0;36m'
 dirty_preview() {
   fzf -e \
     --preview "bat --style=changes,header,grid --theme=1337 --color=always {}" \
-    --preview-window right,70% \
+    --preview-window right,60% \
     --bind up:preview-page-up,down:preview-page-down \
     --header "$(printf " ${ORANGE}Open File ")" \
     --header-first \
