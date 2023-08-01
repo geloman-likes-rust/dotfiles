@@ -1,0 +1,20 @@
+#!/bin/sh
+
+RED='\033[0;91m'
+CYAN='\033[0;36m'
+WHITE='\033[1;37m'
+
+dirty_preview() {
+  fzf -e \
+    --header "$(printf " ${CYAN}Restore ${RED}Deleted ${WHITE}File") " \
+    --header-first \
+    --border=rounded \
+    --border-label "$(printf " ${CYAN}Git Restore ")" \
+    --margin 15%,15% \
+    --prompt " " \
+    --pointer ""
+}
+
+workspace=$(git rev-parse --show-toplevel 2> /dev/null)
+dirty_files=$(git diff --name-only --diff-filter=D "$workspace" 2> /dev/null | xargs -I {} printf "${RED}{}\n")
+[ -z "$dirty_files" ] || selected=$(echo "$dirty_files" | tr ' ' '\n' | dirty_preview); [ -z "$selected" ] || git restore "$workspace/$selected"
