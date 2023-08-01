@@ -1,0 +1,23 @@
+#!/bin/sh
+
+[ -z "$(git rev-parse --show-toplevel 2> /dev/null)" ] && exit 0
+
+ORANGE='\033[0;33m'
+CYAN='\033[0;36m'
+
+dirty_preview() {
+  fzf -e \
+    --preview "bat --style=changes,header,grid --theme=1337 --color=always {}" \
+    --preview-window right,70% \
+    --bind up:preview-page-up,down:preview-page-down \
+    --header "$(printf " ${ORANGE}Open File ")" \
+    --header-first \
+    --preview-label "$(printf " ${ORANGE}File Preview ")" \
+    --border-label "$(printf "${CYAN} Untracked Files ")" \
+    --padding 1 \
+    --prompt " " \
+    --pointer ""
+}
+
+untracked_files=$(git ls-files "$(git rev-parse --show-toplevel 2> /dev/null)" --exclude-standard --others 2> /dev/null | xargs -I {} printf "${CYAN}{}\n")
+[ -z "$untracked_files" ] && echo "no dirty files, working tree clean" || selected=$(echo "$untracked_files" | tr ' ' '\n' | dirty_preview); [ -z "$selected" ] || nvim "$selected"
