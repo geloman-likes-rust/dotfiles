@@ -3,12 +3,4 @@ BLUE='\033[1;34m'
 RED='\033[0;91m'
 ORANGE='\033[0;33m'
 
-git_branch() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \1/'
-}
-
-dirty_repo() {
-  [[ -z $(git ls-files -m --others --exclude-standard 2> /dev/null) ]] || echo " ✗"
-}
-
-export PS1=" $BLUE\W$NC$RED\$(git_branch)$ORANGE\$(dirty_repo)$NC "
+export PS1=" $BLUE\W$NC "
