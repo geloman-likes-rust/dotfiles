@@ -1,3 +1,4 @@
 #!/bin/sh
 
-nvim  +5 -c 'normal f"vi"' ~/.dotfiles/handy-scripts/bin/tmux-sessionizer
+[ -n "$(which nvim 2> /dev/null)" ] && nvim  +5 -c 'normal f"vi"' ~/.dotfiles/handy-scripts/bin/tmux-sessionizer && exit 0
+[ -n "$(which vim 2> /dev/null)" ] && vim  +5 -c 'normal f"vi"' ~/.dotfiles/handy-scripts/bin/tmux-sessionizer && exit 0
