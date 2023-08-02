@@ -24,4 +24,5 @@ file_name=$(echo "$selected" | awk -F: '{print $1}')
 line_number=$(echo "$selected" | awk -F: '{print $2}')
 column_number=$(echo "$selected" | awk -F: '{print $3}')
 search_string=$(echo "$selected" | awk -F: '{print $4}')
-nvim +"$line_number" -c "normal zt${column_number}|" "+match Search /\%.l${search_string}/" "$file_name"
+[ -n "$(which nvim 2> /dev/null)" ] && nvim +"$line_number" -c "normal zt${column_number}|" "+match Search /\%.l${search_string}/" "$file_name" && exit 0
+[ -n "$(which vim 2> /dev/null)" ] && vim +"$line_number" -c "normal zt${column_number}|" "+match Search /\%.l${search_string}/" "$file_name" && exit 0
