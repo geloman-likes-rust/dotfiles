@@ -41,6 +41,7 @@ alias \
   gsp="git stash pop" \
   gsc="git stash clear" \
   gsl="git stash list" \
+  gss="git stash show" \
 
 # additional aliases
 alias \
