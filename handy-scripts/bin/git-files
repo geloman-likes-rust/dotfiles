@@ -1,0 +1,7 @@
+#!/bin/sh
+
+workspace=$(git rev-parse --show-toplevel 2> /dev/null)
+[ -z "$workspace" ] && exit 0
+selected="$(git ls-files "$workspace" --exclude-standard --cached --others | fzf --preview "bat --color=always {}" --header " Open File " --header-first --preview-window right,60% --border-label " Git Files " --preview-label " File Preview ")"
+[ -z "$selected" ] && exit 0
+nvim "$selected"
