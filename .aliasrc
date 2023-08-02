@@ -46,6 +46,8 @@ alias \
   gsc="git stash clear" \
   gsl="git stash list" \
   gss="git stash show" \
+  gca="git commit --amend" \
+  gcan="git commit --amend --no-edit" \
 
 # additional aliases
 alias \
