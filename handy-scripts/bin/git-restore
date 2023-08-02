@@ -1,6 +1,7 @@
 #!/bin/sh
 
-[ -z "$(git rev-parse --show-toplevel 2> /dev/null)" ] && exit 0
+workspace=$(git rev-parse --show-toplevel 2> /dev/null)
+[ -z "$workspace" ] && exit 0
 
 RED='\033[0;91m'
 CYAN='\033[0;36m'
@@ -16,5 +17,5 @@ dirty_preview() {
     --pointer ""
 }
 
-dirty_files=$(git ls-files "$(git rev-parse --show-toplevel 2> /dev/null)" -m 2> /dev/null | xargs -I {} printf "${RED}{}\n")
+dirty_files=$(git ls-files "$workspace" -m 2> /dev/null | xargs -I {} printf "${RED}{}\n")
 [ -z "$dirty_files" ] || selected=$(echo "$dirty_files" | tr ' ' '\n' | dirty_preview); [ -z "$selected" ] || git restore "$selected"
