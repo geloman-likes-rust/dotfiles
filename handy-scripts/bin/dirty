@@ -16,7 +16,6 @@ dirty_preview() {
     --header-first \
     --preview-label "$(printf " ${ORANGE}File Preview ")" \
     --border-label "$(printf "${RED} Dirty Files ")" \
-    --padding 1 \
     --prompt " " \
     --pointer ""
 }
