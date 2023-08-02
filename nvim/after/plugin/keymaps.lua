@@ -29,6 +29,7 @@ keymap("n", "H", "Hzz")
 keymap("n", "L", "Lzz")
 keymap("n", "G", "Gzz")
 
+keymap("n", "<leader>bf", ":buffers<cr>", { silent = true })
 -- switch buffers
 keymap("n", "<C-n>", ":bNext<cr>", { silent = true })
 keymap("n", "<left>", ":bprevious<cr>", { silent = true })
