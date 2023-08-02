@@ -8,7 +8,7 @@ NC='\033[0m'
 workspace=$(git rev-parse --show-toplevel 2> /dev/null)
 
 [ -z "$workspace" ] && exit 0
-[ "$1" = "-l" ] && git status --long && exit 0
+[ -n "$1" ] && git status "$1" && exit 0
 [ -z "$(git status -s)" ] && git status && exit 0
 
 staged_files=$(git diff --name-only --cached)
