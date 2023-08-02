@@ -32,4 +32,7 @@ untracked_files=$(git ls-files "$workspace" --full-name --exclude-standard --oth
 
 [ -n "$dirty_files" ] && [ -n "$untracked_files" ] && selected=$(echo "$dirty_files" "$untracked_files" | tr ' ' '\n' | dirty_preview)
 
-[ -z "$selected" ] || nvim "$selected"
+[ -z "$selected" ] && exit 0
+
+[ -n "$(which nvim 2> /dev/null)" ] && nvim "$selected" && exit 0
+[ -n "$(which vim 2> /dev/null)" ] && vim "$selected" && exit 0
