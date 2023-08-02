@@ -25,7 +25,7 @@ fast_cd() {
 # -----------------------------------
 bind -x '"\C-p": tmux-sessionizer'
 bind -x '"\C-b": randbg'
-bind -x '"\C-f": fvi'
+bind -x '"\C-f": find-files'
 bind '"\C-o": "fast_cd; clear\n"'
 
 ## ALL ENVIRONMENT VARIABLE GOES HERE
