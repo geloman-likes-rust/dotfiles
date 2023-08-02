@@ -37,6 +37,8 @@ alias \
   gcm="git commit -m" \
   gp="git push" \
   gdf="git diff" \
+  gsu="git stash -uq" \
+  gsp="git stash pop -q" \
 
 # additional aliases
 alias \
