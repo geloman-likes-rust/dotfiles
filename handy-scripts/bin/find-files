@@ -11,10 +11,12 @@ fuzzy_preview() {
     --border-label "$(printf " ${ORANGE}Open File ")" \
     --header-first \
     --preview-label "$(printf " ${ORANGE}File Preview ")" \
-    --padding 1 \
     --prompt " " \
     --pointer ""
 }
 
 selected=$(rg --files --sort-files --hidden --glob="!{**.git/*,**/node_modules/*,.cache,**.jpg,**.png,**.mp3,**.mp4,**.rpm}" | fuzzy_preview)
-[ -z "$selected" ] || nvim "$selected"
+[ -z "$selected" ] && exit 0
+
+[ -n "$(which nvim 2> /dev/null)" ] && nvim "$selected" && exit 0
+[ -n "$(which vim 2> /dev/null)" ] && vim "$selected" && exit 0
