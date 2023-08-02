@@ -20,6 +20,7 @@ alias \
   lg="live-grep" \
   drt="dirty" \
   gs="git-status" \
+  gf="git-files" \
   ga="git-add" \
   gu="git-unstage-file" \
   gr="git-restore" \
