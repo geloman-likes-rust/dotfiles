@@ -2,7 +2,7 @@
 
 workspace=$(git rev-parse --show-toplevel 2> /dev/null)
 [ -z "$workspace" ] && exit 0
-selected="$(git ls-files "$workspace" --exclude-standard --cached --others | fzf --preview "bat --style=changes,numbers,grid,header-filename --color=always {}" --header " Open File " --header-first --preview-window right,60% --border-label " Git Files " --preview-label " File Preview ")"
+selected="$(git ls-files "$workspace" --exclude-standard --cached --others | fzf --preview "bat --theme=1337 --style=changes,numbers,grid,header-filename --color=always {}" --header " Open File " --header-first --preview-window right,60% --border-label " Git Files " --preview-label " File Preview ")"
 [ -z "$selected" ] && exit 0
 [ -n "$(which nvim 2> /dev/null)" ] && nvim "$selected" && exit 0
 [ -n "$(which vim 2> /dev/null)" ] && vim "$selected" && exit 0
