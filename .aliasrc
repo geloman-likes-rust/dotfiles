@@ -40,6 +40,7 @@ alias \
   gsu="git stash -u" \
   gsp="git stash pop" \
   gsc="git stash clear" \
+  gsl="git stash list" \
 
 # additional aliases
 alias \
