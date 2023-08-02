@@ -29,6 +29,7 @@ alias \
   gmf="git-modified-files" \
   grd="git-restore-deleted" \
   grm="git-restore-modified" \
+  gsa="git-stash-apply" \
 
 # version control aliases
 alias \
