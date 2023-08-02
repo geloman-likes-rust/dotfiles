@@ -3,6 +3,8 @@
 workspace=$(git rev-parse --show-toplevel 2> /dev/null)
 [ -z "$workspace" ] && exit 0
 
+[ -n "$1" ] && git restore "$1" && exit 0
+
 RED='\033[0;91m'
 CYAN='\033[0;36m'
 
