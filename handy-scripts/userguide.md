@@ -13,7 +13,7 @@ before using all of my handy scripts, u must have all these tools installed on y
 
 ### handy-scripts user guide:
 
-- [**`fvi`**](bin/fvi) - find files recursively and opens it in neovim.
+- [**`find-files`**](bin/find-files) - find files recursively and opens it in neovim.
 
     - Default keymaps:
         - **`<cr>`** : opens the selected file.
