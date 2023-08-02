@@ -8,7 +8,7 @@ WHITE='\033[1;37m'
 
 dirty_preview() {
   fzf -e \
-    --preview "git diff --color=always {1} | delta" \
+    --preview "git diff --color=always {1} | delta --file-style=red" \
     --preview-window right,60% \
     --bind up:preview-page-up,down:preview-page-down \
     --header "$(printf " ${ORANGE}Open File ")" \
