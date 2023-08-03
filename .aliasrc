@@ -40,6 +40,7 @@ alias \
   gb="git branch" \
   gcm="git commit -m" \
   gp="git push" \
+  gpf="git push -f" \
   gdf="git diff" \
   gsu="git stash -u" \
   gsp="git stash pop" \
