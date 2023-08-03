@@ -94,6 +94,8 @@ autocmd FileType javascript,javascriptreact,typescriptreact,typescript,html,css 
 " ---------------------------------------
 
 highlight DiffAdd guifg=#03C988 guibg=#d6ffd6
+highlight DiffText guifg=#f6b26b guibg=#fbe0c3
+highlight DiffChange guifg=#068fff guibg=#b4ddff
 highlight DiffDelete guifg=#FC2947 guibg=#ffeeee
 
 highlight TabLine guifg=#93a4c3 guibg=#21283b  
