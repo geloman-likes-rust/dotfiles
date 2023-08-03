@@ -33,6 +33,7 @@ alias \
   grd="git-restore-deleted" \
   grm="git-restore-modified" \
   gsa="git-stash-apply" \
+  gulc="git-undo-last-commit" \
 
 # version control aliases
 alias \
