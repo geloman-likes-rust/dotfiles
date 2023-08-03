@@ -53,6 +53,7 @@ alias \
   gss="git stash show" \
   gca="git commit --amend" \
   gcan="git commit --amend --no-edit" \
+  gdt="git difftool -y" \
 
 # additional aliases
 alias \
