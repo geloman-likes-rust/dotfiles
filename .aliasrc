@@ -34,6 +34,7 @@ alias \
   grm="git-restore-modified" \
   gsa="git-stash-apply" \
   gulc="git-undo-last-commit" \
+  gai="git-add-interactive" \
 
 # version control aliases
 alias \
