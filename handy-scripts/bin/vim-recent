@@ -1,0 +1,4 @@
+#!/bin/sh
+
+[ "$EDITOR" = "vim" ] && vim -c "norm '0" && exit 0
+[ "$EDITOR" = "nvim" ] && nvim -c "norm '0" && exit 0
