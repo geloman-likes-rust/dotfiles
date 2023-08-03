@@ -1,0 +1,7 @@
+#!/bin/sh
+
+[ -z "$(git rev-parse --git-dir 2> /dev/null)" ] && exit 0
+
+CYAN='\033[0;36m'
+selected_worktree="$(git worktree list | cut -d' ' -f1 | fzf --prompt " " --pointer "" --header-first --header "select worktree" --border-label "$(printf " ${CYAN}%s " "git worktree")")"
+[ -n "$selected_worktree" ] && echo "$selected_worktree"
