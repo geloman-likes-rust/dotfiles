@@ -1,0 +1,20 @@
+#!/bin/sh
+
+[ -z "$(git rev-parse --git-dir 2> /dev/null)" ] && exit 0
+
+worktrees="$(git worktree list 2> /dev/null)"
+
+bare_repo="$(echo "$worktrees" | grep bare | cut -d' ' -f1)"
+[ -z "$bare_repo" ] && exit 0
+
+CYAN='\033[0;36m'
+selected_branch=$(git branch --color=always | fzf --prompt "  " --pointer "" --margin 20%,20% --border=rounded --border-label " $(printf "${CYAN}%s" "git-worktree-branch") " --header-first --header "select worktree branch")
+[ -z "$selected_branch" ] && exit 0
+
+worktree=$(echo "${selected_branch##* }")
+
+worktree_path="$(echo "$worktrees" | grep "$worktree" | cut -d' ' -f1)"
+[ -d "$worktree_path" ] && echo "$worktree_path" && exit 0
+
+worktree_path=$(echo "$bare_repo/$worktree")
+git worktree add -q "$worktree" && echo "$worktree_path" 2> /dev/null
