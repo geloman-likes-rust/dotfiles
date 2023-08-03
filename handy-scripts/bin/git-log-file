@@ -1,0 +1,9 @@
+#!/bin/sh
+
+workspace=$(git rev-parse --show-toplevel 2> /dev/null)
+[ -z "$workspace" ] && exit 0
+
+selected="$(git ls-files "$workspace" --exclude-standard --cached | fzf --border-label " git-log-file " --header-first --header " git log --oneline --follow")"
+[ -z "$selected" ] && exit 0
+
+git log --oneline --follow "$selected"
