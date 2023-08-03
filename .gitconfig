@@ -35,3 +35,13 @@
 
 [fetch]
 	prune = true
+
+[color]
+	status = auto
+	ui = true
+
+[color "status"]
+	added = green
+	deleted = red
+	changed = red
+	untracked = cyan
