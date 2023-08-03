@@ -38,6 +38,7 @@ alias \
   gai="git-add-interactive" \
   grl="git-reflog" \
   gw="git-worktree" \
+  gwb="git-worktree-branch" \
 
 # version control aliases
 alias \
