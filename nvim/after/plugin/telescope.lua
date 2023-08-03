@@ -101,6 +101,7 @@ keymap('n', '<leader>?', builtin.oldfiles, { desc = '[?] Find recently opened fi
 keymap('n', '<leader><space>', builtin.buffers, { desc = '[ ] Find existing buffers' })
 keymap('n', '<leader>j', builtin.current_buffer_fuzzy_find, { desc = '[J] current buffer fuzzy find' })
 keymap('n', '<leader>ps', builtin.planets, { desc = 'Love and Peace' })
+keymap('n', '<leader>fr', builtin.registers, { desc = 'Fuzzy Find Registers' })
 
 keymap('n', '<leader>gs', builtin.git_status, { desc = '[G]it [S]tatus' })
 keymap('n', '<leader>gf', builtin.git_files, { desc = '[G]it [F]iles' })
