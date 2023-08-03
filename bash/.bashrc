@@ -20,6 +20,9 @@
 fast_cd() {
   selected=$(fast-cd); [ -z "$selected" ] || cd "$selected" || return
 }
+change_worktree() {
+  selected=$(git-worktree); [ -n "$selected" ] && cd "$selected" || return
+}
 
 # CUSTOM KEYMAPS
 # -----------------------------------
@@ -27,6 +30,7 @@ bind -x '"\C-p": tmux-sessionizer'
 bind -x '"\C-b": randbg'
 bind -x '"\C-f": find-files'
 bind '"\C-o": "fast_cd; clear\n"'
+bind '"\C-n": "change_worktree; clear\n"'
 
 ## ALL ENVIRONMENT VARIABLE GOES HERE
 # -----------------------------------
