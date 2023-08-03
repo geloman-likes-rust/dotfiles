@@ -35,6 +35,7 @@ alias \
   gsa="git-stash-apply" \
   gulc="git-undo-last-commit" \
   gai="git-add-interactive" \
+  grl="git-reflog" \
 
 # version control aliases
 alias \
