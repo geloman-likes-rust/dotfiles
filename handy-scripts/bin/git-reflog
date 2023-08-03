@@ -1,0 +1,11 @@
+#!/bin/sh
+
+CYAN='\033[0;36m'
+ORANGE='\033[0;33m'
+
+commit_hash="$(git reflog show --color=always | fzf --prompt "  " --pointer "" --border=rounded --border-label "$(printf " ${CYAN}%s " "git reflog")" --header "$(printf " git reset ${ORANGE}%s " "commit")" --header-first | cut -d' ' -f1)"
+[ -z "$commit_hash" ] && exit 0
+
+wanna_reset=$(printf "${CYAN}%s\n${ORANGE}%s\n" "no" "yes" | fzf --prompt " " --pointer "" --margin 35%,35%  --border=rounded --border-label "$(printf " git reset ${ORANGE}%s " "$commit_hash")")
+[ "$wanna_reset" = "no" ] && exit 0
+git reset "$commit_hash"
