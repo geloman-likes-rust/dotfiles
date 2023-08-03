@@ -3,6 +3,7 @@
 workspace=$(git rev-parse --show-toplevel 2> /dev/null)
 [ -z "$workspace" ] && exit 0
 modified_files="$(git ls-files "$workspace" -m)"
+[ -z "$modified_files" ] && exit 0
 
 CYAN='\033[0;36m'
 ORANGE='\033[0;33m'
