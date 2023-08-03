@@ -64,7 +64,6 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 ## source fzf
 #-----------------------------------------------------
 
-RED=#f65866
 YELLOW=#FF8400
 PINK=#FF52A2
 PURPLE=#DAB8F3

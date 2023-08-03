@@ -30,7 +30,6 @@ bind '"\C-o": "fast_cd; clear\n"'
 
 ## ALL ENVIRONMENT VARIABLE GOES HERE
 # -----------------------------------
-RED=#f65866
 PINK=#FF52A2
 PURPLE=#DAB8F3
 BG=#2a324a
