@@ -55,6 +55,7 @@ alias \
   gca="git commit --amend" \
   gcan="git commit --amend --no-edit" \
   gdt="git difftool -y" \
+  gwa="git worktree add" \
 
 # additional aliases
 alias \
