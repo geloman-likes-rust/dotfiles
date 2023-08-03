@@ -1,0 +1,18 @@
+#!/bin/sh
+
+[ -z "$(git rev-parse --show-toplevel 2> /dev/null)" ] && exit 0
+
+[ "$1" = "-s" ] && git reset --soft HEAD~1 && exit 0
+[ "$1" = "-h" ] && git reset --hard HEAD~1 && exit 0
+[ "$1" = "-m" ] && git reset --mixed HEAD~1 && exit 0
+
+CYAN='\033[0;36m'
+GREEN='\033[1;32m'
+NC='\033[0m'
+RED='\033[0;31m'
+
+selected=$(printf "${RED}%s\n${GREEN}%s\n${NC}%s\n" "mixed" "soft" "hard" | fzf --pointer "" --prompt "  " --margin 25%,35% --border=rounded --border-label "$(printf " ${CYAN}undo last commit ")")
+[ -z "$selected" ] && exit 0
+[ "$selected" = "soft" ] && git reset --soft HEAD~1 && exit 0
+[ "$selected" = "hard" ] && git reset --hard HEAD~1 && exit 0
+[ "$selected" = "mixed" ] && git reset --mixed HEAD~1 && exit 0
