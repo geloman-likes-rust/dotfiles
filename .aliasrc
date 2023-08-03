@@ -16,6 +16,7 @@ alias \
 # handy scripts
 alias \
   ew="edit-tmux-workspace" \
+  vr="vim-recent" \
   ff="find-files" \
   fvi="find-files" \
   frm="fast-remove" \
