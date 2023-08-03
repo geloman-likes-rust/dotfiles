@@ -21,7 +21,7 @@ alias \
   frm="fast-remove" \
   lg="live-grep" \
   drt="dirty" \
-  gs="git status --short" \
+  gs="git-status" \
   gf="git-files" \
   ga="git-add" \
   gu="git-unstage-file" \
