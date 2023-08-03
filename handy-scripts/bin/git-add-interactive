@@ -2,8 +2,10 @@
 
 workspace=$(git rev-parse --show-toplevel 2> /dev/null)
 [ -z "$workspace" ] && exit 0
+modified_files="$(git ls-files "$workspace" -m)"
 
 CYAN='\033[0;36m'
-selected=$(git ls-files "$workspace" -m | fzf --pointer "" --prompt "  " --margin 10%,15% --border=rounded --border-label "$(printf " ${CYAN}%s " "git-add-interactive")" --header-first --header "select file")
+ORANGE='\033[0;33m'
+selected=$(printf "${ORANGE}%s" "$modified_files" | fzf --pointer "" --prompt "  " --margin 10%,15% --border=rounded --border-label "$(printf " ${CYAN}%s " "git-add-interactive")" --header-first --header "select file")
 [ -z "$selected" ] && exit 0
 git add --patch "$selected"
