@@ -10,7 +10,7 @@ set smartindent
 set autowrite
 set smartcase
 set scrolloff=10
-" set sidescrolloff=20
+set sidescrolloff=10
 set hidden
 set noerrorbells
 set nowrap
