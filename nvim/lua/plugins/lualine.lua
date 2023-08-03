@@ -12,8 +12,8 @@ return {
       section_separators = { left = '', right = '' },
       symbols = {
         -- unix = '', -- e712
-        -- unix = '',  -- e70f
-        -- unix = '',  -- e711
+        -- dos = '',  -- e70f
+        -- mac = '',  -- e711
       }
     },
   },
