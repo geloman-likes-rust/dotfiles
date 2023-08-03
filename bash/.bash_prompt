@@ -1,6 +1,4 @@
 NC='\033[0m'
 BLUE='\033[1;34m'
-RED='\033[0;91m'
-ORANGE='\033[0;33m'
 
 export PS1=" $BLUE\W$NC "
