@@ -1,0 +1,9 @@
+#!/bin/sh
+
+workspace=$(git rev-parse --show-toplevel 2> /dev/null)
+[ -z "$workspace" ] && exit 0
+
+CYAN='\033[0;36m'
+selected=$(git ls-files "$workspace" -m | fzf --pointer "" --prompt "  " --margin 10%,15% --border=rounded --border-label "$(printf " ${CYAN}%s " "git-add-interactive")" --header-first --header "select file")
+[ -z "$selected" ] && exit 0
+git add --patch "$selected"
