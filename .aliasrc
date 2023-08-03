@@ -39,6 +39,7 @@ alias \
   grl="git-reflog" \
   gw="git-worktree" \
   gwb="git-worktree-branch" \
+  glf="git-log-file" \
 
 # version control aliases
 alias \
