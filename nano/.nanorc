@@ -7,6 +7,7 @@ set constantshow
 set afterends
 set nonewlines
 set numbercolor white
+set multibuffer
 
 bind ^d chopwordright main
 bind ^y copy main
