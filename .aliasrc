@@ -40,6 +40,7 @@ alias \
   gw="git-worktree" \
   gwb="git-worktree-branch" \
   glf="git-log-file" \
+  sws="switch_shell" \
 
 # version control aliases
 alias \
