@@ -18,6 +18,5 @@ dirty_preview() {
     --pointer ""
 }
 
-# dirty_files=$(git diff --name-only --diff-filter=D "$workspace" 2> /dev/null | xargs -I {} printf "${RED}{}\n")
-dirty_files=$(git ls-files -d | xargs -I {} printf "${RED}{}\n")
-[ -z "$dirty_files" ] || selected=$(echo "$dirty_files" | tr ' ' '\n' | dirty_preview); [ -z "$selected" ] || git restore "$workspace/$selected"
+dirty_files=$(git ls-files "$workspace" -d | xargs -I {} printf "${RED}{}\n")
+[ -n "$dirty_files" ] && selected=$(echo "$dirty_files" | dirty_preview); [ -n "$selected" ] && git restore "$selected"
