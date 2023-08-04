@@ -66,6 +66,7 @@ alias \
   size-all="du -hc" \
   ls='exa --no-user --no-time --no-filesize -l' \
   lsn='command ls --color=always' \
+  nano='nano -x' \
   v='nvim' \
   vi='nvim' \
   vii='nvim' \
