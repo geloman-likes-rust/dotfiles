@@ -18,6 +18,7 @@ bind M-] nextblock main
 bind M-[ prevblock main
 bind M-K firstline main
 bind M-J lastline main
+bind ^t insert all
 bind ^n nextbuf main
 bind ^m prevbuf main
 bind M-D cut main
