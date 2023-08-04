@@ -3,9 +3,22 @@ set autoindent
 set linenumbers
 set positionlog
 set minibar
+set constantshow
+set nonewlines
 
 bind ^d chopwordright main
 bind ^y copy main
+bind ^v copy main
+bind ^o enter main
+bind ^g gotoline main
+bind M-] nextblock main
+bind M-[ prevblock main
+bind M-K firstline main
+bind M-J lastline main
+bind M-D cut main
+bind M-, unindent main
+bind M-. indent main
+bind ^f whereis main
 bind ^x delete main
 bind ^p paste main
 bind ^u undo main
