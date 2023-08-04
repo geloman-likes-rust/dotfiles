@@ -36,3 +36,39 @@ bind ^h left main
 bind ^l right main
 bind ^j down main
 bind ^k up main
+
+
+## SYNTAX HIGHLIGHTING
+
+include "~/.dotfiles/nano/asm.nanorc"
+include "~/.dotfiles/nano/c.nanorc"
+include "~/.dotfiles/nano/conf.nanorc"
+include "~/.dotfiles/nano/csharp.nanorc"
+include "~/.dotfiles/nano/css.nanorc"
+include "~/.dotfiles/nano/Dockerfile.nanorc"
+include "~/.dotfiles/nano/dotenv.nanorc"
+include "~/.dotfiles/nano/dot.nanorc"
+include "~/.dotfiles/nano/git.nanorc"
+include "~/.dotfiles/nano/go.nanorc"
+include "~/.dotfiles/nano/html.j2.nanorc"
+include "~/.dotfiles/nano/html.nanorc"
+include "~/.dotfiles/nano/i3.nanorc"
+include "~/.dotfiles/nano/inputrc.nanorc"
+include "~/.dotfiles/nano/javascript.nanorc"
+include "~/.dotfiles/nano/js.nanorc"
+include "~/.dotfiles/nano/json.nanorc"
+include "~/.dotfiles/nano/lua.nanorc"
+include "~/.dotfiles/nano/man.nanorc"
+include "~/.dotfiles/nano/markdown.nanorc"
+include "~/.dotfiles/nano/nanorc.nanorc"
+include "~/.dotfiles/nano/nginx.nanorc"
+include "~/.dotfiles/nano/python.nanorc"
+include "~/.dotfiles/nano/rust.nanorc"
+include "~/.dotfiles/nano/sh.nanorc"
+include "~/.dotfiles/nano/sql.nanorc"
+include "~/.dotfiles/nano/toml.nanorc"
+include "~/.dotfiles/nano/ts.nanorc"
+include "~/.dotfiles/nano/xml.nanorc"
+include "~/.dotfiles/nano/yaml.nanorc"
+include "~/.dotfiles/nano/zsh.nanorc"
+include "~/.dotfiles/nano/zshrc.nanorc"
