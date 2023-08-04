@@ -1,4 +1,19 @@
-set zero
+set nohelp
 set autoindent
 set linenumbers
 set positionlog
+set minibar
+
+bind ^d chopwordright main
+bind ^y copy main
+bind ^x delete main
+bind ^p paste main
+bind ^u undo main
+bind ^r redo main
+bind ^q exit main
+bind ^w nextword main
+bind ^b prevword main
+bind ^h left main
+bind ^l right main
+bind ^j down main
+bind ^k up main
