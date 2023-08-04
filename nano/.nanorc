@@ -4,6 +4,7 @@ set linenumbers
 set positionlog
 set minibar
 set constantshow
+set afterends
 set nonewlines
 
 bind ^d chopwordright main
