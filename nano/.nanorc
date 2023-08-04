@@ -6,6 +6,7 @@ set minibar
 set constantshow
 set afterends
 set nonewlines
+set numbercolor white
 
 bind ^d chopwordright main
 bind ^y copy main
