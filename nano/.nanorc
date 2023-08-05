@@ -1,6 +1,7 @@
 set nohelp
 set autoindent
 set linenumbers
+set tabsize 4
 set positionlog
 set minibar
 set constantshow
