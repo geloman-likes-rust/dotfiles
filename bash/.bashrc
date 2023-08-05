@@ -1,6 +1,5 @@
 # SOURCE THESE
 # -----------------------------------
-[ -f /etc/bashrc ] && . /etc/bashrc
 [ -f ~/.aliasrc ] && . "$HOME"/.aliasrc
 [ -f ~/.bash_prompt ] && . "$HOME"/.bash_prompt
 [ -f ~/.fzf.bash ] && . "$HOME"/.fzf.bash
@@ -34,13 +33,15 @@ bind '"\C-n": "change_worktree; clear\n"'
 
 ## ALL ENVIRONMENT VARIABLE GOES HERE
 # -----------------------------------
+SHELL="/bin/bash"
+[ -n "$(command -v nvim)" ] && EDITOR="nvim" || EDITOR="vim"
+
 PINK=#FF52A2
 PURPLE=#DAB8F3
 BG=#2a324a
 FG=#93a4c3
 MINT=#00FFAB
 WHITE=#EDEDED
-export PATH
-export EDITOR="nvim"
-export SHELL="/bin/bash"
+
+export PATH EDITOR SHELL
 [ -f ~/.fzf.bash ] && export FZF_DEFAULT_OPTS="--ansi --color=bg+:$BG,fg+:$FG,gutter:-1,border:$PURPLE,hl:$MINT,hl+:$PINK,query:$PINK,pointer:$PINK,label:$WHITE,info:$MINT,spinner:$PURPLE,header:$PURPLE --border=rounded"
