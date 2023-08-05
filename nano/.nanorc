@@ -4,7 +4,6 @@ set linenumbers
 set positionlog
 set minibar
 set constantshow
-set afterends
 set nonewlines
 set numbercolor white
 set multibuffer
