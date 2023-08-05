@@ -22,6 +22,7 @@
 [ -L ~/.bashrc ] && unlink ~/.bashrc
 [ -L ~/.inputrc ] && unlink ~/.inputrc
 [ -L ~/.bash_prompt ] && unlink ~/.bash_prompt
+[ -L ~/.bash_profile ] && unlink ~/.bash_profile
 
 # UNLINK I3 CONFIGS
 [ -L ~/.config/i3 ] && unlink ~/.config/i3
