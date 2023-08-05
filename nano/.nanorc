@@ -37,6 +37,7 @@ bind ^x delete main
 bind ^p paste main
 bind ^u undo main
 bind ^r redo main
+bind M-W save main
 bind ^q exit main
 
 # file explorer & buffer switching
