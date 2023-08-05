@@ -42,4 +42,5 @@ MINT=#00FFAB
 WHITE=#EDEDED
 export PATH
 export EDITOR="nvim"
+export SHELL="/bin/bash"
 [ -f ~/.fzf.bash ] && export FZF_DEFAULT_OPTS="--ansi --color=bg+:$BG,fg+:$FG,gutter:-1,border:$PURPLE,hl:$MINT,hl+:$PINK,query:$PINK,pointer:$PINK,label:$WHITE,info:$MINT,spinner:$PURPLE,header:$PURPLE --border=rounded"
