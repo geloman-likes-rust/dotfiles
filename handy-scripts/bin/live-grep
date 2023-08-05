@@ -26,5 +26,5 @@ column_number=$(echo "$selected" | cut -d':' -f3)
 search_string=$(echo "$selected" | cut -d':' -f4)
 
 [ "$EDITOR" = "nano" ] && nano +"$line_number","$column_number" "$file_name" && exit 0
-[ -n "$(which nvim 2> /dev/null)" ] && nvim +"$line_number" -c "normal zt${column_number}|" "+match Search /\%.l${search_string}/" "$file_name" && exit 0
-[ -n "$(which vim 2> /dev/null)" ] && vim +"$line_number" -c "normal zt${column_number}|" "+match Search /\%.l${search_string}/" "$file_name" && exit 0
+[ -n "$(command -v nvim)" ] && nvim +"$line_number" -c "normal zt${column_number}|" "+match Search /\%.l${search_string}/" "$file_name" && exit 0
+[ -n "$(command -v vim)" ] && vim +"$line_number" -c "normal zt${column_number}|" "+match Search /\%.l${search_string}/" "$file_name" && exit 0
