@@ -36,7 +36,10 @@
 # GETTING BACK TO NORMAL
 [ -f ~/.vimrc.bak ] && mv -f ~/.vimrc.bak ~/.vimrc
 [ -f ~/.zshrc.bak ] && mv -f ~/.zshrc.bak ~/.zshrc
+[ -f ~/.zshenv.bak ] && mv -f ~/.zshenv.bak ~/.zshenv
+[ -f ~/.zprofile.bak ] && mv -f ~/.zprofile.bak ~/.zprofile
 [ -f ~/.bashrc.bak ] && mv -f ~/.bashrc.bak ~/.bashrc
+[ -f ~/.bash_profile.bak ] && mv -f ~/.bash_profile.bak ~/.bash_profile
 [ -f ~/.inputrc.bak ] && mv -f ~/.inputrc.bak ~/.inputrc
 [ -f ~/.gitconfig.bak ] && mv -f ~/.gitconfig.bak ~/.gitconfig
 [ -d ~/.config/i3.bak ] && mv -f ~/.config/i3.bak ~/.config/i3
