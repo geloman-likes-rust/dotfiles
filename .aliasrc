@@ -76,7 +76,7 @@ alias \
   config="cd ~/.dotfiles/.config" \
   python='python3' \
   mem="neofetch memory" \
-  cpu="neofetch cpu" \
+  cpu="neofetch cpu --cpu_temp" \
   disk="neofetch disk" \
   uptime="neofetch uptime" \
   mysql-run="mysql -v --table" \
