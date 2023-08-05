@@ -14,6 +14,8 @@
 
 # UNLINK ZSH CONFIGS
 [ -L ~/.zshrc ] && unlink ~/.zshrc
+[ -L ~/.zshenv ] && unlink ~/.zshenv
+[ -L ~/.zprofile ] && unlink ~/.zprofile
 [ -L ~/.zsh_prompt ] && unlink ~/.zsh_prompt
 
 # UNLINK BASH CONFIGS
