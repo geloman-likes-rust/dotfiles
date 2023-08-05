@@ -4,6 +4,7 @@
 #---------------------------------------------------------------------
 install_miniconda() {
 	[ -d ~/.miniconda ] && return
+	[ -z "$(command -v curl)" ] && return
 	echo "Installing miniconda......................................"
 	curl -sSL https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -o ~/miniconda.sh
 	chmod +x ~/miniconda.sh
@@ -43,6 +44,8 @@ install_fzf() {
 install_neovim() {
 	[ -d ~/.neovim ] && return
 	[ -n "$(command -v nvim)" ] && return
+	[ -z "$(command -v curl)" ] && return
+	[ -z "$(command -v tar)" ] && return
 	echo "Installing neovim......................................"
 	cd "$HOME" && curl -s -JLO https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz
 	tar xzvf nvim-linux64.tar.gz
@@ -64,6 +67,7 @@ install_clang() {
 #---------------------------------------------------------------------
 install_rust() {
 	[ -d ~/.cargo ] && return
+	[ -z "$(command -v curl)" ] && return
 	echo "Installing rustup, cargo, rustc......................................"
 	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 }
@@ -72,6 +76,7 @@ install_rust() {
 #---------------------------------------------------------------------
 install_nvm() {
 	[ -d ~/.nvm ] && return
+	[ -z "$(command -v curl)" ] && return
 	echo "Installing node-version-manager......................................"
 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | sh
 	[ -s "$HOME/.nvim/nvm.sh" ] && \. "$HOME/.nvm/nvm.sh"  # This loads nvm
@@ -84,6 +89,8 @@ install_nvm() {
 install_exa() {
 	[ -d ~/.exa ] && return
 	[ -n "$(command -v exa)" ] && return
+	[ -z "$(command -v curl)" ] && return
+	[ -z "$(command -v unzip)" ] && return
 	echo "Installing exa......................................"
 	[ -d ~/.exa ] || mkdir ~/.exa && cd "$HOME"/.exa || return
 	curl -sLO https://github.com/ogham/exa/releases/download/v0.10.1/exa-linux-x86_64-v0.10.1.zip
@@ -97,6 +104,7 @@ install_exa() {
 install_httpie() {
 	[ -d ~/.httpie ] && return
 	[ -n "$(command -v http)" ] && return
+	[ -z "$(command -v curl)" ] && return
 	echo "Installing httpie......................................"
 	curl --create-dirs -Lo ~/.httpie/http https://packages.httpie.io/binaries/linux/http-latest
 	chmod +x ~/.httpie/http && ln -sf ~/.httpie/http ~/.local/bin/
@@ -141,6 +149,7 @@ install_bat() {
 ## oh-my-zsh - need this for zsh pretty prompt
 install_ohmyzsh() {
 	[ -d ~/.oh-my-zsh ] && return
+	[ -z "$(command -v curl)" ] && return
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 }
 
@@ -159,3 +168,8 @@ install_clang
 install_ohmyzsh
 install_nvm
 install_rust
+
+[ -z "$(command -v tar)" ] && echo "tar was not installed, u need tar to install nvim"
+[ -z "$(command -v unzip)" ] && echo "unzip was not installed, u need unzip to install exa"
+[ -z "$(command -v git)" ] && echo "git was not installed, u need git to install the required dependencies"
+[ -z "$(command -v curl)" ] && echo "curl was not installed, u need curl to install the required dependencies"
