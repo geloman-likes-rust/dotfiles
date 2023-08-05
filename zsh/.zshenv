@@ -1,4 +1,4 @@
-EDITOR="nvim" 
+[ -n "$(command -v nvim)" ] && EDITOR="nvim" || EDITOR="vim"
 KEYTIMEOUT=1
 SHELL="/bin/zsh"
 
