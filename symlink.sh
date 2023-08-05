@@ -2,12 +2,15 @@
 
 # ZSH CONFIGS
 [ -L ~/.zshrc ] || ln -s ~/.dotfiles/zsh/.zshrc "$HOME"
-[ -L ~/.zsh_prompt ] || ln -s "$HOME"/.dotfiles/zsh/.zsh_prompt "$HOME"
+[ -L ~/.zshenv ] || ln -s ~/.dotfiles/zsh/.zshenv "$HOME"
+[ -L ~/.zprofile ] || ln -s ~/.dotfiles/zsh/.zprofile "$HOME"
+[ -L ~/.zsh_prompt ] || ln -s ~/.dotfiles/zsh/.zsh_prompt "$HOME"
 
 # BASH CONFIGS
 [ -L ~/.bashrc ] || ln -s ~/.dotfiles/bash/.bashrc "$HOME"
 [ -L ~/.inputrc ] || ln -s ~/.dotfiles/bash/.inputrc "$HOME"
 [ -L ~/.bash_prompt ] || ln -s ~/.dotfiles/bash/.bash_prompt "$HOME"
+[ -L ~/.bash_profile ] || ln -s ~/.dotfiles/bash/.bash_profile "$HOME"
 
 # ALIASES
 [ -L ~/.aliasrc ] || ln -s ~/.dotfiles/.aliasrc "$HOME"
