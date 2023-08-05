@@ -9,33 +9,40 @@ set nonewlines
 set numbercolor white
 set multibuffer
 
-bind ^d chopwordright main
-bind ^y copy main
-bind ^v copy main
-bind ^o enter main
+# navigation
+bind ^k up main
+bind ^j down main
+bind ^l right main
+bind ^h left main
+bind ^b prevword main
+bind ^i home main
 bind ^g gotoline main
+bind ^w nextword main
 bind M-] nextblock main
 bind M-[ prevblock main
 bind M-K firstline main
 bind M-J lastline main
-bind ^t insert all
-bind ^n nextbuf main
-bind ^m prevbuf main
+bind ^f whereis main
+
+# editing
+bind M-E comment main
+bind ^d chopwordright main
+bind ^y copy main
+bind ^v copy main
+bind ^o enter main
 bind M-D cut main
 bind M-, unindent main
 bind M-. indent main
-bind ^f whereis main
 bind ^x delete main
 bind ^p paste main
 bind ^u undo main
 bind ^r redo main
 bind ^q exit main
-bind ^w nextword main
-bind ^b prevword main
-bind ^h left main
-bind ^l right main
-bind ^j down main
-bind ^k up main
+
+# file explorer & buffer switching
+bind ^t insert all
+bind ^n nextbuf main
+bind ^m prevbuf main
 
 
 ## SYNTAX HIGHLIGHTING
