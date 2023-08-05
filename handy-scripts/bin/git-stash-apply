@@ -6,5 +6,4 @@ ORANGE='\033[0;33m'
 selected=$(git stash list | fzf --preview "echo {} | cut -d':' -f1 | xargs git stash show -p | delta --file-style=orange" --header "select stash entry" --header-first --border-label "$(printf "${CYAN} git-stash-apply ")" --preview-label "$(printf "${ORANGE} File Preview ")" --preview-window right,60%)
 [ -z "$selected" ] && exit 0
 stash_entry=$(echo "${selected%%:*}")
-git stash apply -q "$stash_entry" 
-[ -n "$(which git-status 2> /dev/null)" ] && git-status || git status --short
+git stash apply -q "$stash_entry" && git status --short
