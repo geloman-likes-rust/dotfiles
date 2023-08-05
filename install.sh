@@ -35,7 +35,7 @@ install_fzf() {
 	[ -n "$(command -v fzf)" ] && return
 	echo "Installing fzf......................................"
 	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-	y | ~/.fzf/install
+	echo "y" | ~/.fzf/install
 }
 
 ## NEOVIM LATEST VERSION - STABLE
