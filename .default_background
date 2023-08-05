@@ -1,1 +1,1 @@
-[ -z $(which xwallpaper 2> /dev/null) ] || xwallpaper --zoom ~/.personal/wallpaper/$(command ls ~/.personal/wallpaper | shuf -n 1)
+[ -n $(command -v xwallpaper) ] && xwallpaper --zoom ~/.personal/wallpaper/$(command ls ~/.personal/wallpaper | shuf -n 1)
