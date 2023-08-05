@@ -169,7 +169,7 @@ install_ohmyzsh
 install_nvm
 # install_rust
 
-[ -z "$(command -v tar)" ] && echo "tar was not installed, u need tar to install nvim"
-[ -z "$(command -v unzip)" ] && echo "unzip was not installed, u need unzip to install exa"
-[ -z "$(command -v git)" ] && echo "git was not installed, u need git to install the required dependencies"
-[ -z "$(command -v curl)" ] && echo "curl was not installed, u need curl to install the required dependencies"
+[ -z "$(command -v tar)" ] && printf "\033[0;91mtar\033[0m was not installed, u need \033[0;91mtar\033[0m to install nvim\n"
+[ -z "$(command -v unzip)" ] && printf "\033[0;91munzip\033[0m was not installed, u need \033[0;91munzip\033[0m to install exa\n"
+[ -z "$(command -v git)" ] && printf "\033[0;91mgit\033[0m was not installed, u need \033[0;91mgit\033[0m to install the required dependencies\n"
+[ -z "$(command -v curl)" ] && printf "\033[0;91mcurl\033[0m was not installed, u need \033[0;91mcurl\033[0m to install the required dependencies\n"
