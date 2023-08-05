@@ -167,7 +167,7 @@ install_neovim
 install_clang
 install_ohmyzsh
 install_nvm
-install_rust
+# install_rust
 
 [ -z "$(command -v tar)" ] && echo "tar was not installed, u need tar to install nvim"
 [ -z "$(command -v unzip)" ] && echo "unzip was not installed, u need unzip to install exa"
