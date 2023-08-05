@@ -1,4 +1,4 @@
 #!/bin/sh
 
-[ -n "$(which nvim 2> /dev/null)" ] && nvim -c "norm '0" && exit 0
-[ -n "$(which vim 2> /dev/null)" ] && vim -c "norm '0" && exit 0
+[ -n "$(command -v nvim)" ] && nvim -c "norm '0" && exit 0
+[ -n "$(command -v vim)" ] && vim -c "norm '0" && exit 0
