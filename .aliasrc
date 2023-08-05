@@ -62,8 +62,6 @@ alias \
 
 # additional aliases
 alias \
-  size-of="du -sh" \
-  size-all="du -hc" \
   ls='exa --no-user --no-time --no-filesize --group-directories-first' \
   lsn='command ls --color=always' \
   nn='nano' \
