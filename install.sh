@@ -15,7 +15,7 @@ install_miniconda() {
 #---------------------------------------------------------------------
 install_tmux() {
 	[ -f ~/.miniconda/bin/tmux ] && return
-	[ -z "$(which tmux 2> /dev/null)" ] || return
+	[ -n "$(command -v tmux)" ] && return
 	echo "Installing tmux..........................................."
 	~/.miniconda/bin/conda install -y -c conda-forge tmux 2> /dev/null
 }
@@ -32,7 +32,7 @@ install_tmux_tpm() {
 #---------------------------------------------------------------------
 install_fzf() {
 	[ -d ~/.fzf ] && return
-	[ -z "$(which fzf 2> /dev/null)" ] || return
+	[ -n "$(command -v fzf)" ] && return
 	echo "Installing fzf......................................"
 	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 	y | ~/.fzf/install
@@ -42,7 +42,7 @@ install_fzf() {
 #---------------------------------------------------------------------
 install_neovim() {
 	[ -d ~/.neovim ] && return
-	[ -z "$(which nvim 2> /dev/null)" ] || return
+	[ -n "$(command -v nvim)" ] && return
 	echo "Installing neovim......................................"
 	cd "$HOME" && curl -s -JLO https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz
 	tar xzvf nvim-linux64.tar.gz
@@ -54,8 +54,8 @@ install_neovim() {
 ## CLANG - nvim-treesitter need this for syntax highlighting
 #---------------------------------------------------------------------
 install_clang() {
-	[ -z "$(which gcc 2> /dev/null)" ] || return
-	[ -z "$(which cc 2> /dev/null)" ] || return
+	[ -n "$(command -v cc)" ] && return
+	[ -n "$(command -v gcc)" ] && return
 	echo "Installing clang for nvim-treesitter"
 	~/.miniconda/bin/conda install -y -c conda-forge clang
 }
@@ -83,7 +83,7 @@ install_nvm() {
 #---------------------------------------------------------------------
 install_exa() {
 	[ -d ~/.exa ] && return
-	[ -z "$(which exa 2> /dev/null)" ] || return
+	[ -n "$(command -v exa)" ] && return
 	echo "Installing exa......................................"
 	[ -d ~/.exa ] || mkdir ~/.exa && cd "$HOME"/.exa || return
 	curl -sLO https://github.com/ogham/exa/releases/download/v0.10.1/exa-linux-x86_64-v0.10.1.zip
@@ -96,7 +96,7 @@ install_exa() {
 #---------------------------------------------------------------------
 install_httpie() {
 	[ -d ~/.httpie ] && return
-	[ -z "$(which http 2> /dev/null)" ] || return
+	[ -n "$(command -v http)" ] && return
 	echo "Installing httpie......................................"
 	curl --create-dirs -Lo ~/.httpie/http https://packages.httpie.io/binaries/linux/http-latest
 	chmod +x ~/.httpie/http && ln -sf ~/.httpie/http ~/.local/bin/
@@ -106,7 +106,7 @@ install_httpie() {
 #---------------------------------------------------------------------
 install_fd() {
 	[ -f ~/.miniconda/bin/fd ] && return
-	[ -z "$(which fd 2> /dev/null)" ] || return
+	[ -n "$(command -v fd)" ] && return
 	echo "Installing fd-find......................................"
 	~/.miniconda/bin/conda install -y -c conda-forge fd-find
 }
@@ -115,7 +115,7 @@ install_fd() {
 #---------------------------------------------------------------------
 install_ripgrep() {
 	[ -f ~/.miniconda/bin/rg ] && return
-	[ -z "$(which rg 2> /dev/null)" ] || return
+	[ -n "$(command -v rg)" ] && return
 	echo "Installing ripgrep......................................"
 	~/.miniconda/bin/conda install -y -c conda-forge ripgrep
 }
@@ -124,7 +124,7 @@ install_ripgrep() {
 #---------------------------------------------------------------------
 install_delta() {
 	[ -f ~/.miniconda/bin/delta ] && return
-	[ -z "$(which delta 2> /dev/null)" ] || return
+	[ -n "$(command -v delta)" ] && return
 	echo "Installing git-delta......................................"
 	~/.miniconda/bin/conda install -y -c conda-forge git-delta
 }
@@ -133,7 +133,7 @@ install_delta() {
 #---------------------------------------------------------------------
 install_bat() {
 	[ -f ~/.miniconda/bin/bat ] && return
-	[ -z "$(which bat 2> /dev/null)" ] || return
+	[ -n "$(command -v bat)" ] && return
 	echo "Installing bat......................................"
 	~/.miniconda/bin/conda install -y -c conda-forge bat
 }
