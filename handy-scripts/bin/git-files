@@ -6,5 +6,5 @@ selected="$(git ls-files "$workspace" --exclude-standard --cached --others | fzf
 [ -z "$selected" ] && exit 0
 
 [ -n "$EDITOR" ] && "$EDITOR" "$selected" && exit 0
-[ -n "$(which nvim 2> /dev/null)" ] && nvim "$selected" && exit 0
-[ -n "$(which vim 2> /dev/null)" ] && vim "$selected" && exit 0
+[ -n "$(command -v nvim)" ] && nvim "$selected" && exit 0
+[ -n "$(command -v vim)" ] && vim "$selected" && exit 0
