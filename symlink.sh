@@ -33,6 +33,9 @@
 # KITTY CONFIGS
 [ -L ~/.config/kitty ] || ln -s ~/.dotfiles/kitty ~/.config/
 
+# ALACRITTY CONFIGS
+[ -L ~/.config/alacritty ] || ln -s ~/.dotfiles/alacritty ~/.config/
+
 # SHORTHAND FOR SYMLINK AND UNLINK
 [ -L ~/.local/bin/slnk ] || ln -s ~/.dotfiles/symlink.sh ~/.local/bin/slnk
 [ -L ~/.local/bin/ulnk ] ||  ln -s ~/.dotfiles/unlink.sh ~/.local/bin/ulnk
