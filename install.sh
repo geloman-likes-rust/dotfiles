@@ -168,6 +168,9 @@ install_ohmyzsh
 install_nvm
 # install_rust
 
+## this will remove the '(base)' in the prompt after installing miniconda
+~/.miniconda/bin/conda config --set auto_activate_base False
+
 [ -z "$(command -v tar)" ] && printf "\033[0;91mtar\033[0m was not installed, u need \033[0;91mtar\033[0m to install nvim\n"
 [ -z "$(command -v unzip)" ] && printf "\033[0;91munzip\033[0m was not installed, u need \033[0;91munzip\033[0m to install exa\n"
 [ -z "$(command -v git)" ] && printf "\033[0;91mgit\033[0m was not installed, u need \033[0;91mgit\033[0m to install the required dependencies\n"
