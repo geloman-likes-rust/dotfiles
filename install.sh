@@ -79,9 +79,8 @@ install_nvm() {
 	[ -z "$(command -v curl)" ] && return
 	echo "Installing node-version-manager......................................"
 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | sh
-	[ -s "$HOME/.nvim/nvm.sh" ] && \. "$HOME/.nvm/nvm.sh"  # This loads nvm
-	nvm install --lts
-	nvm install-latest-npm
+	# nvm install --lts
+	# nvm install-latest-npm
 }
 
 ## EXA LS
