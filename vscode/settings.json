@@ -1,0 +1,91 @@
+{
+  "vim.leader": "<space>",
+  "vim.timeout": 300,
+  "vim.statusBarColorControl": true,
+  "vim.statusBarColors.normal": "#8bcd5b",
+  "vim.statusBarColors.insert": "#4fa6ed",
+  "vim.statusBarColors.visual": "#bf68d9",
+  "vim.statusBarColors.visualline": "#bf68d9",
+  "vim.statusBarColors.visualblock": "#bf68d9",
+  "vim.statusBarColors.replace": "#e55561",
+  "vim.statusBarColors.commandlineinprogress": "#efbd5d",
+  "vim.statusBarColors.searchinprogressmode": "#efbd5d",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "K"
+      ],
+      "commands": [
+        "editor.action.showHover"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "e"
+      ],
+      "commands": [
+        "workbench.action.toggleSidebarVisibility"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "n"
+      ],
+      "commands": [
+        "workbench.action.editor.nextChange"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "N"
+      ],
+      "commands": [
+        "workbench.action.editor.previousChange"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "d"
+      ],
+      "commands": [
+        "editor.action.goToTypeDefinition"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "r",
+        "n"
+      ],
+      "commands": [
+        "editor.action.rename"
+      ]
+    }
+  ],
+  "workbench.colorCustomizations": {
+    "statusBar.foreground": "#434C5E",
+    "statusBar.debuggingForeground": "#434C5E",
+    "statusBar.background": "#8bcd5b",
+    "statusBar.noFolderBackground": "#8bcd5b",
+    "statusBar.debuggingBackground": "#8bcd5b",
+    "editor.lineHighlightBackground": "#4fa6ed",
+    "editorLineNumber.activeForeground": "#434C5E"
+  },
+  "window.zoomLevel": 3,
+  "editor.fontSize": 12,
+  "editor.lineNumbers": "relative",
+  "editor.minimap.enabled": false,
+  "editor.hideCursorInOverviewRuler": true,
+  "editor.scrollbar.vertical": "hidden",
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.scrollbar.verticalScrollbarSize": 0,
+  "editor.scrollbar.horizontalScrollbarSize": 0,
+  "editor.renderLineHighlight": "gutter",
+  "workbench.activityBar.visible": false,
+  "breadcrumbs.enabled": false,
+  "workbench.editor.enablePreview": false
+}
