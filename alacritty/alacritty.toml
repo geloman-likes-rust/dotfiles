@@ -1,0 +1,24 @@
+[font]
+size = 18
+
+[mouse]
+hide_when_typing = true
+
+[window]
+opacity = 0.85
+decorations = "none"
+startup_mode = "Maximized"
+
+# [window.dimensions]
+# lines = 30
+# columns = 90
+
+[font.normal]
+family = "hack nerd font"
+
+[cursor.style]
+shape = "Beam"
+blinking = "Off"
+
+[colors.primary]
+background = "#1A212E"
