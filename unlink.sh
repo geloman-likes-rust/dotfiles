@@ -33,6 +33,9 @@
 # UNLINK KITTY CONFIGS
 [ -L ~/.config/kitty ] && unlink ~/.config/kitty
 
+# UNLINK ALACRITTY CONFIGS
+[ -L ~/.config/alacritty ] && unlink ~/.config/alacritty
+
 # GETTING BACK TO NORMAL
 [ -f ~/.vimrc.bak ] && mv -f ~/.vimrc.bak ~/.vimrc
 [ -f ~/.zshrc.bak ] && mv -f ~/.zshrc.bak ~/.zshrc
