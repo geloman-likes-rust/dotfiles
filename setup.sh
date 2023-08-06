@@ -20,6 +20,7 @@
 [ -d ~/.config/nvim ] && mv -f ~/.config/nvim ~/.config/nvim.bak
 [ -d ~/.config/kitty ] && mv -f ~/.config/kitty ~/.config/kitty.bak
 
+[ -z "$(fc-list | grep "Hack Nerd Font")" ] && cp ~/.dotfiles/fonts/hack-nerd-font.ttf ~/.fonts && echo "updating font cache................" && fc-cache -f
 [ -f ~/.profile ] && echo ". \"\$HOME/.dotfiles/.default_background\"" >> ~/.profile
 
 ~/.dotfiles/symlink.sh
