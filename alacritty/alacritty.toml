@@ -9,10 +9,6 @@ opacity = 0.85
 decorations = "none"
 startup_mode = "Maximized"
 
-# [window.dimensions]
-# lines = 30
-# columns = 90
-
 [font.normal]
 family = "hack nerd font"
 
