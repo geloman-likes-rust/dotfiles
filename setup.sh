@@ -19,6 +19,7 @@
 [ -d ~/.config/i3 ] && mv -f ~/.config/i3 ~/.config/i3.bak
 [ -d ~/.config/nvim ] && mv -f ~/.config/nvim ~/.config/nvim.bak
 [ -d ~/.config/kitty ] && mv -f ~/.config/kitty ~/.config/kitty.bak
+[ -d ~/.config/alacritty ] && mv -f ~/.config/alacritty ~/.config/alacritty.bak
 
 [ -z "$(fc-list | grep "Hack Nerd Font")" ] && cp ~/.dotfiles/fonts/hack-nerd-font.ttf ~/.fonts && echo "updating font cache................" && fc-cache -f
 [ -f ~/.profile ] && echo ". \"\$HOME/.dotfiles/.default_background\"" >> ~/.profile
