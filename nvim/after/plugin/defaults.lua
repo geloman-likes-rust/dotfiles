@@ -54,6 +54,10 @@ vim.wo.relativenumber = true
 vim.api.nvim_command('autocmd InsertEnter * set cursorline')
 vim.api.nvim_command('autocmd InsertLeave * set nocursorline')
 
+-- set cursorcolumn on insert mode
+vim.api.nvim_command('autocmd InsertEnter * set cursorcolumn')
+vim.api.nvim_command('autocmd InsertLeave * set nocursorcolumn')
+
 -- set colorscheme
 vim.cmd.colorscheme 'onedark'
 
