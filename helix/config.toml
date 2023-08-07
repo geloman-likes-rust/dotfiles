@@ -1,0 +1,32 @@
+theme = "onedark"
+
+[keys.normal]
+C-r = "redo"
+G = "page_down"
+K = "hover"
+
+[editor]
+mouse = false
+true-color = true
+scroll-lines = 10
+line-number = "relative"
+gutters = ["diagnostics", "diff", "line-numbers"]
+color-modes = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.statusline]
+left = ["mode", "file-name"]
+center = ["version-control"]
+right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+separator = ""
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.file-picker]
+hidden = false
+git-ignore = true
