@@ -7,7 +7,7 @@
 
 [credential]
 	username = geloman-likes-rust
-	helper = store
+	; helper = store
 
 [core]
 	editor = vim
