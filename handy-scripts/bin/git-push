@@ -1,0 +1,3 @@
+#!/bin/sh
+
+echo "$(gpg --decrypt --quiet ~/.gh-token.gpg)" | git push
