@@ -1,12 +1,20 @@
 -- custom keymaps
-vim.keymap.set('n', '<leader>N', require('gitsigns').prev_hunk, { desc = '[N] go to previous hunk' })
-vim.keymap.set('n', '<leader>n', require('gitsigns').next_hunk, { desc = '[n] go to next hunk' })
-vim.keymap.set('n', '<leader>ph', require('gitsigns').preview_hunk, { desc = '[p]review [h]unk' })
-vim.keymap.set('n', 'ga', require('gitsigns').stage_hunk, { desc = '[G]it [A]dd Hunk' })
-vim.keymap.set('n', '<leader>gaa', require('gitsigns').stage_buffer, { desc = '[G]it [A]dd [A]ll Hunks' })
-vim.keymap.set('n', '<leader>gu', require('gitsigns').undo_stage_hunk, { desc = '[G]it [U]nstage Last Staged' })
-vim.keymap.set('n', '<leader>gr', require('gitsigns').reset_buffer, { desc = '[G]it [R]eset Current Buffer' })
-vim.keymap.set('n', '<leader>lb', require('gitsigns').toggle_current_line_blame, { desc = '[L]ine [B]lame toggle' })
+
+local gitsigns = require("gitsigns")
+
+local keymap = function(mode, lhs, rhs, opts)
+  opts = opts or {}
+  vim.keymap.set(mode, lhs, rhs, opts)
+end
+
+keymap('n', '<leader>N', gitsigns.prev_hunk, { desc = '[N] go to previous hunk' })
+keymap('n', '<leader>n', gitsigns.next_hunk, { desc = '[n] go to next hunk' })
+keymap('n', '<leader>ph', gitsigns.preview_hunk, { desc = '[p]review [h]unk' })
+keymap('n', 'ga', gitsigns.stage_hunk, { desc = '[G]it [A]dd Hunk' })
+keymap('n', '<leader>gaa', gitsigns.stage_buffer, { desc = '[G]it [A]dd [A]ll Hunks' })
+keymap('n', '<leader>gu', gitsigns.undo_stage_hunk, { desc = '[G]it [U]nstage Last Staged' })
+keymap('n', '<leader>gr', gitsigns.reset_buffer, { desc = '[G]it [R]eset Current Buffer' })
+keymap('n', '<leader>lb', gitsigns.toggle_current_line_blame, { desc = '[L]ine [B]lame toggle' })
 
 -- custom highlights
 vim.cmd("highlight! DiffDelete guifg=#FC2947 guibg=#ffeeee")
