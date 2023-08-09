@@ -13,6 +13,8 @@ local on_attach = function(_, bufnr)
   keymap('gt', vim.lsp.buf.type_definition, '[G]oto [T]ype Definition')
   keymap('K', vim.lsp.buf.hover, 'Hover Documentation')
   keymap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
+  keymap('<leader>dn', vim.diagnostic.goto_next, 'Next Diagnostic')
+  keymap('<leader>dp', vim.diagnostic.goto_prev, 'Previous Diagnostic')
   -- Create a command `:Format` local to the LSP buffer
   vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
     vim.lsp.buf.format()
