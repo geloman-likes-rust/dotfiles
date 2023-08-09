@@ -75,7 +75,6 @@ alias \
   ivii='nvim' \
   dev="cd ~/.development" \
   dotfiles="cd ~/.dotfiles" \
-  config="cd ~/.dotfiles/.config" \
   python='python3' \
   mem="neofetch memory" \
   cpu="neofetch cpu --cpu_temp" \
