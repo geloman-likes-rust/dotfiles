@@ -14,6 +14,10 @@ local actions = require('telescope.actions')
 require('telescope').setup {
   pickers = {
 
+    lsp_references = {
+      initial_mode = "normal",
+    },
+
     planets = {
       show_pluto = true,
       show_moon = true,
@@ -96,6 +100,7 @@ keymap('n', '<leader>ff', builtin.find_files, { desc = '[F]ind [F]iles' })
 keymap('n', '<leader>hh', builtin.help_tags, { desc = 'Search [H][H]elp' })
 keymap('n', '<leader>fw', builtin.grep_string, { desc = '[F]ind [W]ord under cursor' })
 keymap('n', '<leader>lg', builtin.live_grep, { desc = '[L]ive [G]rep' })
+keymap('n', '<leader>lr', builtin.lsp_references, { desc = '[L]sp [R]eferences' })
 keymap('n', '<leader>wd', builtin.diagnostics, { desc = '[W]orkspace [D]iagnostics' })
 keymap('n', '<leader>?', builtin.oldfiles, { desc = '[?] Find recently opened files' })
 keymap('n', '<leader><space>', builtin.buffers, { desc = '[ ] Find existing buffers' })
