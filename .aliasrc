@@ -62,6 +62,7 @@ alias \
 
 # additional aliases
 alias \
+  cr="cargo run" \
   rsc="rustc" \
   ls='exa --no-user --no-time --no-filesize --group-directories-first' \
   lsn='command ls --color=always' \
