@@ -59,6 +59,7 @@ alias \
   gcan="git commit --amend --no-edit" \
   gdt="git difftool -y" \
   gwa="git worktree add" \
+  gcob="git checkout -b" \
 
 # additional aliases
 alias \
