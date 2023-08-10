@@ -4,10 +4,10 @@ local function keymap(mode, lhs, rhs, opts)
 end
 
 -- window's resize
-keymap("n", "=", ":vertical resize +5<cr>", { noremap = true, silent = true, desc = "[=] (+) vertical resize" })
-keymap("n", "-", ":vertical resize -5<cr>", { noremap = true, silent = true, desc = "[-] (-) vertical resize" })
-keymap("n", "_", "horizontal resize -3<cr>", { noremap = true, silent = true, desc = "[_] (-) horizontal resize" })
-keymap("n", "+", "horizontal resize +3<cr>", { noremap = true, silent = true, desc = "[+] (+) horizontal resize" })
+keymap("n", "=", "<cmd>vertical resize +5<cr>", { noremap = true, silent = true, desc = "[=] (+) vertical resize" })
+keymap("n", "-", "<cmd>vertical resize -5<cr>", { noremap = true, silent = true, desc = "[-] (-) vertical resize" })
+keymap("n", "_", "<cmd>horizontal resize -3<cr>", { noremap = true, silent = true, desc = "[_] (-) horizontal resize" })
+keymap("n", "+", "<cmd>horizontal resize +3<cr>", { noremap = true, silent = true, desc = "[+] (+) horizontal resize" })
 
 -- toggle highlight search
 keymap("n", "<leader>hl", ":set hlsearch!<cr>", { noremap = true, silent = true, desc = "toggle [H]ighlight [S]earch" })
