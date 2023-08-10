@@ -69,6 +69,7 @@ require('telescope').setup {
   },
 
   defaults = {
+    dynamic_preview_title = true,
     file_ignore_patterns = ignore_files,
 
     mappings = {
