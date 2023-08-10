@@ -1,6 +1,9 @@
 [font]
 size = 18
 
+[env]
+TERM = "xterm-256color"
+
 [mouse]
 hide_when_typing = true
 
