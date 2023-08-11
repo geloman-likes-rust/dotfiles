@@ -44,7 +44,7 @@ alias \
 
 # version control aliases
 alias \
-  glo="git log --oneline" \
+  glo="git log --oneline --color=always" \
   gb="git branch" \
   gcm="git commit -m" \
   gp="git push" \
