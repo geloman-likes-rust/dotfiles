@@ -12,4 +12,3 @@ keymap('n', '<leader>gaa', "<cmd>Gitsigns stage_buffer<cr>", { desc = '[G]it [A]
 keymap('n', '<leader>gu', "<cmd>Gitsigns undo_stage_hunk<cr>", { desc = '[G]it [U]nstage Last Staged' })
 keymap('n', '<leader>gr', "<cmd>Gitsigns reset_buffer<cr>", { desc = '[G]it [R]eset Current Buffer' })
 keymap('n', '<leader>lb', "<cmd>Gitsigns toggle_current_line_blame<cr>", { desc = '[L]ine [B]lame toggle' })
-
