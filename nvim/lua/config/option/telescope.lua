@@ -83,7 +83,7 @@ local options = {
         },
 
         selection_caret = "  ",
-        prompt_prefix = "   ",
+        prompt_prefix = "   ",
     },
 }
 return options
