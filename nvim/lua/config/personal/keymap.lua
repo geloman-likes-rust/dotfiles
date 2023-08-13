@@ -1,6 +1,7 @@
+--- keymaps
 local function keymap(mode, lhs, rhs, opts)
-  opts = opts or {}
-  vim.keymap.set(mode, lhs, rhs, opts)
+    opts = opts or {}
+    vim.keymap.set(mode, lhs, rhs, opts)
 end
 
 -- window's resize
@@ -11,9 +12,6 @@ keymap("n", "+", "<cmd>horizontal resize +3<cr>", { noremap = true, silent = tru
 
 -- toggle highlight search
 keymap("n", "<leader>hl", ":set hlsearch!<cr>", { noremap = true, silent = true, desc = "toggle [H]ighlight [S]earch" })
-
--- toggle Lexplore
-keymap("n", "<leader>e", ":Lex 25<cr>", { noremap = true, silent = true, desc = "toggle Lex 25" })
 
 -- close current buffer
 keymap("n", "q", "<C-w>q")
