@@ -2,6 +2,7 @@ return {
   'nvim-treesitter/nvim-treesitter',
   priority = 1500,
   cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
+  event = "BufReadPost",
   config = function()
     local parsers = { 'lua', 'rust', 'html', 'tsx', 'typescript', 'javascript', 'vimdoc' }
     require('nvim-treesitter.configs').setup {
