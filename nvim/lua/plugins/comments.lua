@@ -1,1 +1,1 @@
-return { 'numToStr/Comment.nvim', event = "LspAttach", opts = {} }
+return { 'numToStr/Comment.nvim', event = "CursorMoved", opts = {} }
