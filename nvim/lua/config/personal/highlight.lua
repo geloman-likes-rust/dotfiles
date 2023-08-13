@@ -4,3 +4,4 @@ vim.cmd('autocmd BufWinEnter * highlight! CurSearch guifg=#d6ffd6 guibg=#03c988'
 vim.cmd('autocmd BufWinEnter * highlight! IncSearch guifg=#d6ffd6 guibg=#03c988')
 vim.cmd('autocmd InsertEnter * highlight! CursorLine gui=bold guibg=#2a324a')
 vim.cmd('autocmd InsertEnter * highlight! CursorColumn gui=bold guibg=#2a324a')
+vim.cmd('autocmd BufWinEnter * highlight! TelescopeTitle gui=reverse')
