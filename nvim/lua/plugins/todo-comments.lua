@@ -1,5 +1,6 @@
 return {
   "folke/todo-comments.nvim",
+  event = "LspAttach",
   dependencies = { "nvim-lua/plenary.nvim" },
   opts = {
     -- your configuration comes here
