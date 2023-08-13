@@ -1,5 +1,6 @@
 return {
   "mhartington/formatter.nvim",
+  event = "LspAttach",
   config = function()
     require("formatter").setup {
       logging = true,
