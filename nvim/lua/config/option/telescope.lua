@@ -72,6 +72,7 @@ local options = {
             n = {
                 ['<C-k>'] = actions.move_selection_previous,
                 ['<C-j>'] = actions.move_selection_next,
+                ["q"] = actions.close
             }
         },
 
