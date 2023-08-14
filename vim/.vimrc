@@ -23,10 +23,8 @@ set noshowmode
 set path+=** " search down into subfolders
 set laststatus=2
 set termguicolors
+colorscheme habamax
 syntax on
-
-let g:enable_trasparent = 0
-let g:show_os_icon = 0
 
 " Set cursor shape
 let &t_SI = "\<Esc>[6 q"
@@ -93,131 +91,20 @@ autocmd FileType javascript,javascriptreact,typescriptreact,typescript,html,css 
 " --------- CUSTOM COLORSCHEME ----------
 " ---------------------------------------
 
+autocmd BufWinEnter * highlight! Search guibg=#d6ffd6
+autocmd BufWinEnter * highlight! Cursearch guifg=#d6ffd6 guibg=#03c988
+autocmd BufWinEnter * highlight! IncSearch guifg=#d6ffd6 guibg=#03c988
+autocmd InsertEnter * highlight! CursorLine gui=bold guibg=#2a324a
+autocmd InsertEnter * highlight! CursorColumn gui=bold guibg=#2a324a
+autocmd InsertEnter * set cursorline
+autocmd InsertEnter * set cursorcolumn
+autocmd InsertLeave * set nocursorline
+autocmd InsertLeave * set nocursorcolumn
+
 highlight DiffAdd guifg=#03C988 guibg=#d6ffd6
 highlight DiffText guifg=#f6b26b guibg=#fbe0c3
 highlight DiffChange guifg=#068fff guibg=#b4ddff
 highlight DiffDelete guifg=#FC2947 guibg=#ffeeee
-
-highlight TabLine guifg=#93a4c3 guibg=#21283b  
-highlight TabLineSel cterm=bold guifg=#1a212e guibg=#93a4c3
-highlight TabLineFill cterm=reverse guifg=#455574 guibg=#21283b
-
-highlight netrwSymLink guifg=#c75ae8
-highlight netrwExe guifg=#8bcd5b
-highlight netrwPlain guifg=#93a4c3
-highlight netrwTreeBar guifg=#455574
-highlight netrwClassify guifg=#4fa6ed
-
-highlight vimEscape guifg=#dd9046
-highlight vimContinue guifg=#dd9046
-highlight vimFuncSID guifg=#dd9046
-highlight vimNotation guifg=#dd9046
-
-highlight CursorLineNR ctermfg=11 guifg=NONE guibg=#21283b
-highlight CursorLine gui=reverse guifg=NONE guibg=#21283b
-highlight Cursor gui=reverse guifg=NONE guibg=NONE
-highlight Type guifg=#efbd5d
-highlight Comment guifg=#455574
-highlight StatusLine guibg=#a0a8b7 guifg=#1A212E
-highlight Question guifg=#cc9057
-highlight Directory guifg=#4fa6ed
-highlight IncSearch guifg=#d6ffd6 guibg=#03c988
-highlight Search guibg=#d6ffd6
-highlight CurSearch guifg=#d6ffd6 guibg=#03c988
-highlight MatchParen guibg=#2a324a guifg=NONE
-"highlight Pmenu guifg=#e55561
-highlight PmenuSel guifg=#e55561
-highlight WildMenu guibg=#e55561
-highlight ErrorMsg guifg=#f65866
-highlight String guifg=#8bcd5b
-highlight Constant guifg=#34bfd0
-highlight Character guifg=#dd9046
-highlight Number guifg=#dd9046
-highlight Boolean guifg=#dd9046
-highlight Float guifg=#dd9046
-highlight Function guifg=#c75ae8
-highlight Identifier guifg=#f65866
-highlight Conditional guifg=#c75ae8
-highlight Statement guifg=#c75ae8
-highlight Repeat guifg=#c75ae8
-highlight Label guifg=#c75ae8
-highlight Operator guifg=#c75ae8
-highlight Keyword guifg=#c75ae8
-highlight Exception guifg=#c75ae8
-highlight Include guifg=#c75ae8
-highlight Define guifg=#c75ae8
-highlight Macro guifg=#f65866
-highlight Special guifg=#2a324a
-highlight Tag guifg=#8bcd5b
-highlight SpecialChar guifg=#f65866
-highlight Delimiter guifg=#6c7d9c
-highlight Visual ctermbg=242 guibg=#2a324a guifg=NONE
-highlight PreProc guifg=#f65866
-
-if g:enable_trasparent == 1
-    highlight Normal guifg=#93a4c3 ctermbg=NONE guibg=NONE
-    highlight VertSplit guifg=#2a324a guibg=NONE ctermbg=NONE
-    highlight EndOfBuffer guifg=#455574
-    highlight LineNr guifg=#93a4c3
-else
-    highlight Normal guibg=#1A212E guifg=#93a4c3
-    highlight VertSplit guifg=#2a324a guibg=#1A212E
-    highlight EndOfBuffer guifg=#1A212E
-    highlight LineNr guifg=#455574
-endif
-
-" -----------------------------------------------
-" ------- LANGUAGE SPECIFIC COLORSCHEME ---------
-" -----------------------------------------------
-" --------------- JS,TS,JSX,TSX -----------------
-autocmd FileType javascript,typescript,javascriptreact,typescriptreact
-    \ highlight Normal guifg=#93a4c3 |
-    \ highlight Special guifg=#c75ae8 |
-    \ highlight Identifier guifg=#c75ae8 |
-    \ highlight htmlTag guifg=#c75ae8 |
-    \ highlight link htmlTagName htmlTag |
-    \ highlight JavaScriptBraces guifg=#6c7d9c |
-    \ highlight link javaScriptParens JavascriptBraces |
-    \ highlight javaScriptValue guifg=#4fa6ed |
-    \ highlight Structure guifg=#e55561 |
-    \ highlight Type guifg=#efbd5d |
-    \ highlight link typescriptBraces JavascriptBraces |
-    \ highlight link typescriptParens JavascriptParens |
-    \ highlight typescriptObjectColon guifg=#ffffff |
-    \ highlight typescriptArrowFunc guifg=#93a4c3 |
-    \ highlight typescriptClassName guifg=#efbd5d |
-    \ highlight typescriptIdentifierName guifg=#93a4c3 |
-    \ highlight typescriptVariableDeclaration guifg=#4fa6ed |
-    \ highlight tsxEqual guifg=#93a4c3 |
-    \ highlight tsxTagName guifg=#efbd5d |
-    \ highlight typescriptFuncName guifg=#4fa6ed |
-
-
-" -----------------------------------------------
-" ------- LANGUAGE SPECIFIC COLORSCHEME ---------
-" -----------------------------------------------
-" ------------------- HTML ----------------------
-highlight link htmlEndTag htmlTag
-highlight htmlH1 guifg=#93a4c3
-highlight htmlH2 guifg=#93a4c3
-highlight htmlH3 guifg=#93a4c3
-highlight htmlH4 guifg=#93a4c3
-highlight htmlH5 guifg=#93a4c3
-highlight htmlH6 guifg=#93a4c3
-highlight htmlArg guifg=#efbd5d
-highlight htmlTitle guifg=#93a4c3
-
-
-" -----------------------------------------------
-" ------- LANGUAGE SPECIFIC COLORSCHEME ---------
-" -----------------------------------------------
-" -------------------- CSS ----------------------
-highlight cssClassName guifg=#4fa6ed
-highlight cssClassNameDot guifg=#4fa6ed
-highlight cssIdentifier guifg=#4fa6ed
-highlight cssBraces guifg=#4fa6ed
-highlight cssProp guifg=#efbd5d
-
 
 " ----------- POPUP MENU COLORSCHEME ------------
 highlight Pmenu guifg=#4fa6ed guibg=#2a324a
@@ -262,26 +149,13 @@ endf
 
 fu! WhatOS()
   if has('win32') || has('win64')
-    if g:show_os_icon == 1
-        return ''
-    else
-        return 'windows'
-    endif
+    return 'windows'
 
   elseif has('unix') || has('linux')
-    if g:show_os_icon == 1
-        return ''
-    else
-        return 'unix'
-    endif
+    return 'unix'
 
   else
-    if g:show_os_icon == 1
-        return ''
-    else
-        return 'mac'
-    endif
-
+    return 'mac'
   endif
 
 endf
@@ -297,7 +171,7 @@ set statusline=
 set statusline+=\%#ModeMsg#\ %{WhatMode()}
 set statusline+=\ %#Dark#\ %t
 set statusline+=\%=
-set statusline+=\ %{WhatOS()}
-set statusline+=\ \│\ %{&filetype}\ 
+set statusline+=\ \ %{&filetype}\ 
+set statusline+=\│\ %{WhatOS()}\ 
 set statusline+=\ %#LightGray#\ %P
 set statusline+=\ %#ModeMsg#\ %l:%c\ 
