@@ -60,6 +60,3 @@ vim.api.nvim_command('autocmd InsertLeave * set nocursorcolumn')
 
 -- set colorscheme
 vim.cmd.colorscheme 'onedark'
-
--- format on save
-vim.api.nvim_command('autocmd BufWritePre * Format')
