@@ -12,6 +12,6 @@ return {
             indent = { enable = true, disable = { 'python', 'html' } },
         }
     end,
-    dependencies = { 'nvim-treesitter/nvim-treesitter-textobjects', 'nvim-treesitter/playground' },
+    dependencies = { 'nvim-treesitter/playground' },
     build = ":TSUpdate",
 }
