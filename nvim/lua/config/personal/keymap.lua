@@ -9,6 +9,10 @@ local toggle_numberln = function()
     vim.cmd "set relativenumber!"
 end
 
+-- toggle statusline
+keymap("n", "<leader>l1", "<cmd>set laststatus=1<cr>", { noremap = true, silent = true, desc = "hide statusline" })
+keymap("n", "<leader>l2", "<cmd>set laststatus=2<cr>", { noremap = true, silent = true, desc = "show statusline" })
+
 -- toggle number line
 keymap("n", "<leader>ln", toggle_numberln, { noremap = true, silent = true, desc = "toggle number line" })
 
