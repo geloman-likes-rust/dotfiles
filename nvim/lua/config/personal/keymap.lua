@@ -4,6 +4,14 @@ local function keymap(mode, lhs, rhs, opts)
     vim.keymap.set(mode, lhs, rhs, opts)
 end
 
+local toggle_numberln = function()
+    vim.cmd "set number!"
+    vim.cmd "set relativenumber!"
+end
+
+-- toggle number line
+keymap("n", "<leader>ln", toggle_numberln, { noremap = true, silent = true, desc = "toggle number line" })
+
 -- window's resize
 keymap("n", "=", "<cmd>vertical resize +5<cr>", { noremap = true, silent = true, desc = "[=] (+) vertical resize" })
 keymap("n", "-", "<cmd>vertical resize -5<cr>", { noremap = true, silent = true, desc = "[-] (-) vertical resize" })
