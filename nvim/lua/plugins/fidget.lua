@@ -1,6 +1,6 @@
 return {
   'j-hui/fidget.nvim',
-  tag = "legacy",
+  tag = "v1.0.0",
   event = "InsertEnter",
   config = function()
     require("config.plugin.fidget")
