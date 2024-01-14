@@ -1,0 +1,4 @@
+#!/bin/sh
+
+[ -n "$1" ] && tmux new-session -s "$1" -c "$1"
+[ -n "$TMUX" ] && tmux switch-client -t "$1"
