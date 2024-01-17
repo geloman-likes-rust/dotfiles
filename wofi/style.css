@@ -1,0 +1,36 @@
+window {
+    font-size: 64px;
+    font-family: "Hack Nerd Font";
+    background-color: #1A212E;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    opacity: 0.8;
+    display: flex;
+}
+
+#input {
+    outline: none;
+    border: none;
+    padding: 10px;
+    opacity: 0.8;
+    background-color: #1A212E;
+}
+
+#entry {
+    display: flex;
+    flex-direction: column;
+}
+
+#entry:selected {
+    background-color: #54b0fd;
+    color: #1A212E;
+}
+
+#text:selected {
+    color: #333333;
+}
+
+image {
+    margin-left: .25em;
+    margin-right: .25em;
+}
