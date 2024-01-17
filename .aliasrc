@@ -12,6 +12,7 @@ alias \
   ta="tmux a" \
   tns="tmux new -s" \
   trn="tmux rename-session -t" \
+  tow="tmux-open-workspace"
 
 # handy scripts
 alias \
