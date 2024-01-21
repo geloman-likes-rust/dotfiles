@@ -17,6 +17,7 @@ alias \
 # handy scripts
 alias \
   ew="edit-tmux-workspace" \
+  mp="monitor-process" \
   vr="vim-recent" \
   ff="find-files" \
   fvi="find-files" \
