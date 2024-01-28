@@ -5,6 +5,12 @@ alias \
   ....="cd ../../.." \
   .....="cd ../../../.." \
 
+# docker aliases
+alias \
+  docker-status="systemctl status docker" \
+  docker-start="sudo systemctl start docker" \
+  docker-stop="sudo systemctl stop docker.socket" \
+
 # tmux aliases
 alias \
   tls="tmux ls" \
@@ -12,7 +18,7 @@ alias \
   ta="tmux a" \
   tns="tmux new -s" \
   trn="tmux rename-session -t" \
-  tow="tmux-open-workspace"
+  tow="tmux-open-workspace" \
 
 # handy scripts
 alias \
