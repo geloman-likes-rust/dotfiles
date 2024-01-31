@@ -1,6 +1,7 @@
 {
   "vim.leader": "<space>",
   "vim.timeout": 300,
+  "vim.useControlKey": false,
   "vim.statusBarColorControl": true,
   "vim.statusBarColors.normal": "#8bcd5b",
   "vim.statusBarColors.insert": "#4fa6ed",
@@ -64,6 +65,15 @@
       "commands": [
         "editor.action.rename"
       ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "u"
+      ],
+      "commands": [
+        "workbench.action.openSettingsJson"
+      ]
     }
   ],
   "workbench.colorCustomizations": {
@@ -85,7 +95,12 @@
   "editor.scrollbar.verticalScrollbarSize": 0,
   "editor.scrollbar.horizontalScrollbarSize": 0,
   "editor.renderLineHighlight": "gutter",
+  "editor.formatOnSave": true,
   "workbench.activityBar.visible": false,
+  "workbench.activityBar.location": "hidden",
   "breadcrumbs.enabled": false,
-  "workbench.editor.enablePreview": false
+  "workbench.editor.enablePreview": false,
+  "workbench.colorTheme": "One Dark Pro Darker",
+  "workbench.iconTheme": "vscode-icons",
+  "window.menuBarVisibility": "toggle"
 }
