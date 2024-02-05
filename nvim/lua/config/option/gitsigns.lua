@@ -15,6 +15,7 @@ local options = {
     preview_config = {
         border = "rounded"
     },
+    attach_to_untracked = true
 }
 
 return options
