@@ -12,7 +12,7 @@ cmp.setup {
     },
     mapping = cmp.mapping.preset.insert {
 
-        ['<CR>'] = cmp.mapping.confirm {
+        ['<C-space>'] = cmp.mapping.confirm {
             behavior = cmp.ConfirmBehavior.Replace,
             select = true,
         },
