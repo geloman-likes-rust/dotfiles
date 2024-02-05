@@ -28,8 +28,8 @@ keymap("n", "+", "<cmd>horizontal resize +3<cr>", { noremap = true, silent = tru
 -- toggle highlight search
 keymap("n", "<leader>hl", ":set hlsearch!<cr>", { noremap = true, silent = true, desc = "toggle [H]ighlight [S]earch" })
 
--- close current buffer
-keymap("n", "q", "<C-w>q")
+-- close all buffers
+keymap("n", "<C-q>", function() vim.cmd("qall!") end)
 
 -- toggle cursorline
 keymap("n", "<cr>", ":set cursorline!<cr>", { noremap = true, silent = true })
@@ -48,7 +48,6 @@ keymap("n", "<right>", ":bNext<cr>", { silent = true })
 -- switch tabs
 keymap("n", "<S-tab>", ":tabprevious<cr>", { silent = true })
 keymap("n", "<tab>", ":tabNext<cr>", { silent = true })
-keymap("n", "<C-q>", ":tabclose<cr>", { silent = true })
 
 -- here because.. i don't know either LOL
 keymap({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
