@@ -50,6 +50,7 @@ cmp.setup {
         { name = 'nvim_lsp', max_item_count = 5 },
         { name = 'luasnip',  max_item_count = 5 },
         { name = 'path',     max_item_count = 5 },
+        { name = 'calc',     max_item_count = 5 },
     },
 
 }
