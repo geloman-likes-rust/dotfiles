@@ -5,7 +5,7 @@ CYAN='\033[0;36m'
 workspace="$HOME/.dotfiles $HOME/.development $HOME/.personal"
 
 [ $# -eq 1 ] && selected=$1
-selected=$(find $workspace -type d | fzf --no-mouse --border-label "$(printf " ${CYAN}tmux-sessionizer ")" --border=rounded --margin=1 --header-first --header "Create tmux session" --prompt "  " --pointer "")
+selected=$(find $workspace -maxdepth 1 -type d | fzf --no-mouse --border-label "$(printf " ${CYAN}tmux-sessionizer ")" --border=rounded --margin=1 --header-first --header "Create tmux session" --prompt "  " --pointer "")
 
 [ -z "$selected" ] && exit 0
 
