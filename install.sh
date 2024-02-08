@@ -163,10 +163,10 @@ install_exa
 install_httpie
 install_tmux_tpm
 install_neovim
-install_clang
 install_ohmyzsh
-install_nvm
+# install_nvm
 # install_rust
+# install_clang
 
 ## this will remove the '(base)' in the prompt after installing miniconda
 [ -n "$(~/.miniconda/bin/conda config --show | grep auto_activate_base)" ] && ~/.miniconda/bin/conda config --set auto_activate_base False
