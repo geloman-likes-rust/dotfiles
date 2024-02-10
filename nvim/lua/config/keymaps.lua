@@ -49,7 +49,7 @@ keymap("n", "<right>", ":bNext<cr>", { silent = true })
 keymap("n", "<S-tab>", ":tabprevious<cr>", { silent = true })
 keymap("n", "<tab>", ":tabNext<cr>", { silent = true })
 
--- here because.. i don't know either LOL
+-- navigate across wrapped lines
 keymap({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 keymap('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })

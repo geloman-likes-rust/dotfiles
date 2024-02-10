@@ -5,10 +5,10 @@ return {
     event = "BufReadPost",
     config = function()
         vim.defer_fn(function()
-            local parsers = { 'lua', 'rust', 'dockerfile', 'html', 'tsx', 'typescript', 'javascript', 'vimdoc' }
+            local parsers = { 'c', 'lua', 'vim', 'vimdoc', 'query' }
             require('nvim-treesitter.configs').setup {
                 modules = {},
-                auto_install = false,
+                auto_install = true,
                 sync_install = false,
                 ignore_install = {},
                 ensure_installed = parsers,
@@ -17,6 +17,6 @@ return {
             }
         end, 0)
     end,
-    dependencies = { 'nvim-treesitter/playground' },
+    -- dependencies = { 'nvim-treesitter/playground' },
     build = ":TSUpdate",
 }
