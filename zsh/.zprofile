@@ -1,2 +1,2 @@
-# [ -f ~/.zshenv ] && . ~/.zshenv
-# [ -f ~/.zshrc ] && . ~/.zshrc
+[ -f ~/.zshenv ] && . ~/.zshenv
+[ -f ~/.zshrc ] && . ~/.zshrc
