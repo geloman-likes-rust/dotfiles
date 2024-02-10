@@ -51,12 +51,18 @@ return {
 
                 lsp_references = {
                     initial_mode = "normal",
+                    layout_config = {
+                        preview_width = 0.55
+                    },
                 },
 
                 planets = {
                     show_pluto = true,
                     show_moon = true,
                     initial_mode = "normal",
+                    layout_config = {
+                        preview_width = 0.55
+                    },
                 },
 
                 colorscheme = {
@@ -70,14 +76,23 @@ return {
                 grep_string = {
                     word_match = "-w",
                     initial_mode = "normal",
+                    layout_config = {
+                        preview_width = 0.55
+                    },
                 },
 
                 oldfiles = {
                     initial_mode = "normal",
+                    layout_config = {
+                        preview_width = 0.55
+                    },
                 },
 
                 diagnostics = {
                     initial_mode = "normal",
+                    layout_config = {
+                        preview_width = 0.55
+                    },
                 },
 
                 buffers = {
@@ -86,19 +101,32 @@ return {
                         n = {
                             ['dd'] = actions.delete_buffer,
                         }
-                    }
+                    },
+                    layout_config = {
+                        preview_width = 0.55
+                    },
                 },
 
                 find_files = {
                     hidden = true,
+                    layout_config = {
+                        preview_width = 0.55
+                    },
                 },
+
                 git_status = {
                     initial_mode = "normal",
-                    show_untracked = true
+                    show_untracked = true,
+                    layout_config = {
+                        preview_width = 0.55
+                    },
                 },
 
                 git_files = {
-                    show_untracked = true
+                    show_untracked = true,
+                    layout_config = {
+                        preview_width = 0.55
+                    },
                 },
             },
 
@@ -121,7 +149,6 @@ return {
                 layout_config = {
                     height = 0.95,
                     width = 0.95,
-                    preview_width = 0.55
                 },
 
                 selection_caret = "  ",
