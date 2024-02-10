@@ -1,4 +1,5 @@
 [ -f ~/.zsh_prompt ] && . ~/.zsh_prompt
+[ -f ~/.zshenv ] && . ~/.zshenv
 [ -f ~/.aliasrc ] && . ~/.aliasrc
 
 # vi mode
