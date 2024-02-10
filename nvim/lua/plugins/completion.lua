@@ -52,6 +52,9 @@ return {
                     end
                 end, { 'i', 's' }),
 
+                ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+                ['<C-f>'] = cmp.mapping.scroll_docs(4),
+
             },
 
             window = {
