@@ -147,7 +147,7 @@ install_bat() {
 
 ## oh-my-zsh - need this for zsh pretty prompt
 install_ohmyzsh() {
-	[ -d $HOME/.oh-my-zsh ] && return
+	[ -d ~/.oh-my-zsh ] && return
 	[ -z "$(command -v curl)" ] && return
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 }
