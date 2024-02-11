@@ -3,12 +3,9 @@ local function highlight(name, value)
 end
 
 -- CUSTOM HIGHLIGHTS
---bg = "#d6ffd6",
---,
 highlight("Visual", { reverse = true })
 highlight("Search", { reverse = true })
 highlight("CurSearch", { fg = "#d6ffd6", bg = "#03c988" })
--- #93a4c3
 highlight("IncSearch", { fg = "#d6ffd6", bg = "#03c988" })
 highlight("CursorLine", { bold = true, bg = "#2a324a" })
 highlight("CursorColumn", { bold = true, bg = "#2a324a" })
