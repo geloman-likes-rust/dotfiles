@@ -26,7 +26,7 @@ install_tmux() {
 install_tmux_tpm() {
 	[ -d ~/.tmux ] && return
 	echo "Installing tmux-plugins/tpm......................................"
-	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+	git clone --depth 1 https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 }
 
 ## FUZZY FINDER
