@@ -1,6 +1,6 @@
 #!/bin/sh
 
-[ -d ~/.personal/wallpaper ] || git clone https://github.com/geloman-likes-rust/desktop-wallpaper ~/.personal/wallpaper
+[ -d ~/.personal/wallpaper ] || git clone --depth 1 https://github.com/geloman-likes-rust/desktop-wallpaper ~/.personal/wallpaper
 
 [ -d ~/.fonts ] || mkdir ~/.fonts
 [ -d ~/.local ] || mkdir ~/.local
