@@ -1,3 +1,9 @@
+# ansible aliases
+alias \
+  av="ansible-vault" \
+  ave="ansible-vault encrypt" \
+  avd="ansible-vault decrypt" \
+
 # navigation aliases
 alias \
   ..="cd .." \
