@@ -2,7 +2,7 @@ return {
     'nvim-treesitter/nvim-treesitter',
     priority = 1500,
     cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
-    event = "BufReadPost",
+    event = "VeryLazy",
     config = function()
         vim.defer_fn(function()
             local parsers = { 'c', 'lua', 'vim', 'vimdoc', 'query' }
@@ -17,6 +17,5 @@ return {
             }
         end, 0)
     end,
-    -- dependencies = { 'nvim-treesitter/playground' },
     build = ":TSUpdate",
 }

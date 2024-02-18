@@ -1,8 +1,6 @@
 return {
     'folke/which-key.nvim',
-    enabled = true,
-    event = { "InsertEnter", "CursorMoved" },
-    keys = { "<leader>", "<c-r>", "<c-w>", '"', "`", "c", "v", "g" },
+    event = "VeryLazy",
     config = function()
         require("which-key").setup()
     end
