@@ -49,6 +49,19 @@ return {
         local options = {
             pickers = {
 
+                highlights = {
+                    layout_config = {
+                        preview_width = 0.55
+                    },
+
+                },
+
+                help_tags = {
+                    layout_config = {
+                        preview_width = 0.55
+                    },
+                },
+
                 live_grep = {
                     layout_config = {
                         preview_width = 0.55
