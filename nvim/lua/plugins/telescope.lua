@@ -49,6 +49,12 @@ return {
         local options = {
             pickers = {
 
+                live_grep = {
+                    layout_config = {
+                        preview_width = 0.55
+                    },
+                },
+
                 lsp_references = {
                     initial_mode = "normal",
                     layout_config = {
