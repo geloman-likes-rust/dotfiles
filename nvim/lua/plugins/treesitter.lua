@@ -2,7 +2,7 @@ return {
     'nvim-treesitter/nvim-treesitter',
     priority = 1500,
     cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
-    event = "VeryLazy",
+    event = "BufReadPost",
     config = function()
         vim.defer_fn(function()
             local parsers = { 'c', 'lua', 'vim', 'vimdoc', 'query' }
