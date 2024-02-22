@@ -1,0 +1,70 @@
+general {
+        colors = true
+        interval = 1
+        separator = "|"
+        color_bad = "#f65866"
+        color_good = "#00FFAB"
+        color_degraded = "#efbd5d"
+}
+
+# order += "battery all"
+# order += "wireless _first_"
+order += "ethernet _first_"
+order += "cpu_temperature 0"
+order += "cpu_usage"
+order += "memory"
+order += "volume master"
+order += "tztime local"
+
+wireless _first_ {
+        format_up = "  "
+        format_down = "  "
+}
+
+ethernet _first_ {
+        format_up = "  "
+        format_down = "  "
+}
+
+cpu_temperature 0 {
+    format = " %degrees°C "
+    format_above_threshold = " %degrees°C "
+    max_threshold = 50
+}
+
+memory {
+        format = " %percentage_used  "
+        format_degraded = " %percentage_used  "
+        threshold_degraded = "30%"
+        threshold_critical = "15%"
+}
+
+cpu_usage {
+    format = " %usage  "
+    format_above_threshold = " %usage  "
+    format_above_degraded_threshold = " %usage  "
+    max_threshold = 90
+    degraded_threshold = 70
+}
+
+tztime local {
+        # format = "%m-%d-%Y %H:%M:%S"
+        format = " %H:%M "
+}
+
+volume master {
+    format = " %volume  "
+    #format_muted
+    device = "default"
+}
+
+# battery all {
+#        format = "%status %percentage %remaining"
+#        status_chr = ""
+#        status_bat = ""
+#        status_unk = ""
+#        status_full = ""
+#        low_threshold = 30
+#        format_percentage = "%.00f%s"
+# }
+
