@@ -1,0 +1,12 @@
+configuration {
+    display-drun: "Applications";
+    display-window: "Active Windows";
+    modi: "window,drun";
+    show-icons: true;
+}
+
+@theme "Arc-Dark"
+
+window {
+    width: 25%;
+}
