@@ -37,6 +37,15 @@ return {
                 end,
                 desc = "Git Worktrees"
             },
+            {
+                "<leader>cw",
+                function()
+                    local telescope = require("telescope")
+                    telescope.load_extension("git_worktree")
+                    telescope.extensions.git_worktree.create_git_worktree()
+                end,
+                desc = "Create Git Worktree"
+            },
 
             -- TELESCOPE'S EASTER EGG
             { "<leader>ps", Command("Telescope planets"),   desc = "Love and Peace" },
