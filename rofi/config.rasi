@@ -1,12 +1,35 @@
+@theme "Arc-Dark"
+
 configuration {
-    display-drun: "Applications";
-    display-window: "Active Windows";
+    display-drun: " ";
+    display-window: " ";
+    font: "Hack Nerd Font 30";
     modi: "window,drun";
+    lines: 5;
     show-icons: true;
 }
 
-@theme "Arc-Dark"
+listview {
+    lines: 5;
+}
 
 window {
-    width: 25%;
+    width: 40%;
+    padding: 10px;
+    border: none;
 }
+
+element {
+    padding: 5px;
+    spacing: 10px;
+
+}
+
+element-icon {
+    size: 50px;
+}
+
+scrollbar {
+    handle-width: 0;
+}
+
