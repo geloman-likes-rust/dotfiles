@@ -34,6 +34,7 @@ bindsym $mod+Return exec kitty
 # always open in specific workspace
 assign [class="Code"] 1
 assign [class="kitty"] 1
+assign [class="Aseprite"] 1
 assign [class="Google-chrome"] 2
 assign [class="discord"] 3
 assign [class="steam"] 4
