@@ -1,0 +1,10 @@
+#!/bin/sh
+
+[ -z "$1" ] && exit 0
+worktrees="$(git worktree list 2> /dev/null)"
+[ -z "$worktrees" ] && exit 0
+
+bare="$(echo "$worktrees" | awk 'NR == 1 {print $1}')"
+worktree="$1"
+
+git worktree add -b "$worktree" "$bare/$worktree"
