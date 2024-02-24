@@ -51,6 +51,7 @@ alias \
   gai="git-add-interactive" \
   grl="git-reflog" \
   gw="tmux-switch-worktree" \
+  cw="git-create-worktree" \
   glf="git-log-file" \
   sws="switch_shell" \
 
