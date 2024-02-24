@@ -1,0 +1,30 @@
+#!/bin/sh
+
+worktrees="$(git worktree list 2> /dev/null)"
+
+[ -z "$worktrees" ] && exit 0
+[ "$(echo "$worktrees" | wc -l)" -eq 1 ] && exit 0
+
+
+selected="$(echo "$worktrees" \
+    | awk 'NR > 1 {printf("\033[0;91m%s \033[0;33m%s\033[0m \033[0;36m%s\n", $2, $3, $1)}' \
+    | fzf --pointer "" --prompt "    " --border-label " worktree list " --header-first --header "switch worktree " \
+    | awk '{print $3}')"
+
+[ -z "$selected" ] && exit 0
+
+session_name=$(basename "$selected")
+
+# INSIDE TMUX
+if [ -n "$TMUX" ]; then
+    tmux has-session -t $session_name 2> /dev/null \
+        && tmux switch-client -t $session_name && exit 0 \
+        || tmux new-session -ds $session_name -c $selected && tmux switch-client -t $session_name && exit 0
+fi
+
+# OUTSIDE TMUX
+if [ -z "$TMUX" ]; then
+    tmux has-session -t $session_name 2> /dev/null \
+        && tmux attach-session -t $session_name && exit 0 \
+        || tmux new-session -s $session_name -c $selected && exit 0
+fi
