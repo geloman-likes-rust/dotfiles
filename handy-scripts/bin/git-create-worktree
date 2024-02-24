@@ -7,4 +7,6 @@ worktrees="$(git worktree list 2> /dev/null)"
 bare="$(echo "$worktrees" | awk 'NR == 1 {print $1}')"
 worktree="$1"
 
-git worktree add -b "$worktree" "$bare/$worktree"
+git worktree add -b "$worktree" "$bare/$worktree" 2> /dev/null \
+    && exit 0 \
+    || git worktree add "$bare/$worktree" && exit 0
