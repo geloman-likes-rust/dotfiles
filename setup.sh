@@ -17,9 +17,16 @@
 [ -f ~/.inputrc ] && mv -f ~/.inputrc ~/.inputrc.bak
 [ -f ~/.gitconfig ] && mv -f ~/.gitconfig ~/.gitconfig.bak
 [ -d ~/.config/i3 ] && mv -f ~/.config/i3 ~/.config/i3.bak
+[ -d ~/.config/i3status ] && mv -f ~/.config/i3status ~/.config/i3status.bak
 [ -d ~/.config/nvim ] && mv -f ~/.config/nvim ~/.config/nvim.bak
 [ -d ~/.config/kitty ] && mv -f ~/.config/kitty ~/.config/kitty.bak
 [ -d ~/.config/alacritty ] && mv -f ~/.config/alacritty ~/.config/alacritty.bak
+[ -d ~/.config/wofi ] && mv -f ~/.config/wofi ~/.config/wofi.bak
+[ -d ~/.config/rofi ] && mv -f ~/.config/rofi ~/.config/rofi.bak
+[ -d ~/.config/hypr ] && mv -f ~/.config/hypr ~/.config/hypr.bak
+[ -d ~/.config/waybar ] && mv -f ~/.config/waybar ~/.config/waybar.bak
+[ -f ~/.config/Code/User/settings.json ] && mv -f ~/.config/Code/User/settings.json ~/.config/Code/User/settings.json.bak
+[ -f ~/.config/Code/User/keybindings.json ] && mv -f ~/.config/Code/User/keybindings.json ~/.config/Code/User/keybindings.json.bak
 
 [ -z "$(fc-list | grep "Hack Nerd Font")" ] && cp ~/.dotfiles/fonts/hack-nerd-font.ttf ~/.fonts && echo "updating font cache................" && fc-cache -f
 [ -f ~/.profile ] && echo ". \"\$HOME/.dotfiles/.default_background\"" >> ~/.profile
