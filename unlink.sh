@@ -36,6 +36,25 @@
 # UNLINK ALACRITTY CONFIGS
 [ -L ~/.config/alacritty ] && unlink ~/.config/alacritty
 
+# UNLINK WOFI CONFIGS
+[ -L ~/.config/wofi ] && unlink ~/.config/wofi
+
+# UNLINK ROFI CONFIGS
+[ -L ~/.config/rofi ] && unlink ~/.config/rofi
+
+# UNLINK I3STATUS CONFIGS
+[ -L ~/.config/i3status ] && unlink ~/.config/i3status
+
+# UNLINK HYPR CONFIGS
+[ -L ~/.config/hypr ] && unlink ~/.config/hypr
+
+# UNLINK WAYBAR CONFIGS
+[ -L ~/.config/waybar ] && unlink ~/.config/waybar
+
+# UNLINK VSCODE CONFIGS
+[ -L ~/.config/Code/User/settings.json ] && unlink ~/.config/Code/User/settings.json
+[ -L ~/.config/Code/User/keybindings.json ] && unlink ~/.config/Code/User/keybindings.json
+
 # GETTING BACK TO NORMAL
 [ -f ~/.vimrc.bak ] && mv -f ~/.vimrc.bak ~/.vimrc
 [ -f ~/.zshrc.bak ] && mv -f ~/.zshrc.bak ~/.zshrc
@@ -48,3 +67,10 @@
 [ -d ~/.config/i3.bak ] && mv -f ~/.config/i3.bak ~/.config/i3
 [ -d ~/.config/nvim.bak ] && mv -f ~/.config/nvim.bak ~/.config/nvim
 [ -d ~/.config/kitty.bak ] && mv -f ~/.config/kitty.bak ~/.config/kitty
+[ -d ~/.config/wofi.bak ] && mv -f ~/.config/wofi.bak ~/.config/wofi
+[ -d ~/.config/rofi.bak ] && mv -f ~/.config/rofi.bak ~/.config/rofi
+[ -d ~/.config/i3status.bak ] && mv -f ~/.config/i3status.bak ~/.config/i3status
+[ -d ~/.config/hypr.bak ] && mv -f ~/.config/hypr.bak ~/.config/hypr
+[ -d ~/.config/waybar.bak ] && mv -f ~/.config/waybar.bak ~/.config/waybar
+[ -f ~/.config/Code/User/settings.json.bak ] && mv -f ~/.config/Code/User/settings.json.bak ~/.config/Code/User/settings.json
+[ -f ~/.config/Code/User/keybindings.json.bak ] && mv -f ~/.config/Code/User/keybindings.json.bak ~/.config/Code/User/keybindings.json
