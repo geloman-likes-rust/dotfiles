@@ -36,6 +36,25 @@
 # ALACRITTY CONFIGS
 [ -L ~/.config/alacritty ] || ln -s ~/.dotfiles/alacritty ~/.config/
 
+# WOFI CONFIGS
+[ -L ~/.config/wofi ] || ln -s ~/.dotfiles/wofi ~/.config/
+
+# ROFI CONFIGS
+[ -L ~/.config/rofi ] || ln -s ~/.dotfiles/rofi ~/.config/
+
+# I3STATUS CONFIGS
+[ -L ~/.config/i3status ] || ln -s ~/.dotfiles/i3status ~/.config/
+
+# HYPR CONFIGS
+[ -L ~/.config/hypr ] || ln -s ~/.dotfiles/hypr ~/.config/
+
+# WAYBAR CONFIGS
+[ -L ~/.config/waybar ] || ln -s ~/.dotfiles/waybar ~/.config/
+
+# VSCODE CONFIGS
+[ -L ~/.config/Code/User/settings.json ] || ln -s ~/.dotfiles/vscode/settings.json ~/.config/Code/User/
+[ -L ~/.config/Code/User/keybindings.json ] || ln -s ~/.dotfiles/vscode/keybindings.json ~/.config/Code/User/
+
 # SHORTHAND FOR SYMLINK AND UNLINK
 [ -L ~/.local/bin/slnk ] || ln -s ~/.dotfiles/symlink.sh ~/.local/bin/slnk
 [ -L ~/.local/bin/ulnk ] ||  ln -s ~/.dotfiles/unlink.sh ~/.local/bin/ulnk
