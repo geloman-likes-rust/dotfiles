@@ -1,1 +1,1 @@
-return { "windwp/nvim-autopairs", event = "InsertEnter", opts = {} }
+return { "windwp/nvim-autopairs", enabled = false, event = "InsertEnter", opts = {} }
