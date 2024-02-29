@@ -103,4 +103,6 @@
   "workbench.colorTheme": "One Dark Pro Darker",
   "workbench.iconTheme": "vscode-icons",
   "window.menuBarVisibility": "toggle"
+  "editor.autoClosingBrackets": "never",
+  "editor.autoClosingQuotes": "never"
 }
