@@ -5,7 +5,7 @@
 [init]
 	defaultBranch = main
 
-[credential]
+[credential "https://github.com"]
 	username = geloman-likes-rust
 	helper = store
 
