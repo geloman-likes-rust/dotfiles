@@ -1,6 +1,7 @@
 # ansible aliases
 alias \
   av="ansible-vault" \
+  avv="ansible-vault view" \
   ave="ansible-vault encrypt" \
   avd="ansible-vault decrypt" \
 
