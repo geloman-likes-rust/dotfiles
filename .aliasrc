@@ -23,6 +23,7 @@ alias \
   tls="tmux ls" \
   tks="tmux kill-server" \
   ta="tmux a" \
+  td="tmux detach" \
   tns="tmux new -s" \
   trn="tmux rename-session -t" \
 
