@@ -82,14 +82,14 @@ return {
 
                 live_grep = {
                     layout_config = {
-                        preview_width = 0.55
+                        preview_width = 0.60
                     },
                 },
 
                 lsp_references = {
                     initial_mode = "normal",
                     layout_config = {
-                        preview_width = 0.55
+                        preview_width = 0.60,
                     },
                 },
 
@@ -103,7 +103,7 @@ return {
                 },
 
                 colorscheme = {
-                    initial_mode = "normal",
+                    initial_mode = "insert",
                     layout_config = {
                         width = 0.40,
                         height = 0.60,
