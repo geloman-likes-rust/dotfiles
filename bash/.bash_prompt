@@ -1,4 +1,1 @@
-NC='\033[0m'
-BLUE='\033[1;34m'
-
-export PS1=" $BLUE\W$NC "
+export PS1="\033[1;34m\W\033[0m "
