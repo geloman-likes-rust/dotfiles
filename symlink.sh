@@ -8,7 +8,7 @@
 
 # BASH CONFIGS
 [ -L ~/.bashrc ] || ln -s ~/.dotfiles/bash/.bashrc "$HOME"
-[ -L ~/.inputrc ] || ln -s ~/.dotfiles/bash/.inputrc "$HOME"
+# [ -L ~/.inputrc ] || ln -s ~/.dotfiles/bash/.inputrc "$HOME"
 [ -L ~/.bash_prompt ] || ln -s ~/.dotfiles/bash/.bash_prompt "$HOME"
 [ -L ~/.bash_profile ] || ln -s ~/.dotfiles/bash/.bash_profile "$HOME"
 
