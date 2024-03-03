@@ -4,9 +4,9 @@ end
 
 -- CUSTOM HIGHLIGHTS
 highlight("Visual", { reverse = true })
-highlight("Search", { reverse = true })
-highlight("CurSearch", { fg = "#d6ffd6", bg = "#03c988" })
-highlight("IncSearch", { fg = "#d6ffd6", bg = "#03c988" })
+highlight("Search", { bg = "#2a324a" })
+highlight("CurSearch", { reverse = true })
+highlight("IncSearch", { reverse = true })
 highlight("CursorLine", { bold = true, bg = "#2a324a" })
 highlight("CursorColumn", { bold = true, bg = "#2a324a" })
 highlight("TelescopeTitle", { reverse = true })
