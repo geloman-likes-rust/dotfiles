@@ -7,11 +7,13 @@ highlight("Visual", { reverse = true })
 highlight("Search", { bg = "#2a324a" })
 highlight("CurSearch", { reverse = true })
 highlight("IncSearch", { reverse = true })
-highlight("CursorLine", { bold = true, bg = "#2a324a" })
-highlight("CursorColumn", { bold = true, bg = "#2a324a" })
+highlight("CursorLine", { bg = "#2a324a", underline = true })
+highlight("CursorColumn", { bg = "#2a324a", blend = 5 })
 
 -- TELESCOPE HIGHLIGHTS
 highlight("TelescopeTitle", { reverse = true })
+highlight("TelescopeSelection", { bg = '#34bfd0', fg = '#283347' })
+highlight("TelescopePromptCounter", { fg = '#34bfd0' })
 
 -- LAZY HIGHLIGHTS
 highlight("LazyNormal", { blend = 0, link = 'none' })
@@ -22,8 +24,9 @@ highlight("LazyDimmed", { blend = 0, link = 'none' })
 highlight("MasonNormal", { blend = 0, link = 'none' })
 
 -- TREESITTER-CONTEXT HIGHLIGHTS
-highlight("TreesitterContextBottom", { underdotted = true })
 highlight("TreesitterContext", { blend = 0, link = 'none' })
+highlight("TreesitterContextBottom", { underdotted = true })
+highlight("TreesitterContextLineNumberBottom", { fg = '#93a4c3', underdotted = true })
 
 -- GIT HIGHLIGHTS
 highlight("GitSignsUntracked", { fg = "#34bfd0" })
