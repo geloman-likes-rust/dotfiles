@@ -193,7 +193,8 @@ return {
                     width = 0.95,
                 },
 
-                selection_caret = "  ",
+                -- selection_caret = "  ",
+                selection_caret = "  ",
                 prompt_prefix = "   ",
             },
         }
