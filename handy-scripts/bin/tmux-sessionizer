@@ -4,20 +4,25 @@ CYAN='\033[0;36m'
 
 workspace="$HOME/.dotfiles $HOME/.development $HOME/.personal"
 
-[ $# -eq 1 ] && selected=$1
-selected=$(find $workspace -maxdepth 1 -type d | fzf --no-mouse --border-label "$(printf " ${CYAN}tmux-sessionizer ")" --border=rounded --margin=1 --header-first --header "Create tmux session" --prompt "  " --pointer "")
+selected=$(find $workspace -maxdepth 1 -type d \
+    | fzf --no-mouse --border-label "$(printf " ${CYAN}tmux-sessionizer ")" \
+    --border=rounded --margin=1 --header-first --header "Create tmux session" \
+    --prompt "  " --pointer "")
 
 [ -z "$selected" ] && exit 0
 
-selected_name=$(basename "$selected" | tr . _)
-tmux_running=$(pgrep tmux)
+session_name=$(basename "$selected" | tr . _)
 
-[ -z "$TMUX" ] && [ -z "$tmux_running" ] && tmux new-session -s "$selected_name" -c "$selected" && exit 0
+# INSIDE TMUX
+if [ -n "$TMUX" ]; then
+    tmux has-session -t $session_name 2> /dev/null \
+        && tmux switch-client -t $session_name && exit 0 \
+        || tmux new-session -ds $session_name -c $selected && tmux switch-client -t $session_name && exit 0
+fi
 
-! tmux has-session -t="$selected_name" 2> /dev/null && tmux new-session -ds "$selected_name" -c "$selected"
-
-tmux has-session -t "$selected_name"
-
-[ -z "$TMUX" ] || tmux switch-client -t "$selected_name"
-
-tmux attach-session -t "$selected_name"
+# OUTSIDE TMUX
+if [ -z "$TMUX" ]; then
+    tmux has-session -t $session_name 2> /dev/null \
+        && tmux attach-session -t $session_name && exit 0 \
+        || tmux new-session -s $session_name -c $selected && exit 0
+fi
