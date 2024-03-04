@@ -9,9 +9,6 @@ local toggle_numberln = function()
     vim.cmd "set relativenumber!"
 end
 
--- config nvim
-keymap('n', '<leader>cn', '<cmd>e ~/.dotfiles/nvim<cr>', { silent = true, desc = "Config Nvim" })
-
 -- toggle statusline
 keymap("n", "<leader>l1", "<cmd>set laststatus=1<cr>", { noremap = true, silent = true, desc = "hide statusline" })
 keymap("n", "<leader>l2", "<cmd>set laststatus=2<cr>", { noremap = true, silent = true, desc = "show statusline" })

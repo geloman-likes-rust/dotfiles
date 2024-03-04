@@ -2,6 +2,11 @@ return {
     'nvim-telescope/telescope.nvim',
     version = '*',
     cmd = "Telescope",
+    init = function()
+        vim.keymap.set('n', '<leader>cn', function()
+            require('telescope.builtin').find_files { cwd = vim.fn.stdpath 'config' }
+        end, { desc = 'neovim config files' })
+    end,
     keys = function()
         local Command = function(command) return function() vim.cmd(command) end end
         return {
