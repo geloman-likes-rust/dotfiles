@@ -28,7 +28,7 @@ return {
     {
         "williamboman/mason.nvim",
         cmd = { "Mason", "MasonLog", "MasonUpdate", "MasonInstall", "MasonUninstall", "MasonUninstallAll" },
-        opts = {}
+        opts = { ui = { border = "rounded" } }
     },
     {
         "williamboman/mason-lspconfig.nvim",
