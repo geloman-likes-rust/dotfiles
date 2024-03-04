@@ -9,7 +9,21 @@ highlight("CurSearch", { reverse = true })
 highlight("IncSearch", { reverse = true })
 highlight("CursorLine", { bold = true, bg = "#2a324a" })
 highlight("CursorColumn", { bold = true, bg = "#2a324a" })
+
+-- TELESCOPE HIGHLIGHTS
 highlight("TelescopeTitle", { reverse = true })
+
+-- LAZY HIGHLIGHTS
+highlight("LazyNormal", { blend = 0, link = 'none' })
+highlight("LazyProp", { blend = 0, link = 'none' })
+highlight("LazyDimmed", { blend = 0, link = 'none' })
+
+-- MASON HIGHLIGHTS
+highlight("MasonNormal", { blend = 0, link = 'none' })
+
+-- TREESITTER-CONTEXT HIGHLIGHTS
+highlight("TreesitterContextBottom", { underdotted = true })
+highlight("TreesitterContext", { blend = 0, link = 'none' })
 
 -- GIT HIGHLIGHTS
 highlight("GitSignsUntracked", { fg = "#34bfd0" })
