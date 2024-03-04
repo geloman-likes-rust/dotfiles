@@ -24,6 +24,7 @@ alias \
   tks="tmux kill-server" \
   ta="tmux a" \
   td="tmux detach" \
+  tx="tmux-sessionizer" \
   tns="tmux new -s" \
   trn="tmux rename-session -t" \
 
