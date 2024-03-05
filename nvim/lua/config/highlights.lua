@@ -7,8 +7,8 @@ highlight("Visual", { reverse = true })
 highlight("Search", { bg = "#2a324a" })
 highlight("CurSearch", { reverse = true })
 highlight("IncSearch", { reverse = true })
-highlight("CursorLine", { bg = "#2a324a", underline = true })
-highlight("CursorColumn", { bg = "#2a324a", blend = 5 })
+highlight("CursorLine", { bg = "#2a324a" })
+highlight("CursorColumn", { bg = "#2a324a" })
 
 -- TELESCOPE HIGHLIGHTS
 highlight("TelescopeTitle", { reverse = true })
