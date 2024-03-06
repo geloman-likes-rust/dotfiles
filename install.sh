@@ -105,7 +105,7 @@ install_delta() {
 ## BAT - just like 'cat' but with syntax-highlighting
 #---------------------------------------------------------------------
 install_bat() {
-    realease_tag="https://github.com/sharkdp/bat/releases/download/v0.24.0/bat-v0.24.0-x86_64-unknown-linux-gnu.tar.gz"
+    release_tag="https://github.com/sharkdp/bat/releases/download/v0.24.0/bat-v0.24.0-x86_64-unknown-linux-gnu.tar.gz"
 	[ -n "$(command -v bat)" ] && return
 	echo "Installing bat......................................"
     curl -Lo ~/.batcat/bat.tar.gz --create-dirs "$release_tag"
@@ -122,7 +122,7 @@ install_ohmyzsh() {
 }
 
 install_lua_language_server() {
-    [-z "$(command -v lua-language-server)" ] && return
+    [ -z "$(command -v lua-language-server)" ] && return
     release_tag="https://github.com/LuaLS/lua-language-server/releases/download/3.7.4/lua-language-server-3.7.4-linux-x64.tar.gz"
 	echo "Installing lua-language-server......................................"
     curl -Lo ~/.language-servers/packages/lua-language-server/lua_ls.tar.gz --create-dirs "$release_tag"
@@ -141,15 +141,15 @@ install_omnisharp_roslyn() {
     ln -sf ~/.language-servers/packages/omnisharp-roslyn/bin/OmniSharp ~/.language-servers/bin/
 }
 
-install_fd
-install_ripgrep
-install_delta
+# install_fd
+# install_ripgrep
+# install_delta
 install_bat
-install_fzf
-install_exa
-install_tmux_tpm
-install_neovim
-install_lua_language_server
+# install_fzf
+# install_exa
+# install_tmux_tpm
+# install_neovim
+# install_lua_language_server
 # install_omnisharp_roslyn
 # install_ohmyzsh
 # install_nvm
