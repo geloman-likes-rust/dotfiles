@@ -1,4 +1,4 @@
 #!/bin/sh
 
 selected=$(command ls ~/.personal/wallpaper | fzf --border=rounded --margin=25%,35% --border-label " Set Background " --header-first --header "Select Background" --pointer "" --prompt "  ")
-[ -z "$selected" ] || xwallpaper --zoom ~/.personal/wallpaper/"$selected"
+[ -n "$selected" ] && xwallpaper --zoom ~/.personal/wallpaper/"$selected"
