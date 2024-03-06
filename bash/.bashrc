@@ -13,6 +13,7 @@
 [ -d ~/.dotfiles/handy-scripts/bin ] && PATH=$PATH:~/.dotfiles/handy-scripts/bin
 [ -d ~/.cargo ] && PATH=$PATH:$HOME/.cargo/bin
 [ -d ~/.miniconda/bin ] && PATH=$PATH:$HOME/.miniconda/bin
+[ -d ~/.local/share/nvim/mason/bin ] && PATH=$PATH:$HOME/.local/share/nvim/mason/bin
 
 # CUSTOM FUNCTIONS
 # -----------------------------------
