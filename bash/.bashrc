@@ -12,7 +12,6 @@
 [ -d ~/.local/bin ] && PATH=$PATH:$HOME/.local/bin
 [ -d ~/.dotfiles/handy-scripts/bin ] && PATH=$PATH:~/.dotfiles/handy-scripts/bin
 [ -d ~/.cargo ] && PATH=$PATH:$HOME/.cargo/bin
-[ -d ~/.miniconda/bin ] && PATH=$PATH:$HOME/.miniconda/bin
 [ -d ~/.local/share/nvim/mason/bin ] && PATH=$PATH:$HOME/.local/share/nvim/mason/bin
 
 # CUSTOM FUNCTIONS
@@ -46,20 +45,5 @@ WHITE=#EDEDED
 
 export PATH EDITOR SHELL
 [ -f ~/.fzf.bash ] && export FZF_DEFAULT_OPTS="--ansi --color=bg+:$BG,fg+:$FG,gutter:-1,border:$PURPLE,hl:$MINT,hl+:$PINK,query:$PINK,pointer:$PINK,label:$WHITE,info:$MINT,spinner:$PURPLE,header:$PURPLE --border=rounded"
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/geloman/.miniconda/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/geloman/.miniconda/etc/profile.d/conda.sh" ]; then
-        . "/home/geloman/.miniconda/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/geloman/.miniconda/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 
 . "$HOME/.cargo/env"

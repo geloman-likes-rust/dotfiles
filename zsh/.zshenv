@@ -16,8 +16,7 @@ FZF_DEFAULT_OPTS="--ansi --color=bg+:$BG,fg+:$FG,gutter:-1,border:$PURPLE,hl:$MI
 
 [ -d ~/.cargo ] && PATH=$PATH:$HOME/.cargo/bin
 [ -d ~/.local/bin ] && PATH=$PATH:$HOME/.local/bin
-[ -d ~/.miniconda/bin ] && PATH=$PATH:$HOME/.miniconda/bin
 [ -d ~/.dotfiles/handy-scripts/bin ] && PATH=$PATH:$HOME/.dotfiles/handy-scripts/bin
-[ -d ~/.local/share/nvim/mason/bin ] && PATH=$PATH:$HOME/.local/share/nvim/mason/bin
+[ -d ~/.language-servers/bin ] && PATH=$PATH:$HOME/.language-servers/bin
 
 export PATH SHELL EDITOR KEYTIMEOUT FZF_DEFAULT_OPTS
