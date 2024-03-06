@@ -1,20 +1,14 @@
 return {
     'j-hui/fidget.nvim',
-    tag = "legacy",
+    tag = "1.4.0",
     event = "InsertEnter",
     opts = {
-        text = {
-            spinner = "circle_quarters"
-        },
-        timer = {
-            fidget_decay = 250,
-        },
-        window = {
-            border = "rounded",
-            blend = 0
+        notification = {
+            window = {
+                border = "rounded",
+                normal_hl = "Normal",
+                winblend = 0,
+            }
         }
     },
-    config = function(_, opts)
-        require("fidget").setup(opts)
-    end,
 }
