@@ -8,7 +8,7 @@ return {
             local parsers = { 'c', 'lua', 'vim', 'vimdoc', 'query' }
             require('nvim-treesitter.configs').setup {
                 modules = {},
-                auto_install = true,
+                auto_install = false,
                 sync_install = false,
                 ignore_install = {},
                 ensure_installed = parsers,
