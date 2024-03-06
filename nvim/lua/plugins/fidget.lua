@@ -1,6 +1,6 @@
 return {
     'j-hui/fidget.nvim',
-    tag = "1.4.0",
+    tag = "v1.4.0",
     event = "InsertEnter",
     opts = {
         notification = {
