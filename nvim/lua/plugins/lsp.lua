@@ -27,8 +27,8 @@ return {
             cmd = { 'OmniSharp' },
             capabilities = capabilities,
             enable_editorconfig_support = true,
+            enable_import_completion = true,
             enable_roslyn_analyzers = true,
-            analyze_open_documents_only = true,
             root_dir = util.root_pattern("*.sln", "*.csproj", "omnisharp.json", "function.json")
         }
 
