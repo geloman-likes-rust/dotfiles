@@ -14,26 +14,29 @@ return {
             capabilities = capabilities,
         }
 
-        -- lspconfig.rust_analyzer.setup {
-        --     autostart = true,
-        --     cmd = { 'rust-analyzer' },
-        --     capabilities = capabilities,
-        --     root_dir = util.root_pattern('Cargo.toml', 'Cargo.lock')
-        -- }
+        lspconfig.rust_analyzer.setup {
+            autostart = true,
+            cmd = { 'rust-analyzer' },
+            capabilities = capabilities,
+            root_dir = util.root_pattern('Cargo.toml', 'Cargo.lock', 'rust-project.json')
+        }
 
-        -- lspconfig.omnisharp.setup {
-        --     cmd = { "dotnet", "$HOME/.omnisharp-roslyn/OmniSharp.dll" },
-        --     enable_editorconfig_support = true,
-        --     enable_roslyn_analyzers = true,
-        --     analyze_open_documents_only = true,
-        -- }
+        lspconfig.omnisharp.setup {
+            name = 'omnisharp-roslyn',
+            autostart = true,
+            cmd = { 'OmniSharp' },
+            capabilities = capabilities,
+            enable_editorconfig_support = true,
+            enable_roslyn_analyzers = true,
+            analyze_open_documents_only = true,
+            root_dir = util.root_pattern("*.sln", "*.csproj", "omnisharp.json", "function.json")
+        }
 
-        -- lspconfig.lua_ls.setup {
-        --     autostart = true,
-        --     cmd = { 'typescript-language-server' },
-        --     capabilities = capabilities,
-        --     root_dir = util.root_pattern('package.json', 'package-lock.json')
-        -- }
+        lspconfig.tsserver.setup {
+            autostart = true,
+            cmd = { 'typescript-language-server' },
+            capabilities = capabilities,
+        }
     end,
     dependencies = { "folke/neodev.nvim", cmd = "Neoconf" },
 }
