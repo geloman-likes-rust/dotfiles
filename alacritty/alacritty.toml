@@ -8,7 +8,7 @@ TERM = "xterm-256color"
 hide_when_typing = true
 
 [window]
-opacity = 0.85
+opacity = 0.75
 decorations = "none"
 startup_mode = "Maximized"
 
