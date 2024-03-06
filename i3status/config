@@ -18,12 +18,12 @@ order += "tztime local"
 
 wireless _first_ {
         format_up = "  "
-        format_down = "  "
+        format_down = " 󰤮 "
 }
 
 ethernet _first_ {
         format_up = "  "
-        format_down = "  "
+        format_down = " 󰤮 "
 }
 
 cpu_temperature 0 {
