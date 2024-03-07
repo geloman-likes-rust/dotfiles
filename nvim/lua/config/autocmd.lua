@@ -56,5 +56,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
             local hl = "DiagnosticSign" .. type
             vim.fn.sign_define(hl, { text = icon, texthl = hl })
         end
+
+        -- rounded border for textDocument/hover
+        vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+            vim.lsp.handlers.hover, { border = "rounded" }
+        )
     end,
 })
