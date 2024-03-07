@@ -4,18 +4,21 @@ return {
     opts = {
         options = {
             icons_enabled = true,
-            -- theme = 'onedark',
-            -- section_separators = { left = '', right = '' },
+            theme = 'auto',
+            section_separators = { left = '', right = '' },
             -- component_separators = { left = '', right = '' },
             -- component_separators = { left = '', right = '' },
-            -- component_separators = { left = '│', right = '│' },
-            component_separators = { left = '┊', right = '' },
-            section_separators = { left = '', right = '' },
-            symbols = {
-                -- unix = '', -- e712
-                -- dos = '',  -- e70f
-                -- mac = '',  -- e711
-            }
+            component_separators = { left = '│', right = '│' },
+            -- component_separators = { left = '┊', right = '' },
+            -- section_separators = { left = '', right = '' },
         },
-    },
+        sections = {
+            lualine_a = { 'mode' },
+            lualine_b = { 'branch', 'diff', 'diagnostics' },
+            lualine_c = { 'filename' },
+            lualine_x = { 'filetype' },
+            lualine_y = { 'progress' },
+            lualine_z = { 'location' }
+        },
+    }
 }
