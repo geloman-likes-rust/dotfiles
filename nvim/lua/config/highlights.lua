@@ -35,7 +35,6 @@ highlight("GitSignsUntrackedNr", { fg = "#34bfd0" })
 highlight("DiffAdd", { fg = "#03C988", bg = "#d6ffd6" })
 highlight("DiffDelete", { fg = "#FC2947", bg = "#ffeeee" })
 
--- CUSTOM FIDGET HIGHLIGHTS
-highlight("FidgetTitle", { fg = "#41a7fc", bg = "NONE" })
-highlight("FidgetTask", { fg = "#93a4c3", bg = "NONE" })
-highlight("FloatBorder", { fg = "#455574", bg = "NONE" })
+-- FLOATING WINDOW HIGHLIGHT
+highlight("FloatBorder", { blend = 0 })
+highlight("NormalFloat", { blend = 0 })
