@@ -20,9 +20,6 @@ highlight("LazyNormal", { blend = 0, link = 'none' })
 highlight("LazyProp", { blend = 0, link = 'none' })
 highlight("LazyDimmed", { blend = 0, link = 'none' })
 
--- MASON HIGHLIGHTS
-highlight("MasonNormal", { blend = 0, link = 'none' })
-
 -- TREESITTER-CONTEXT HIGHLIGHTS
 highlight("TreesitterContext", { blend = 0, link = 'none' })
 highlight("TreesitterContextBottom", { underdotted = true })
