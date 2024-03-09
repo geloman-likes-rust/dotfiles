@@ -38,3 +38,6 @@ highlight("DiffDelete", { fg = "#FC2947", bg = "#ffeeee" })
 -- FLOATING WINDOW HIGHLIGHT
 highlight("FloatBorder", { blend = 0 })
 highlight("NormalFloat", { blend = 0 })
+
+-- VIM-DADBOD-UI HIGHLIGHTS
+highlight("NotificationError", { blend = 0, fg = '#f65866' })
