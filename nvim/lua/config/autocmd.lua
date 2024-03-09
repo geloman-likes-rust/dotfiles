@@ -61,5 +61,15 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
             vim.lsp.handlers.hover, { border = "rounded" }
         )
+
+        vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
+            buffer = event.buf,
+            callback = vim.lsp.buf.document_highlight
+        })
+
+        vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
+            buffer = event.buf,
+            callback = vim.lsp.buf.clear_references
+        })
     end,
 })
