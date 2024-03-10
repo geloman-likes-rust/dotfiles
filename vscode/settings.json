@@ -86,7 +86,7 @@
     "editorLineNumber.activeForeground": "#434C5E"
   },
   "window.zoomLevel": 3,
-  "editor.fontSize": 12,
+  "editor.fontSize": 16,
   "editor.lineNumbers": "relative",
   "editor.minimap.enabled": false,
   "editor.hideCursorInOverviewRuler": true,
@@ -102,7 +102,8 @@
   "workbench.editor.enablePreview": false,
   "workbench.colorTheme": "One Dark Pro Darker",
   "workbench.iconTheme": "vscode-icons",
-  "window.menuBarVisibility": "toggle"
+  "window.menuBarVisibility": "toggle",
   "editor.autoClosingBrackets": "never",
-  "editor.autoClosingQuotes": "never"
+  "editor.autoClosingQuotes": "never",
+  "workbench.editor.showTabs": "single"
 }
