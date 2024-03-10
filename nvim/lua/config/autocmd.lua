@@ -8,7 +8,7 @@ vim.api.nvim_create_autocmd("InsertEnter", {
 })
 
 -- set nocursorline/nocursorcolumn on InsertLeave
-vim.api.nvim_create_autocmd({ "InsertLeave" }, {
+vim.api.nvim_create_autocmd("InsertLeave", {
     pattern = "*",
     callback = function()
         vim.opt.cursorline = false
@@ -16,14 +16,21 @@ vim.api.nvim_create_autocmd({ "InsertLeave" }, {
     end
 })
 
--- Highlight on yank
-local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
-vim.api.nvim_create_autocmd('TextYankPost', {
+vim.api.nvim_create_autocmd("BufReadPost", {
+    pattern = { "*.html", "*.ts", "*.js", "*.css", "*.jsx", "*.tsx", "*.svelte" },
+    group = vim.api.nvim_create_augroup('javascript-2spacestab', { clear = true }),
     callback = function()
-        vim.highlight.on_yank()
-    end,
-    group = highlight_group,
+        vim.o.tabstop = 2
+        vim.o.softtabstop = 2
+        vim.o.shiftwidth = 2
+    end
+})
+
+-- Highlight on yank
+vim.api.nvim_create_autocmd('TextYankPost', {
     pattern = '*',
+    group = vim.api.nvim_create_augroup('YankHighlight', { clear = true }),
+    callback = vim.highlight.on_yank
 })
 
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -62,14 +69,17 @@ vim.api.nvim_create_autocmd('LspAttach', {
             vim.lsp.handlers.hover, { border = "rounded" }
         )
 
-        vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
-            buffer = event.buf,
-            callback = vim.lsp.buf.document_highlight
-        })
+        local client = vim.lsp.get_client_by_id(event.data.client_id)
+        if client and client.server_capabilities.documentHighlightProvider then
+            vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
+                buffer = event.buf,
+                callback = vim.lsp.buf.document_highlight
+            })
 
-        vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
-            buffer = event.buf,
-            callback = vim.lsp.buf.clear_references
-        })
+            vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
+                buffer = event.buf,
+                callback = vim.lsp.buf.clear_references
+            })
+        end
     end,
 })
