@@ -24,6 +24,14 @@ return {
             root_dir = util.root_pattern('Cargo.toml', 'Cargo.lock', 'rust-project.json')
         }
 
+        --[[ OCAML LSP ]]
+        require 'lspconfig'.ocamllsp.setup {
+            autostart = true,
+            cmd = { 'ocamllsp' },
+            capabilities = capabilities,
+            root_dir = util.root_pattern("*.opam", "esy.json", "package.json", ".git", "dune-project", "dune-workspace")
+        }
+
         --[[ GOLANG LSP ]]
         lspconfig.gopls.setup {
             autostart = true,
