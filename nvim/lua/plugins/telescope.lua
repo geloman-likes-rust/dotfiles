@@ -33,24 +33,6 @@ return {
             { "<leader>gb",      Command("Telescope git_branches"),   desc = "[G]it [B]ranches" },
             { "<leader>gts",     Command("Telescope git_stash"),      desc = "Git Stash" },
             { "<leader>gtb",     Command("Telescope git_bcommits"),   desc = "Git Current Buffer Commits" },
-            {
-                "<leader>gw",
-                function()
-                    local telescope = require("telescope")
-                    telescope.load_extension("git_worktree")
-                    telescope.extensions.git_worktree.git_worktrees()
-                end,
-                desc = "Git Worktrees"
-            },
-            {
-                "<leader>cw",
-                function()
-                    local telescope = require("telescope")
-                    telescope.load_extension("git_worktree")
-                    telescope.extensions.git_worktree.create_git_worktree()
-                end,
-                desc = "Create Git Worktree"
-            },
 
             -- TELESCOPE'S EASTER EGG
             { "<leader>ps", Command("Telescope planets"),   desc = "Love and Peace" },
@@ -60,7 +42,7 @@ return {
 
         }
     end,
-    dependencies = { 'nvim-lua/plenary.nvim', 'ThePrimeagen/git-worktree.nvim' },
+    dependencies = { 'nvim-lua/plenary.nvim' },
     opts = function()
         local ignore_files = { ".git", "target", "node_modules", "wwwroot/lib", "**/Debug", "**.cache", "**/assets",
             "**.png",
