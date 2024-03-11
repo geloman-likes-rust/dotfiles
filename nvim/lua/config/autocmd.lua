@@ -30,7 +30,9 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 vim.api.nvim_create_autocmd('TextYankPost', {
     pattern = '*',
     group = vim.api.nvim_create_augroup('YankHighlight', { clear = true }),
-    callback = vim.highlight.on_yank
+    callback = function()
+        vim.highlight.on_yank()
+    end
 })
 
 vim.api.nvim_create_autocmd('LspAttach', {
