@@ -56,62 +56,41 @@ install_nvm() {
 ## EXA LS
 #---------------------------------------------------------------------
 install_exa() {
-    release_tag="https://github.com/ogham/exa/releases/download/v0.10.1/exa-linux-x86_64-v0.10.1.zip"
 	[ -n "$(command -v exa)" ] && return
-	[ -z "$(command -v curl)" ] && return
-	[ -z "$(command -v unzip)" ] && return
 	echo "Installing exa......................................"
-    curl -Lo ~/.exa/exa.zip --create-dirs "$release_tag"
-	cd ~/.exa && unzip ./exa.zip
-	ln -sf ~/.exa/bin/exa ~/.local/bin/
+    ~/.cargo/bin/cargo install exa
 }
 
 ## FD-FIND - need this for telescope live-grep & grep-string
 #---------------------------------------------------------------------
 install_fd() {
-    release_tag="https://github.com/sharkdp/fd/releases/download/v9.0.0/fd-v9.0.0-x86_64-unknown-linux-musl.tar.gz"
 	[ -n "$(command -v fd)" ] && return
 	echo "Installing fd-find......................................"
-    curl -Lo ~/.fd_find/fd_find.tar.gz --create-dirs "$release_tag"
-    cd ~/.fd_find && tar xzvf ./fd_find.tar.gz
-    mv ~/.fd_find/$(command ls ~/.fd_find | grep -v "tar.gz") ~/.fd_find/bin
-    ln -sf ~/.fd_find/bin/fd ~/.local/bin/
+    ~/.cargo/bin/cargo install fd-find
 }
 
 ## RIPGREP - need this for telescope live-grep & grep-string
 #---------------------------------------------------------------------
 install_ripgrep() {
-    release_tag="https://github.com/BurntSushi/ripgrep/releases/download/14.1.0/ripgrep-14.1.0-x86_64-unknown-linux-musl.tar.gz"
 	[ -n "$(command -v rg)" ] && return
 	echo "Installing ripgrep......................................"
-    curl -Lo ~/.ripgrep/ripgrep.tar.gz --create-dirs "$release_tag"
-    cd ~/.ripgrep && tar xzvf ./ripgrep.tar.gz
-    mv ~/.ripgrep/$(command ls ~/.ripgrep | grep -v "tar.gz") ~/.ripgrep/bin
-    ln -sf ~/.ripgrep/bin/rg ~/.local/bin/
+    ~/.cargo/bin/cargo install ripgrep
 }
 
 ## GIT-DELTA - gitdiff syntax-highlighting
 #---------------------------------------------------------------------
 install_delta() {
-    release_tag="https://github.com/dandavison/delta/releases/download/0.16.5/delta-0.16.5-x86_64-unknown-linux-musl.tar.gz"
 	[ -n "$(command -v delta)" ] && return
 	echo "Installing git-delta......................................"
-    curl -Lo ~/.git-delta/delta.tar.gz --create-dirs "$release_tag"
-    cd ~/.git-delta && tar xzvf ./delta.tar.gz
-    mv ~/.git-delta/$(command ls ~/.git-delta | grep -v "tar.gz") ~/.git-delta/bin
-    ln -sf ~/.git-delta/bin/delta ~/.local/bin/
+    ~/.cargo/bin/cargo install git-delta
 }
 
 ## BAT - just like 'cat' but with syntax-highlighting
 #---------------------------------------------------------------------
 install_bat() {
-    release_tag="https://github.com/sharkdp/bat/releases/download/v0.24.0/bat-v0.24.0-x86_64-unknown-linux-gnu.tar.gz"
 	[ -n "$(command -v bat)" ] && return
 	echo "Installing bat......................................"
-    curl -Lo ~/.batcat/bat.tar.gz --create-dirs "$release_tag"
-    cd ~/.batcat && tar xzvf ./bat.tar.gz
-    mv ~/.batcat/$(command ls ~/.batcat | grep -v "tar.gz") ~/.batcat/bin
-    ln -sf ~/.batcat/bin/bat ~/.local/bin/
+    ~/.cargo/bin/cargo install bat
 }
 
 ## oh-my-zsh - need this for zsh pretty prompt
@@ -141,19 +120,19 @@ install_omnisharp_roslyn() {
     ln -sf ~/.language-servers/packages/omnisharp-roslyn/bin/OmniSharp ~/.language-servers/bin/
 }
 
-# install_fd
-# install_ripgrep
-# install_delta
+install_neovim
+install_fzf
+install_rust
+install_fd
+install_ripgrep
+install_delta
 install_bat
-# install_fzf
-# install_exa
-# install_tmux_tpm
-# install_neovim
+install_exa
+install_tmux_tpm
 # install_lua_language_server
 # install_omnisharp_roslyn
 # install_ohmyzsh
 # install_nvm
-# install_rust
 
 [ -z "$(command -v tar)" ] && printf "\033[0;91mtar\033[0m was not installed, u need \033[0;91mtar\033[0m to install nvim\n"
 [ -z "$(command -v unzip)" ] && printf "\033[0;91munzip\033[0m was not installed, u need \033[0;91munzip\033[0m to install exa\n"
