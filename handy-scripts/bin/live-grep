@@ -18,7 +18,7 @@ fuzzy_preview() {
 }
 
 [ -z "$1" ] && exit 0
-selected=$(rg --line-number --color=always --column --only-matching --hidden --colors "line:fg:green" --colors "column:fg:yellow" --colors "path:fg:blue" --colors "match:fg:white" --glob="!.git" $1 | fuzzy_preview)
+selected=$(rg --line-number --color=always --column --only-matching --hidden --colors "line:fg:green" --colors "column:fg:yellow" --colors "path:fg:blue" --colors "match:fg:white" --glob="!.git" -- "$1" | fuzzy_preview)
 [ -z "$selected" ] && exit 0
 file_name=$(echo "$selected" | cut -d':' -f1)
 line_number=$(echo "$selected" | cut -d':' -f2)
