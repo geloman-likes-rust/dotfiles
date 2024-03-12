@@ -5,7 +5,7 @@ return {
         local harpoon = require('harpoon')
         local toggle_list = function() harpoon:list():append() end
         local add_file = function() harpoon.ui:toggle_quick_menu(harpoon:list()) end
-        local select_file = function(number) harpoon:list():select(number) end
+        local select_file = function(number) return function() harpoon:list():select(number) end end
         return {
             { '<leader>ha', toggle_list,    desc = 'Harpoon Add File' },
             { '<leader>ht', add_file,       desc = 'Harpoon Toggle List' },
@@ -18,7 +18,7 @@ return {
             { '<leader>h7', select_file(7), desc = 'Harpoon Buffer 7' },
             { '<leader>h8', select_file(8), desc = 'Harpoon Buffer 8' },
             { '<leader>h9', select_file(9), desc = 'Harpoon Buffer 9' },
-            { '<leader>h0', select_file(0), desc = 'Harpoon Buffer 10' },
+            { '<leader>h0', select_file(10), desc = 'Harpoon Buffer 10' },
         }
     end,
     dependencies = { "nvim-lua/plenary.nvim" }
