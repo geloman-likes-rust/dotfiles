@@ -117,4 +117,5 @@ alias \
   obs="flatpak run com.obsproject.Studio" \
   suspend="systemctl suspend" \
   restart="systemctl reboot" \
+  i3lock="i3lock -c 1A212E" \
   sb="setbg" \
