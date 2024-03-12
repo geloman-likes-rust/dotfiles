@@ -23,7 +23,7 @@ return {
         }
 
         --[[ OCAML LSP ]]
-        require 'lspconfig'.ocamllsp.setup {
+        lspconfig.ocamllsp.setup {
             cmd = { 'ocamllsp' },
             capabilities = capabilities,
             root_dir = util.root_pattern('*.opam', 'esy.json', 'package.json', '.git', 'dune-project', 'dune-workspace')
@@ -59,6 +59,11 @@ return {
             cmd = { 'svelteserver', '--stdio' },
             capabilities = capabilities,
             root_dir = util.root_pattern('package.json', '.git')
+        }
+
+        --[[ ANGULAR LSP ]]
+        lspconfig.angularls.setup {
+            capabilities = capabilities,
         }
     end,
     dependencies = { 'folke/neodev.nvim', cmd = 'Neoconf' },
