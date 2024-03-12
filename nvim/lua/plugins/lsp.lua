@@ -61,11 +61,6 @@ return {
             capabilities = capabilities,
             root_dir = util.root_pattern('package.json', '.git')
         }
-
-        --[[ ANGULAR LSP ]]
-        lspconfig.angularls.setup {
-            capabilities = capabilities,
-        }
     end,
     dependencies = { 'folke/neodev.nvim', cmd = 'Neoconf' },
 }
