@@ -13,7 +13,8 @@ end
 keymap("n", "<leader>l1", "<cmd>set laststatus=1<cr>", { noremap = true, silent = true, desc = "hide statusline" })
 keymap("n", "<leader>l2", "<cmd>set laststatus=2<cr>", { noremap = true, silent = true, desc = "show statusline" })
 
--- toggle number line keymap("n", "<leader>ln", toggle_numberln, { noremap = true, silent = true, desc = "toggle number line" })
+-- toggle number line
+keymap("n", "<leader>ln", toggle_numberln, { noremap = true, silent = true, desc = "toggle number line" })
 
 -- window's resize
 keymap("n", "=", "<cmd>vertical resize +5<cr>", { noremap = true, silent = true, desc = "[=] (+) vertical resize" })
@@ -51,4 +52,4 @@ keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 keymap('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- show file path of current buffer
-keymap('n', '<leader>pwd',function() print(vim.fn.expand("%:p")) end, { desc = 'show current buffer file path' })
+keymap('n', '<leader>pwd', function() print(vim.fn.expand("%:p")) end, { desc = 'show current buffer file path' })
