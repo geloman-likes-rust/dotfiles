@@ -36,6 +36,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 vim.api.nvim_create_autocmd('LspAttach', {
+    group = vim.api.nvim_create_augroup("geloman/LspAttach", { clear = true }),
     callback = function(event)
         local keymap = function(keys, func, desc)
             if desc then
