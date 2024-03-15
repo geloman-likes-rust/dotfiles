@@ -92,6 +92,7 @@ alias \
   iv='nvim' \
   ivi='nvim' \
   ivii='nvim' \
+  tree='tree --gitignore' \
   dev="cd ~/.development" \
   dotfiles="cd ~/.dotfiles" \
   python='python3' \
