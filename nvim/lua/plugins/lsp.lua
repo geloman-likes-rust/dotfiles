@@ -61,6 +61,18 @@ return {
             capabilities = capabilities,
             root_dir = util.root_pattern('package.json', '.git')
         }
+
+        --[[ ANGULAR LSP ]]
+        lspconfig.angularls.setup {
+            cmd = { 'ngserver',
+                '--stdio',
+                '--tsProbeLocations',
+                '/usr/local/lib/node_modules/typescript/lib',
+                '--ngProbeLocations',
+                '/usr/local/lib/node_modules/@angular/language-server/bin' },
+            capabilities = capabilities,
+            filetypes = { 'ts', 'typescript', 'html' }
+        }
     end,
     dependencies = { 'folke/neodev.nvim', cmd = 'Neoconf' },
 }
