@@ -1,0 +1,4 @@
+#!/bin/sh
+
+
+tmux new -s database -c $PWD -d && nvim -c "DBUIToggle"
