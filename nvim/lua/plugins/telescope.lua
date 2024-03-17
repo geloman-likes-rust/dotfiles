@@ -10,6 +10,10 @@ return {
     keys = function()
         local Command = function(command) return function() vim.cmd(command) end end
         return {
+
+            -- RESUME CURRENT SEARCH
+            { "<leader>rs",      Command("Telescope resume"),         desc = "Telescope resume" },
+
             -- BUFFERS, FILES, AND REGISTERS
             { "<leader>ff",      Command("Telescope find_files"),     desc = "[F]ind [F]iles" },
             { "<leader>fr",      Command("Telescope registers"),      desc = "[F]ind [F]iles" },
@@ -35,10 +39,10 @@ return {
             { "<leader>gtb",     Command("Telescope git_bcommits"),   desc = "Git Current Buffer Commits" },
 
             -- TELESCOPE'S EASTER EGG
-            { "<leader>ps", Command("Telescope planets"),   desc = "Love and Peace" },
+            { "<leader>ps",      Command("Telescope planets"),        desc = "Love and Peace" },
 
             -- HELP TAGS
-            { "<leader>hh", Command("Telescope help_tags"), desc = "Search Help" },
+            { "<leader>hh",      Command("Telescope help_tags"),      desc = "Search Help" },
 
         }
     end,
