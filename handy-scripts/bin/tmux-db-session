@@ -1,4 +1,18 @@
 #!/bin/sh
 
+hell_yeah_baby_heck_yeah() {
+    tmux new-session -ds database -c $PWD \
+        && tmux send-keys -t database "nvim -c DBUIToggle" ENTER
+}
 
-tmux new -s database -c $PWD -d && nvim -c "DBUIToggle"
+# INSIDE TMUX
+if [ -n "$TMUX" ]; then
+    tmux has-session -t database 2> /dev/null && tmux switch-client -t database && exit 0
+    hell_yeah_baby_heck_yeah && tmux switch-client -t database && exit 0
+fi
+
+# OUTSIDE TMUX
+if [ -z "$TMUX" ]; then
+    tmux has-session -t database 2> /dev/null && tmux attach-session -t database && exit 0
+    hell_yeah_baby_heck_yeah && tmux attach-session -t database && exit 0
+fi
