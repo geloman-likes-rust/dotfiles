@@ -4,6 +4,7 @@ end
 
 -- CUSTOM HIGHLIGHTS
 highlight("Visual", { reverse = true })
+highlight("WinBar", { reverse = true })
 highlight("Search", { bg = "#2a324a" })
 highlight("CurSearch", { reverse = true })
 highlight("IncSearch", { reverse = true })
