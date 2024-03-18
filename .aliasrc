@@ -93,6 +93,7 @@ alias \
   iv='nvim' \
   ivi='nvim' \
   ivii='nvim' \
+  dbui='nvim -c DBUIToggle' \
   tree='tree --gitignore' \
   dev="cd ~/.development" \
   dotfiles="cd ~/.dotfiles" \
