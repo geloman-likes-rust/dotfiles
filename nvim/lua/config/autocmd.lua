@@ -54,11 +54,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
         keymap('<leader>do', vim.diagnostic.open_float, 'Open Floating Diagnostic')
         keymap('<leader>dn', vim.diagnostic.goto_next, 'Next Diagnostic')
         keymap('<leader>dp', vim.diagnostic.goto_prev, 'Previous Diagnostic')
-        keymap('<leader>fm', vim.lsp.buf.format, 'Format Current Buffer')
-
-        -- format on save
-        vim.api.nvim_create_autocmd("BufWritePost",
-            { callback = function() vim.lsp.buf.format() end })
 
         -- Default DiagnosticSign
         local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
