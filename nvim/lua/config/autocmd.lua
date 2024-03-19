@@ -16,7 +16,7 @@ vim.api.nvim_create_autocmd("InsertLeave", {
     end
 })
 
-vim.api.nvim_create_autocmd("BufReadPost", {
+vim.api.nvim_create_autocmd({ 'BufReadPost', 'BufWritePost', 'BufNewFile' }, {
     pattern = { "*.html", "*.ts", "*.js", "*.css", "*.jsx", "*.tsx", "*.svelte" },
     group = vim.api.nvim_create_augroup('javascript-2spacestab', { clear = true }),
     callback = function()
