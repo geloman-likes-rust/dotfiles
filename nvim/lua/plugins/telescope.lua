@@ -8,41 +8,41 @@ return {
         end, { desc = 'neovim config files' })
     end,
     keys = function()
-        local Command = function(command) return function() vim.cmd(command) end end
+        local cmd = function(command) return function() vim.cmd(command) end end
         return {
 
             -- RESUME CURRENT SEARCH
-            { "<leader>rs",      Command("Telescope resume"),         desc = "Telescope resume" },
+            { "<leader>rs",      cmd "Telescope resume",         desc = "Telescope resume" },
 
             -- BUFFERS, FILES, AND REGISTERS
-            { "<leader>ff",      Command("Telescope find_files"),     desc = "[F]ind [F]iles" },
-            { "<leader>fr",      Command("Telescope registers"),      desc = "[F]ind [F]iles" },
-            { "<leader><space>", Command("Telescope buffers"),        desc = "[ ] Find existing buffers" },
+            { "<leader>ff",      cmd "Telescope find_files",     desc = "[F]ind [F]iles" },
+            { "<leader>fr",      cmd "Telescope registers",      desc = "[F]ind [F]iles" },
+            { "<leader><space>", cmd "Telescope buffers",        desc = "[ ] Find existing buffers" },
 
             -- REGULAR EXPRESSIONS
-            { "<leader>lg",      Command("Telescope live_grep"),      desc = "[L]ive [G]rep" },
-            { "<leader>fw",      Command("Telescope grep_string"),    desc = "[F]ind [W]ord under cursor" },
+            { "<leader>lg",      cmd "Telescope live_grep",      desc = "[L]ive [G]rep" },
+            { "<leader>fw",      cmd "Telescope grep_string",    desc = "[F]ind [W]ord under cursor" },
 
             -- LSP RELATED
-            { "<leader>lr",      Command("Telescope lsp_references"), desc = "[L]sp [R]eferences" },
-            { "<leader>wd",      Command("Telescope diagnostics"),    desc = "[W]orkspace [D]iagnostics" },
+            { "<leader>lr",      cmd "Telescope lsp_references", desc = "[L]sp [R]eferences" },
+            { "<leader>wd",      cmd "Telescope diagnostics",    desc = "[W]orkspace [D]iagnostics" },
 
             -- COLORSCHEMES AND HIGHLIGHTS
-            { "<leader>hp",      Command("Telescope highlights"),     desc = "[H]ighlights [P]review" },
-            { "<leader>cc",      Command("Telescope colorscheme"),    desc = "[C]hange [C]olorscheme" },
+            { "<leader>hp",      cmd "Telescope highlights",     desc = "[H]ighlights [P]review" },
+            { "<leader>cc",      cmd "Telescope colorscheme",    desc = "[C]hange [C]olorscheme" },
 
             -- GIT COMMANDS
-            { "<leader>gs",      Command("Telescope git_status"),     desc = "[G]it [S]tatus" },
-            { "<leader>gf",      Command("Telescope git_files"),      desc = "[G]it [F]iles" },
-            { "<leader>gb",      Command("Telescope git_branches"),   desc = "[G]it [B]ranches" },
-            { "<leader>gts",     Command("Telescope git_stash"),      desc = "Git Stash" },
-            { "<leader>gtb",     Command("Telescope git_bcommits"),   desc = "Git Current Buffer Commits" },
+            { "<leader>gs",      cmd "Telescope git_status",     desc = "[G]it [S]tatus" },
+            { "<leader>gf",      cmd "Telescope git_files",      desc = "[G]it [F]iles" },
+            { "<leader>gb",      cmd "Telescope git_branches",   desc = "[G]it [B]ranches" },
+            { "<leader>gts",     cmd "Telescope git_stash",      desc = "Git Stash" },
+            { "<leader>gtb",     cmd "Telescope git_bcommits",   desc = "Git Current Buffer Commits" },
 
             -- TELESCOPE'S EASTER EGG
-            { "<leader>ps",      Command("Telescope planets"),        desc = "Love and Peace" },
+            { "<leader>ps",      cmd "Telescope planets",        desc = "Love and Peace" },
 
             -- HELP TAGS
-            { "<leader>hh",      Command("Telescope help_tags"),      desc = "Search Help" },
+            { "<leader>hh",      cmd "Telescope help_tags",      desc = "Search Help" },
 
         }
     end,
