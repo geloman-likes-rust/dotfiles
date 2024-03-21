@@ -7,6 +7,14 @@ vim.api.nvim_create_autocmd("InsertEnter", {
     end
 })
 
+vim.api.nvim_create_autocmd('BufEnter', {
+    group = vim.api.nvim_create_augroup('RazorPagesHighlight', { clear = true }),
+    pattern = "*.razor",
+    callback = function()
+        vim.o.filetype = 'html'
+    end
+})
+
 -- set nocursorline/nocursorcolumn on InsertLeave
 vim.api.nvim_create_autocmd("InsertLeave", {
     pattern = "*",
