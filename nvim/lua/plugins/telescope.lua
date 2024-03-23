@@ -16,7 +16,7 @@ return {
 
             -- BUFFERS, FILES, AND REGISTERS
             { "<leader>ff",      cmd "Telescope find_files",     desc = "[F]ind [F]iles" },
-            { "<leader>fr",      cmd "Telescope registers",      desc = "[F]ind [F]iles" },
+            { "<leader>fr",      cmd "Telescope registers",      desc = "[F]ind [R]egisters" },
             { "<leader><space>", cmd "Telescope buffers",        desc = "[ ] Find existing buffers" },
 
             -- REGULAR EXPRESSIONS
