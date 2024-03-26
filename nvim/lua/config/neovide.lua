@@ -1,6 +1,5 @@
 -- Neovide configs
 if vim.g.neovide then
-    vim.o.guifont = "Hack Nerd Font:h16" -- text below applies for VimScript
     vim.g.neovide_transparency = 0.8
     vim.g.transparency = 0.8
     vim.g.neovide_padding_top = 0
