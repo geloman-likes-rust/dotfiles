@@ -1,6 +1,7 @@
 #!/bin/sh
 
-[ -z "$(git rev-parse --show-toplevel 2> /dev/null)" ] && exit 0
+workspace=$(git rev-parse --show-toplevel 2> /dev/null)
+[ -z "$workspace" ] && exit 0
 
 CYAN='\033[0;36m'
 GREEN='\033[1;32m'
@@ -16,11 +17,22 @@ fuzzy_preview() {
     --prompt "  "
 }
 
-[ -z "$1" ] || git restore --stage "$1"
-[ -z "$1" ] || exit 0
+commit_count=$(git rev-list --count --all)
+
+if [ -n "$1" ]; then
+    [ $commit_count -eq 0 ] \
+        && git rm --cached -r "$1" \
+        || git restore --stage -r "$1"
+    exit 0
+fi
 
 staged_files=$(git diff --name-only --cached)
 [ -z "$staged_files" ] && echo "No staged files, nothing to unstage" && exit 0
-workspace=$(git rev-parse --show-toplevel)
+
 selected=$(printf "${GREEN}${staged_files}" | tr ' ' '\n' | fuzzy_preview)
-[ -z "$selected" ] || git restore --stage "$workspace"/"$selected"
+if [ -n "$selected" ]; then
+    [ $commit_count -eq 0 ] \
+        && git rm --cached -r "$workspace/$selected" \
+        || git restore --stage -r "$workspace/$selected"
+    exit 0
+fi
