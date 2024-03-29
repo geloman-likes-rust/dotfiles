@@ -1,0 +1,6 @@
+#!/bin/bash
+
+file=$1
+[ -z "$file" ] && exit 0
+
+nvim --server ~/.cache/nvim/godot.pipe --remote-send ':e '$file'<CR>'
