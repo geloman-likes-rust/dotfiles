@@ -34,7 +34,6 @@ return {
             -- GIT COMMANDS
             { "<leader>gs",      cmd "Telescope git_status",     desc = "[G]it [S]tatus" },
             { "<leader>gf",      cmd "Telescope git_files",      desc = "[G]it [F]iles" },
-            { "<leader>gb",      cmd "Telescope git_branches",   desc = "[G]it [B]ranches" },
             { "<leader>gts",     cmd "Telescope git_stash",      desc = "Git Stash" },
             { "<leader>gtb",     cmd "Telescope git_bcommits",   desc = "Git Current Buffer Commits" },
 
