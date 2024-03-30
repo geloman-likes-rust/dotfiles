@@ -6,6 +6,7 @@ return {
             lua = { 'stylua' },
             go = { 'goimports', 'gofmt' },
             rust = { 'rustfmt' },
+            ocaml = { 'ocamlformat' },
             typescript = { { "prettierd", "prettier" } },
             typescriptreact = { { "prettierd", "prettier" } },
             javascript = { { "prettierd", "prettier" } },
