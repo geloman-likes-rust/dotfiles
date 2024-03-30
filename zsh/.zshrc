@@ -74,3 +74,9 @@ _dotnet_zsh_complete()
 }
 
 compdef _dotnet_zsh_complete dotnet
+
+# opam configuration
+[ -n "$(command -v opam)" ] && eval "$(opam env)"
+
+# starship configuration
+# [ -n "$(command -v starship)" ] && eval "$(starship init zsh)"
