@@ -6,11 +6,7 @@
 bindkey -v
 
 function fast_cd() {
-    selected=$(fast-cd); [[ -z $selected ]] || cd $selected
-}
-
-function change_worktree() {
-    selected=$(git-worktree); [[ -n $selected ]] && cd $selected
+    selected=$(fast-cd); [ -n $selected ] && cd $selected
 }
 
 # handy-scripts
