@@ -14,10 +14,11 @@ return {
             -- RESUME CURRENT SEARCH
             { "<leader>rs",      cmd "Telescope resume",         desc = "Telescope resume" },
 
-            -- BUFFERS, FILES, AND REGISTERS
+            -- BUFFERS, FILES, JUMPLIST, AND REGISTERS
             { "<leader>ff",      cmd "Telescope find_files",     desc = "[F]ind [F]iles" },
             { "<leader>fr",      cmd "Telescope registers",      desc = "[F]ind [R]egisters" },
             { "<leader><space>", cmd "Telescope buffers",        desc = "[ ] Find existing buffers" },
+            { "<leader>jl",      cmd "Telescope jumplist",       desc = "[J]ump [L]ist" },
 
             -- REGULAR EXPRESSIONS
             { "<leader>lg",      cmd "Telescope live_grep",      desc = "[L]ive [G]rep" },
@@ -62,6 +63,13 @@ return {
                         preview_width = 0.55
                     },
 
+                },
+
+                jumplist = {
+                    initial_mode = "normal",
+                    layout_config = {
+                        preview_width = 0.55
+                    },
                 },
 
                 help_tags = {
