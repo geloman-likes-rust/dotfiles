@@ -20,4 +20,4 @@ dirty_preview() {
 }
 
 untracked_files=$(git ls-files "$(git rev-parse --show-toplevel 2> /dev/null)" --exclude-standard --others 2> /dev/null | xargs -I {} printf "${CYAN}{}\n")
-[ -z "$untracked_files" ] || selected=$(echo "$untracked_files" | tr ' ' '\n' | dirty_preview); [ -z "$selected" ] || nvim "$selected"
+[ -n "$untracked_files" ] && selected=$(echo "$untracked_files" | tr ' ' '\n' | dirty_preview); [ -n "$selected" ] && nvim "$selected"
