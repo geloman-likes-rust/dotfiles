@@ -3,8 +3,8 @@
 
 [ -z "$(git rev-parse --show-toplevel 2> /dev/null)" ] && exit 0
 [ -z "$(git ls-files "$(git rev-parse --show-toplevel)" -m --exclude-standard --other)" ] && echo "working tree clean, nothing to stage" && exit 0
-[ -z "$1" ] || git add "$1"
-[ -z "$1" ] || exit 0
+[ -n "$1" ] && git add "$1"
+[ -n "$1" ] && exit 0
 
 CYAN='\033[0;36m'
 GREEN='\033[0;92m'
@@ -44,14 +44,14 @@ git_stage_untracked() {
   untracked_files="$(git ls-files "$(git rev-parse --show-toplevel 2> /dev/null)" --exclude-standard --others 2> /dev/null)"
   [ -z "$untracked_files" ] && echo "no untracked files, nothing to stage" && exit 0
   selected="$(echo "$untracked_files" | tr ' ' '\n' | xargs -I {} printf "${CYAN}{}\n" | file_preview)"
-  [ -z "$selected" ] || git add "$selected"
+  [ -n "$selected" ] && git add "$selected"
 }
 
 git_stage_modified() {
   dirty_files="$(git ls-files "$(git rev-parse --show-toplevel 2> /dev/null)" -m 2> /dev/null)"
   [ -z "$dirty_files" ] && echo "no modified files, nothing to stage" && exit 0
   selected="$(echo "$dirty_files" | tr ' ' '\n' | xargs -I {} printf "${RED}{}\n" | dirty_preview)"
-  [ -z "$selected" ] || git add "$selected"
+  [ -n "$selected" ] && git add "$selected"
 }
 
 git_stage_what() {
