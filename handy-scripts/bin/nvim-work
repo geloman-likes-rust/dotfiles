@@ -1,0 +1,4 @@
+#!/bin/sh
+
+[ -L $HOME/.config/nvim ] && unlink $HOME/.config/nvim
+ln -s $HOME/.dotfiles/nvim $HOME/.config/
