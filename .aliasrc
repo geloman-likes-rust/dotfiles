@@ -116,6 +116,8 @@ alias \
 
 # personal aliases
 alias \
+  ncp="nvim-cp" \
+  nwk="nvim-work" \
   celluloid="flatpak run io.github.celluloid_player.Celluloid" \
   obs="flatpak run com.obsproject.Studio" \
   suspend="systemctl suspend" \
