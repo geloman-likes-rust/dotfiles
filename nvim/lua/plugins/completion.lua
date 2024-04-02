@@ -13,7 +13,7 @@ return {
         local cmp = require 'cmp'
         local luasnip = require 'luasnip'
         require("luasnip.loaders.from_vscode").lazy_load { exclude = { 'rust' } }
-        luasnip.config.setup {}
+        luasnip.config.setup { update_events = 'TextChanged,TextChangedI' }
 
         cmp.setup {
             snippet = {
@@ -23,7 +23,7 @@ return {
             },
             mapping = cmp.mapping.preset.insert {
 
-                ['<C-Space>'] = cmp.mapping.complete(),
+                ['<C-Space>'] = cmp.mapping.confirm { select = true },
 
                 ['<CR>'] = cmp.mapping.confirm {
                     behavior = cmp.ConfirmBehavior.Replace,
