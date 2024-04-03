@@ -67,7 +67,7 @@ return {
             snippet('in2', fmt(
                 [[
                     {type} {}, {}; cin >> {} >> {};
-                ]], { type = i(1, 'T'), i(2, 'A'), i(3, 'B'), rep(2, 'A'), rep(3, 'B') }
+                ]], { type = i(1, 'T'), i(2, 'A'), i(3, 'B'), rep(2), rep(3) }
             )),
         })
     end
