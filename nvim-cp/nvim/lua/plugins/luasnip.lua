@@ -71,11 +71,35 @@ return {
                 ]], { cond = i(1, '_'), yes = i(2, '_'), no = i(3, '_') }
             )),
 
-            snippet('in2', fmt(
-                [[
-                    {type} {}, {}; cin >> {} >> {};
-                ]], { type = i(1, 'T'), i(2, 'A'), i(3, 'B'), rep(2), rep(3) }
-            )),
+            snippet('in', c(1, {
+                fmt('{type} {}, {}; cin >> {} >> {};', {
+                    type = i(1, 'T'),
+                    i(2, 'A'),
+                    i(3, 'B'),
+                    rep(2),
+                    rep(3),
+                }),
+                fmt('{type} {}, {}, {}; cin >> {} >> {} >> {};', {
+                    type = i(1, 'T'),
+                    i(2, 'A'),
+                    i(3, 'B'),
+                    i(4, 'C'),
+                    rep(2),
+                    rep(3),
+                    rep(4),
+                }),
+                fmt('{type} {}, {}, {}, {}; cin >> {} >> {} >> {} >> {};', {
+                    type = i(1, 'T'),
+                    i(2, 'A'),
+                    i(3, 'B'),
+                    i(4, 'C'),
+                    i(5, 'D'),
+                    rep(2),
+                    rep(3),
+                    rep(4),
+                    rep(5),
+                }),
+            })),
 
             snippet('bp', c(1, {
                 fmt('__builtin_popcount({})', i(1)),
