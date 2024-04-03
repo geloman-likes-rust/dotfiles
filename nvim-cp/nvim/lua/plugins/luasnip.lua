@@ -6,11 +6,17 @@ return {
         local jump = function(n)
             return function() luasnip.jump(n) end
         end
+        local change_choice = function()
+            if luasnip.choice_active() then
+                luasnip.change_choice(1)
+            end
+        end
 
         return {
             { '<C-space>', mode = 'i',          expand },
             { '<C-n>',     mode = { 'i', 's' }, jump(1) },
             { '<C-p>',     mode = { 'i', 's' }, jump(-1) },
+            { '<C-e>',     mode = { 'i', 's' }, change_choice },
         }
     end,
     config = function()
@@ -23,6 +29,7 @@ return {
 
         local t = luasnip.text_node
         local i = luasnip.insert_node
+        local c = luasnip.choice_node
         local snippet = luasnip.snippet
 
         luasnip.add_snippets('cpp', {
@@ -69,6 +76,12 @@ return {
                     {type} {}, {}; cin >> {} >> {};
                 ]], { type = i(1, 'T'), i(2, 'A'), i(3, 'B'), rep(2), rep(3) }
             )),
+
+            snippet('bp', c(1, {
+                fmt('__builtin_popcount({})', i(1)),
+                fmt('__builtin_popcountl({})', i(1)),
+                fmt('__builtin_popcountll({})', i(1))
+            }))
         })
     end
 }
