@@ -20,7 +20,7 @@ return {
                 color = 'lualine_b_normal',
                 separator = { left = '', right = '' }
             } },
-            lualine_x = { 'filetype' },
+            lualine_x = {},
             lualine_y = { 'progress' },
             lualine_z = { { 'location', separator = { left = '', right = '' } } }
         },
