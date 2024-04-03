@@ -7,16 +7,11 @@ return {
             theme = 'auto',
             globalstatus = true,
             section_separators = { left = '', right = '' },
-            -- component_separators = { left = '', right = '' },
-            -- component_separators = { left = '', right = '' },
             component_separators = { left = '│', right = '│' },
-            -- component_separators = { left = '┊', right = '' },
-            -- section_separators = { left = '', right = '' },
-            -- disabled_filetypes = { 'NvimTree' },
         },
         sections = {
             lualine_a = { { 'mode', separator = { left = '', right = '' } } },
-            lualine_b = { 'branch', 'diff', 'diagnostics' },
+            lualine_b = { 'branch' },
             lualine_c = { '%=', {
                 'filename',
                 on_click = function()
