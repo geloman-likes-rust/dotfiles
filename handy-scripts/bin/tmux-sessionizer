@@ -2,7 +2,7 @@
 
 CYAN='\033[0;36m'
 
-workspace="$HOME/.dotfiles $HOME/.development $HOME/.personal"
+workspace="$HOME/.dotfiles $HOME/.development $HOME/.personal $HOME/.competitive-programming"
 
 selected=$(find $workspace -maxdepth 1 -type d \
     | fzf --no-mouse --border-label "$(printf " ${CYAN}tmux-sessionizer ")" \
