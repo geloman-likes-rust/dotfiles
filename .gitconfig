@@ -10,7 +10,7 @@
 	helper = store
 
 [core]
-	editor = vim
+	editor = nvim
 	pager = delta
 
 [interactive]
