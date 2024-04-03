@@ -47,12 +47,12 @@ return {
                 ]], { start = i(1, ':'), include = t('#include <bits/stdc++.h>') }
             )),
 
-            snippet('tc', fmta(
+            snippet('tc', fmt(
                 [[
                     int T; cin >> T;
-                    while(T--) {
-                        <>
-                    }
+                    while(T--) {{
+                        {}
+                    }}
                 ]], i(0, ':')
             )),
 
@@ -78,6 +78,33 @@ return {
                 [[
                     <cond> ? <yes> : <no>
                 ]], { cond = i(1, '_'), yes = i(2, '_'), no = i(3, '_') }
+            )),
+
+            snippet('if', c(1, {
+                fmt('if({cond}) {};', { cond = i(1), i(2) }),
+                fmta(
+                    [[
+                        if(<cond>) {
+                            <>
+                        }
+                    ]], { cond = i(1), i(2, ':') }
+                )
+            })),
+
+            snippet('ife', fmta(
+                [[
+                    if(<cond>) {
+                        <ifbody>
+                    } else {
+                        <elsebody>
+                    }
+                ]], { cond = i(1), ifbody = i(2, '// statement'), elsebody = i(3, '// statement') }
+            )),
+
+            snippet('out', fmt(
+                [[
+                    cout << {} << "\n";
+                ]], i(0)
             )),
 
             snippet('in', c(1, {
