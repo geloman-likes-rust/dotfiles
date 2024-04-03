@@ -66,13 +66,22 @@ return {
                 ]], { n = i(1, '_'), scope = i(0, ':') }
             )),
 
-            snippet('fn', fmta(
-                [[
-                    <T> <fn>() {
-                        <body>
-                    }
-                ]], { T = i(1, 'T'), fn = i(2, '_'), body = i(0, ':') }
-            )),
+            snippet('fn', c(1, {
+                fmta(
+                    [[
+                        void <fn>(<param>) {
+                            <body>
+                        }
+                    ]], { fn = i(1, '_'), param = i(2, '_'), body = i(3, ':') }
+                ),
+                fmta(
+                    [[
+                        <T> <fn>(<param>) {
+                            <body>
+                        }
+                    ]], { T = i(1, 'T'), fn = i(2, '_'), param = i(3, '_'), body = i(4, ':') }
+                )
+            })),
 
             snippet('?', fmta(
                 [[
