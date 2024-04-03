@@ -1,1 +1,1 @@
-return { 'numToStr/Comment.nvim', event = 'VeryLazy', opts = {} }
+return { 'numToStr/Comment.nvim', event = 'CursorMoved', opts = {} }
