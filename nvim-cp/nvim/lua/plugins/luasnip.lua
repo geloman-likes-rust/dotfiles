@@ -47,6 +47,15 @@ return {
                 ]], { start = i(1, ':'), include = t('#include <bits/stdc++.h>') }
             )),
 
+            snippet('tc', fmta(
+                [[
+                    int T; cin >> T;
+                    while(T--) {
+                        <>
+                    }
+                ]], i(0, ':')
+            )),
+
             snippet('fa', { t('for(auto &a: A) cin >> a;') }),
 
             snippet('fr', fmt(
