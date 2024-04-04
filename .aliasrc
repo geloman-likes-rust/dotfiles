@@ -1,22 +1,9 @@
-# ansible aliases
-alias \
-  av="ansible-vault" \
-  avv="ansible-vault view" \
-  ave="ansible-vault encrypt" \
-  avd="ansible-vault decrypt" \
-
 # navigation aliases
 alias \
   ..="cd .." \
   ...="cd ../.." \
   ....="cd ../../.." \
   .....="cd ../../../.." \
-
-# docker aliases
-alias \
-  docker-status="systemctl status docker" \
-  docker-start="sudo systemctl start docker" \
-  docker-stop="sudo systemctl stop docker.socket" \
 
 # tmux aliases
 alias \
@@ -102,24 +89,12 @@ alias \
   cpu="neofetch cpu --cpu_temp" \
   disk="neofetch disk" \
   uptime="neofetch uptime" \
-  mysql-run="mysql -v --table" \
-  mysql-start="sudo systemctl start mysqld.service" \
-  mysql-stop="sudo systemctl stop mysqld.service" \
-  mysql-status="systemctl status mysqld.service" \
-  redis-start="sudo systemctl start redis.service" \
-  redis-stop="sudo systemctl stop redis.service" \
-  redis-status="systemctl status redis.service" \
-  mongo-start="sudo systemctl start mongod.service" \
-  mongo-stop="sudo systemctl stop mongod.service" \
-  mongo-status="systemctl status mongod.service" \
   ndoe="node" \
 
 # personal aliases
 alias \
   ncp="nvim-cp" \
   nwk="nvim-work" \
-  celluloid="flatpak run io.github.celluloid_player.Celluloid" \
-  obs="flatpak run com.obsproject.Studio" \
   suspend="systemctl suspend" \
   restart="systemctl reboot" \
   i3lock="i3lock -c 1A212E" \
