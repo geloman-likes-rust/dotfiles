@@ -19,8 +19,6 @@
 [ -d ~/.nvm ] && rm -rdf ~/.nvm
 [ -d ~/.cargo ] && rm -rdf ~/.cargo
 [ -d ~/.rustup ] && rm -rdf ~/.rustup
-[ -d ~/.miniconda ] && rm -rdf ~/.miniconda
-[ -d ~/.conda ] && rm -rdf ~/.conda
 
 # REMOVE MY DOTFILES
 [ -d ~/.dotfiles ] && rm -rdf ~/.dotfiles
