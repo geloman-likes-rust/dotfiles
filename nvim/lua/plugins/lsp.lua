@@ -16,6 +16,9 @@ return {
             capabilities = capabilities,
         }
 
+        --[[ PYTHON LSP ]]
+        lspconfig.pyright.setup { capabilities = capabilities }
+
         --[[ RUST LSP ]]
         lspconfig.rust_analyzer.setup {
             cmd = { 'rust-analyzer' },
