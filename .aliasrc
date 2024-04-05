@@ -73,8 +73,8 @@ alias \
   rsc="rustc" \
   ls='exa --no-user --no-time --no-filesize --group-directories-first' \
   lsn='command ls --color=always' \
-  sv='source ./venv/bin/activate' \
-  cv='python3 -m venv venv' \
+  sv='source ./.venv/bin/activate' \
+  cv='python3 -m venv .venv' \
   nn='nano' \
   v='nvim' \
   vi='nvim' \
