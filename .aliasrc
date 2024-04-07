@@ -75,6 +75,7 @@ alias \
   lsn='command ls --color=always' \
   sv='source ./.venv/bin/activate' \
   cv='python3 -m venv .venv' \
+  pir='pip install -r requirements.txt' \
   nn='nano' \
   v='nvim' \
   vi='nvim' \
