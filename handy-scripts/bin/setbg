@@ -1,4 +1,11 @@
 #!/bin/sh
 
+if [ -n "$1" ]; then
+    exist=$(command ls ~/.personal/wallpaper | grep "$1")
+    [ ! -n "$exist" ] && exit 0
+    xwallpaper --zoom ~/.personal/wallpaper/$(printf "%03d\n" $1).jpg
+    exit 0
+fi
+
 selected=$(command ls ~/.personal/wallpaper | fzf --border=rounded --margin=25%,35% --border-label " Set Background " --header-first --header "Select Background" --pointer "" --prompt "  ")
 [ -n "$selected" ] && xwallpaper --zoom ~/.personal/wallpaper/"$selected"
