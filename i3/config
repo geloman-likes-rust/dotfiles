@@ -39,11 +39,14 @@ assign [class="Nautilus"] 2
 assign [class="Google-chrome"] 2
 assign [class="discord"] 3
 assign [class="steam"] 4
-assign [class="com.obsproject.Studio"] 5
+assign [class="Mechvibes"] 8
+assign [class="Rhythmbox"] 9
+assign [class="obs"] 10
 
 for_window [class="Nautilus"] floating enable
+for_window [class="Mechvibes"] floating enable
 
-# start dmenu (a program launcher)
+# start rofi (a program launcher)
 bindsym $mod+f exec --no-startup-id rofi -show drun
 
 # fuzzy finder for active windows
