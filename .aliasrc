@@ -71,6 +71,7 @@ alias \
   e="$EDITOR" \
   cr="cargo run" \
   rsc="rustc" \
+  dbe="db-env" \
   ls='exa --no-user --no-time --no-filesize --group-directories-first' \
   lsn='command ls --color=always' \
   sv='source ./.venv/bin/activate' \
