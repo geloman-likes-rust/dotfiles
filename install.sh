@@ -27,9 +27,8 @@ install_neovim() {
 	[ -z "$(command -v tar)" ] && return
 	echo "Installing neovim......................................"
 	cd "$HOME" && curl -s -JLO https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz
-	tar xzvf nvim-linux64.tar.gz
+	tar xzf nvim-linux64.tar.gz -C "$HOME"/.neovim
 	rm -rdf nvim-linux64.tar.gz
-	mv "$HOME"/nvim-linux64 "$HOME"/.neovim
 	ln -sf "$HOME"/.neovim/bin/nvim "$HOME"/.local/bin/
 }
 
@@ -105,18 +104,18 @@ install_lua_language_server() {
     release_tag="https://github.com/LuaLS/lua-language-server/releases/download/3.7.4/lua-language-server-3.7.4-linux-x64.tar.gz"
 	echo "Installing lua-language-server......................................"
     curl -Lo ~/.language-servers/packages/lua-language-server/lua_ls.tar.gz --create-dirs "$release_tag"
-    cd ~/.language-servers/packages/lua-language-server && tar xzvf ./lua_ls.tar.gz
-    [ -d ~/.language-servers/bin ] || mkdir ~/.language-servers/bin
+    tar xzf ./lua_ls.tar.gz -C ~/.language-servers/packages/lua-language-server
+    [ ! -d ~/.language-servers/bin ] && mkdir ~/.language-servers/bin
     ln -sf ~/.language-servers/packages/lua-language-server/bin/lua-language-server ~/.language-servers/bin/
 }
 
 install_omnisharp_roslyn() {
-    [-z "$(command -v OmniSharp)" ] && return
+    [ -z "$(command -v OmniSharp)" ] && return
     release_tag="https://github.com/OmniSharp/omnisharp-roslyn/releases/download/v1.39.11/omnisharp-linux-x64-net6.0.tar.gz"
 	echo "Installing omnisharp-roslyn......................................"
     curl -Lo ~/.language-servers/packages/omnisharp-roslyn/bin/roslyn.tar.gz --create-dirs "$release_tag"
-    cd ~/.language-servers/packages/omnisharp-roslyn/bin && tar xzvf ./roslyn.tar.gz
-    [ -d ~/.language-servers/bin ] || mkdir ~/.language-servers/bin
+    tar xzf ./roslyn.tar.gz -C ~/.language-servers/packages/omnisharp-roslyn/bin
+    [ ! -d ~/.language-servers/bin ] && mkdir ~/.language-servers/bin
     ln -sf ~/.language-servers/packages/omnisharp-roslyn/bin/OmniSharp ~/.language-servers/bin/
 }
 
