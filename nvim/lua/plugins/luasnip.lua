@@ -5,5 +5,6 @@ return {
         local luasnip = require 'luasnip'
         luasnip.add_snippets('lua', require('config.snippets.lua'))
         luasnip.add_snippets('cs', require('config.snippets.csharp'))
+        luasnip.add_snippets('python', require('config.snippets.python'))
     end
 }
