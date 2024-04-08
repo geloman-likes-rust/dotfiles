@@ -25,4 +25,14 @@ return {
                 main()
         ]], { start = i(0) }
     )),
+    snippet('s.', fmt(
+        [[
+            self.{prop} = {val}
+        ]], { prop = i(1), val = rep(1) }
+    )),
+    snippet('col', fmt(
+        [[
+            {prop} = Column("{column}", {type})
+        ]], { prop = i(1), column = rep(1), type = i(2, "_") }
+    )),
 }
