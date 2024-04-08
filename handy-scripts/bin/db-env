@@ -1,6 +1,6 @@
 #!/bin/sh
 
-selected=$(echo "redis\nmysql\npostgres"| fzf-tmux -p --border-label " show environments ")
+selected=$(echo "redis\nmysql\npostgres"| fzf-tmux -p 30%,50% --border-label " show environments ")
 
 print_environments() {
     environments=$1
