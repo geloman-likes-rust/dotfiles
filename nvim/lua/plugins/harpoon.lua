@@ -3,8 +3,11 @@ return {
     branch = "harpoon2",
     keys = function()
         local harpoon = require('harpoon')
+        local toggle_list = function()
+            harpoon.ui:toggle_quick_menu(harpoon:list(),
+                { border = "rounded", title_pos = "center", ui_width_ratio = 0.50 })
+        end
         local add_file = function() harpoon:list():append() end
-        local toggle_list = function() harpoon.ui:toggle_quick_menu(harpoon:list()) end
         local select_file = function(number) return function() harpoon:list():select(number) end end
         return {
             { '<leader>ha', add_file,        desc = 'Harpoon Add File' },
