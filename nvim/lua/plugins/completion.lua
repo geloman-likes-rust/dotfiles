@@ -12,7 +12,7 @@ return {
     config = function()
         local cmp = require 'cmp'
         local luasnip = require 'luasnip'
-        require("luasnip.loaders.from_vscode").lazy_load { exclude = { 'rust', 'sql' } }
+        require("luasnip.loaders.from_vscode").lazy_load { exclude = { 'rust', 'sql', 'yaml' } }
         luasnip.config.setup { update_events = 'TextChanged,TextChangedI' }
 
         cmp.setup {
