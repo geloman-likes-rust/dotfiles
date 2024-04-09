@@ -21,6 +21,7 @@ alias \
   ew="edit-tmux-workspace" \
   mp="monitor-process" \
   vr="vim-recent" \
+  dbp="db-port" \
   ff="find-files" \
   fvi="find-files" \
   frm="fast-remove" \
