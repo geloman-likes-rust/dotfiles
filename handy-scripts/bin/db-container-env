@@ -1,0 +1,8 @@
+#!/bin/sh
+
+selected=$(echo "redis\nmongo\nmysql\npostgres" | fzf --margin 30% --border-label " database container " --header-first --header " show environments ")
+
+[ "$selected" = "redis" ] && echo "REDIS_ARGS"
+[ "$selected" = "mongo" ] && echo "MONGO_INITDB_ROOT_USERNAME MONGO_INITDB_ROOT_PASSWORD"
+[ "$selected" = "mysql" ] && echo "MYSQL_USER MYSQL_PASSWORD MYSQL_DATABASE"
+[ "$selected" = "postgres" ] && echo "POSTGRES_DB POSTGRES_USER POSTGRES_PASSWORD"
