@@ -1,0 +1,10 @@
+#!/bin/sh
+
+selected=$(echo "redis\nmongo\nmysql\npostgres" \
+    | fzf --margin 30% --border-label " database container " \
+        --header-first --header " show volume path ")
+
+[ "$selected" = "redis" ] && echo "redis volume path = /data"
+[ "$selected" = "mongo" ] && echo "mongodb volume path = /data/db"
+[ "$selected" = "mysql" ] && echo "mysql volume path = /var/lib/mysql"
+[ "$selected" = "postgres" ] && echo "postgres volume path = /var/lib/postgres/data"
