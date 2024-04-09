@@ -1,0 +1,7 @@
+#!/bin/sh
+
+selected=$(echo "redis\nmysql\npostgres" | fzf --margin 30% --border-label " show database port ")
+
+[ "$selected" = "redis" ] && echo "REDIS_PORT = 6379"
+[ "$selected" = "mysql" ] && echo "MYSQL_TCP_PORT = 3306"
+[ "$selected" = "postgres" ] && echo "PGPORT = 5432"
