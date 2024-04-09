@@ -15,6 +15,16 @@ vim.api.nvim_create_autocmd('BufEnter', {
     end
 })
 
+vim.api.nvim_create_autocmd('BufEnter', {
+    group = vim.api.nvim_create_augroup('YamlSnippets', { clear = true }),
+    pattern = "yaml.lua",
+    callback = function()
+        vim.o.tabstop = 2
+        vim.o.softtabstop = 2
+        vim.o.shiftwidth = 2
+    end
+})
+
 -- set nocursorline/nocursorcolumn on InsertLeave
 vim.api.nvim_create_autocmd("InsertLeave", {
     pattern = "*",
