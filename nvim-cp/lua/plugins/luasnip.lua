@@ -35,6 +35,10 @@ return {
         luasnip.add_snippets('cpp', {
             snippet('cpt', fmta(
                 [[
+                    /**
+                     *  author - gelongmundomo
+                     *  created - <created_at>
+                    **/
                     <include>
                     using namespace std;
 
@@ -43,7 +47,9 @@ return {
                         <start>
                         return 0;
                     }
-                ]], { start = i(1, ':'), include = t('#include <bits/stdc++.h>') }
+                ]],
+                { start = i(1, ':'), include = t('#include <bits/stdc++.h>'), created_at = t(os.date("%m-%d-%Y %H:%M:%S",
+                    os.time())) }
             )),
 
             snippet('tc', fmt(
