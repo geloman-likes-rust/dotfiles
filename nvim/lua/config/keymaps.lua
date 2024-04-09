@@ -9,6 +9,9 @@ local toggle_numberln = function()
     vim.cmd "set relativenumber!"
 end
 
+-- toggle lazy profiler
+keymap("n", "<leader>lp", "<cmd>Lazy profile<cr>", { desc = "Lazy Profile" })
+
 -- toggle statusline
 keymap("n", "<leader>l1", "<cmd>set laststatus=1<cr>", { noremap = true, silent = true, desc = "hide statusline" })
 keymap("n", "<leader>l2", "<cmd>set laststatus=2<cr>", { noremap = true, silent = true, desc = "show statusline" })
