@@ -23,6 +23,7 @@ alias \
   vr="vim-recent" \
   dbp="db-port" \
   dce="db-container-env" \
+  dbv="db-container-volume" \
   ff="find-files" \
   fvi="find-files" \
   frm="fast-remove" \
