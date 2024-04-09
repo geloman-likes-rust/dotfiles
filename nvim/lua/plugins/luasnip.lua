@@ -18,6 +18,7 @@ return {
         local extras = require 'luasnip.extras'
         local format = require 'luasnip.extras.fmt'
         luasnip.add_snippets('yaml', require('snippets.yaml')(luasnip, format))
+        luasnip.add_snippets('sql', require('snippets.sql')(luasnip, format, extras))
         luasnip.add_snippets('lua', require('snippets.lua')(luasnip, format, extras))
         luasnip.add_snippets('cs', require('snippets.csharp')(luasnip, format, extras))
         luasnip.add_snippets('python', require('snippets.python')(luasnip, format, extras))
