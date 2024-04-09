@@ -22,6 +22,7 @@ alias \
   mp="monitor-process" \
   vr="vim-recent" \
   dbp="db-port" \
+  dce="db-container-env" \
   ff="find-files" \
   fvi="find-files" \
   frm="fast-remove" \
