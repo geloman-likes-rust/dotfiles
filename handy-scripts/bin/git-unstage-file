@@ -22,7 +22,7 @@ commit_count=$(git rev-list --count --all)
 if [ -n "$1" ]; then
     [ $commit_count -eq 0 ] \
         && git rm --cached -r "$1" \
-        || git restore --staged -r "$1"
+        || git restore --staged "$1"
     exit 0
 fi
 
@@ -33,6 +33,6 @@ selected=$(printf "${GREEN}${staged_files}" | tr ' ' '\n' | fuzzy_preview)
 if [ -n "$selected" ]; then
     [ $commit_count -eq 0 ] \
         && git rm --cached -r "$workspace/$selected" \
-        || git restore --staged -r "$workspace/$selected"
+        || git restore --staged "$workspace/$selected"
     exit 0
 fi
