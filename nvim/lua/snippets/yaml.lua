@@ -99,7 +99,17 @@ return function(luasnip, format, extras)
           networks:
             {network}:
               driver: {driver}
-        ]], { network = i(1, 'network'), driver = i(2, 'bridge') }
+        ]], {
+          network = i(1, 'network'),
+          driver = c(2, {
+            i(1, 'bridge'),
+            i(1, 'host'),
+            i(1, 'none'),
+            i(1, 'overlay'),
+            i(1, 'ipvlan'),
+            i(1, 'macvlan'),
+          })
+        }
       )
     })),
   }
