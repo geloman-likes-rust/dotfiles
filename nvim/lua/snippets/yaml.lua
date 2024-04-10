@@ -102,12 +102,12 @@ return function(luasnip, format, extras)
         ]], {
           network = i(1, 'network'),
           driver = c(2, {
-            i(1, 'bridge'),
-            i(1, 'host'),
-            i(1, 'none'),
-            i(1, 'overlay'),
-            i(1, 'ipvlan'),
-            i(1, 'macvlan'),
+            i(1, 'bridge # The default network driver.'),
+            i(1, 'host # Remove network isolation between the container and the Docker host.'),
+            i(1, 'none # Completely isolate a container from the host and other containers.'),
+            i(1, 'overlay # Overlay networks connect multiple Docker daemons together.'),
+            i(1, 'ipvlan # IPvlan networks provide full control over both IPv4 and IPv6 addressing.'),
+            i(1, 'macvlan # Assign a MAC address to a container.'),
           })
         }
       )
