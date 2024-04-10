@@ -2,6 +2,7 @@ return function(luasnip, format, extras)
   local fmt = format.fmt
   local rep = extras.rep
   local i = luasnip.insert_node
+  local c = luasnip.choice_node
   local snippet = luasnip.snippet
 
   return {
@@ -20,15 +21,20 @@ return function(luasnip, format, extras)
       [[
           services:
             {container}:
+              container_name: {container_name}
               image: {image}
               ports:
                 - {your_port}:{container_port}
               restart: on-failure
+              env_file:
+                - path: .env
+                  required: false
               environment:
                 - {environment}=${{{}:-""}}
       ]],
       {
         container = i(1, 'container'),
+        container_name = rep(1),
         image = i(2, 'image'),
         your_port = i(3, 'port'),
         container_port = rep(3),
@@ -39,14 +45,19 @@ return function(luasnip, format, extras)
     snippet('container', fmt(
       [[
         {container}:
+          container_name: {container_name}
           image: {image}
           ports:
             - {your_port}:{container_port}
           restart: on-failure
+          env_file:
+            - path: .env
+              required: false
           environment:
             - {environment}=${{{}:-""}}
       ]], {
         container = i(1, 'container'),
+        container_name = rep(1),
         image = i(2, 'image'),
         your_port = i(3, 'port'),
         container_port = rep(3),
@@ -75,6 +86,21 @@ return function(luasnip, format, extras)
           retries: 15
           start_period: 10s
       ]], { i(1) }
-    ))
+    )),
+    snippet('networks', c(1, {
+      fmt(
+        [[
+          networks:
+            - {}
+        ]], { i(1) }
+      ),
+      fmt(
+        [[
+          networks:
+            {network}:
+              driver: {driver}
+        ]], { network = i(1, 'network'), driver = i(2, 'bridge') }
+      )
+    })),
   }
 end
