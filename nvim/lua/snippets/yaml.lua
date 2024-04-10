@@ -75,7 +75,14 @@ return function(luasnip, format, extras)
         depends_on:
           {container}:
             condition: {condition}
-      ]], { container = i(1, 'container'), condition = i(2, 'service_healthy') }
+      ]], {
+        container = i(1, 'container'),
+        condition = c(2, {
+          i(1, 'service_healthy'),
+          i(1, 'service_started'),
+          i(1, 'service_completed_successfully'),
+        })
+      }
     )),
     snippet('healthcheck', fmt(
       [[
@@ -102,15 +109,40 @@ return function(luasnip, format, extras)
         ]], {
           network = i(1, 'network'),
           driver = c(2, {
-            i(1, 'bridge # The default network driver.'),
-            i(1, 'host # Remove network isolation between the container and the Docker host.'),
-            i(1, 'none # Completely isolate a container from the host and other containers.'),
-            i(1, 'overlay # Overlay networks connect multiple Docker daemons together.'),
-            i(1, 'ipvlan # IPvlan networks provide full control over both IPv4 and IPv6 addressing.'),
-            i(1, 'macvlan # Assign a MAC address to a container.'),
+            i(1, 'bridge # Allows communication between containers on the same Docker host.'),
+            i(1, 'overlay # Connects containers across multiple hosts in Docker Swarm.'),
           })
         }
       )
     })),
+    snippet('network_mode', c(1, {
+      fmt(
+        [[
+          network_mode: {mode}
+        ]], { mode = i(1, 'host') }
+      ),
+      fmt(
+        [[
+          network_mode: {mode}
+        ]], { mode = i(1, 'none') }
+      ),
+      fmt(
+        [[
+          network_mode: service:{service}
+        ]], { service = i(1, 'name') }
+      ),
+    })),
+    snippet('volumes', fmt(
+      [[
+        volumes:
+          {}
+      ]], { i(1) }
+    )),
+    snippet('dump', fmt(
+      [[
+        - ./{dump}.sql:/docker-entrypoint-initdb.d/{}.sql
+      ]], { dump = i(1, 'dump'), rep(1) }
+    )),
+    -- t('- ./dump.sql:/docker-entrypoint-initdb.d/dump.sql')
   }
 end
