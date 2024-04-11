@@ -25,6 +25,14 @@ vim.api.nvim_create_autocmd('BufEnter', {
     end
 })
 
+vim.api.nvim_create_autocmd('BufEnter', {
+    group = vim.api.nvim_create_augroup('Jenkinsfile', { clear = true }),
+    pattern = "Jenkinsfile",
+    callback = function()
+        vim.o.filetype = 'groovy'
+    end
+})
+
 -- set nocursorline/nocursorcolumn on InsertLeave
 vim.api.nvim_create_autocmd("InsertLeave", {
     pattern = "*",
