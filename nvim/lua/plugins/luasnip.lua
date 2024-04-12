@@ -17,6 +17,7 @@ return {
         local luasnip = require 'luasnip'
         local extras = require 'luasnip.extras'
         local format = require 'luasnip.extras.fmt'
+        luasnip.add_snippets('systemd', require('snippets.systemd')(luasnip))
         luasnip.add_snippets('all', require('snippets.all')(luasnip, format, extras))
         luasnip.add_snippets('yaml', require('snippets.yaml')(luasnip, format, extras))
         luasnip.add_snippets('nginx', require('snippets.nginx')(luasnip, format))
