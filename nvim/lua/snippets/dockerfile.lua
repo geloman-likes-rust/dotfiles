@@ -16,7 +16,7 @@ return function(luasnip, format)
         snippet('COPY', fmt(
             [[
                 COPY {from} {to}
-            ]], { from = i(1, '.'), to = i(2, '/app') }
+            ]], { from = i(1, '.'), to = i(2, '.') }
         )),
         snippet('RUN', fmt(
             [[
