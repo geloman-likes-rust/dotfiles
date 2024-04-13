@@ -16,8 +16,8 @@ vim.api.nvim_create_autocmd('BufEnter', {
 })
 
 vim.api.nvim_create_autocmd('BufEnter', {
-    group = vim.api.nvim_create_augroup('YamlSnippets', { clear = true }),
-    pattern = "yaml.lua",
+    group = vim.api.nvim_create_augroup('TwoSpacesIndentSize', { clear = true }),
+    pattern = { "yaml.lua", "*.yaml", "*.json" },
     callback = function()
         vim.o.tabstop = 2
         vim.o.softtabstop = 2
