@@ -14,6 +14,11 @@ return function(luasnip, format, extras)
                 {body}
         ]], { name = i(1, 'name'), args = i(2, 'args'), returns = i(3, 'None'), body = i(4, 'pass') }
         )),
+        snippet('Blueprint', fmt(
+            [[
+                {blueprint} = Blueprint('{}', __name__)
+            ]], { blueprint = i(1), rep(1) }
+        )),
         snippet('main', fmt(
             [[
             def main() -> None:
