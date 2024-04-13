@@ -1,7 +1,6 @@
 return function(luasnip, format, extras)
     local rep = extras.rep
     local fmt = format.fmt
-    local fmta = format.fmta
     local t = luasnip.text_node
     local i = luasnip.insert_node
     local c = luasnip.choice_node
@@ -19,6 +18,13 @@ return function(luasnip, format, extras)
                 {blueprint} = Blueprint('{}', __name__)
             ]], { blueprint = i(1), rep(1) }
         )),
+        snippet('created', { t('return "", 201 # 201 - created') }),
+        snippet('no_content', { t('return "", 204 # 204 - NO CONTENT') }),
+        snippet('bad_request', { t('return "", 400 # 400 - BAD REQUEST') }),
+        snippet('unauthorized', { t('return "", 401 # 401 - UNAUTHORIZED') }),
+        snippet('payment_required', { t('return "", 402 # 402 - PAYMENT REQUIRED') }),
+        snippet('forbidden', { t('return "", 403 # 403 - FORBIDDEN') }),
+        snippet('not_found', { t('return "", 404 # 404 - NOT FOUND') }),
         snippet('main', fmt(
             [[
             def main() -> None:
