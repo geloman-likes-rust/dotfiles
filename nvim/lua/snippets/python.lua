@@ -18,13 +18,18 @@ return function(luasnip, format, extras)
                 {blueprint} = Blueprint('{}', __name__)
             ]], { blueprint = i(1), rep(1) }
         )),
-        snippet('created', { t('return "", 201 # 201 - created') }),
-        snippet('no_content', { t('return "", 204 # 204 - NO CONTENT') }),
-        snippet('bad_request', { t('return "", 400 # 400 - BAD REQUEST') }),
-        snippet('unauthorized', { t('return "", 401 # 401 - UNAUTHORIZED') }),
-        snippet('payment_required', { t('return "", 402 # 402 - PAYMENT REQUIRED') }),
-        snippet('forbidden', { t('return "", 403 # 403 - FORBIDDEN') }),
-        snippet('not_found', { t('return "", 404 # 404 - NOT FOUND') }),
+        snippet('CREATED', { t('return "", 201 # 201 - created') }),
+        snippet('NO_CONTENT', { t('return "", 204 # 204 - NO CONTENT') }),
+        snippet('BAD_REQUEST', { t('return "", 400 # 400 - BAD REQUEST') }),
+        snippet('UNAUTHORIZED', { t('return "", 401 # 401 - UNAUTHORIZED') }),
+        snippet('PAYMENT_REQUIRED', { t('return "", 402 # 402 - PAYMENT REQUIRED') }),
+        snippet('FORBIDDEN', { t('return "", 403 # 403 - FORBIDDEN') }),
+        snippet('NOT_FOUND', { t('return "", 404 # 404 - NOT FOUND') }),
+        snippet('CONFLICT', fmt(
+            [[
+                return {{"error": "{}"}}, 409 # 409 - CONFLICT
+            ]], { i(1) }
+        )),
         snippet('main', fmt(
             [[
             def main() -> None:
