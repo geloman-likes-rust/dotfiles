@@ -1,8 +1,8 @@
 ## How to use this?
-
+A quick docs for me because I always forgot everything.
 ### QUICKSTART
 
-Run this to autoinstall and setup everything effortlessly.
+Run this command to install and setup everything without any effort because I'm lazy.
 ```
 curl -sSf https://raw.githubusercontent.com/geloman-likes-rust/dotfiles/main/quickstart | sh
 ```
