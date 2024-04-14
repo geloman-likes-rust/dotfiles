@@ -9,7 +9,7 @@ return function(luasnip, format, extras)
         snippet('DESCRIBE_TABLE', fmt(
             [[
                 -- DESCRIBE TABLE '{}'
-                SELECT column_name, data_type
+                SELECT column_name, data_type, is_nullable
                 FROM information_schema.columns
                 WHERE table_name = '{table}';
             ]], { table = i(1, 'table'), rep(1) }
