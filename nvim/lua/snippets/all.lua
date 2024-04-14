@@ -14,7 +14,7 @@ return function(luasnip, format, extras)
                         -e MYSQL_USER={user} \
                         -e MYSQL_PASSWORD={password} \
                         -e MYSQL_DATABASE={database} \
-                        -v {volume}:/var/lib/mysql \
+                        -v ./mysqldata:/var/lib/mysql \
                         -p 3306:3306 \
                         mysql:{tag}
                     # DOCKER RUN MYSQL
@@ -24,8 +24,7 @@ return function(luasnip, format, extras)
                     user = i(2, 'user'),
                     password = i(3, 'password'),
                     database = i(4, 'database'),
-                    volume = i(5, 'your/own/path'),
-                    tag = i(6, 'tag')
+                    tag = i(5, 'tag')
                 }
             ),
             fmt(
@@ -36,7 +35,7 @@ return function(luasnip, format, extras)
                         -e POSTGRES_DB={database} \
                         -e POSTGRES_USER={user} \
                         -e POSTGRES_PASSWORD={password} \
-                        -v ~/.databases/sql/{volume}:/var/lib/postgres/data \
+                        -v ./pgdata:/var/lib/postgres/data \
                         -p 5432:5432 \
                         postgres:{tag}
                     # DOCKER RUN POSTGRES
@@ -46,7 +45,6 @@ return function(luasnip, format, extras)
                     database = rep(1),
                     user = rep(1),
                     password = i(2, 'password'),
-                    volume = rep(1),
                     tag = i(3, 'tag')
                 }
             ),
