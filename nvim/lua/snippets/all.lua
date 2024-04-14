@@ -9,12 +9,11 @@ return function(luasnip, format, extras)
             fmt(
                 [[
                     # DEVELOPMENT DATABASE - MYSQL
-                    docker run -d \
+                    docker run --rm -d \
                         --name {container} \
                         -e MYSQL_USER={user} \
                         -e MYSQL_PASSWORD={password} \
                         -e MYSQL_DATABASE={database} \
-                        -v ./mysqldata:/var/lib/mysql \
                         -p 3306:3306 \
                         mysql:{tag}
                     # DOCKER RUN MYSQL
@@ -30,12 +29,11 @@ return function(luasnip, format, extras)
             fmt(
                 [[
                     # DEVELOPMENT DATABASE - POSTGRES
-                    docker run -d \
+                    docker run --rm -d \
                         --name {container} \
                         -e POSTGRES_DB={database} \
                         -e POSTGRES_USER={user} \
                         -e POSTGRES_PASSWORD={password} \
-                        -v ./pgdata:/var/lib/postgres/data \
                         -p 5432:5432 \
                         postgres:{tag}
                     # DOCKER RUN POSTGRES
