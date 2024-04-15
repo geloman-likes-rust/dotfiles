@@ -63,51 +63,5 @@ return function(luasnip, format, extras)
                 {attrib} = data.get('{}')
             ]], { attrib = i(1), rep(1) }
         )),
-        snippet('init', c(1, {
-            fmt(
-                [[
-                def __init__(self, {a}):
-                    self.{} = {}
-            ]], { a = i(1, 'a'), rep(1), rep(1) }
-            ),
-            fmt(
-                [[
-                def __init__(self, {a}, {b}):
-                    self.{} = {}
-                    self.{} = {}
-            ]], { a = i(1, 'a'), rep(1), rep(1), b = i(2, 'b'), rep(2), rep(2) }
-            ),
-            fmt(
-                [[
-                def __init__(self, {a}, {b}, {c}):
-                    self.{} = {}
-                    self.{} = {}
-                    self.{} = {}
-            ]], { a = i(1, 'a'), rep(1), rep(1), b = i(2, 'b'), rep(2), rep(2), c = i(3, 'c'), rep(3), rep(3) }
-            ),
-            fmt(
-                [[
-                def __init__(self, {a}, {b}, {c}, {d}):
-                    self.{} = {}
-                    self.{} = {}
-                    self.{} = {}
-                    self.{} = {}
-            ]],
-                {
-                    a = i(1, 'a'),
-                    rep(1),
-                    rep(1),
-                    b = i(2, 'b'),
-                    rep(2),
-                    rep(2),
-                    c = i(3, 'c'),
-                    rep(3),
-                    rep(3),
-                    d = i(4, 'd'),
-                    rep(4),
-                    rep(4)
-                }
-            ),
-        })),
     }
 end
