@@ -45,10 +45,10 @@ return function(luasnip, format, extras)
             self.{prop} = {val}
         ]], { prop = i(1), val = rep(1) }
         )),
-        snippet('col', fmt(
+        snippet('data.get', fmt(
             [[
-            {prop} = Column("{column}", {type})
-        ]], { prop = i(1), column = rep(1), type = i(2, "_") }
+                {attrib} = data.get('{}')
+            ]], { attrib = i(1), rep(1) }
         )),
         snippet('init', c(1, {
             fmt(
