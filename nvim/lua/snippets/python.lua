@@ -13,6 +13,19 @@ return function(luasnip, format, extras)
                 {body}
         ]], { name = i(1, 'name'), args = i(2, 'args'), returns = i(3, 'None'), body = i(4, 'pass') }
         )),
+        snippet('argk', c(1, {
+            fmt(
+                [[
+                    def {func}(*args, **kwargs):
+                        {body}
+                ]], { func = i(1, 'func'), body = i(2, '# write function body here') }
+            ),
+            fmt(
+                [[
+                    {func}(*args, **kwargs)
+                ]], { func = i(1, 'func') }
+            ),
+        })),
         snippet('Blueprint', fmt(
             [[
                 {blueprint} = Blueprint('{}', __name__)
