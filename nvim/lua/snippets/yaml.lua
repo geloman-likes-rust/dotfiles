@@ -11,7 +11,7 @@ return function(luasnip, format, extras)
           trailingComa: "es5"
           semi: false
           tabWidth: 2
-          singleQoute: true
+          singleQuote: true
           arrowParens: "avoid"
           bracketSpacing: true
           endOfLine: "lf"
