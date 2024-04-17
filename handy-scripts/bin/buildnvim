@@ -1,0 +1,25 @@
+#!/bin/sh
+
+
+NVIM_DIR="$HOME/neovim"
+BUILD_DIR="$NVIM_DIR/build"
+MAKEFILE="$NVIM_DIR/Makefile"
+
+[ ! -d "$NVIM_DIR" ] && echo "yo dawg, you haven't cloned neovim..!" && exit 0
+
+git -C "$NVIM_DIR" checkout --quiet master
+
+git -C "$NVIM_DIR" fetch --quiet origin master
+
+git -C "$NVIM_DIR" diff --quiet master origin/master
+
+[ $? -eq 0 ] && echo "your neovim local branch is up-to-date." && exit 0
+
+git -C "$NVIM_DIR" merge origin/master
+
+sudo rm -rf /usr/local/share/nvim
+make -C "$NVIM_DIR" distclean
+
+mkdir -p "$BUILD_DIR"
+make -C "$NVIM_DIR" -f "$MAKEFILE" CMAKE_BUILD_TYPE=RelWithDebInfo
+sudo make -C "$NVIM_DIR" install
