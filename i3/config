@@ -30,6 +30,8 @@ tiling_drag modifier titlebar
 # start a terminal
 bindsym $mod+Return exec kitty
 
+# Screenshots
+bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/Screenshots/Screenshot from $(date +'%Y-%m-%d at %H:%M:%S').png"
 
 # always open in specific workspace
 assign [class="Code"] 1
