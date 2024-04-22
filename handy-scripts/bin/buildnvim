@@ -1,10 +1,18 @@
 #!/bin/sh
 
 
+NVIM_TAG="stable"
 NVIM_DIR="$HOME/neovim"
 BUILD_DIR="$NVIM_DIR/build"
 MAKEFILE="$NVIM_DIR/Makefile"
-NVIM_TAG="stable"
+
+distro="$(cat /etc/os-release | awk -F '=' '/^ID=/ {print $2}')"
+
+[ "$distro" = "arch" ] && sudo pacman -Syu --noconfirm base-devel cmake unzip ninja curl
+[ "$distro" = "debian" ] && sudo apt-get install -y ninja-build gettext cmake unzip curl build-essential
+[ "$distro" = "ubuntu" ] && sudo apt-get install -y ninja-build gettext cmake unzip curl build-essential
+[ "$distro" = "fedora" ] && sudo dnf install -y ninja-build cmake gcc make unzip gettext curl glibc-gconv-extra
+[ "$distro" = "opensuse-leap" ] && sudo zypper install -y ninja cmake gcc-c++ gettext-tools curl
 
 [ ! -d "$NVIM_DIR" ] && echo "yo dawg, you haven't cloned neovim..!" && exit 1
 
