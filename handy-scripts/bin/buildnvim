@@ -4,18 +4,13 @@
 NVIM_DIR="$HOME/neovim"
 BUILD_DIR="$NVIM_DIR/build"
 MAKEFILE="$NVIM_DIR/Makefile"
+NVIM_TAG="stable"
+
+[ -n "$1" ] && NVIM_TAG="$1"
 
 [ ! -d "$NVIM_DIR" ] && echo "yo dawg, you haven't cloned neovim..!" && exit 1
 
-git -C "$NVIM_DIR" checkout --quiet master
-
-git -C "$NVIM_DIR" fetch --quiet origin master
-
-git -C "$NVIM_DIR" diff --quiet master origin/master
-
-[ $? -eq 0 ] && echo "your neovim local branch is up-to-date." && exit 0
-
-git -C "$NVIM_DIR" merge origin/master
+git -C "$NVIM_DIR" checkout --quiet "$NVIM_TAG"
 
 [ -d /usr/local/share/nvim ] && sudo rm -rf /usr/local/share/nvim
 make -C "$NVIM_DIR" distclean
