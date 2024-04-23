@@ -8,7 +8,7 @@ MAKEFILE="$NVIM_DIR/Makefile"
 
 [ ! -d "$NVIM_DIR" ] && echo "yo dawg, you haven't cloned neovim..!" && exit 1
 
-distro="$(cat /etc/os-release | awk -F '=' '/^ID=/ {print $2}')"
+distro="$(awk -F '=' '/^ID=/ {print $2}' /etc/os-release)"
 
 [ "$distro" = "arch" ] && sudo pacman -Syu --noconfirm base-devel cmake unzip ninja curl
 [ "$distro" = "debian" ] && sudo apt-get install -y ninja-build gettext cmake unzip curl build-essential
