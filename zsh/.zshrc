@@ -12,9 +12,7 @@ function fast_cd() {
 # handy-scripts
 bindkey -s ^o "fast_cd; clear\n"
 bindkey -s ^f "find-files; clear\n"
-bindkey -s ^b "randbg; clear\n"
 bindkey -s ^p "tmux-sessionizer; clear\n"
-bindkey -s ^n "change_worktree; clear\n"
 
 # Basic auto/tab complete:
 autoload -U compinit
