@@ -18,6 +18,7 @@
 
 [delta]
 	navigate = true
+    side-by-side = true
 	light = false
 	line-numbers = true
 	line-numbers-minus-style = "#FC2947" bold
