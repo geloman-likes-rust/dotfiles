@@ -49,5 +49,3 @@ vim.o.termguicolors = true
 vim.wo.wrap = false
 vim.wo.number = true
 vim.wo.relativenumber = true
-
-vim.cmd.colorscheme 'onedark'
