@@ -1,7 +1,7 @@
 [
-    {
-        "key": "ctrl+up",
-        "command": "workbench.action.toggleMaximizedPanel",
-        "when": "!editorTextFocus"
-    }
+  {
+    "key": "ctrl+up",
+    "command": "workbench.action.toggleMaximizedPanel",
+    "when": "!editorTextFocus"
+  }
 ]
