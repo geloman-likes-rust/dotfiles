@@ -105,7 +105,7 @@ install_lua_language_server() {
 	echo "Installing lua-language-server......................................"
     curl -Lo ~/.language-servers/packages/lua-language-server/lua_ls.tar.gz --create-dirs "$release_tag"
     tar xzf ./lua_ls.tar.gz -C ~/.language-servers/packages/lua-language-server
-    [ ! -d ~/.language-servers/bin ] && mkdir ~/.language-servers/bin
+    mkdir -p ~/.language-servers/bin
     ln -sf ~/.language-servers/packages/lua-language-server/bin/lua-language-server ~/.language-servers/bin/
 }
 
@@ -115,7 +115,7 @@ install_omnisharp_roslyn() {
 	echo "Installing omnisharp-roslyn......................................"
     curl -Lo ~/.language-servers/packages/omnisharp-roslyn/bin/roslyn.tar.gz --create-dirs "$release_tag"
     tar xzf ./roslyn.tar.gz -C ~/.language-servers/packages/omnisharp-roslyn/bin
-    [ ! -d ~/.language-servers/bin ] && mkdir ~/.language-servers/bin
+    mkdir -p ~/.language-servers/bin
     ln -sf ~/.language-servers/packages/omnisharp-roslyn/bin/OmniSharp ~/.language-servers/bin/
 }
 
