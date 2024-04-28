@@ -53,15 +53,5 @@ return function(luasnip, format, extras)
                 main()
         ]], { start = i(0) }
         )),
-        snippet('s.', fmt(
-            [[
-            self.{prop} = {val}
-        ]], { prop = i(1), val = rep(1) }
-        )),
-        snippet('data.get', fmt(
-            [[
-                {attrib} = data.get('{}')
-            ]], { attrib = i(1), rep(1) }
-        )),
     }
 end
