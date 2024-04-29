@@ -3,5 +3,14 @@
     "key": "ctrl+up",
     "command": "workbench.action.toggleMaximizedPanel",
     "when": "!editorTextFocus"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "workbench.action.quickOpenLeastRecentlyUsedEditor",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+5",
+    "command": "explorer.newFile"
   }
 ]
