@@ -1,10 +1,12 @@
 #!/bin/sh
 
 switch_shell() {
-  selected=$(cat /etc/shells | fzf --border=rounded --margin=10,30)
-  [ -z "$selected" ] || chsh -s "$selected"
+    selected=$(cat /etc/shells | awk '/usr\/bin/ {print}'| uniq | fzf --border=rounded --margin=30% --border-label " switch shell " --header " select shell " --header-first)
+    echo $selected
+    # [ -n "$selected" ] && chsh -s "$selected"
 }
 
-[ $HOSTNAME = "debian" ] && switch_shell
-[ $HOSTNAME = "ubuntu" ] && switch_shell
-[ $HOSTNAME = "fedora" ] && sudo lchsh "$USER"
+distro="$(awk -F '=' '/^ID=/ {print $2}' /etc/os-release)"
+
+[ $distro = "debian" ] && switch_shell
+[ $distro = "ubuntu" ] && switch_shell
