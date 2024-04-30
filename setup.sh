@@ -24,6 +24,7 @@ mkdir -p ~/.local/bin
 [ -d ~/.config/rofi ] && mv -f ~/.config/rofi ~/.config/rofi.bak
 [ -d ~/.config/hypr ] && mv -f ~/.config/hypr ~/.config/hypr.bak
 [ -d ~/.config/picom ] && mv -f ~/.config/picom ~/.config/picom.bak
+[ -d ~/.config/dunst ] && mv -f ~/.config/dunst ~/.config/dunst.bak
 [ -d ~/.config/waybar ] && mv -f ~/.config/waybar ~/.config/waybar.bak
 [ -d ~/.config/Code/User/snippets ] mv -f ~/.config/Code/User/snippets ~/.config/Code/User/snippets.bak
 [ -f ~/.config/Code/User/settings.json ] && mv -f ~/.config/Code/User/settings.json ~/.config/Code/User/settings.json.bak
