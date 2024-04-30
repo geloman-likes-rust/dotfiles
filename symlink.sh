@@ -54,6 +54,9 @@
 # PICOM CONFIGS
 [ -L ~/.config/picom ] || ln -s ~/.dotfiles/picom ~/.config/
 
+# DUNST CONFIGS
+[ -L ~/.config/dunst ] || ln -s ~/.dotfiles/dunst ~/.config/
+
 # VSCODE CONFIGS
 [ -L ~/.config/Code/User/snippets ] || ln -s ~/.dotfiles/vscode/snippets ~/.config/Code/User/
 [ -L ~/.config/Code/User/settings.json ] || ln -s ~/.dotfiles/vscode/settings.json ~/.config/Code/User/
