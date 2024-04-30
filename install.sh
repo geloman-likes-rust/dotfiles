@@ -100,7 +100,7 @@ install_ohmyzsh() {
 }
 
 install_lua_language_server() {
-    [ -z "$(command -v lua-language-server)" ] && return
+    [ -n "$(command -v lua-language-server)" ] && return
     release_tag="https://github.com/LuaLS/lua-language-server/releases/download/3.7.4/lua-language-server-3.7.4-linux-x64.tar.gz"
 	echo "Installing lua-language-server......................................"
     curl -Lo ~/.language-servers/packages/lua-language-server/lua_ls.tar.gz --create-dirs "$release_tag"
@@ -110,7 +110,7 @@ install_lua_language_server() {
 }
 
 install_omnisharp_roslyn() {
-    [ -z "$(command -v OmniSharp)" ] && return
+    [ -n "$(command -v OmniSharp)" ] && return
     release_tag="https://github.com/OmniSharp/omnisharp-roslyn/releases/download/v1.39.11/omnisharp-linux-x64-net6.0.tar.gz"
 	echo "Installing omnisharp-roslyn......................................"
     curl -Lo ~/.language-servers/packages/omnisharp-roslyn/bin/roslyn.tar.gz --create-dirs "$release_tag"
