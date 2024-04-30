@@ -8,4 +8,11 @@
         ],
         "description": "Find Pattern",
     },
+    "Show Dirty Files": {
+        "prefix": "dirty",
+        "body": [
+            "git diff --name-only --diff-filter=M \"\\$(git rev-parse --show-toplevel 2> /dev/null)\"",
+        ],
+        "description": "Show Dirty Files",
+    },
 }
