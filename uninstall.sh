@@ -2,13 +2,10 @@
 
 # UNLINK ALL SYMLINKS
 [ -f ~/.local/bin/ulnk ] && ulnk
-[ -f ~/.local/bin/ulnk ] && unlink ~/.local/bin/ulnk
-[ -f ~/.local/bin/slnk ] && unlink ~/.local/bin/slnk
-[ -f ~/.local/bin/nvim ] && unlink ~/.local/bin/nvim
+find ~/.local/bin -maxdepth 1 -type l \
+    | xargs -I {} sh -c 'unlink {}'
 
 # REMOVE ALL DEPENDENCIES
-[ -d ~/.exa ] && unlink ~/.local/bin/exa && rm -rdf ~/.exa
-[ -d ~/.httpie ] && unlink ~/.local/bin/http && rm -rdf ~/.httpie
 [ -d ~/.neovim ] && rm -rdf ~/.neovim
 [ -d ~/.local/share/nvim ] && rm -rdf ~/.local/share/nvim
 [ -d ~/.fzf ] && rm -rdf ~/.fzf
@@ -19,6 +16,7 @@
 [ -d ~/.nvm ] && rm -rdf ~/.nvm
 [ -d ~/.cargo ] && rm -rdf ~/.cargo
 [ -d ~/.rustup ] && rm -rdf ~/.rustup
+[ -d ~/.language-servers/bin ] && rm -rdf ~/.language-servers/bin
 
 # REMOVE MY DOTFILES
 [ -d ~/.dotfiles ] && rm -rdf ~/.dotfiles
