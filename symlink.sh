@@ -52,6 +52,7 @@
 [ -L ~/.config/waybar ] || ln -s ~/.dotfiles/waybar ~/.config/
 
 # VSCODE CONFIGS
+[ -L ~/.config/Code/User/snippets ] || ln -s ~/.dotfiles/vscode/snippets ~/.config/Code/User/
 [ -L ~/.config/Code/User/settings.json ] || ln -s ~/.dotfiles/vscode/settings.json ~/.config/Code/User/
 [ -L ~/.config/Code/User/keybindings.json ] || ln -s ~/.dotfiles/vscode/keybindings.json ~/.config/Code/User/
 
