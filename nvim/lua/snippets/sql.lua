@@ -31,5 +31,20 @@ return function(luasnip, format, extras)
                     ({values});
             ]], { table = i(1, 'table'), columns = i(2, 'columns'), values = i(3, 'values') }
         )),
+        snippet('SELECT', fmt(
+            [[
+                SELECT
+                    {columns}
+                FROM {table};
+            ]], { columns = i(1, '*'), table = i(2, 'table') }
+        )),
+        snippet('CREATE', fmt(
+            [[
+                CREATE TABLE IF NOT EXISTS
+                    {table}(
+                        {fields}
+                    );
+            ]], { table = i(1, 'table_name'), fields = i(2, 'field_name') }
+        )),
     }
 end
