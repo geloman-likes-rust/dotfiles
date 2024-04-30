@@ -51,6 +51,9 @@
 # WAYBAR CONFIGS
 [ -L ~/.config/waybar ] || ln -s ~/.dotfiles/waybar ~/.config/
 
+# PICOM CONFIGS
+[ -L ~/.config/picom ] || ln -s ~/.dotfiles/picom ~/.config/
+
 # VSCODE CONFIGS
 [ -L ~/.config/Code/User/snippets ] || ln -s ~/.dotfiles/vscode/snippets ~/.config/Code/User/
 [ -L ~/.config/Code/User/settings.json ] || ln -s ~/.dotfiles/vscode/settings.json ~/.config/Code/User/
