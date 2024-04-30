@@ -9,3 +9,9 @@ find ~/.config -maxdepth 1 -type d \
     | grep .bak$ \
     | sed 's/.bak//' \
     | xargs -I {} sh -c 'mv {}.bak {}'
+
+find ~/.config/Code/User -maxdepth 2 -type f,d \
+    | grep .bak$ \
+    | sed 's/.bak//' \
+    | xargs -I {} sh -c 'mv {}.bak {}'
+
