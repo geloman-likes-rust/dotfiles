@@ -2,10 +2,10 @@
 
 [ -d ~/.personal/wallpaper ] || git clone --depth 1 https://github.com/geloman-likes-rust/desktop-wallpaper ~/.personal/wallpaper
 
-[ -d ~/.fonts ] || mkdir ~/.fonts
-[ -d ~/.local ] || mkdir ~/.local
-[ -d ~/.local/bin ] || mkdir ~/.local/bin
-[ -d ~/.config ] || mkdir ~/.config
+mkdir -p ~/.fonts
+mkdir -p ~/.config
+mkdir -p ~/.local/bin
+mkdir -p ~/.config/Code/User
 
 # CREATING BACKUPS
 [ -f ~/.vimrc ] && mv -f ~/.vimrc ~/.vimrc.bak
@@ -25,10 +25,11 @@
 [ -d ~/.config/rofi ] && mv -f ~/.config/rofi ~/.config/rofi.bak
 [ -d ~/.config/hypr ] && mv -f ~/.config/hypr ~/.config/hypr.bak
 [ -d ~/.config/waybar ] && mv -f ~/.config/waybar ~/.config/waybar.bak
+[ -d ~/.config/Code/User/snippets ] mv -f ~/.config/Code/User/snippets ~/.config/Code/User/snippets.bak
 [ -f ~/.config/Code/User/settings.json ] && mv -f ~/.config/Code/User/settings.json ~/.config/Code/User/settings.json.bak
 [ -f ~/.config/Code/User/keybindings.json ] && mv -f ~/.config/Code/User/keybindings.json ~/.config/Code/User/keybindings.json.bak
 
-[ -z "$(fc-list | grep "Hack Nerd Font")" ] && cp ~/.dotfiles/fonts/hack-nerd-font.ttf ~/.fonts && echo "updating font cache................" && fc-cache -f
+[ -z "$(fc-list | grep "Hack Nerd Font")" ] && cp ~/.dotfiles/fonts/hack-nerd-font.ttf ~/.fonts && echo "updating font cache................" && fc-cache -fv
 [ -f ~/.profile ] && echo ". \"\$HOME/.dotfiles/.default_background\"" >> ~/.profile
 
 ~/.dotfiles/symlink.sh
