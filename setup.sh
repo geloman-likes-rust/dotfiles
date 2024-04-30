@@ -5,7 +5,6 @@
 mkdir -p ~/.fonts
 mkdir -p ~/.config
 mkdir -p ~/.local/bin
-mkdir -p ~/.config/Code/User
 
 # CREATING BACKUPS
 [ -f ~/.vimrc ] && mv -f ~/.vimrc ~/.vimrc.bak
