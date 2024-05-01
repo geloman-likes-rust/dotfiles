@@ -9,16 +9,16 @@ find ~/.dotfiles/bash -type f \
     | xargs -I {} sh -c 'ln -sf {} "$HOME"'
 
 # ALIASES
-ln -s ~/.dotfiles/.aliasrc "$HOME"
+ln -sf ~/.dotfiles/.aliasrc "$HOME"
 
 # GIT CONFIGS
-ln -s ~/.dotfiles/.gitconfig "$HOME"
+ln -sf ~/.dotfiles/.gitconfig "$HOME"
 
 # TMUX CONFIGS
-ln -s ~/.dotfiles/tmux/.tmux.conf "$HOME"
+ln -sf ~/.dotfiles/tmux/.tmux.conf "$HOME"
 
 # VIM CONFIGS
-ln -s ~/.dotfiles/vim/.vimrc "$HOME"
+ln -sf ~/.dotfiles/vim/.vimrc "$HOME"
 
 find ~/.dotfiles -maxdepth 1 -type d \
     | grep -Ev '.dotfiles$|ssh|.git|handy-scripts|nvim-cp|tmux|fonts|vim|ansible|zsh|bash|vscode|nano' \
