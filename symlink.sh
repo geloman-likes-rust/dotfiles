@@ -21,8 +21,8 @@ ln -s ~/.dotfiles/tmux/.tmux.conf "$HOME"
 ln -s ~/.dotfiles/vim/.vimrc "$HOME"
 
 find ~/.dotfiles -maxdepth 1 -type d \
-    | sed '/.dotfiles$/d; /ssh/d; /.git/d; /handy-scripts/d; /nvim-cp/d; /tmux/d; /fonts/d; /vim/d; /ansible/d; /zsh/d; /bash/d; /vscode/d; /nano/d' \
-    | xargs -I {} echo 'ln -sf {} ~/.config/'
+    | grep -Ev '.dotfiles$|ssh|.git|handy-scripts|nvim-cp|tmux|fonts|vim|ansible|zsh|bash|vscode|nano' \
+    | xargs -I {} sh -c 'ln -sf {} ~/.config/'
 
 # VSCODE CONFIGS
 ln -sf ~/.dotfiles/vscode/snippets ~/.config/Code/User/
