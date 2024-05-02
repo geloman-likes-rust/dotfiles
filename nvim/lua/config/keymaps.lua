@@ -30,10 +30,3 @@ keymap("n", "G", "Gzz")
 keymap({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 keymap('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
-
--- show file path of current buffer
-local hidden = true
-keymap('n', '<leader>pwd', function()
-    hidden = not hidden
-    if hidden then vim.o.winbar = '' else vim.o.winbar = '%= %f %=' end
-end, { desc = 'show current buffer file path' })
