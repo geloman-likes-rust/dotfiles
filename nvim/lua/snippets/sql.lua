@@ -59,5 +59,12 @@ return function(luasnip, format, extras)
                 WHERE {condition};
             ]], { table = i(1, 'table_name'), condition = i(2, 'condition') }
         )),
+        snippet('VIEW', fmt(
+            [[
+                CREATE VIEW {view} AS
+                SELECT {attrib}
+                FROM {table};
+            ]], { view = i(1, 'view_name'), attrib = i(2, '*'), table = i(3, 'existing_table') }
+        )),
     }
 end
