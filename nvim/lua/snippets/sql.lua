@@ -3,6 +3,7 @@ return function(luasnip, format, extras)
     local fmt = format.fmt
     local t = luasnip.text_node
     local i = luasnip.insert_node
+    local c = luasnip.choice_node
     local snippet = luasnip.snippet
     return {
         snippet('information_schema', t('information_schema')),
@@ -65,6 +66,22 @@ return function(luasnip, format, extras)
                 SELECT {attrib}
                 FROM {table};
             ]], { view = i(1, 'view_name'), attrib = i(2, '*'), table = i(3, 'existing_table') }
+        )),
+        snippet('JOIN', fmt(
+            [[
+                SELECT
+                    {attrib}
+                FROM {table_a}
+                {join_type} JOIN {table_b}
+                ON {condition};
+            ]],
+            {
+                attrib = i(2, '*'),
+                table_a = i(3, 'table_a'),
+                join_type = c(1, { t('INNER'), t('LEFT'), t('RIGHT') }),
+                table_b = i(4, 'table_b'),
+                condition = i(5, 'condition'),
+            }
         )),
     }
 end
