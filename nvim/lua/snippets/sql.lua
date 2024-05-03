@@ -46,5 +46,18 @@ return function(luasnip, format, extras)
                     );
             ]], { table = i(1, 'table_name'), fields = i(2, 'field_name') }
         )),
+        snippet('UPDATE', fmt(
+            [[
+                UPDATE {table}
+                SET {attrib}
+                WHERE {condition};
+            ]], { table = i(1, 'table_name'), attrib = i(2, 'attributes'), condition = i(3, 'condition') }
+        )),
+        snippet('DELETE', fmt(
+            [[
+                DELETE FROM {table}
+                WHERE {condition};
+            ]], { table = i(1, 'table_name'), condition = i(2, 'condition') }
+        )),
     }
 end
