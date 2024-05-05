@@ -59,12 +59,22 @@ return function(luasnip, format, extras)
                 WHERE {condition};
             ]], { table = i(1, 'table_name'), condition = i(2, 'condition') }
         )),
-        snippet('VIEW', fmt(
+        snippet('CREATE_VIEW', fmt(
             [[
                 CREATE VIEW {view} AS
                 SELECT {attrib}
                 FROM {table};
             ]], { view = i(1, 'view_name'), attrib = i(2, '*'), table = i(3, 'existing_table') }
+        )),
+        snippet('CREATE_FUNCTION', fmt(
+            [[
+                CREATE FUNCTION {func}({params})
+                RETURNS {returns} AS
+                $body$
+                {query}
+                $body$
+                LANGUAGE SQL
+            ]], { func = i(1, 'fn_name'), params = i(2, 'params'), returns = i(3, 'returns'), query = i(4) }
         )),
         snippet('JOIN', fmt(
             [[
