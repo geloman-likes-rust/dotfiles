@@ -39,12 +39,11 @@ return function(luasnip, format, extras)
                 FROM {table};
             ]], { columns = i(1, '*'), table = i(2, 'table') }
         )),
-        snippet('CREATE', fmt(
+        snippet('CREATE_TABLE', fmt(
             [[
-                CREATE TABLE IF NOT EXISTS
-                    {table}(
-                        {fields}
-                    );
+                CREATE TABLE {table}(
+                    {fields}
+                );
             ]], { table = i(1, 'table_name'), fields = i(2, 'field_name') }
         )),
         snippet('UPDATE', fmt(
@@ -82,6 +81,41 @@ return function(luasnip, format, extras)
                 table_b = i(4, 'table_b'),
                 condition = i(5, 'condition'),
             }
+        )),
+        snippet('REFERENCES', fmt(
+            [[
+                INTEGER REFERENCES {table}(id),
+            ]], { table = i(1, 'table') }
+        )),
+        snippet('SERIAL_PRIMARY_KEY', t('id SERIAL PRIMARY KEY,')),
+        snippet('ALTER_TABLE_DROP_COLUMN', fmt(
+            [[
+                ALTER TABLE {table}
+                DROP COLUMN {column};
+            ]], { table = i(1, 'table'), column = i(2, 'column') }
+        )),
+        snippet('ALTER_TABLE_ADD_COLUMN', fmt(
+            [[
+                ALTER TABLE {table}
+                ADD COLUMN {column};
+            ]], { table = i(1, 'table'), column = i(2, 'column') }
+        )),
+        snippet('ALTER_TABLE_RENAME_COLUMN', fmt(
+            [[
+                ALTER TABLE {table}
+                RENAME COLUMN {old} TO {new};
+            ]], { table = i(1, 'table'), old = i(2, 'old_column_name'), new = i(3, 'new_column_name') }
+        )),
+        snippet('ALTER_TABLE_ALTER_COLUMN', fmt(
+            [[
+                ALTER TABLE {table}
+                ALTER COLUMN {column} {instruction};
+            ]], { table = i(1, 'table'), column = i(2, 'column'), instruction = i(3, 'instruction') }
+        )),
+        snippet('TRUNCATE', fmt(
+            [[
+                TRUNCATE TABLE {table}
+            ]], { table = i(1, 'table') }
         )),
     }
 end
