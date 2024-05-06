@@ -76,6 +76,16 @@ return function(luasnip, format, extras)
                 LANGUAGE SQL
             ]], { func = i(1, 'fn_name'), params = i(2, 'params'), returns = i(3, 'returns'), query = i(4) }
         )),
+        snippet('CREATE_PROCEDURE', fmt(
+            [[
+                CREATE PROCEDURE {procedure}({params})
+                AS
+                $body$
+                {body}
+                $body$
+                LANGUAGE SQL
+            ]], { procedure = i(1, 'procedure_name'), params = i(2, 'params'), body = i(3, 'instruction') }
+        )),
         snippet('JOIN', fmt(
             [[
                 SELECT
