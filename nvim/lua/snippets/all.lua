@@ -13,17 +13,19 @@ return function(luasnip, format, extras)
                         --name {container} \
                         -e MYSQL_USER={user} \
                         -e MYSQL_PASSWORD={password} \
+                        -e MYSQL_ROOT_PASSWORD={root_password} \
                         -e MYSQL_DATABASE={database} \
                         -p 3306:3306 \
                         mysql:{tag}
                     # DOCKER RUN MYSQL
                 ]],
                 {
-                    container = i(1, 'container'),
-                    user = i(2, 'user'),
-                    password = i(3, 'password'),
-                    database = i(4, 'database'),
-                    tag = i(5, 'tag')
+                    container = i(1, 'default'),
+                    user = rep(1, 'user'),
+                    password = i(2, 'password'),
+                    root_password = rep(2),
+                    database = rep(1, 'database'),
+                    tag = i(3, 'tag')
                 }
             ),
             fmt(
