@@ -7,14 +7,22 @@ return function(luasnip, format, extras)
     local snippet = luasnip.snippet
     return {
         snippet('information_schema', t('information_schema')),
-        snippet('DESCRIBE_TABLE', fmt(
-            [[
-                -- DESCRIBE TABLE '{}'
-                SELECT column_name, data_type, is_nullable
-                FROM information_schema.columns
-                WHERE table_name = '{table}';
-            ]], { table = i(1, 'table'), rep(1) }
-        )),
+        snippet('DESCRIBE_TABLE', c(1, {
+            fmt(
+                [[
+                    -- DESCRIBE TABLE '{}'
+                    SELECT column_name, data_type, is_nullable
+                    FROM information_schema.columns
+                    WHERE table_name = '{table}';
+                ]], { table = i(1, 'table'), rep(1) }
+            ),
+            fmt(
+                [[
+                    -- DESCRIBE TABLE '{}'
+                    DESCRIBE {table};
+                ]], { table = i(1, 'table'), rep(1) }
+            ),
+        })),
         snippet('SHOW_TABLES', fmt(
             [[
                 -- SHOW TABLES
