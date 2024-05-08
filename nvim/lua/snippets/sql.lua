@@ -88,11 +88,11 @@ return function(luasnip, format, extras)
             fmt(
                 [[
                     CREATE PROCEDURE {procedure}({params})
-                    AS
-                    $body$
-                    {body}
-                    $body$
                     LANGUAGE SQL
+                    AS
+                    $procedure$
+                    {body}
+                    $procedure$
                 ]], { procedure = i(1, 'procedure_name'), params = i(2, 'params'), body = i(3, 'instruction') }
             ),
             fmt(
@@ -156,6 +156,22 @@ return function(luasnip, format, extras)
             [[
                 TRUNCATE TABLE {table}
             ]], { table = i(1, 'table') }
+        )),
+        snippet('DESCRIBE_PROCEDURE', fmt(
+            [[
+                SELECT pg_get_functiondef(p.oid) as procedure_definition
+                FROM pg_proc p
+                JOIN pg_namespace n ON p.pronamespace = n.oid
+                JOIN pg_language l ON p.prolang = l.oid
+                WHERE p.proname = '{procedure}' AND n.nspname = 'public';
+            ]], { procedure = i(1, 'procedure_name') }
+        )),
+        snippet('SHOW_PROCEDURES', fmt(
+            [[
+                SELECT proname as stored_procedures
+                FROM pg_proc
+                WHERE pronamespace = (SELECT oid FROM pg_namespace WHERE nspname = 'public');
+            ]], {}
         )),
     }
 end
