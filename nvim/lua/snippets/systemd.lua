@@ -31,9 +31,9 @@ return function(luasnip)
         snippet('RestartSec', t('RestartSec=')),
         snippet('StartLimitIntervalSec', t('StartLimitIntervalSec=')),
         snippet('StartLimitBurst', t('StartLimitBurst=')),
-        snippet('MemoryLimit', 'MemoryLimit='),
-        snippet('MemorySoftLimit', 'MemorySoftLimit='),
-        snippet('CPUQuota', 'CPUQuota='),
+        snippet('MemoryLimit', t('MemoryLimit=')),
+        snippet('MemorySoftLimit', t('MemorySoftLimit=')),
+        snippet('CPUQuota', t('CPUQuota=')),
 
         -- [Install] - Install Directives
         snippet('[Install]', t('[Install]')),
