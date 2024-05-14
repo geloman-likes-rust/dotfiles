@@ -77,12 +77,13 @@ return function(luasnip, format, extras)
         snippet('CREATE_FUNCTION', fmt(
             [[
                 CREATE FUNCTION {func}({params})
+                LANGUAGE SQL
                 RETURNS {returns} AS
                 $body$
                 {query}
                 $body$
-                LANGUAGE SQL
-            ]], { func = i(1, 'fn_name'), params = i(2, 'params'), returns = i(3, 'returns'), query = i(4) }
+            ]],
+            { func = i(1, 'fn_name'), params = i(2, 'params'), returns = i(3, 'returns'), query = i(4, 'instruction') }
         )),
         snippet('CREATE_PROCEDURE', c(1, {
             fmt(
