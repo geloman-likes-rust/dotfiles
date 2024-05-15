@@ -1,6 +1,6 @@
 return {
     "folke/noice.nvim",
-    event = "VeryLazy",
+    event = "CmdlineEnter",
     opts = {
         health = { checker = false },
         notify = { enabled = false },
