@@ -1,6 +1,6 @@
 return {
     "hrsh7th/nvim-cmp",
-    event = "InsertEnter",
+    event = { "InsertCharPre", "CmdlineChanged" },
     dependencies = {
         'L3MON4D3/LuaSnip',
         'hrsh7th/cmp-calc',
@@ -85,10 +85,10 @@ return {
             mapping = cmp.mapping.preset.cmdline(),
             sources = cmp.config.sources(
                 {
-                    { name = 'path' }
+                    { name = 'path', max_item_count = 5 }
                 },
                 {
-                    { name = 'cmdline' }
+                    { name = 'cmdline', max_item_count = 5 }
                 }
             ),
             ---@diagnostic disable-next-line: missing-fields
