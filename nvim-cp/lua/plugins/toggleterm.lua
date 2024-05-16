@@ -1,12 +1,12 @@
 return {
-    "akinsho/toggleterm.nvim",
-    cmd = "ToggleTerm",
-    keys = { { "<leader>tm", function() vim.cmd("ToggleTerm") end, desc = "Toggle Terminal" } },
+    'akinsho/toggleterm.nvim',
+    cmd = 'ToggleTerm',
+    keys = { { '<leader>tm', '<cmd>ToggleTerm<cr>', desc = 'Toggle Terminal' } },
     opts = {
-        direction = "float",
+        direction = 'float',
         float_opts = {
-            border = "curved",
-            title_pos = "center"
+            border = 'curved',
+            title_pos = 'center'
         }
     }
 }
