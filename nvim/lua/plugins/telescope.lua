@@ -2,14 +2,16 @@ return {
     'nvim-telescope/telescope.nvim',
     version = '*',
     cmd = 'Telescope',
-    init = function()
-        vim.keymap.set('n', '<leader>cn', function()
-            require('telescope.builtin').find_files { cwd = vim.fn.stdpath 'config' }
-        end, { desc = 'neovim config files' })
-    end,
     keys = function()
         local cmd = function(command) return function() vim.cmd(command) end end
         return {
+
+            -- NEOVIM CONFIG FILES
+            {
+                '<leader>cn',
+                function() require('telescope.builtin').find_files { cwd = vim.fn.stdpath 'config' } end,
+                desc = 'neovim config files'
+            },
 
             -- RESUME CURRENT SEARCH
             { '<leader>rs',      cmd 'Telescope resume',         desc = 'Telescope resume' },
