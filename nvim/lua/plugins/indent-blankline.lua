@@ -1,7 +1,18 @@
 return {
     'lukas-reineke/indent-blankline.nvim',
-    event = "VeryLazy",
+    lazy = true,
     main = "ibl",
+    init = function()
+        vim.api.nvim_create_autocmd({ "BufReadPost" }, {
+            group = vim.api.nvim_create_augroup("IndentBlanklineLazyLoad", { clear = true }),
+            callback = function()
+                vim.schedule(function()
+                    vim.api.nvim_del_augroup_by_name "IndentBlanklineLazyLoad"
+                    require('lazy').load { plugins = { 'indent-blankline.nvim' } }
+                end)
+            end,
+        })
+    end,
     config = function()
         local highlight = {
             "RainbowRed",
