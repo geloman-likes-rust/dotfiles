@@ -2,6 +2,7 @@ return {
     "folke/noice.nvim",
     event = "CmdlineEnter",
     opts = {
+        popupmenu = { enabled = false },
         health = { checker = false },
         notify = { enabled = false },
         messages = { enabled = false },
