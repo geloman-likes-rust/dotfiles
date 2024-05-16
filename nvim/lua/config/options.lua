@@ -1,6 +1,9 @@
 -- no showmode
 vim.o.showmode = false
 
+-- set nowildmenu
+vim.o.wildmenu = false
+
 -- tab space
 vim.o.tabstop = 4
 vim.o.softtabstop = 4
