@@ -1,6 +1,6 @@
 return {
-    "hrsh7th/nvim-cmp",
-    event = { "InsertCharPre", "CmdlineChanged" },
+    'hrsh7th/nvim-cmp',
+    event = { 'InsertEnter', 'CmdlineChanged' },
     dependencies = {
         'L3MON4D3/LuaSnip',
         'hrsh7th/cmp-calc',
@@ -9,12 +9,12 @@ return {
         'hrsh7th/cmp-cmdline',
         'hrsh7th/cmp-nvim-lsp',
         'saadparwaiz1/cmp_luasnip',
-        "rafamadriz/friendly-snippets",
+        'rafamadriz/friendly-snippets',
     },
     config = function()
         local cmp = require 'cmp'
         local luasnip = require 'luasnip'
-        require("luasnip.loaders.from_vscode").lazy_load { exclude = { 'rust', 'sql', 'yaml', 'dockerfile' } }
+        require('luasnip.loaders.from_vscode').lazy_load { exclude = { 'rust', 'sql', 'yaml', 'dockerfile' } }
         luasnip.config.setup { update_events = 'TextChanged,TextChangedI' }
 
         cmp.setup {
@@ -25,16 +25,19 @@ return {
             },
             mapping = cmp.mapping.preset.insert {
 
-                ['<C-Space>'] = cmp.mapping.confirm { select = true },
+                ['<C-Space>'] = cmp.mapping.confirm {
+                    behavior = cmp.ConfirmBehavior.Insert,
+                    select = true,
+                },
 
                 ['<CR>'] = cmp.mapping.confirm {
-                    behavior = cmp.ConfirmBehavior.Replace,
+                    behavior = cmp.ConfirmBehavior.Insert,
                     select = true,
                 },
 
                 ['<C-n>'] = cmp.mapping(function(fallback)
                     if cmp.visible() then
-                        cmp.select_next_item()
+                        cmp.select_next_item { behavior = cmp.ConfirmBehavior.Insert }
                     elseif luasnip.expand_or_jumpable() then
                         luasnip.expand_or_jump()
                     else
@@ -44,7 +47,7 @@ return {
 
                 ['<C-p>'] = cmp.mapping(function(fallback)
                     if cmp.visible() then
-                        cmp.select_prev_item()
+                        cmp.select_prev_item { behavior = cmp.ConfirmBehavior.Insert }
                     elseif luasnip.jumpable(-1) then
                         luasnip.jump(-1)
                     else
@@ -55,21 +58,30 @@ return {
                 ['<C-b>'] = cmp.mapping.scroll_docs(-4),
                 ['<C-f>'] = cmp.mapping.scroll_docs(4),
 
+                -- Toggle docs view
+                ['<C-e>'] = function()
+                    if cmp.visible_docs() then
+                        cmp.close_docs()
+                    else
+                        cmp.open_docs()
+                    end
+                end
+
             },
 
             window = {
                 completion = cmp.config.window.bordered({
-                    winhighlight = "Normal:VisualNC,FloatBorder:VisualNC,CursorLine:PmenuSel"
+                    winhighlight = 'Normal:VisualNC,FloatBorder:VisualNC,CursorLine:PmenuSel'
                 }),
                 documentation = cmp.config.window.bordered(),
             },
 
             sources = {
                 { name = 'nvim_lsp', max_item_count = 8 },
-                { name = 'luasnip',  max_item_count = 8 },
-                { name = 'buffer',   max_item_count = 5 },
-                { name = 'path',     max_item_count = 5 },
-                { name = 'calc',     max_item_count = 5 },
+                { name = 'luasnip',  max_item_count = 4 },
+                { name = 'buffer',   max_item_count = 4 },
+                { name = 'path',     max_item_count = 4 },
+                { name = 'calc',     max_item_count = 4 },
             },
 
         }
