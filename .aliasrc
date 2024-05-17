@@ -89,6 +89,8 @@ alias \
   iv='nvim' \
   ivi='nvim' \
   ivii='nvim' \
+  nv='nvim' \
+  nvi='nvim' \
   dbui='nvim -c DBUIToggle' \
   tree='tree --gitignore' \
   dev="cd ~/.development" \
