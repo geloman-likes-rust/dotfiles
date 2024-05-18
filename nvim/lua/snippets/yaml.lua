@@ -8,13 +8,13 @@ return function(luasnip, format, extras)
   return {
     snippet('prettierrc', fmt(
       [[
-          trailingComa: "es5"
           semi: false
           tabWidth: 2
+          endOfLine: "lf"
           singleQuote: true
           arrowParens: "avoid"
+          trailingComa: "none"
           bracketSpacing: true
-          endOfLine: "lf"
       ]], {}
     )),
     snippet('compose', fmt(
