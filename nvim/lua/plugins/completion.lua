@@ -30,11 +30,6 @@ return {
                     select = true,
                 },
 
-                ['<CR>'] = cmp.mapping.confirm {
-                    behavior = cmp.ConfirmBehavior.Insert,
-                    select = true,
-                },
-
                 ['<C-n>'] = cmp.mapping(function(fallback)
                     if cmp.visible() then
                         cmp.select_next_item { behavior = cmp.ConfirmBehavior.Insert }
