@@ -1,6 +1,6 @@
 EDITOR="nvim"
 KEYTIMEOUT=1
-SHELL="/bin/zsh"
+SHELL="/usr/bin/zsh"
 
 # FZF CUSTOM COLORS
 YELLOW=#FF8400

@@ -33,7 +33,7 @@ bind '"\C-n": "change_worktree; clear\n"'
 
 ## ALL ENVIRONMENT VARIABLE GOES HERE
 # -----------------------------------
-SHELL="/bin/bash"
+SHELL="/usr/bin/bash"
 [ -n "$(command -v nvim)" ] && EDITOR="nvim" || EDITOR="vim"
 
 PINK=#FF52A2
