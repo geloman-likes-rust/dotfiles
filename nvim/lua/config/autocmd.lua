@@ -77,9 +77,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
         keymap('gt', vim.lsp.buf.type_definition, '[G]oto [T]ype Definition')
         keymap('K', vim.lsp.buf.hover, 'Hover Documentation')
         keymap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
-        keymap('<leader>do', vim.diagnostic.open_float, 'Open Floating Diagnostic')
-        keymap('<leader>dn', vim.diagnostic.goto_next, 'Next Diagnostic')
-        keymap('<leader>dp', vim.diagnostic.goto_prev, 'Previous Diagnostic')
+        keymap('<C-w>d', vim.diagnostic.open_float, 'Open Floating Diagnostic')
+        keymap(']d', vim.diagnostic.goto_next, 'Next Diagnostic')
+        keymap('[d', vim.diagnostic.goto_prev, 'Previous Diagnostic')
 
         -- Default DiagnosticSign
         local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
@@ -89,11 +89,14 @@ vim.api.nvim_create_autocmd('LspAttach', {
         end
 
         -- rounded border for diagnostic popup
-        vim.diagnostic.config { signs = true, float = { border = 'rounded', header = false } }
+        vim.diagnostic.config { signs = true, float = { border = 'rounded' } }
 
         -- rounded border for textDocument/hover
         vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
             vim.lsp.handlers.hover, { border = "rounded" }
+        )
+        vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+            vim.lsp.handlers.signature_help, { border = "rounded" }
         )
 
         local client = vim.lsp.get_client_by_id(event.data.client_id)
