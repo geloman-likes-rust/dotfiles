@@ -125,8 +125,11 @@ return function(luasnip, format, extras)
         )),
         snippet('REFERENCES', fmt(
             [[
-                INTEGER REFERENCES {table}(id),
-            ]], { table = i(1, 'table') }
+                INTEGER REFERENCES {table}(id) ON DELETE {on_delete},
+            ]], {
+                table = i(1, 'table'),
+                on_delete = c(2, { i(1, 'SET NULL'), i(1, 'CASCADE') })
+            }
         )),
         snippet('SERIAL_PRIMARY_KEY', t('id SERIAL PRIMARY KEY,')),
         snippet('ALTER_TABLE_DROP_COLUMN', fmt(
