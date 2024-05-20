@@ -101,5 +101,13 @@ return {
             ---@diagnostic disable-next-line: missing-fields
             matching = { disallow_symbol_nonprefix_matching = false }
         })
+
+        cmp.setup.filetype({ 'sql' }, {
+            sources = {
+                { name = 'buffer',                max_item_count = 4 },
+                { name = 'luasnip',               max_item_count = 4 },
+                { name = 'vim-dadbod-completion', max_item_count = 4 },
+            }
+        })
     end,
 }

@@ -6,5 +6,5 @@ return {
         { "<leader>dq", "<cmd>DBUIClose<cr>",         desc = "DBUIClose" },
         { "<leader>da", "<cmd>DBUIAddConnection<cr>", desc = "DBUIAddConnection" },
     },
-    dependencies = { "kristijanhusak/vim-dadbod-ui", --[["kristijanhusak/vim-dadbod-completion"]] },
+    dependencies = { "kristijanhusak/vim-dadbod-ui", "kristijanhusak/vim-dadbod-completion" },
 }
