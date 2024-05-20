@@ -76,6 +76,11 @@ return {
             capabilities = capabilities,
             filetypes = { 'ts', 'typescript', 'html' }
         }
+
+        --[[ CSS LSP ]]
+        lspconfig.cssls.setup {
+            capabilities = capabilities
+        }
     end,
     dependencies = { 'folke/neodev.nvim', cmd = 'Neoconf' },
 }
