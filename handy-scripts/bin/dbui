@@ -1,0 +1,19 @@
+#!/bin/sh
+
+connection_string="$1"
+
+workspace="$(git rev-parse --show-toplevel 2> /dev/null)"
+
+[ -n "$workspace" ] && [ -f "$workspace/.env" ] \
+    && connection_string="$(grep "DB_UI_*" $workspace/.env | cut -d '=' -f2 | sed -e 's/\"//g')"
+
+[ -z "$connection_string" ] && echo "dbui \"connection string\" | \"file path\"" && exit 1
+
+[ -f "$connection_string" ] \
+    && connection_string="$(grep "DB_UI_*" $connection_string | cut -d '=' -f2 | sed -e 's/\"//g')"
+
+connection_name="$(basename $connection_string)"
+
+export "DB_UI_$(echo "$connection_name" | tr "a-z" "A-Z")=$connection_string"
+
+nvim -c 'DBUIToggle'
