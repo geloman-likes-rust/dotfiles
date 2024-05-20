@@ -82,5 +82,5 @@ return {
             capabilities = capabilities
         }
     end,
-    dependencies = { 'folke/neodev.nvim', cmd = 'Neoconf' },
+    dependencies = { 'folke/neodev.nvim' },
 }
