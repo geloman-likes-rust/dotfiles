@@ -13,6 +13,11 @@ return function(luasnip, format, extras)
                 {body}
         ]], { name = i(1, 'name'), args = i(2, 'args'), returns = i(3, 'None'), body = i(4, 'pass') }
         )),
+        snippet('namedtuple', fmt(
+            [[
+                {name} = namedtuple('{}', field_names=[{fields}])
+            ]], { name = i(1), rep(1), fields = i(2) }
+        )),
         snippet('argk', c(1, {
             fmt(
                 [[
