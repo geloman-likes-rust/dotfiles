@@ -26,9 +26,17 @@ return {
         end,
         init = function()
             vim.api.nvim_create_user_command("Curl", function()
-                local tmp = vim.fn.system('mktemp' .. ' request.XXXXXXXXXXXX.http ' .. '--tmpdir')
+                local find_tmp_files = 'ls' .. ' ' .. '/tmp/request.*.http'
+                vim.fn.system(find_tmp_files)
                 if vim.v.shell_error == 0 then
-                    vim.cmd("edit " .. tmp)
+                    local tmp_file = vim.fn.system(find_tmp_files .. ' | ' .. 'awk "NR == 1 {print}"')
+                    vim.cmd("edit " .. tmp_file)
+                else
+                    local create_tmp_file = 'mktemp' .. ' request.XXXXXXXXXXXX.http ' .. '--tmpdir'
+                    local tmp_file = vim.fn.system(create_tmp_file)
+                    if vim.v.shell_error == 0 then
+                        vim.cmd("edit " .. tmp_file)
+                    end
                 end
             end, {})
             vim.keymap.set('n', '<localleader>rc', '<cmd>Curl<cr>', { desc = 'Create Rest Client' })
