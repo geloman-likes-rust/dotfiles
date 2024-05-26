@@ -52,5 +52,6 @@
   "window.menuBarVisibility": "toggle",
   "editor.autoClosingBrackets": "never",
   "editor.autoClosingQuotes": "never",
-  "workbench.editor.showTabs": "single"
+  "workbench.editor.showTabs": "single",
+  "explorer.compactFolders": false
 }
