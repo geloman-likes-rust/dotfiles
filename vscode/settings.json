@@ -53,5 +53,6 @@
   "editor.autoClosingBrackets": "never",
   "editor.autoClosingQuotes": "never",
   "workbench.editor.showTabs": "single",
-  "explorer.compactFolders": false
+  "explorer.compactFolders": false,
+  "explorer.sortOrder": "filesFirst"
 }
