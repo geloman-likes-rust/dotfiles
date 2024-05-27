@@ -103,6 +103,7 @@ return {
                 },
 
                 colorscheme = {
+                    colors = { 'kanagawa', 'onedark', 'tokyonight', 'catppuccin', 'gruvbox' },
                     initial_mode = 'insert',
                     layout_config = {
                         width = 0.40,
