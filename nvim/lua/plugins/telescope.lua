@@ -105,6 +105,7 @@ return {
                 colorscheme = {
                     colors = { 'kanagawa', 'onedark', 'tokyonight', 'catppuccin', 'gruvbox' },
                     initial_mode = 'insert',
+                    results_title = 'Colorschemes',
                     layout_config = {
                         width = 0.40,
                         height = 0.60,
