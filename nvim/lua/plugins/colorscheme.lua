@@ -1,6 +1,7 @@
 return {
     {
         'navarasu/onedark.nvim',
+        lazy = true,
         priority = 1000,
         opts = {
             style = 'deep',
@@ -21,7 +22,7 @@ return {
     },
     {
         'rebelot/kanagawa.nvim',
-        lazy = true,
+        lazy = false,
         priority = 1000,
         transparent = true,
         opts = {
@@ -37,7 +38,7 @@ return {
         },
         config = function(_, opts)
             require('kanagawa').setup(opts)
-            require('kanagawa').load 'dragon'
+            require('kanagawa').load 'lotus'
         end
     },
     {
