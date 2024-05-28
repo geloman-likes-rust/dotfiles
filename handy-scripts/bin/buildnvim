@@ -3,10 +3,21 @@
 
 NVIM_TAG="stable"
 NVIM_DIR="$HOME/neovim"
+NVIM_REMOTE="git@github.com:neovim/neovim.git"
+
 BUILD_DIR="$NVIM_DIR/build"
 MAKEFILE="$NVIM_DIR/Makefile"
+INSTALL_LOCATION="$HOME/.local"
 
-[ ! -d "$NVIM_DIR" ] && echo "yo dawg, you haven't cloned neovim..!" && exit 1
+[ -d "$NVIM_DIR" ] && git --git-dir "$NVIM_DIR/.git" rev-parse --is-inside-work-tree > /dev/null 2>&1
+
+[ $? -ne 0 ] && rm -rdf "$NVIM_DIR"
+
+[ ! -d "$NVIM_DIR" ] \
+    && git clone \
+    --config advice.detachedHead=false \
+    --branch "$NVIM_TAG" --single-branch \
+    --depth 1 "$NVIM_REMOTE" "$NVIM_DIR"
 
 distro="$(awk -F '=' '/^ID=/ {print $2}' /etc/os-release)"
 
@@ -19,9 +30,10 @@ distro="$(awk -F '=' '/^ID=/ {print $2}' /etc/os-release)"
 [ -n "$1" ] && NVIM_TAG="$1"
 git -C "$NVIM_DIR" checkout --quiet "$NVIM_TAG"
 
-[ -d /usr/local/share/nvim ] && sudo rm -rf /usr/local/share/nvim
+[ -d "$INSTALL_LOCATION/share/nvim" ] && rm -rf "$INSTALL_LOCATION/share/nvim"
 make -C "$NVIM_DIR" distclean
 
-mkdir -p "$BUILD_DIR"
-make -C "$NVIM_DIR" -f "$MAKEFILE" CMAKE_BUILD_TYPE=RelWithDebInfo
-sudo make -C "$NVIM_DIR" install
+mkdir -p "$INSTALL_LOCATION" "$BUILD_DIR"
+
+make -C "$NVIM_DIR" -f "$MAKEFILE" CMAKE_BUILD_TYPE=Release CMAKE_INSTALL_PREFIX="$INSTALL_LOCATION" 
+make -C "$NVIM_DIR" install
