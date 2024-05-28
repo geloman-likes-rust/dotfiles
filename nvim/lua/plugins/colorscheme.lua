@@ -38,7 +38,7 @@ return {
         },
         config = function(_, opts)
             require('kanagawa').setup(opts)
-            require('kanagawa').load 'lotus'
+            require('kanagawa').load 'wave'
         end
     },
     {
