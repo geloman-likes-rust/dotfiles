@@ -47,8 +47,14 @@ assign [class="Mechvibes"] 8
 assign [class="Rhythmbox"] 9
 assign [class="obs"] 10
 
+# floating windows
 for_window [class="Nautilus"] floating enable
 for_window [class="Mechvibes"] floating enable
+for_window [class="gnome-calendar"] floating enable
+for_window [class="gnome-calculator"] floating enable
+
+# resize floating windows
+for_window [class="gnome-calendar"] resize set 800 500
 
 # start rofi (a program launcher)
 bindsym $mod+f exec --no-startup-id rofi -show drun
@@ -58,11 +64,9 @@ bindsym $mod+w exec --no-startup-id rofi -show window
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
+
 # bindsym $mod+w layout tabbed
 bindsym $mod+v layout toggle split
-
-# change focus between tiling / floating windows
-# bindsym $mod+space focus mode_toggle
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
