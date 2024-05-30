@@ -1,9 +1,16 @@
 #!/bin/sh
 
 switch_shell() {
-    selected=$(cat /etc/shells | awk '/usr\/bin/ {print}'| uniq | fzf --border=rounded --margin=30% --border-label " switch shell " --header " select shell " --header-first)
-    echo $selected
-    # [ -n "$selected" ] && chsh -s "$selected"
+    selected="$(cat /etc/shells \
+        | awk '/usr\/bin/ {print}' \
+        | uniq \
+        | fzf   --border=rounded \
+                --margin=30% \
+                --border-label " switch shell " \
+                --header " select shell " \
+                --header-first \
+        )"
+    [ -n "$selected" ] && chsh -s "$selected"
 }
 
 distro="$(awk -F '=' '/^ID=/ {print $2}' /etc/os-release)"
