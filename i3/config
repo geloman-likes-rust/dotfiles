@@ -39,6 +39,7 @@ assign [class="kitty"] 1
 assign [class="Aseprite"] 1
 assign [class="Nautilus"] 2
 assign [class="Google-chrome"] 2
+assign [class="Postman"] 3
 assign [class="discord"] 3
 assign [class="steam"] 4
 assign [class="Firefox"] 5
