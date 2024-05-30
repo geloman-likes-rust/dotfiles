@@ -10,7 +10,7 @@ switch_shell() {
                 --header " select shell " \
                 --header-first \
         )"
-    [ -n "$selected" ] && chsh -s "$selected"
+    [ -n "$selected" ] && chsh -s "$selected" && exec "$selected"
 }
 
 distro="$(awk -F '=' '/^ID=/ {print $2}' /etc/os-release)"
