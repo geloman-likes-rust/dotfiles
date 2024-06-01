@@ -4,7 +4,7 @@ return function(luasnip, format)
     local snippet = luasnip.snippet
 
     return {
-        snippet('middleware', fmt(
+        snippet('@middleware', fmt(
             [[
                 /**
                  * @param {{Request}} req - The Express request object.
@@ -16,6 +16,18 @@ return function(luasnip, format)
                   next()
                 }}
             ]], { middleware = i(1, 'middleware') }
+        )),
+        snippet('@handler', fmt(
+            [[
+                /**
+                 * @param {{Request}} req - The Express request object.
+                 * @param {{Response}} res - The Express response object.
+                 * @returns {{Promise<any>}} Returns HTTP response.
+                 */
+                function {handler}(req, res) {{
+                    {body}
+                }}
+            ]], { handler = i(1, 'handler'), body = i(0, 'res.status(204).end()') }
         ))
     }
 end
