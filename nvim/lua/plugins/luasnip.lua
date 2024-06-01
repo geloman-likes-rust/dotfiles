@@ -25,6 +25,7 @@ return {
         luasnip.add_snippets('lua', require('snippets.lua')(luasnip, format, extras))
         luasnip.add_snippets('cs', require('snippets.csharp')(luasnip, format, extras))
         luasnip.add_snippets('python', require('snippets.python')(luasnip, format, extras))
+        luasnip.add_snippets('javascript', require('snippets.javascript')(luasnip, format))
         luasnip.add_snippets('dockerfile', require('snippets.dockerfile')(luasnip, format))
         luasnip.add_snippets('editorconfig', require('snippets.editorconfig')(luasnip, format))
     end
