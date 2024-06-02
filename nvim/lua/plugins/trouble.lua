@@ -6,5 +6,5 @@ return {
         { '<leader>tr', '<cmd>Trouble lsp toggle<cr>',         desc = 'Toggle Lsp References' },
     },
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    opts = {},
+    opts = { focus = true },
 }
