@@ -14,7 +14,6 @@ local function highlight_all()
 
     -- TELESCOPE HIGHLIGHTS
     highlight("TelescopeTitle", { reverse = true })
-    highlight("TelescopeSelection", { bg = '#34bfd0', fg = '#283347' })
     highlight("TelescopePromptCounter", { fg = '#34bfd0' })
 
     -- LAZY HIGHLIGHTS
