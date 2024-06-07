@@ -77,7 +77,7 @@ alias \
   cr="cargo run" \
   rsc="rustc" \
   dbe="db-env" \
-  ls='exa --no-user --no-time --no-filesize --group-directories-first' \
+  ls='eza --icons=always --no-user --no-time --no-filesize' \
   lsn='command ls --color=always' \
   sv='source ./venv/bin/activate' \
   cv='python3 -m venv venv' \
