@@ -60,6 +60,14 @@ install_exa() {
     ~/.cargo/bin/cargo install exa
 }
 
+## EZA LS
+#---------------------------------------------------------------------
+install_eza() {
+	[ -n "$(command -v eza)" ] && return
+	echo "Installing eza......................................"
+    ~/.cargo/bin/cargo install eza
+}
+
 ## FD-FIND - need this for telescope live-grep & grep-string
 #---------------------------------------------------------------------
 install_fd() {
@@ -126,7 +134,7 @@ install_fd
 install_ripgrep
 install_delta
 install_bat
-install_exa
+install_eza
 install_tmux_tpm
 # install_lua_language_server
 # install_omnisharp_roslyn
