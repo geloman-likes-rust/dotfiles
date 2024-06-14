@@ -81,6 +81,12 @@ return {
                     },
                 },
 
+                man_pages = {
+                    layout_config = {
+                        preview_width = 0.55
+                    },
+                },
+
                 live_grep = {
                     layout_config = {
                         preview_width = 0.60
