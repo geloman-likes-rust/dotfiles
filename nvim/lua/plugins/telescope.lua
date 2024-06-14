@@ -45,6 +45,7 @@ return {
 
             -- HELP TAGS
             { '<leader>hh',      cmd 'Telescope help_tags',      desc = 'Search Help' },
+            { '<leader>mp',      cmd 'Telescope man_pages',      desc = 'Man Pages' },
 
         }
     end,
