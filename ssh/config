@@ -4,3 +4,17 @@ Host *
 
 Host github.com
     IdentityFile ~/.ssh/github_ed25519
+
+Host bigtuna
+    HostName 163.47.8.6
+    User geloman
+    IdentityFile ~/.ssh/bigtuna_ed25519
+    SetEnv TERM=xterm-256color
+    SendEnv TERM
+
+Host kingfisher
+    HostName 188.166.196.85
+    User geloman
+    IdentityFile ~/.ssh/kingfisher_ed25519
+    SetEnv TERM=xterm-256color
+    SendEnv TERM
