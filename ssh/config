@@ -9,6 +9,7 @@ Host bigtuna
     HostName 163.47.8.6
     User geloman
     IdentityFile ~/.ssh/bigtuna_ed25519
+    ForwardAgent yes
     SetEnv TERM=xterm-256color
     SendEnv TERM
 
