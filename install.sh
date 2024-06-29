@@ -112,7 +112,7 @@ install_lua_language_server() {
     release_tag="https://github.com/LuaLS/lua-language-server/releases/download/3.7.4/lua-language-server-3.7.4-linux-x64.tar.gz"
 	echo "Installing lua-language-server......................................"
     curl -Lo ~/.language-servers/packages/lua-language-server/lua_ls.tar.gz --create-dirs "$release_tag"
-    tar xzf ./lua_ls.tar.gz -C ~/.language-servers/packages/lua-language-server
+    tar xzf ~/.language-servers/packages/lua-language-server/lua_ls.tar.gz -C ~/.language-servers/packages/lua-language-server
     mkdir -p ~/.language-servers/bin
     ln -sf ~/.language-servers/packages/lua-language-server/bin/lua-language-server ~/.language-servers/bin/
 }
