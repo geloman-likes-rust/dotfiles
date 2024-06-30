@@ -16,10 +16,12 @@ return {
             html = { 'prettier' },
             css = { 'prettier' },
         },
-        format_on_save = {
-            lsp_fallback = true,
-            timeout_ms = 500,
+
+        format_after_save = {
+            async = true,
+            lsp_fallback = true
         },
+
         notify_on_error = false
     }
 }
