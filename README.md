@@ -1,6 +1,7 @@
-# How to use this?
-A quick docs for me because I always forgot everything.
+# HOW TO USE THIS?
+
 # QUICKSTART
+A quick docs for me because I always forgot everything.
 
 
 ### RUN LOCALLY
