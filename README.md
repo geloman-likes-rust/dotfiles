@@ -1,5 +1,5 @@
 # HOW TO USE THIS?
-You can run **`docker pull geloman/dotfiles`**, or set this up locally.
+You can run **`docker run --rm -it geloman/dotfiles`** to use this with docker locally or you can follow the quickstart guide.
 
 # QUICKSTART
 A quick docs for me because I always forgot everything.
