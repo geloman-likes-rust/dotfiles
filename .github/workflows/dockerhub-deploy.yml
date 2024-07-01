@@ -23,4 +23,5 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/dotfiles:latest, ${{ github.run_number }}
+          images: ${{ secrets.DOCKERHUB_USERNAME }}/dotfiles
+          tags: latest, ${{ github.run_number }}
