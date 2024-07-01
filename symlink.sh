@@ -24,6 +24,9 @@ find ~/.dotfiles -maxdepth 1 -type d \
     | grep -Ev '.dotfiles$|ssh|.git|handy-scripts|nvim-cp|tmux|fonts|vim|ansible|zsh|bash|vscode|nano' \
     | xargs -I {} sh -c 'ln -sf {} ~/.config/'
 
+# NVIM CONFIG
+ln -sf ~/.dotfiles/nvim ~/.config/
+
 # VSCODE CONFIGS
 ln -sf ~/.dotfiles/vscode/snippets ~/.config/Code/User/
 ln -sf ~/.dotfiles/vscode/settings.json ~/.config/Code/User/
@@ -32,4 +35,3 @@ ln -sf ~/.dotfiles/vscode/keybindings.json ~/.config/Code/User/
 # SHORTHAND FOR SYMLINK AND UNLINK
 ln -sf ~/.dotfiles/symlink.sh ~/.local/bin/slnk
 ln -sf ~/.dotfiles/unlink.sh ~/.local/bin/ulnk
-
