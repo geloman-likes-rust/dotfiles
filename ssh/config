@@ -21,3 +21,10 @@ Host kingfisher
     IdentityFile ~/.ssh/kingfisher_ed25519
     SetEnv TERM=xterm-256color
     SendEnv TERM
+
+Host nightjar
+    HostName 144.126.242.21
+    User geloman
+    IdentityFile ~/.ssh/nightjar_ed25519
+    SetEnv TERM=xterm-256color
+    SendEnv TERM
