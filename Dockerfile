@@ -3,7 +3,8 @@ FROM ubuntu:latest
 RUN apt-get update \
         && apt-get install -y \
         sudo git fontconfig tar wget rustup gcc unzip curl \
-        zsh tmux neovim fzf git-delta eza bat ripgrep fd-find neofetch
+        zsh tmux neovim fzf git-delta eza bat ripgrep fd-find neofetch \
+        && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 ARG USERNAME=user
 RUN useradd --create-home --groups sudo --shell /usr/bin/zsh ${USERNAME} \
