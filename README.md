@@ -4,13 +4,13 @@
 A quick docs for me because I always forgot everything.
 
 
-### RUN LOCALLY
+### SETUP LOCALLY
 - Run this command to install and setup everything without any effort because I'm lazy.
 ```
 curl -sSf https://raw.githubusercontent.com/geloman-likes-rust/dotfiles/main/quickstart | sh
 ```
 
-### RUN LOCALLY WITH DOCKER
+### SETUP LOCALLY WITH DOCKER
 - Replace **`${USERNAME}`** with your actual username.
 ```bash
 docker build --build-arg USERNAME=${USERNAME} -t dotfiles:latest . \
