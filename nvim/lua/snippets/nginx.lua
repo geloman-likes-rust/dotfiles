@@ -70,5 +70,15 @@ return function(luasnip, format)
                 listen  {port};
             ]], { port = i(1, '80') }
         )),
+        snippet('ssl_certificate', fmt(
+            [[
+                ssl_certificate /etc/letsencrypt/live/{certificate}/fullchain.pem
+            ]], { certificate = i(1, 'certificate') }
+        )),
+        snippet('ssl_certificate_key', fmt(
+            [[
+                ssl_certificate_key /etc/letsencrypt/live/{certificate_key}/privkey.pem
+            ]], { certificate_key = i(1, 'certificate_key') }
+        )),
     }
 end
