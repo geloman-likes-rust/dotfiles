@@ -1,6 +1,6 @@
 # How to use this?
 A quick docs for me because I always forgot everything.
-## QUICKSTART
+# QUICKSTART
 
 
 ### RUN LOCALLY
