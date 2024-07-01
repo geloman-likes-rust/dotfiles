@@ -1,6 +1,8 @@
 Host *
     AddKeysToAgent yes
     ServerAliveInterval 60
+    ForwardX11 no
+    Compression no
 
 Host github.com
     IdentityFile ~/.ssh/github_ed25519
