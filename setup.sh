@@ -1,10 +1,13 @@
 #!/bin/sh
 
-[ -d ~/.personal/wallpaper ] || git clone --depth 1 https://github.com/geloman-likes-rust/desktop-wallpaper ~/.personal/wallpaper
-
 mkdir -p ~/.fonts
 mkdir -p ~/.config
+mkdir -p ~/.personal
 mkdir -p ~/.local/bin
+mkdir -p ~/.tmux/plugins
+mkdir -p ~/.config/Code/User
+
+[ -d ~/.personal/wallpaper ] || git clone --depth 1 https://github.com/geloman-likes-rust/desktop-wallpaper ~/.personal/wallpaper
 
 # CREATING BACKUPS
 [ -f ~/.vimrc ] && mv -f ~/.vimrc ~/.vimrc.bak
@@ -26,11 +29,11 @@ mkdir -p ~/.local/bin
 [ -d ~/.config/picom ] && mv -f ~/.config/picom ~/.config/picom.bak
 [ -d ~/.config/dunst ] && mv -f ~/.config/dunst ~/.config/dunst.bak
 [ -d ~/.config/waybar ] && mv -f ~/.config/waybar ~/.config/waybar.bak
-[ -d ~/.config/Code/User/snippets ] mv -f ~/.config/Code/User/snippets ~/.config/Code/User/snippets.bak
+[ -d ~/.config/Code/User/snippets ] && mv -f ~/.config/Code/User/snippets ~/.config/Code/User/snippets.bak
 [ -f ~/.config/Code/User/settings.json ] && mv -f ~/.config/Code/User/settings.json ~/.config/Code/User/settings.json.bak
 [ -f ~/.config/Code/User/keybindings.json ] && mv -f ~/.config/Code/User/keybindings.json ~/.config/Code/User/keybindings.json.bak
 
-[ -z "$(fc-list | grep "Hack Nerd Font")" ] && cp ~/.dotfiles/fonts/hack-nerd-font.ttf ~/.fonts && echo "updating font cache................" && fc-cache -fv
+[ -z "$(fc-list | grep "JetBrainsMono Nerd Font")" ] && cp ~/.dotfiles/fonts/*.ttf ~/.fonts && echo "updating font cache................" && fc-cache -fv
 [ -f ~/.profile ] && echo ". \"\$HOME/.dotfiles/.default_background\"" >> ~/.profile
 
 ~/.dotfiles/symlink.sh
