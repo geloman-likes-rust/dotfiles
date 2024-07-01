@@ -1,4 +1,5 @@
 # HOW TO USE THIS?
+You can run **`docker pull geloman/dotfiles`**, or set this up locally.
 
 # QUICKSTART
 A quick docs for me because I always forgot everything.
