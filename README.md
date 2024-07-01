@@ -15,6 +15,7 @@ Build the image and run the container.
 docker build --build-arg USERNAME=${USERNAME} -t dotfiles:latest . \
 && docker run -it --hostname localhost --name dotfiles dotfiles:latest
 ```
+Replace `${USERNAME}` with your actual username.
 
 ### `uninstallation`
 
