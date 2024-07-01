@@ -2,9 +2,17 @@
 A quick docs for me because I always forgot everything.
 ### QUICKSTART
 
+
+#### RUN LOCALLY
 Run this command to install and setup everything without any effort because I'm lazy.
 ```
 curl -sSf https://raw.githubusercontent.com/geloman-likes-rust/dotfiles/main/quickstart | sh
+```
+
+#### RUN LOCALLY WITH DOCKER
+```
+docker build --build-arg USERNAME=${USERNAME} -t dotfiles:latest . \
+&& docker run -it --hostname localhost --name dotfiles dotfiles:latest
 ```
 
 ### uninstallation
