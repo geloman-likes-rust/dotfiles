@@ -1,28 +1,21 @@
-## How to use this?
+# How to use this?
 A quick docs for me because I always forgot everything.
-### QUICKSTART
+## QUICKSTART
 
 
-#### `RUN LOCALLY`
-Run this command to install and setup everything without any effort because I'm lazy.
+### RUN LOCALLY
+- Run this command to install and setup everything without any effort because I'm lazy.
 ```
 curl -sSf https://raw.githubusercontent.com/geloman-likes-rust/dotfiles/main/quickstart | sh
 ```
 
-#### `RUN LOCALLY WITH DOCKER`
-Build the image and run the container.
-```
+### RUN LOCALLY WITH DOCKER
+- Replace **`${USERNAME}`** with your actual username.
+```bash
 docker build --build-arg USERNAME=${USERNAME} -t dotfiles:latest . \
 && docker run -it --hostname localhost --name dotfiles dotfiles:latest
 ```
-Replace `${USERNAME}` with your actual username.
 
-### `uninstallation`
-
-This will uninstall [everything](uninstall.sh)
-```
-~/.dotfiles/uninstall.sh
-```
 
 [**`handy-scripts`**](handy-scripts/userguide.md) user-friendly guide.
 
