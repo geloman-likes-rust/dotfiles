@@ -36,6 +36,8 @@ install_neovim() {
 #---------------------------------------------------------------------
 install_rust() {
 	[ -d ~/.cargo ] && return
+    [ -n "$(command -v rustup)" ] && return
+    [ -n "$(command -v cargo)" ] && return
 	[ -z "$(command -v curl)" ] && return
 	echo "Installing rustup, cargo, rustc......................................"
 	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -72,6 +74,7 @@ install_eza() {
 #---------------------------------------------------------------------
 install_fd() {
 	[ -n "$(command -v fd)" ] && return
+	[ -n "$(command -v fdfind)" ] && return
 	echo "Installing fd-find......................................"
     ~/.cargo/bin/cargo install fd-find
 }
@@ -96,6 +99,7 @@ install_delta() {
 #---------------------------------------------------------------------
 install_bat() {
 	[ -n "$(command -v bat)" ] && return
+	[ -n "$(command -v batcat)" ] && return
 	echo "Installing bat......................................"
     ~/.cargo/bin/cargo install bat
 }
@@ -136,12 +140,7 @@ install_delta
 install_bat
 install_eza
 install_tmux_tpm
+install_ohmyzsh
 # install_lua_language_server
 # install_omnisharp_roslyn
-# install_ohmyzsh
 # install_nvm
-
-[ -z "$(command -v tar)" ] && printf "\033[0;91mtar\033[0m was not installed, u need \033[0;91mtar\033[0m to install nvim\n"
-[ -z "$(command -v unzip)" ] && printf "\033[0;91munzip\033[0m was not installed, u need \033[0;91munzip\033[0m to install exa\n"
-[ -z "$(command -v git)" ] && printf "\033[0;91mgit\033[0m was not installed, u need \033[0;91mgit\033[0m to install the required dependencies\n"
-[ -z "$(command -v curl)" ] && printf "\033[0;91mcurl\033[0m was not installed, u need \033[0;91mcurl\033[0m to install the required dependencies\n"
