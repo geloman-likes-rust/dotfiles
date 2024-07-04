@@ -6,7 +6,8 @@ on:
       - main
 
 jobs:
-  docker:
+  deploy:
+    name: Deploy to DockerHub
     runs-on: ubuntu-latest
     steps:
       - name: Set up Docker Buildx
