@@ -1,0 +1,9 @@
+geloman:
+  hosts:
+    localhost:
+      ansible_connection: local
+
+servers:
+  hosts:
+    bigtuna:
+      ansible_host: 163.47.8.6
