@@ -6,6 +6,6 @@ geloman:
 servers:
   hosts:
     bigtuna:
+      ansible_user: geloman
       ansible_host: 163.47.8.6
-      ansible_ssh_user: geloman
       ansible_ssh_private_key_file: ~/.ssh/bigtuna_ed25519
