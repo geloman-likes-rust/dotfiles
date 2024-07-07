@@ -1,0 +1,12 @@
+- hosts: all
+  pre_tasks:
+    - name: Update and Upgrade packages
+      when: ansible_distribution in ["Debian", "Ubuntu"]
+      ansible.builtin.apt:
+        upgrade: dist
+        update_cache: yes
+  roles:
+    - git
+    - zsh
+    - tmux
+    - neovim
