@@ -1,0 +1,4 @@
+- name: Install neovim
+  ansible.builtin.package:
+    name: neovim
+    state: latest
