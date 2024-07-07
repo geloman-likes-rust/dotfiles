@@ -1,0 +1,30 @@
+- name: Symlink .zshrc
+  ansible.builtin.file:
+    src: ~/.dotfiles/zsh/.zshrc
+    dest: ~/.zshrc
+    state: link
+
+- name: Symlink .zshenv
+  ansible.builtin.file:
+    src: ~/.dotfiles/zsh/.zshenv
+    dest: ~/.zshenv
+    state: link
+
+- name: Symlink .zsh_prompt
+  ansible.builtin.file:
+    src: ~/.dotfiles/zsh/.zsh_prompt
+    dest: ~/.zsh_prompt
+    state: link
+
+- name: Clone oh-my-zsh
+  ansible.builtin.git:
+    repo: https://github.com/ohmyzsh/ohmyzsh.git
+    dest: ~/.oh-my-zsh
+    clone: true
+    depth: 1
+
+- name: Set ZSH as default shell
+  ansible.builtin.user:
+    name: {{ ansible_user }}
+    shell: /usr/bin/zsh
+  become: yes
