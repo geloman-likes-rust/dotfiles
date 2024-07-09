@@ -3,12 +3,13 @@ return {
     event = 'BufWritePre',
     opts = {
         formatters_by_ft = {
-            terraform = { 'terraform_fmt' },
+            yaml = { 'yamlfmt' },
             lua = { 'stylua' },
             python = { 'black' },
             go = { 'gofmt' },
             rust = { 'rustfmt' },
             ocaml = { 'ocamlformat' },
+            terraform = { 'terraform_fmt' },
             typescript = { 'prettierd', 'prettier' },
             typescriptreact = { 'prettierd', 'prettier' },
             javascript = { 'prettierd', 'prettier' },
