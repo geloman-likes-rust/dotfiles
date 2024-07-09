@@ -16,6 +16,13 @@ return {
             capabilities = capabilities,
         }
 
+        --[[ TERRAFORM LSP ]]
+        lspconfig.terraformls.setup {
+            cmd = { "terraform-ls", "serve" },
+            filetypes = { "terraform", "terraform-vars" },
+            root_dir = util.root_pattern('.terraform', '.git')
+        }
+
         --[[ PYTHON LSP ]]
         lspconfig.pyright.setup { capabilities = capabilities }
 
