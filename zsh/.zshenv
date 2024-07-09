@@ -1,6 +1,7 @@
 EDITOR="$(command -v nvim)"
 KEYTIMEOUT=1
 SHELL="/usr/bin/zsh"
+GOPATH="$HOME/.local/share/go"
 XDG_CONFIG_HOME="$HOME/.config"
 XDG_DATA_HOME="$HOME/.local/share"
 
@@ -22,4 +23,4 @@ FZF_DEFAULT_OPTS="--ansi --color=bg+:$BG,fg+:$FG,gutter:-1,border:$PURPLE,hl:$MI
 [ -d ~/.dotfiles/handy-scripts/bin ] && PATH=$PATH:$HOME/.dotfiles/handy-scripts/bin
 [ -d ~/.language-servers/bin ] && PATH=$PATH:$HOME/.language-servers/bin
 
-export PATH SHELL EDITOR KEYTIMEOUT FZF_DEFAULT_OPTS XDG_CONFIG_HOME XDG_DATA_HOME
+export PATH SHELL EDITOR GOPATH KEYTIMEOUT FZF_DEFAULT_OPTS XDG_CONFIG_HOME XDG_DATA_HOME
