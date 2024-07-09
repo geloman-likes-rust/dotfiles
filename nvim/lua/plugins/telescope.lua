@@ -51,12 +51,6 @@ return {
     end,
     dependencies = { 'nvim-lua/plenary.nvim' },
     opts = function()
-        local ignore_files = {
-            '.git', '**.png', '**.svg', '**.favicon.*', '**.gif',
-            '**.jpg', '**.jpeg', '**.mp4', '**.mp3', '**.pdf',
-            'go', '**.zip', '**.tar.gz', '**/tags', '**.ttf'
-        }
-
         local actions = require('telescope.actions')
         local options = {
             pickers = {
@@ -178,7 +172,6 @@ return {
 
             defaults = {
                 dynamic_preview_title = true,
-                file_ignore_patterns = ignore_files,
 
                 mappings = {
                     i = {
