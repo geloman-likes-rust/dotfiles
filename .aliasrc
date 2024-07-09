@@ -7,6 +7,15 @@ alias \
   ....="cd ../../.." \
   .....="cd ../../../.." \
 
+# terraform aliases
+alias \
+  tff="terraform fmt" \
+  tfi="terraform init" \
+  tfa="terraform apply" \
+  tfd="terraform destroy" \
+  tfr="terraform refresh" \
+  tfp="terraform plan" \
+
 # tmux aliases
 alias \
   tls="tmux ls" \
