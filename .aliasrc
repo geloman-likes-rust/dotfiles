@@ -83,6 +83,7 @@ alias \
 # additional aliases
 alias \
   e="$EDITOR" \
+  conf="cd ~/.config" \
   cr="cargo run" \
   rsc="rustc" \
   dbe="db-env" \
