@@ -1,11 +1,11 @@
 return {
-    "ThePrimeagen/harpoon",
-    branch = "harpoon2",
+    'ThePrimeagen/harpoon',
+    branch = 'harpoon2',
     keys = function()
         local harpoon = require('harpoon')
         local toggle_list = function()
             harpoon.ui:toggle_quick_menu(harpoon:list(),
-                { border = "rounded", title_pos = "center", ui_width_ratio = 0.50 })
+                { border = 'rounded', title_pos = 'center', ui_width_ratio = 0.50 })
         end
         local add_file = function() harpoon:list():add() end
         local select_file = function(number) return function() harpoon:list():select(number) end end
@@ -24,5 +24,5 @@ return {
             { '<A-0>',      select_file(10), desc = 'Harpoon Buffer 10' },
         }
     end,
-    dependencies = { "nvim-lua/plenary.nvim" }
+    dependencies = { 'nvim-lua/plenary.nvim' }
 }

@@ -18,8 +18,8 @@ return {
 
         --[[ TERRAFORM LSP ]]
         lspconfig.terraformls.setup {
-            cmd = { "terraform-ls", "serve" },
-            filetypes = { "terraform", "terraform-vars" },
+            cmd = { 'terraform-ls', 'serve' },
+            filetypes = { 'terraform', 'terraform-vars' },
             root_dir = util.root_pattern('.terraform', '.git')
         }
 

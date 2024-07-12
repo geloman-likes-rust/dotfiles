@@ -30,7 +30,7 @@ return {
                 theme = {
                     all = {
                         ui = {
-                            bg_gutter = "none"
+                            bg_gutter = 'none'
                         }
                     }
                 }
@@ -42,15 +42,15 @@ return {
         end
     },
     {
-        "folke/tokyonight.nvim",
+        'folke/tokyonight.nvim',
         lazy = true,
         priority = 1000,
         opts = {},
     },
     {
-        "catppuccin/nvim",
+        'catppuccin/nvim',
         lazy = true,
-        name = "catppuccin",
+        name = 'catppuccin',
         priority = 1000,
         opts = {},
         config = function(_, opts)
@@ -58,7 +58,7 @@ return {
         end
     },
     {
-        "ellisonleao/gruvbox.nvim",
+        'ellisonleao/gruvbox.nvim',
         lazy = true,
         priority = 1000,
         opts = {

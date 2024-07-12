@@ -1,6 +1,6 @@
 return {
-    "folke/noice.nvim",
-    event = "CmdlineEnter",
+    'folke/noice.nvim',
+    event = 'CmdlineEnter',
     opts = {
         popupmenu = { enabled = false },
         health = { checker = false },
@@ -21,5 +21,5 @@ return {
             lsp_doc_border = true,        -- add a border to hover docs and signature help
         },
     },
-    dependencies = { "MunifTanjim/nui.nvim" },
+    dependencies = { 'MunifTanjim/nui.nvim' },
 }
