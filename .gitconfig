@@ -35,6 +35,9 @@
 	colorMoved = default
 	tool = vimdiff
 
+[pull]
+	rebase = true
+
 [fetch]
 	prune = true
 
