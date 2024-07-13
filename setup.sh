@@ -38,3 +38,6 @@ mkdir -p ~/.config/Code/User
 
 ~/.dotfiles/symlink.sh
 ~/.dotfiles/install.sh
+
+# Install neovim plugins
+$(command -v nvim) --headless "+Lazy! sync" +qa
