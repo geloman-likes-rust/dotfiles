@@ -108,7 +108,7 @@ install_bat() {
 install_ohmyzsh() {
 	[ -d ~/.oh-my-zsh ] && return
 	[ -z "$(command -v curl)" ] && return
-	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    git clone --depth 1 https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
 }
 
 install_lua_language_server() {
