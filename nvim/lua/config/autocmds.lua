@@ -19,6 +19,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
         keymap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
         keymap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
         keymap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
+        keymap('<leader>lr', vim.lsp.buf.references, '[L]sp [R]eferences')
         keymap('gI', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
         keymap('gt', vim.lsp.buf.type_definition, '[G]oto [T]ype Definition')
         keymap('K', vim.lsp.buf.hover, 'Hover Documentation')
