@@ -15,6 +15,7 @@ keymap("n", "<leader>lp", "<cmd>Lazy profile<cr>", { desc = "Lazy Profile" })
 -- keymap for cnext and cprev
 keymap("n", "<c-n>", "<cmd>cnext<cr>", { desc = "cnext" })
 keymap("n", "<c-p>", "<cmd>cprev<cr>", { desc = "cprevious" })
+keymap("n", "<c-q>", "<cmd>copen<cr>", { desc = "copen" })
 
 -- toggle statusline
 keymap("n", "<leader>l1", "<cmd>set laststatus=1<cr>", { noremap = true, silent = true, desc = "hide statusline" })
