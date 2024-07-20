@@ -14,9 +14,6 @@ return {
                 desc = 'neovim config files'
             },
 
-            -- RESUME CURRENT SEARCH
-            { '<leader>rs',      cmd 'Telescope resume',       desc = 'Telescope resume' },
-
             -- BUFFERS, FILES, JUMPLIST, AND REGISTERS
             { '<leader>ff',      cmd 'Telescope find_files',   desc = '[F]ind [F]iles' },
             { '<leader>fr',      cmd 'Telescope registers',    desc = '[F]ind [R]egisters' },
