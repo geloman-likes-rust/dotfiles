@@ -40,4 +40,4 @@ mkdir -p ~/.config/Code/User
 ~/.dotfiles/install.sh
 
 # Install neovim plugins
-$(command -v nvim) --headless "+Lazy! sync" +qa
+$(command -v nvim) --headless "+Lazy! restore" +qa
