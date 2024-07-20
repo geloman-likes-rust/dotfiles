@@ -43,6 +43,13 @@ return function(luasnip, format, extras)
           }
         ]], { version = i(1, "=3.0.0") }
       ),
-    }))
+    })),
+    snippet('variable', fmta(
+      [[
+        variable "<var>" {
+          default = "<default>"
+        }
+      ]], { var = i(1, 'name'), default = i(2, 'default') }
+    )),
   }
 end
