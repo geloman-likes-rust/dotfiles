@@ -1,12 +1,10 @@
 #!/bin/sh
 
 # ZSH CONFIGS
-find ~/.dotfiles/zsh -type f \
-    | xargs -I {} sh -c 'ln -sf {} "$HOME"'
+ln -sf ~/.dotfiles/zsh/.zshrc "$HOME"
 
 # BASH CONFIGS
-find ~/.dotfiles/bash -type f \
-    | xargs -I {} sh -c 'ln -sf {} "$HOME"'
+ln -sf ~/.dotfiles/bash/.bashrc "$HOME"
 
 # ALIASES
 ln -sf ~/.dotfiles/.aliasrc "$HOME"
