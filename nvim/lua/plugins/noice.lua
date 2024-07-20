@@ -10,7 +10,7 @@ return {
         lsp = {
             progress = { enabled = false },
             message = { enabled = false },
-            hover = { enabled = false },
+            hover = { enabled = true, silent = true },
             signature = { enabled = false },
         },
         presets = {
