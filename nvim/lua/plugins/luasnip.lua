@@ -28,5 +28,6 @@ return {
         luasnip.add_snippets('javascript', require('snippets.javascript')(luasnip, format))
         luasnip.add_snippets('dockerfile', require('snippets.dockerfile')(luasnip, format))
         luasnip.add_snippets('editorconfig', require('snippets.editorconfig')(luasnip, format))
+        luasnip.add_snippets('terraform', require('snippets.terraform')(luasnip, format, extras))
     end
 }
