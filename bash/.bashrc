@@ -1,11 +1,8 @@
 # SOURCE THESE
 # -----------------------------------
-[ -f ~/.aliasrc ] && . "$HOME"/.aliasrc
-[ -f ~/.bash_prompt ] && . "$HOME"/.bash_prompt
-[ -f ~/.fzf.bash ] && . "$HOME"/.fzf.bash
-# [ -d "$HOME"/.nvm ] && export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -f ~/.dotfiles/.aliasrc ] && . ~/.dotfiles/.aliasrc
+[ -f ~/.dotfiles/bash/.bash_prompt ] && . ~/.dotfiles/bash/.bash_prompt
+[ -f ~/.fzf.bash ] && . ~/.fzf.bash
 
 # ADD THESE TO PATH
 # -----------------------------------
