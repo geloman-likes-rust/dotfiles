@@ -5,7 +5,7 @@ return {
     event = 'BufReadPost',
     config = function()
         vim.defer_fn(function()
-            local parsers = { 'c', 'lua', 'vim', 'vimdoc', 'query' }
+            local parsers = { 'c', 'lua', 'vim', 'vimdoc', 'query', 'regex' }
             require('nvim-treesitter.configs').setup {
                 modules = {},
                 auto_install = false,
