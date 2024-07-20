@@ -1,6 +1,6 @@
 return {
     'folke/noice.nvim',
-    event = 'CmdlineEnter',
+    event = 'VeryLazy',
     opts = {
         popupmenu = { enabled = false },
         health = { checker = false },
