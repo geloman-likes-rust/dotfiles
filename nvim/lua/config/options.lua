@@ -52,3 +52,11 @@ vim.o.termguicolors = true
 vim.wo.wrap = false
 vim.wo.number = true
 vim.wo.relativenumber = true
+
+-- custom filetypes
+vim.filetype.add({
+    extension = {
+        tf = 'terraform',
+        tfvars = 'terraform-vars'
+    }
+})
