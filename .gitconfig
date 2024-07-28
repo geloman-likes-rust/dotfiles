@@ -41,6 +41,9 @@
 [fetch]
 	prune = true
 
+[push]
+	followTags = true
+
 [color]
 	status = auto
 	ui = true
