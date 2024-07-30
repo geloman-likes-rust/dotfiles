@@ -3,11 +3,10 @@
 ## TMUX PLUGIN MANAGER
 #---------------------------------------------------------------------
 install_tmux_tpm() {
-	[ -d ~/.tmux ] && return
+	[ -d ~/.tmux/plugins/tpm ] && return
 	echo "Installing tmux-plugins/tpm......................................"
-    mkdir -p ~/.tmux/plugins/tpm
 	git clone --depth 1 https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-    [ -n "$(command -v tmux)" ] && tmux -c "~/.tmux/plugins/tpm/tpm && ~/.tmux/plugins/tpm/bin/install_plugins"
+    [ -n "$(command -v tmux)" ] && TMUX_PLUGIN_MANAGER_PATH="~/.tmux/plugins/" tmux -c '~/.tmux/plugins/tpm/bindings/install_plugins'
 }
 
 ## FUZZY FINDER
