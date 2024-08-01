@@ -29,7 +29,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
         keymap('[d', vim.diagnostic.goto_prev, 'Previous Diagnostic')
 
         -- Default DiagnosticSign
-        local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+        local signs = { Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰌶 ", Info = "󰋽 " }
         for type, icon in pairs(signs) do
             local hl = "DiagnosticSign" .. type
             vim.fn.sign_define(hl, { text = icon, texthl = hl })
