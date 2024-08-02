@@ -1,0 +1,75 @@
+#!/bin/sh
+
+FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --header-first --border-label \" worktree list \" --margin=15%,10%"
+
+GIT_DIR="$(git rev-parse --git-dir 2> /dev/null)"
+[ -n "$GIT_DIR" ] && WORKSPACE="$(basename $(echo $GIT_DIR | sed 's|/\.bare.*$||'))"
+
+COMMAND=$1
+
+if [ "$COMMAND" = "clone" ]; then
+    REMOTE=$2 WORKSPACE=$3
+    [ -d "$WORKSPACE" ] && echo "fatal: destination path '$WORKSPACE' already exists and is not an empty directory." && exit 1
+    [ -z "$REMOTE" ] && echo "usage: gwt clone <remote> <local:optional>" && exit 1
+    [ -z "$WORKSPACE" ] && WORKSPACE="$(basename $REMOTE | sed 's/.git$//')"
+    git clone --bare $REMOTE $WORKSPACE/.bare
+    echo "gitdir: ./.bare" > $WORKSPACE/.git
+    GIT_DIR="$WORKSPACE/.git"
+    CURRENT_BRANCH="$(git --git-dir "$GIT_DIR" branch --show-current 2> /dev/null)"
+    git --git-dir "$GIT_DIR" worktree add "$WORKSPACE/$CURRENT_BRANCH" "$CURRENT_BRANCH" --quiet
+fi
+
+if [ "$COMMAND" = "list" ] || [ -z "$COMMAND" ]; then
+    FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --header \" Select Worktree\""
+    WORKTREES="$(git worktree list)"
+
+    [ -z "$(command -v fzf)" ] && echo "$WORKTREES" && exit 0
+    [ -n "$(command -v fzf)" ] && WORKTREES="$(echo "$WORKTREES" | grep -v "(bare)")"
+    [ -z "$WORKTREES" ] && exit 0; selected="$(echo "$WORKTREES" | fzf | awk '{print $1 " " $NF}')"; [ -z "$selected" ] && exit 0
+
+    WORKDIR="$(echo $selected | cut -d ' ' -f 1)"
+    WORKTREE="$(echo $selected | cut -d ' ' -f 2)"
+    SESSION_NAME="$WORKSPACE $WORKTREE"
+
+    # INSIDE TMUX
+    if [ -n "$TMUX" ]; then
+        tmux has-session -t "$SESSION_NAME" 2> /dev/null
+        [ $? -eq 0 ] && tmux switch-client -t "$SESSION_NAME" && exit 0
+        [ $? -ne 0 ] && tmux new-session -ds "$SESSION_NAME" -c "$WORKDIR" && tmux switch-client -t "$SESSION_NAME" && exit 0
+    fi
+
+    # OUTSIDE TMUX
+    if [ -z "$TMUX" ]; then
+        tmux has-session -t "$SESSION_NAME" 2> /dev/null
+        [ $? -eq 0 ] && tmux attach-session -t "$SESSION_NAME" && exit 0
+        [ $? -ne 0 ] && tmux new-session -s "$SESSION_NAME" -c "$WORKDIR" && exit 0
+    fi
+fi
+
+if [ "$COMMAND" = "add" ]; then
+    BRANCH=$2 WORKTREE=$3
+    [ -z "$BRANCH" ] && echo "usage: gwt add <branch:worktree> | gwt add <branch> <worktree:optional>" && exit 1
+    [ -z "$WORKTREE" ] && WORKTREE=$2
+    WORKDIR="$(echo $GIT_DIR | sed 's|/\.bare.*$||')/$WORKTREE"
+
+    BRANCH_EXISTS="$(git rev-parse --verify $BRANCH 2> /dev/null)"
+    [ -n "$BRANCH_EXISTS" ] && git worktree add "$WORKDIR" "$BRANCH"
+    [ -z "$BRANCH_EXISTS" ] && git worktree add -b "$BRANCH" "$WORKDIR"
+fi
+
+if [ "$COMMAND" = "remove" ]; then
+    FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --header \"Remove Worktree\" --header-first"
+    WORKTREES="$(git worktree list | grep -v "(bare)")"
+    [ -z "$WORKTREES" ] && exit 0
+
+    selected="$(echo "$WORKTREES" | fzf)"
+    if [ -n "$selected" ]; then
+        WORKTREE="$(echo "$selected" | awk '{print $NF}')"
+        WORKDIR="$(echo "$selected" | awk '{print $1}')"
+        TMUX_SESSION="$(tmux ls 2> /dev/null | grep -F "$WORKSPACE $WORKTREE" | head -n 1 | cut -d ':' -f 1)"
+        git worktree remove "$WORKDIR"
+        [ -n "$TMUX_SESSION" ] && tmux kill-session -t "$TMUX_SESSION"
+    fi
+fi
+
+[ "$COMMAND" = "prune" ] && git worktree prune
