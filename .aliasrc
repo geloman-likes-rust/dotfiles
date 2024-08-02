@@ -47,6 +47,7 @@ alias \
   gr="git-restore" \
   gco="git-checkout" \
   guc="git-unpushed-commits" \
+  gwt="git-worktree-tool" \
   guf="git-untracked-files" \
   gmf="git-modified-files" \
   grd="git-restore-deleted" \
