@@ -24,19 +24,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
         keymap('gt', vim.lsp.buf.type_definition, '[G]oto [T]ype Definition')
         keymap('K', vim.lsp.buf.hover, 'Hover Documentation')
         keymap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
-        keymap('<C-w>d', vim.diagnostic.open_float, 'Open Floating Diagnostic')
-        keymap(']d', vim.diagnostic.goto_next, 'Next Diagnostic')
-        keymap('[d', vim.diagnostic.goto_prev, 'Previous Diagnostic')
-
-        -- Default DiagnosticSign
-        local signs = { Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰌶 ", Info = "󰋽 " }
-        for type, icon in pairs(signs) do
-            local hl = "DiagnosticSign" .. type
-            vim.fn.sign_define(hl, { text = icon, texthl = hl })
-        end
-
-        -- rounded border for diagnostic popup
-        vim.diagnostic.config { signs = true, float = { border = 'rounded' } }
 
         -- rounded border for textDocument/hover
         vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(

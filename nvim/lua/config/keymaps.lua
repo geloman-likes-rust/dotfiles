@@ -9,6 +9,11 @@ local toggle_numberln = function()
     vim.cmd "set relativenumber!"
 end
 
+-- diagnostics keymaps
+keymap('n', '<C-w>d', vim.diagnostic.open_float, { desc = 'Open Floating Diagnostic' })
+keymap('n', ']d', vim.diagnostic.goto_next, { desc = 'Next Diagnostic' })
+keymap('n', '[d', vim.diagnostic.goto_prev, { desc = 'Previous Diagnostic' })
+
 -- toggle lazy profiler
 keymap("n", "<leader>lp", "<cmd>Lazy profile<cr>", { desc = "Lazy Profile" })
 
