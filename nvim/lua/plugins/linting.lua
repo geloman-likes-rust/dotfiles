@@ -6,7 +6,6 @@ return {
             typescript = { 'eslint' },
             javascriptreact = { 'eslint' },
             typescriptreact = { 'eslint' },
-            svelte = { 'eslint' },
         }
     end,
 
