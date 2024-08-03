@@ -26,6 +26,7 @@ return {
         priority = 1000,
         transparent = true,
         opts = {
+            keywordStyle = { italic = false },
             colors = {
                 theme = {
                     all = {
