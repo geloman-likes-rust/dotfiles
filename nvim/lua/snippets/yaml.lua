@@ -13,7 +13,7 @@ return function(luasnip, format, extras)
           endOfLine: "lf"
           singleQuote: true
           arrowParens: "avoid"
-          trailingComa: "none"
+          trailingComma: "none"
           bracketSpacing: true
       ]], {}
     )),
