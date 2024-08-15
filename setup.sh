@@ -4,6 +4,7 @@ mkdir -p ~/.fonts
 mkdir -p ~/.config
 mkdir -p ~/.personal
 mkdir -p ~/.local/bin
+mkdir -p ~/.development
 mkdir -p ~/.tmux/plugins
 mkdir -p ~/.config/Code/User
 
