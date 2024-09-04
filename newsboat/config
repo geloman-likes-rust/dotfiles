@@ -1,2 +1,7 @@
 bind-key k up
 bind-key j down
+bind-key H home
+bind-key L end
+
+color info black blue
+color listfocus black white
