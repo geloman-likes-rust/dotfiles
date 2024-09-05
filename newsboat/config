@@ -5,5 +5,7 @@ bind-key L end
 
 color info black blue
 color listfocus black white
+color listfocus_unread black white
+color hint-key white blue
 
 run-on-startup select-tag
