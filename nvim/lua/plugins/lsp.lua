@@ -63,7 +63,7 @@ return {
         }
 
         --[[ TYPESCRIPT LSP ]]
-        lspconfig.tsserver.setup {
+        lspconfig.ts_ls.setup {
             cmd = { 'typescript-language-server', '--stdio' },
             capabilities = capabilities,
             root_dir = util.root_pattern('tsconfig.json', 'package.json', 'jsconfig.json', '.git')
