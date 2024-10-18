@@ -61,7 +61,7 @@ alias \
 
 # version control aliases
 alias \
-  glo="git log --oneline --color=always" \
+  glo="git log --format=\"format:%C(magenta)%h%C(green)%d %C(reset)%s %C(cyan)(%cr) %C(blue)%an\"" \
   gb="git branch" \
   gcm="git commit -m" \
   gp="git push" \
