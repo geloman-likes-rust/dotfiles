@@ -54,9 +54,9 @@ vim.wo.number = true
 vim.wo.relativenumber = true
 
 -- custom filetypes
-vim.filetype.add({
-    extension = {
-        tf = 'terraform',
-        tfvars = 'terraform-vars'
-    }
-})
+vim.filetype.add {
+	extension = {
+		tf = 'terraform',
+		tfvars = 'terraform-vars',
+	},
+}

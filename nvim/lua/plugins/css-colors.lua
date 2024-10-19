@@ -1,1 +1,5 @@
-return { 'brenoprata10/nvim-highlight-colors', ft = { 'css', 'svelte' }, opts = {} }
+return {
+	'brenoprata10/nvim-highlight-colors',
+	ft = { 'css', 'svelte' },
+	opts = {},
+}
