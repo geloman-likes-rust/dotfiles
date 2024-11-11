@@ -1,4 +1,5 @@
 - hosts: all
+  become: yes
   pre_tasks:
     - name: Update and Upgrade packages
       when: ansible_distribution in ["Debian", "Ubuntu"]
@@ -6,7 +7,10 @@
         upgrade: dist
         update_cache: yes
   roles:
+    - common
     - git
     - zsh
-    - tmux
     - neovim
+    - terraform
+    - docker
+    - nodejs
