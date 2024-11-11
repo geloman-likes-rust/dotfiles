@@ -1,0 +1,19 @@
+---
+- name: Add HashiCorp GPG key
+  ansible.builtin.apt_key:
+    url: https://apt.releases.hashicorp.com/gpg
+    state: present
+
+- name: Add HashiCorp APT repository
+  ansible.builtin.apt_repository:
+    repo: "deb https://apt.releases.hashicorp.com {{ ansible_lsb.codename }} main"
+    state: present
+
+- name: Ensure apt cache is updated
+  ansible.builtin.apt:
+    update_cache: yes
+
+- name: Install Terraform
+  ansible.builtin.apt:
+    name: terraform
+    state: latest
