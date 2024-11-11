@@ -1,4 +1,19 @@
-- name: Install neovim
-  ansible.builtin.package:
+---
+- name: Install software-properties-common
+  ansible.builtin.apt:
+    name: software-properties-common
+    state: present
+
+- name: Add Neovim Nightly unstable PPA
+  ansible.builtin.apt_repository:
+    repo: ppa:neovim-ppa/unstable
+    state: present
+
+- name: Update apt package index
+  ansible.builtin.apt:
+    update_cache: yes
+
+- name: Install Neovim Nightly
+  ansible.builtin.apt:
     name: neovim
     state: latest
