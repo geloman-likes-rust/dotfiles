@@ -1,4 +1,5 @@
-geloman:
+all:
   hosts:
     localhost:
+      ansible_user: geloman
       ansible_connection: local
