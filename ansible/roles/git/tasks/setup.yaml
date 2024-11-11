@@ -1,12 +1,12 @@
 - name: Clone dotfiles
   ansible.builtin.git:
-    repo: https://github.com/geloman-likes-rust/dotfiles
-    dest: ~/.dotfiles
+    repo: "https://github.com/geloman-likes-rust/dotfiles"
+    dest: "{{ ansible_user }}/.dotfiles"
     clone: true
     depth: 1
 
 - name: Symlink .gitconfig
   ansible.builtin.file:
-    src: ~/.dotfiles/.gitconfig
-    dest: ~/.gitconfig
+    src: "{{ ansible_user }}/.dotfiles/.gitconfig"
+    dest: "{{ ansible_user }}/.gitconfig"
     state: link
