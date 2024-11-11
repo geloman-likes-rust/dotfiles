@@ -1,4 +1,11 @@
 ---
+- name: Install required dependencies
+  ansible.builtin.apt:
+    name:
+      - gnupg
+      - software-properties-common
+    state: present
+
 - name: Add HashiCorp GPG key
   ansible.builtin.apt_key:
     url: https://apt.releases.hashicorp.com/gpg
