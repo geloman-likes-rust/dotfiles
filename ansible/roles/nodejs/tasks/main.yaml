@@ -1,0 +1,12 @@
+---
+- name: Download and execute the NodeSource setup script for Node.js {{ nodejs_major_version }}.x
+  ansible.builtin.shell: |
+    curl -fsSL https://deb.nodesource.com/setup_{{ nodejs_major_version }}.x | bash -
+  args:
+    creates: /usr/bin/node # Ensures this task only runs if /usr/bin/node doesn't exist
+
+- name: Install Node.js
+  ansible.builtin.apt:
+    name: nodejs
+    state: latest
+    update_cache: yes
