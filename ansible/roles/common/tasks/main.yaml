@@ -1,0 +1,19 @@
+---
+- name: Install common packages
+  ansible.builtin.apt:
+    name:
+      - eza
+      - fzf
+      - ripgrep
+      - fd-find
+      - bat
+      - git-delta
+      - gcc
+      - tar
+      - unzip
+      - curl
+      - wget
+      - jq
+      - neofetch
+      - ansible
+    state: latest
