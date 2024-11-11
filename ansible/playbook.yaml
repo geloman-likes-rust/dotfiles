@@ -1,4 +1,4 @@
-- hosts: all
+- hosts: localhost
   become: yes
   pre_tasks:
     - name: Update and Upgrade packages
