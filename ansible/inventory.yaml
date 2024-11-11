@@ -1,5 +1,5 @@
 all:
   hosts:
     localhost:
-      become_user: geloman
       ansible_connection: local
+      ansible_become_user: geloman
