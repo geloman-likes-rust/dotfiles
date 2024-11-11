@@ -1,0 +1,30 @@
+---
+- name: Install required dependencies
+  ansible.builtin.apt:
+    name:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - software-properties-common
+    state: present
+
+- name: Add Docker GPG key
+  ansible.builtin.apt_key:
+    url: "https://download.docker.com/linux/ubuntu/gpg"
+    state: present
+
+- name: Add Docker APT repository
+  ansible.builtin.apt_repository:
+    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_lsb.codename }} stable"
+    state: present
+
+- name: Install Docker
+  apt:
+    name: docker-ce
+    state: latest
+
+- name: Start and enable Docker service
+  ansible.builtin.systemd:
+    name: docker
+    enabled: yes
+    state: started
