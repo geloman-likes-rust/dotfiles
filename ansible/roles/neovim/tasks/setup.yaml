@@ -1,5 +1,5 @@
 - name: Symlink neovim config
   ansible.builtin.file:
-    src: "{{ ansible_user }}/.dotfiles/nvim"
-    dest: "{{ ansible_user }}/.config/nvim"
+    src: "{{ ansible_user_dir }}/.dotfiles/nvim"
+    dest: "{{ ansible_user_dir }}/.config/nvim"
     state: link
