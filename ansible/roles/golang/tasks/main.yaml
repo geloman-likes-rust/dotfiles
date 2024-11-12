@@ -1,0 +1,40 @@
+---
+- name: Remove any existing Go installation
+  ansible.builtin.file:
+    path: /usr/local/go
+    state: absent
+
+- name: Download Golang tarball
+  ansible.builtin.get_url:
+    url: "{{ go_download_url }}"
+    dest: /tmp/go.tar.gz
+
+- name: Extract Golang tarball
+  ansible.builtin.unarchive:
+    src: /tmp/go.tar.gz
+    dest: /usr/local
+    remote_src: yes
+
+- name: Create a symbolic link for Go binary
+  ansible.builtin.file:
+    src: /usr/local/go/bin/go
+    dest: /usr/local/bin/go
+    state: link
+    force: yes
+
+- name: Add Go to the system PATH
+  ansible.builtin.lineinfile:
+    path: /etc/profile.d/go.sh
+    line: 'export PATH=$PATH:/usr/local/go/bin'
+    create: yes
+
+- name: Apply updated PATH
+  ansible.builtin.shell: ". /etc/profile.d/go.sh"
+
+- name: Verify Go installation
+  ansible.builtin.shell: go version
+  register: go_version_output
+
+- name: Show Go version
+  ansible.builtin.debug:
+    msg: "{{ go_version_output.stdout }}"
