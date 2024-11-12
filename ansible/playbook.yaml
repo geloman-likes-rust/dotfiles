@@ -14,3 +14,5 @@
     - terraform
     - docker
     - nodejs
+    - golang
+    - stylua
