@@ -1,0 +1,15 @@
+---
+- name: Install terraform-ls
+  ansible.builtin.apt:
+    name: "terraform-ls"
+    state: present
+
+- name: Install gopls
+  ansible.builtin.apt:
+    name: "gopls"
+    state: present
+
+- name: Install typescript-language-server
+  ansible.builtin.command: 
+    cmd: "npm install -g typescript typescript-language-server"
+    creates: "/usr/bin/typescript-language-server"
