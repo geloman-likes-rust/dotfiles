@@ -1,0 +1,26 @@
+---
+- name: Ensure tmux is installed
+  ansible.builtin.apt:
+    name: tmux
+    state: present
+
+- name: Clone TPM (Tmux Plugin Manager)
+  ansible.builtin.git:
+    repo: "https://github.com/tmux-plugins/tpm"
+    dest: "~/.tmux/plugins/tpm"
+    update: yes
+  become_user: geloman
+
+- name: Symlink tmux configuration file
+  ansible.builtin.file:
+    src: "~/.dotfiles/tmux/.tmux.conf"
+    dest: "~/.tmux.conf"
+    state: link
+  become_user: geloman
+
+- name: Install tmux plugins using TPM
+  ansible.builtin.shell: |
+    tmux new-session -d -s tmux_temp_session
+    ~/.tmux/plugins/tpm/bin/install_plugins
+    tmux kill-session -t tmux_temp_session
+  become_user: geloman
