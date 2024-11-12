@@ -1,0 +1,24 @@
+---
+- name: Download Stylua binary
+  ansible.builtin.get_url:
+    url: "{{ stylua_download_url }}"
+    dest: /tmp/stylua-linux.zip
+
+- name: Install unzip package
+  package:
+    name: unzip
+    state: present
+
+- name: Extract and move Stylua binary
+  ansible.builtin.unarchive:
+    src: /tmp/stylua-linux.zip
+    dest: /usr/local/bin
+    remote_src: yes
+
+- name: Verify Stylua installation
+  ansible.builtin.shell: stylua --version
+  register: stylua_version
+
+- name: Show Stylua version
+  ansible.builtin.debug:
+    msg: "{{ stylua_version.stdout }}"
