@@ -1,17 +1,20 @@
+---
 - name: Symlink .zshrc
   ansible.builtin.file:
-    src: "{{ ansible_user_dir }}/.dotfiles/zsh/.zshrc"
-    dest: "{{ ansible_user_dir }}/.zshrc"
+    src: "~/.dotfiles/zsh/.zshrc"
+    dest: "~/.zshrc"
     state: link
+  become_user: geloman
 
 - name: Clone oh-my-zsh
   ansible.builtin.git:
     repo: "https://github.com/ohmyzsh/ohmyzsh.git"
-    dest: "{{ ansible_user_dir }}/.oh-my-zsh"
+    dest: "~/.oh-my-zsh"
     clone: true
     depth: 1
+  become_user: geloman
 
 - name: Set ZSH as default shell
   ansible.builtin.user:
-    name: "{{ ansible_user_id }}"
+    name: geloman
     shell: /usr/bin/zsh

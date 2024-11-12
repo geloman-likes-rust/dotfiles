@@ -1,3 +1,4 @@
+---
 - name: Install zsh
   ansible.builtin.package:
     name: zsh
