@@ -19,12 +19,8 @@
     state: present
 
 - name: Install Docker
-  apt:
+  ansible.builtin.apt:
     name: docker-ce
     state: latest
-
-- name: Start and enable Docker service
-  ansible.builtin.systemd:
-    name: docker
-    enabled: yes
-    state: started
+  notify:
+    - Start and enable Docker service
