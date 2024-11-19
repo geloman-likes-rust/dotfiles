@@ -1,0 +1,8 @@
+---
+- name: Download Minikube .deb package.
+  get_url:
+    url: "{{ minikube_deb_url }}"
+    dest: "{{ minikube_deb_path }}"
+
+- name: Install Minikube using dpkg.
+  command: "dpkg -i {{ minikube_deb_path }}"

@@ -1,0 +1,2 @@
+minikube_deb_url: "https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb"
+minikube_deb_path: "/tmp/minikube_latest_amd64.deb"
