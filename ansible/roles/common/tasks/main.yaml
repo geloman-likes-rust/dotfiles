@@ -17,3 +17,9 @@
       - neofetch
       - ansible
     state: latest
+
+- name: Symlink batcat to bat
+  ansible.builtin.file:
+    src: /usr/bin/batcat
+    dest: /usr/bin/bat
+    state: link
