@@ -2,7 +2,7 @@
 - name: Download Stylua binary
   ansible.builtin.get_url:
     url: "{{ stylua_download_url }}"
-    dest: /tmp/stylua-linux.zip
+    dest: "/tmp/{{ stylua_compress_file }}"
 
 - name: Install unzip package
   package:
@@ -11,7 +11,7 @@
 
 - name: Extract and move Stylua binary
   ansible.builtin.unarchive:
-    src: /tmp/stylua-linux.zip
+    src: "/tmp/{{ stylua_compress_file }}"
     dest: /usr/local/bin
     remote_src: yes
 

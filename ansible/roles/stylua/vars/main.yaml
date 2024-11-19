@@ -1,1 +1,5 @@
-stylua_download_url: "https://github.com/JohnnyMorganz/StyLua/releases/latest/download/stylua-linux.zip"
+stylua_remote_url: "https://github.com"
+stylua_repository: "JohnnyMorganz/StyLua"
+stylua_release_tag: "v2.0.1"
+stylua_compress_file: "stylua-linux-x86_64.zip"
+stylua_download_url: "{{ stylua_remote_url }}/{{ stylua_repository }}/releases/download/{{ stylua_release_tag }}/{{ stylua_compress_file }}"
