@@ -1,6 +1,3 @@
-# HOW TO USE THIS?
-You can run **`docker run --rm -it geloman/dotfiles`** to try this with docker locally or you can follow the quickstart guide.
-
 # QUICKSTART
 A quick docs for me because I always forgot everything.
 
@@ -10,14 +7,6 @@ A quick docs for me because I always forgot everything.
 ```
 curl -sSf https://raw.githubusercontent.com/geloman-likes-rust/dotfiles/main/quickstart | sh
 ```
-
-### SETUP LOCALLY WITH DOCKER
-- Replace **`${USERNAME}`** with your actual username.
-```bash
-docker build --build-arg USERNAME=${USERNAME} -t dotfiles:latest . \
-&& docker run -it --hostname localhost --name dotfiles dotfiles:latest
-```
-
 
 [**`handy-scripts`**](handy-scripts/userguide.md) user-friendly guide.
 
