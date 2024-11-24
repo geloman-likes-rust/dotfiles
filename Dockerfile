@@ -1,22 +1,16 @@
-FROM ubuntu:latest
-
+FROM ubuntu:latest AS base
 RUN apt-get update \
         && apt-get install -y \
         sudo git fontconfig tar wget rustup gcc unzip curl \
         zsh tmux neovim fzf git-delta eza bat ripgrep fd-find neofetch \
         && apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN useradd --create-home --groups sudo --shell /usr/bin/zsh geloman \
+	&& echo "geloman ALL=(ALL) NOPASSWD:ALL" >/etc/sudoers.d/geloman \
+	&& chmod 0440 /etc/sudoers.d/geloman
 
-ARG USERNAME=user
-RUN useradd --create-home --groups sudo --shell /usr/bin/zsh ${USERNAME} \
-	&& echo "${USERNAME} ALL=(ALL) NOPASSWD:ALL" >/etc/sudoers.d/${USERNAME} \
-	&& chmod 0440 /etc/sudoers.d/${USERNAME}
-
-USER ${USERNAME}
-
-WORKDIR /home/${USERNAME}
-
+FROM base as final
+USER geloman
+WORKDIR /home/geloman
 COPY . .dotfiles
-
 RUN ./.dotfiles/setup.sh
-
-CMD ["zsh"]
+ENTRYPOINT ["zsh"]
