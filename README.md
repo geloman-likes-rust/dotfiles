@@ -1,13 +1,6 @@
 # QUICKSTART
 A quick docs for me because I always forgot everything.
 
-
-### SETUP LOCALLY
-- Run this command to install and setup everything without any effort because I'm lazy.
-```
-curl -sSf https://raw.githubusercontent.com/geloman-likes-rust/dotfiles/main/quickstart | sh
-```
-
 [**`handy-scripts`**](handy-scripts/userguide.md) user-friendly guide.
 
 ![debian](https://img.shields.io/badge/debian-D14D72?style=for-the-badge&logo=debian&logoColor=white)
