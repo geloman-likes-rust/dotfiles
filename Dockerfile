@@ -1,7 +1,8 @@
 FROM alpine:latest AS base
 RUN apk add zsh unzip tar
 RUN addgroup --gid 1000 geloman
-RUN adduser --gecos geloman --uid 1000 --gid 1000 --disabled-password geloman
+RUN adduser -u 1000 -g geloman -G geloman -D geloman
+ENTRYPOINT ["zsh"]
 
 # FROM base AS setup
 # USER geloman
