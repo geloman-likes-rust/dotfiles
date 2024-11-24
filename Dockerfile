@@ -8,7 +8,7 @@ RUN useradd --create-home --groups sudo --shell /usr/bin/zsh geloman \
 	&& echo "geloman ALL=(ALL) NOPASSWD:ALL" >/etc/sudoers.d/geloman \
 	&& chmod 0440 /etc/sudoers.d/geloman
 
-FROM base as final
+FROM base AS final
 USER geloman
 WORKDIR /home/geloman
 COPY . .dotfiles
