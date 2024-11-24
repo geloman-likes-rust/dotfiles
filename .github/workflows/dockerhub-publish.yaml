@@ -25,4 +25,3 @@ jobs:
           push: true
           tags: |
             "geloman/dotfiles:latest"
-            "geloman/dotfiles:${GITHUB_SHA:0:7}"

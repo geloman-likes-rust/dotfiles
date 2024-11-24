@@ -3,10 +3,13 @@
 ## TMUX PLUGIN MANAGER
 #---------------------------------------------------------------------
 install_tmux_tpm() {
-	[ -d ~/.tmux/plugins/tpm ] && return
+    protocol="https"
+    remote_src="github.com/tmux-plugins/tpm"
+    destination="~/.tmux/plugins/tpm"
 	echo "Installing tmux-plugins/tpm......................................"
-	git clone --depth 1 https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-    [ -n "$(command -v tmux)" ] && TMUX_PLUGIN_MANAGER_PATH="~/.tmux/plugins/" tmux -c '~/.tmux/plugins/tpm/bindings/install_plugins'
+    [ -d "$destination" ] && return
+    [ "$protocol" = "ssh" ] && git clone --depth 1 "git@${remote_src}.git" "$destination"
+    [ "$protocol" = "https" ] && git clone --depth 1 "https://${remote_src}" "$destination"
 }
 
 ## FUZZY FINDER
