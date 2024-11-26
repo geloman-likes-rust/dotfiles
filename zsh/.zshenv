@@ -1,9 +1,14 @@
-EDITOR="$(command -v nvim)"
+ZSH_PATH="$(command -v zsh)"
+NEOVIM_PATH="$(command -v nvim)"
+EDITOR="$NEOVIM_PATH"
 KEYTIMEOUT=1
-SHELL="/usr/bin/zsh"
+SHELL="$ZSH_PATH"
 GOPATH="$HOME/.local/share/go"
 XDG_CONFIG_HOME="$HOME/.config"
 XDG_DATA_HOME="$HOME/.local/share"
+
+[ -z "$ZSH_PATH" ] && SHELL="/bin/sh"
+[ -z "$NEOVIM_PATH" ] && EDITOR="usr/bin/vim"
 
 # FZF CUSTOM COLORS
 YELLOW=#FF8400
