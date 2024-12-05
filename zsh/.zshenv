@@ -1,5 +1,6 @@
 ZSH_PATH="$(command -v zsh)"
 NEOVIM_PATH="$(command -v nvim)"
+NVIM_APPNAME="nvim"
 EDITOR="$NEOVIM_PATH"
 KEYTIMEOUT=1
 SHELL="$ZSH_PATH"
@@ -28,4 +29,4 @@ FZF_DEFAULT_OPTS="--ansi --color=bg+:$BG,fg+:$FG,gutter:-1,border:$PURPLE,hl:$MI
 [ -d ~/.dotfiles/handy-scripts/bin ] && PATH=$PATH:$HOME/.dotfiles/handy-scripts/bin
 [ -d ~/.language-servers/bin ] && PATH=$PATH:$HOME/.language-servers/bin
 
-export PATH SHELL EDITOR GOPATH KEYTIMEOUT FZF_DEFAULT_OPTS XDG_CONFIG_HOME XDG_DATA_HOME
+export PATH SHELL EDITOR GOPATH KEYTIMEOUT FZF_DEFAULT_OPTS XDG_CONFIG_HOME XDG_DATA_HOME NVIM_APPNAME
