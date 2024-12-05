@@ -1,21 +1,17 @@
 return {
 	'nvim-treesitter/nvim-treesitter',
-	priority = 1500,
+	dependencies = { 'nvim-treesitter/nvim-treesitter-textobjects' },
 	cmd = { 'TSInstall', 'TSBufEnable', 'TSBufDisable', 'TSModuleInfo' },
-	event = 'BufReadPost',
-	config = function()
-		vim.defer_fn(function()
-			local parsers = { 'c', 'lua', 'vim', 'vimdoc', 'query', 'regex' }
-			require('nvim-treesitter.configs').setup {
-				modules = {},
-				auto_install = false,
-				sync_install = false,
-				ignore_install = {},
-				ensure_installed = parsers,
-				highlight = { enable = true },
-				indent = { enable = true, disable = { 'python', 'html' } },
-			}
-		end, 0)
-	end,
+	main = 'nvim-treesitter.configs',
+	lazy = vim.fn.argc(-1) == 0,
+	opts = {
+		modules = {},
+		auto_install = false,
+		sync_install = false,
+		ignore_install = {},
+		ensure_installed = { 'c', 'lua', 'vim', 'vimdoc', 'query', 'regex' },
+		highlight = { enable = true },
+		indent = { enable = true, disable = { 'python', 'html' } },
+	},
 	build = ':TSUpdate',
 }
