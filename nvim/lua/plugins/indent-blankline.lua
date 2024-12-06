@@ -1,6 +1,7 @@
 return {
 	'lukas-reineke/indent-blankline.nvim',
-	event = 'VeryLazy',
+	event = 'BufReadPost',
+	lazy = vim.fn.argc(-1) == 0,
 	main = 'ibl',
 	opts = {
 		indent = { char = '┊' },
