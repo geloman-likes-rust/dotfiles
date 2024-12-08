@@ -3,7 +3,6 @@ return {
 	event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
 	config = function()
 		require('lspconfig.ui.windows').default_options.border = 'rounded'
-		require('neodev').setup()
 		local lspconfig = require 'lspconfig'
 		local util = lspconfig.util
 
@@ -117,5 +116,4 @@ return {
 			capabilities = capabilities,
 		}
 	end,
-	dependencies = { 'folke/neodev.nvim' },
 }
