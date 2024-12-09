@@ -1,0 +1,8 @@
+--pointer " "
+--prompt "  "
+--marker "+┃"
+--header-first
+--header " search"
+--border=rounded
+--border-label " results "
+--color=gutter:-1,border:cyan,label:green,info:green,pointer:yellow,prompt:magenta,marker:green
