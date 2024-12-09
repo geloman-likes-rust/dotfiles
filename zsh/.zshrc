@@ -46,9 +46,11 @@ zle -N zle-line-init
 echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
-## source fzf
-#-----------------------------------------------------
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# append history to history file
+setopt appendhistory
+
+## source fzf command extras
+[ -n "$(command -v fzf)" ] && source <(fzf --zsh)
 
 # zsh parameter completion for the dotnet CLI
 
