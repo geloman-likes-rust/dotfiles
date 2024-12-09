@@ -16,6 +16,7 @@
       - jq
       - neofetch
       - ansible
+      - shellcheck
     state: latest
 
 - name: Symlink batcat to bat
