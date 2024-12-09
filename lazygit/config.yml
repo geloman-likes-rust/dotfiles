@@ -1,0 +1,60 @@
+confirmOnQuit: false
+notARepository: 'quit'
+
+git:
+    disableForcePushing: true
+    paging:
+        colorArg: always
+        pager: delta --dark --paging=never --file-style=omit
+
+gui:
+    nerdFontsVersion: '3'
+    showFileIcons: true
+    theme:
+        activeBorderColor:
+          - '#54546d'
+
+        inactiveBorderColor:
+          - '#54546d'
+
+        selectedLineBgColor:
+          - '#2d4f67'
+
+        searchingActiveBorderColor:
+          - cyan
+          - bold
+
+        unstagedChangesColor:
+          - '#c34043'
+
+        defaultFgColor:
+          - '#dcd7ba'
+
+        optionsTextColor:
+          - '#7e9cd8'
+
+keybinding:
+    universal:
+        quit: q
+        select: <space>
+        toggleRangeSelect: v
+        prevItem: k
+        nextItem: j
+        prevItem-alt: <up>
+        nextItem-alt: <down>
+        scrollUpMain: <c-b>
+        scrollDownMain: <c-f>
+        nextMatch: "n"
+        prevMatch: "N"
+        startSearch: /
+        pushFiles: P
+        pullFiles: p
+    files:
+      fetch: f
+      commitChanges: c
+      amendLastCommit: A
+      openStatusFilter: <disabled>
+      findBaseCommitForFixup: <disabled>
+
+os:
+  editPreset: 'nvim'
