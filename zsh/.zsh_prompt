@@ -1,8 +1,0 @@
-if [ -d "$HOME/.oh-my-zsh" ]; then
-  ZSH_THEME="robbyrussell"
-  export ZSH="$HOME/.oh-my-zsh"
-  . $ZSH/oh-my-zsh.sh
-else
-  autoload -U colors && colors
-  PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
-fi
