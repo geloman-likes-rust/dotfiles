@@ -50,7 +50,7 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 setopt appendhistory
 
 ## source fzf command extras
-[ -n "$(command -v fzf)" ] && source <(fzf --zsh)
+[ -n "$(command -v fzf)" ] && . ~/.dotfiles/fzf/.fzf.zsh
 
 # zsh parameter completion for the dotnet CLI
 
