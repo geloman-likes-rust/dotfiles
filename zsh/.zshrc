@@ -74,6 +74,7 @@ compdef _dotnet_zsh_complete dotnet
 # opam configuration
 [ -n "$(command -v opam)" ] && eval "$(opam env)"
 
+# start ssh-agent
 [ -n "$(command -v ssh-agent)" ] && [ -z "$SSH_AGENT_PID" ] && eval "$(ssh-agent)"
 
 # starship configuration
