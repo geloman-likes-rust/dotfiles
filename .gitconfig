@@ -31,6 +31,7 @@
     hunk-header-number-line-style =  "#dcd7ba"
 
 [merge]
+	ff = only
 	conflictstyle = diff3
 
 [diff]
