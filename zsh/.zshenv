@@ -10,6 +10,7 @@ SHELL="$ZSH_PATH"
 GOPATH="$HOME/.local/share/go"
 XDG_CONFIG_HOME="$HOME/.config"
 XDG_DATA_HOME="$HOME/.local/share"
+STARSHIP_CONFIG="$HOME/.dotfiles/starship/starship.toml"
 
 [ -z "$NEOVIM_PATH" ] && EDITOR="usr/bin/vim"
 
@@ -25,4 +26,4 @@ FZF_DEFAULT_OPTS_FILE="$HOME/.dotfiles/fzf/.fzfrc"
 [ -d ~/.dotfiles/handy-scripts/bin ] && PATH=$PATH:$HOME/.dotfiles/handy-scripts/bin
 [ -d ~/.language-servers/bin ] && PATH=$PATH:$HOME/.language-servers/bin
 
-export PATH SHELL EDITOR GOPATH KEYTIMEOUT FZF_DEFAULT_OPTS_FILE XDG_CONFIG_HOME XDG_DATA_HOME NVIM_APPNAME
+export PATH SHELL EDITOR GOPATH KEYTIMEOUT FZF_DEFAULT_OPTS_FILE STARSHIP_CONFIG XDG_CONFIG_HOME XDG_DATA_HOME NVIM_APPNAME

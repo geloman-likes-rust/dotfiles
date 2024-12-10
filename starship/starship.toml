@@ -1,0 +1,25 @@
+format = '''
+$directory$git_branch$git_status
+[❯ ](green bold)
+'''
+
+[directory]
+truncation_length = 2
+home_symbol = '  home'
+style = 'bold blue'
+
+[git_branch]
+format = '[\($symbol$branch(:$remote_branch)\)]($style) '
+symbol = ''
+style = 'bold yellow'
+
+[git_status]
+format = '$ahead_behind $stashed$staged$deleted$untracked$modified '
+up_to_date = '[ ](green)'
+ahead = '[ ](blue)'
+behind = '[ ](yellow)'
+modified = '[ ](red)'
+deleted = '[󱪟 ](red)'
+staged = '[ ](green)'
+untracked = '[ ](cyan)'
+stashed = '[󰘓 ](red)'
