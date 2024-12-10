@@ -16,7 +16,7 @@ return {
 
 	init = function()
 		vim.api.nvim_create_autocmd(
-			{ 'BufReadPost', 'BufNewFile', 'InsertLeave', 'BufWritePost' },
+			{ 'BufReadPost', 'BufNewFile', 'ModeChanged', 'BufWritePost' },
 			{
 				group = vim.api.nvim_create_augroup(
 					'PerformLinting',
