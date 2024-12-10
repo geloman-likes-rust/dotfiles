@@ -2,10 +2,15 @@ return {
 	'mfussenegger/nvim-lint',
 	config = function()
 		require('lint').linters_by_ft = {
+			sh = { 'shellcheck' },
+			yaml = { 'yamllint' },
+			python = { 'pylint' },
+			terraform = { 'tflint' },
 			javascript = { 'eslint' },
 			typescript = { 'eslint' },
 			javascriptreact = { 'eslint' },
 			typescriptreact = { 'eslint' },
+			['yaml.ansible'] = { 'ansible_lint' },
 		}
 	end,
 
