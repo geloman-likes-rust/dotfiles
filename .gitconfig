@@ -5,10 +5,6 @@
 [init]
 	defaultBranch = main
 
-[credential "https://github.com"]
-	username = geloman-likes-rust
-	helper = store
-
 [core]
 	editor = nvim
 	pager = delta
@@ -17,16 +13,22 @@
 	diffFilter = delta --color-only
 
 [delta]
-	navigate = true
+    dark = true
+    syntax-theme = Coldark-Dark
     side-by-side = false
-	light = false
-	line-numbers = true
-	line-numbers-minus-style = "#FC2947" bold
-	line-numbers-plus-style = "#03C988" bold
-	minus-style = red bold "#ffeeee"
-	plus-style = green bold "#d6ffd6"
-	line-numbers-zero-style = "#F4F2DE"
-	syntax-theme = 1337
+    navigate = true
+    line-numbers = true
+    plus-style = "#98bb6c" bold "#2b3328"
+    minus-style = "#c34043" bold "#43242b"
+    line-numbers-zero-style = "#dcd7ba"
+    line-numbers-minus-style = "#c34043" bold
+    line-numbers-plus-style = "#76946a" bold
+    file-style = "#dcd7ba"
+    file-decoration-style = "#dcd7ba" ul
+    hunk-header-style = omit
+    hunk-header-decoration-style = ul
+    hunk-header-file-style =  "#dcd7ba"
+    hunk-header-number-line-style =  "#dcd7ba"
 
 [merge]
 	conflictstyle = diff3
@@ -35,14 +37,8 @@
 	colorMoved = default
 	tool = vimdiff
 
-[pull]
-	ff = only
-
 [fetch]
 	prune = true
-
-[push]
-	followTags = true
 
 [color]
 	status = auto
