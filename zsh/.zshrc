@@ -1,4 +1,3 @@
-[ -f ~/.dotfiles/zsh/.zsh_prompt ] && . ~/.dotfiles/zsh/.zsh_prompt
 [ -f ~/.dotfiles/zsh/.zshenv ] && . ~/.dotfiles/zsh/.zshenv
 [ -f ~/.dotfiles/.aliasrc ] && . ~/.dotfiles/.aliasrc
 
@@ -50,7 +49,7 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 setopt appendhistory
 
 ## source fzf command extras
-[ -n "$(command -v fzf)" ] && . ~/.dotfiles/fzf/.fzf.zsh
+[ -n "$(command -v fzf)" ] && source <(fzf --zsh)
 
 # zsh parameter completion for the dotnet CLI
 
