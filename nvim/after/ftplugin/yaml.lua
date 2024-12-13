@@ -13,11 +13,11 @@ if vim.fn.executable 'ansible-lint' ~= 0 then
 		vim.api.nvim_create_user_command(command, function(opts)
 			local argc = #opts.fargs
 			if argc == 0 then
-				local current_buffer = vim.api.nvim_buf_get_name(0)
+				local working_directory = (vim.loop or vim.uv).cwd()
 				vim.cmd(
 					string.format(
 						'cexpr system("ansible-lint -p %s")',
-						current_buffer
+						working_directory
 					)
 				)
 			else
