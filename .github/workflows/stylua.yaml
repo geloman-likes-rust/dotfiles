@@ -7,7 +7,7 @@ on:  # yamllint disable-line rule:truthy
 
 defaults:
   run:
-    working-directory: ./nvim
+    working-directory: nvim/
 
 jobs:
   stylua:
