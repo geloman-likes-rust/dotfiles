@@ -1,0 +1,21 @@
+---
+on:  # yamllint disable-line rule:truthy
+  push:
+    paths:
+      - nvim/**.lua
+  workflow_dispatch:
+
+defaults:
+  run:
+    working-directory: ./nvim
+
+jobs:
+  stylua:
+    runs-on: macos-latest
+    steps:
+      - name: Install stylua
+        run: brew install stylua
+
+      - uses: actions/checkout@v4
+      - name: Stylua Check
+        run: stylua --check .
