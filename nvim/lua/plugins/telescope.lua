@@ -18,11 +18,9 @@ return {
 			-- NEOVIM CONFIG FILES
 			{
 				'<leader>cn',
-				function()
-					require('telescope.builtin').find_files {
-						cwd = vim.fn.stdpath 'config',
-					}
-				end,
+				cmd(
+					'Telescope find_files cwd' .. '=' .. vim.fn.stdpath 'config'
+				),
 				desc = 'neovim config files',
 			},
 
