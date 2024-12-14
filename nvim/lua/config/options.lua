@@ -53,6 +53,13 @@ vim.wo.wrap = false
 vim.wo.number = true
 vim.wo.relativenumber = true
 
+-- show trailing whitespace
+vim.opt.list = true
+vim.opt.listchars:append 'trail:␣'
+
+-- default character for tabs
+vim.opt.listchars:append 'tab:│ '
+
 -- custom filetypes
 vim.filetype.add {
 	extension = {
