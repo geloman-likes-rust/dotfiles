@@ -1,4 +1,6 @@
 ---
+name: Stylua Check
+
 on:  # yamllint disable-line rule:truthy
   push:
     paths:
