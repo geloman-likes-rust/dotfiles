@@ -3,6 +3,7 @@ return {
 	event = 'BufWritePre',
 	opts = {
 		formatters_by_ft = {
+			sh = { 'shfmt' },
 			yaml = { 'yamlfmt' },
 			lua = { 'stylua' },
 			python = { 'black' },
