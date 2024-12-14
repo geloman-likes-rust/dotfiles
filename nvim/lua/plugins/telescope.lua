@@ -12,6 +12,9 @@ return {
 		end
 		return {
 
+			-- RESUME PREVIOUS SEARCH
+			{ '<leader>rs', cmd 'Telescope resume', desc = 'Telescope resume' },
+
 			-- NEOVIM CONFIG FILES
 			{
 				'<leader>cn',
