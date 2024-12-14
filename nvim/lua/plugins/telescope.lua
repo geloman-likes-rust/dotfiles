@@ -120,7 +120,6 @@ return {
 		}
 	end,
 	opts = function()
-		local actions = require 'telescope.actions'
 		local options = {
 			pickers = {
 
@@ -206,7 +205,7 @@ return {
 				buffers = {
 					mappings = {
 						n = {
-							['dd'] = actions.delete_buffer,
+							['dd'] = 'delete_buffer',
 						},
 					},
 				},
@@ -231,10 +230,10 @@ return {
 				dynamic_preview_title = true,
 
 				mappings = {
-					n = { ['q'] = actions.close },
+					n = { ['q'] = 'close' },
 					i = {
-						['<C-k>'] = actions.move_selection_previous,
-						['<C-j>'] = actions.move_selection_next,
+						['<C-k>'] = 'move_selection_previous',
+						['<C-j>'] = 'move_selection_next',
 					},
 				},
 
