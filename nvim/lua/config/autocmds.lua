@@ -5,6 +5,26 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 	callback = function() vim.highlight.on_yank() end,
 })
 
+-- Hide trailing whitespace on InsertEnter
+vim.api.nvim_create_autocmd('InsertEnter', {
+	pattern = '*',
+	group = vim.api.nvim_create_augroup(
+		'HideTrailingWhiteSpace',
+		{ clear = true }
+	),
+	callback = function() vim.opt.list = false end,
+})
+
+-- Show trailing whitespace on InsertLeave
+vim.api.nvim_create_autocmd('InsertLeave', {
+	pattern = '*.*',
+	group = vim.api.nvim_create_augroup(
+		'ShowTrailingWhiteSpace',
+		{ clear = true }
+	),
+	callback = function() vim.opt.list = true end,
+})
+
 vim.api.nvim_create_autocmd('LspAttach', {
 	group = vim.api.nvim_create_augroup('geloman/LspAttach', { clear = true }),
 	callback = function(event)
