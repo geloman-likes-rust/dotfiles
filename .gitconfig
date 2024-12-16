@@ -1,6 +1,7 @@
 [user]
 	name = gelocraft
 	email = gelocraft@users.noreply.github.com
+	signingkey = ~/.ssh/signingkey.pub
 
 [init]
 	defaultBranch = main
@@ -37,6 +38,18 @@
 [diff]
 	colorMoved = default
 	tool = vimdiff
+
+[tag]
+	gpgsign = true
+
+[commit]
+	gpgsign = true
+
+[gpg]
+	format = ssh
+
+[gpg "ssh"]
+	allowedSignersFile = ~/.ssh/allowedsigners
 
 [fetch]
 	prune = true
