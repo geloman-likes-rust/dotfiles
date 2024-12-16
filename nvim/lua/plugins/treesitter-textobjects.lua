@@ -26,6 +26,12 @@ return {
 					['<leader>A'] = '@parameter.inner',
 				},
 			},
+			move = {
+				enable = true,
+				set_jumps = true,
+				goto_next_start = { ['<leader>k'] = '@yaml.key' },
+				goto_previous_start = { ['<leader>K'] = '@yaml.key' },
+			},
 		},
 	},
 }
